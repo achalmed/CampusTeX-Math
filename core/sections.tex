@@ -1,0 +1,23 @@
+% ══════════════════════════════════════════════════════════════════
+%  core/sections.tex — Formato de capítulos, secciones y subsecciones
+% ══════════════════════════════════════════════════════════════════
+\usepackage{titlesec}
+
+% \chapter solo existe en book/report; la guarda permite usar el núcleo
+% también con article (p. ej. plantilla de examen).
+\ifcsname c@chapter\endcsname
+\titleformat{\chapter}[display]
+{\normalfont\Large\bfseries\sffamily\color{AzulPizarra}}
+{\large\sffamily\color{AzulMedio}UNIDAD \thechapter}{6pt}
+{\rule{\linewidth}{1.5pt}\vspace{4pt}\Huge}
+[\vspace{2pt}\rule{\linewidth}{0.5pt}]
+\fi
+
+\titleformat{\section}
+{\normalfont\large\bfseries\sffamily\color{AzulPizarra}}
+{\color{AzulMedio}\thesection}{0.8em}{}
+[\color{GrisMedio}\titlerule]
+
+\titleformat{\subsection}
+{\normalfont\normalsize\bfseries\sffamily\color{GrisCarbón}}
+{\color{AzulMedio}\thesubsection}{0.6em}{}

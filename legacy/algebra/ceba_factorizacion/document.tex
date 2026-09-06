@@ -1,0 +1,82 @@
+
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, left=2.54cm, right=2.54cm, top=3cm, bottom=3cm]{geometry} % Márgenes personalizados a 2cm
+\usepackage[spanish]{babel} % Para fechas y formato en español
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{amsmath}
+
+% Configuración de página
+\pagestyle{fancy}
+\fancyhf{} % Limpia encabezados y pies de página
+\fancyhead[L]{CEBA - Santo Domingo}
+\fancyhead[R]{\today}
+\fancyfoot[C]{\thepage} % Número de página centrado en el pie
+\renewcommand{\headrulewidth}{0.8pt}
+
+% Configuración de títulos y espaciado
+\titleformat{\section}[block]{\large\bfseries\centering}{\thesection}{1em}{}
+\setlength{\columnsep}{1cm}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0em}
+
+
+\begin{document}
+
+	\begin{center}
+		\Large\bfseries Criterios de factorización
+	\end{center}
+
+\begin{multicols}{2}
+	\section*{Ejercicios}
+		\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=0.4cm]
+			\item Factoriza el polinomio e indica un factor primo. \\
+			$P(x, y, z) = a(x - y) + b(x - y) + c(x - y) + d(x - y) + z(x - y)$
+
+			\item Factoriza el siguiente polinomio e indica un factor primo. \\
+			$P(a, b, x, y) = ax + bx + ay + by - az - bz$
+
+			\item Factoriza: $P(x, y) = x^2 - y^2 + x + y$
+
+			\item Factoriza: $P(x) = 81x^4 - 1$
+
+			\item Factoriza: $P(x) = x^8 - 1$
+
+			\item Factoriza el siguiente polinomio e indica la cantidad de factores primos. \\
+			$P(a, b) = 4a^2 b - 12a b^2$
+
+			\item Factoriza el polinomio e indica la cantidad de factores primos. \\
+			$P(a, b, c) = a^2 (a + b) + b^2 (a + b) - c^2 (a + b)$
+
+			\item Factoriza el polinomio e indica la suma de sus factores primos. \\
+			$P(x) = 6x^2 + 13x - 5$
+
+			\item Factoriza el polinomio e indica la suma de factores primos. \\
+			$P(x) = 8x - 20 + x^2$
+
+			\item Factoriza el polinomio e indica la cantidad de factores primos. \\
+			$P(m, y) = 34m y^2 + 119m^2 y - 68m^3$
+
+			\item Factoriza el polinomio e indica un factor primo. \\
+			$P(x, y) = 12x^2 + 20xy + 18x + 3y^2 - 5y - 12$
+
+			\item Factoriza el polinomio e indica un factor primo. \\
+			$P(x, y) = 12x^2 + 20xy + 18x + 3y^2 - 5y - 12$
+
+			\item Factoriza el polinomio e indica un factor primo. \\
+			$y(x, y) = 6x^2 + 5xy - 6y^2 - 5x - 14y - 4$
+
+			\item Factoriza el polinomio e indica la cantidad de factores primos. \\
+			$P(x) = x^4 + 3x^3 + 4x^2 + 3x + 1$
+
+
+			% Para añadir más ejercicios, simplemente copia y pega el siguiente bloque:
+			% \item [Enunciado del ejercicio]
+		\end{enumerate}
+
+\end{multicols}
+
+\end{document}

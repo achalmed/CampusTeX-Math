@@ -1,0 +1,73 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, left=2.54cm, right=2.54cm, top=3cm, bottom=3cm]{geometry}
+\usepackage[spanish]{babel}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Configuración de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Academia Prepolicial -- Numeración}
+\fancyhead[R]{\today}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.8pt}
+
+% Configuración de títulos y espaciado
+\titleformat{\section}[block]{\large\bfseries\centering}{\thesection}{1em}{}
+\setlength{\columnsep}{1cm}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0em}
+
+\begin{document}
+
+\begin{center}
+    \Large\bfseries Hoja de Ejercicios -- Numeración
+\end{center}
+
+\section*{Ejercicios}
+
+\begin{multicols}{2}
+\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=0.5cm]
+
+    \item Si a un número entero se le agregan 3 ceros a la derecha, dicho número queda aumentado en $522\,477$ unidades. ¿Cuál es el número?
+
+    \item ¿Cuántos números de 3 cifras no tienen ninguna cifra 2?
+
+    \item ¿Cuántos números existen mayores que 100 de la siguiente forma $\overline{a(2a)b}$ que terminen en cifra par? 
+    
+    \item Si con dos cifras consecutivas formo la edad actual de Danna, ¿dentro de cuántos años ella tendrá una edad formada por las dos cifras iniciales en orden inverso?
+    
+    \item Si con dos cifras consecutivas formo la edad actual de Norma, ¿dentro de cuántos años ella tendrá una edad formada por dos cifras que son las consecutivas de las cifras iniciales respectivamente?
+
+    \item Un número $\overline{abc}$ se divide entre el número $\overline{bc}$, obteniéndose cociente 19 y residuo 12. ¿Cuál es el menor valor de la expresión $2a + b + c$?
+
+    \item ¿Cuántos números de tres cifras diferentes existen que sean iguales a 13 veces la suma de sus tres cifras?
+
+    \item Si $\overline{mnpmn}$ es producto de números primos consecutivos y ``$p$'' es igual a cero, ¿cuál es el mínimo valor de $\overline{mn}$?
+
+    \item Si $\overline{aabb}$ es el producto de 4 números primos consecutivos, calcula la suma de estos números.
+
+    \item ¿Cuántos números de 3 cifras utilizan por lo menos una cifra 7 en su escritura?
+
+    \item ¿Cuántas cifras se han usado para enumerar un libro de 189 hojas?
+
+    \item Si $\overline{ab}^2 - \overline{ba}^2 = 3168$, calcula el menor valor de $a + b$.
+
+
+    \item Si $\overline{mn}^2 - \overline{nm}^2 = 1188$, calcula el valor de $m + n$.
+
+    \item Si se cumple que:
+    \[
+        0{,}\overline{ab} + 0{,}\overline{ba} = 1
+    \]
+    Calcula el valor de $a + b$.
+
+\end{enumerate}
+\end{multicols}
+
+\end{document}

@@ -1,0 +1,344 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║   LIBRO COMPLETO — FÍSICA PREUNIVERSITARIA                               ║
+% ║   Compilar con: lualatex main.tex  (dos pasadas para referencias)        ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+\documentclass[12pt, a4paper, twoside]{book}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §B  METADATOS DEL CURSO
+%     Academia, docente y ciclo se heredan de config/project.tex.
+%     Para sobreescribirlos SOLO en este curso, definirlos aquí.
+% ════════════════════════════════════════════════════════════════════════════
+\newcommand{\NombreCurso}{Física}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §C  PREÁMBULO COMÚN
+%     fontspec y unicode-math los carga el núcleo — no recargarlos aquí.
+% ════════════════════════════════════════════════════════════════════════════
+\input{../../core/preamble}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §D  PREÁMBULO ESPECÍFICO DE FÍSICA
+% ════════════════════════════════════════════════════════════════════════════
+
+% Unidades del SI — comando rápido
+% Uso: \SI{9.8}{\metre\per\second\squared}
+% (Requiere siunitx — se incluye aquí como específico de Física)
+\usepackage{siunitx}
+\sisetup{
+  output-decimal-marker = {,},
+  per-mode              = fraction,
+  fraction-function     = \dfrac
+}
+
+% Diagrama de cuerpo libre (entorno tikz preconfigurado)
+\newenvironment{DCL}[1][3]{%
+  % #1 = escala (default 3)
+  \begin{center}\begin{tikzpicture}[scale=#1,
+    force/.style  = {-{Stealth[length=4pt]}, AzulMedio, thick},
+    weight/.style = {-{Stealth[length=4pt]}, RojoSuave, thick},
+    normal/.style = {-{Stealth[length=4pt]}, VerdeOliva, thick}
+  ]
+}{%
+  \end{tikzpicture}\end{center}
+}
+
+% Caja de datos del problema (MRUA, etc.)
+\newcommand{\datosprob}[1]{%
+  \begin{tcolorbox}[
+    enhanced, colback=GrisClaro, colframe=AzulMedio,
+    arc=2pt, boxrule=0.6pt,
+    fonttitle=\sffamily\bfseries\small,
+    title={Datos del problema},
+    left=6pt, right=6pt, top=4pt, bottom=4pt
+  ]
+  \begin{multicols}{2}
+  #1
+  \end{multicols}
+  \end{tcolorbox}
+}
+
+% Fórmula física destacada con nombre
+% Uso: \fisfórmula{Segunda Ley de Newton}{F = ma}
+\newcommand{\fisformula}[2]{%
+  \begin{cajaprop}[#1]
+  \[ #2 \]
+  \end{cajaprop}
+}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §E  INICIO DEL DOCUMENTO
+% ════════════════════════════════════════════════════════════════════════════
+\begin{document}
+
+\input{portada_libro}
+\input{indice}
+
+% ════════════════════════════════════════════════════════════════════════════
+% MECÁNICA
+% ════════════════════════════════════════════════════════════════════════════
+
+% ── UNIDAD I: Magnitudes y Movimiento   (Temas 1–8) ──────────────────────
+\chapter{Magnitudes y Movimiento}
+
+% --- Semana 01: Magnitudes físicas ---
+% \include{semana_01_magnitudes/teoria}
+% \include{semana_01_magnitudes/ejercicios}
+% \include{semana_01_magnitudes/resueltos}
+
+% --- Semana 02: Sistema Internacional ---
+% \include{semana_02_si/teoria}
+% \include{semana_02_si/ejercicios}
+% \include{semana_02_si/resueltos}
+
+% --- Semana 03: Vectores ---
+% \include{semana_03_vectores/teoria}
+% \include{semana_03_vectores/ejercicios}
+% \include{semana_03_vectores/resueltos}
+
+% --- Semana 04: MRU ---
+% \include{semana_04_mru/teoria}
+% \include{semana_04_mru/ejercicios}
+% \include{semana_04_mru/resueltos}
+
+% --- Semana 05: MRUA ---
+% \include{semana_05_mrua/teoria}
+% \include{semana_05_mrua/ejercicios}
+% \include{semana_05_mrua/resueltos}
+
+% --- Semana 06: Caída libre ---
+% \include{semana_06_caida_libre/teoria}
+% \include{semana_06_caida_libre/ejercicios}
+% \include{semana_06_caida_libre/resueltos}
+
+% --- Semana 07: Movimiento parabólico ---
+% \include{semana_07_parabolico/teoria}
+% \include{semana_07_parabolico/ejercicios}
+% \include{semana_07_parabolico/resueltos}
+
+% --- Semana 08: Movimiento circular ---
+% \include{semana_08_circular/teoria}
+% \include{semana_08_circular/ejercicios}
+% \include{semana_08_circular/resueltos}
+
+% ── UNIDAD II: Dinámica   (Temas 9–12) ──────────────────────────────────
+\chapter{Dinámica}
+
+% --- Semana 09: Leyes de Newton ---
+% \include{semana_09_newton/teoria}
+% \include{semana_09_newton/ejercicios}
+% \include{semana_09_newton/resueltos}
+
+% --- Semana 10: Fuerza de rozamiento ---
+% \include{semana_10_rozamiento/teoria}
+% \include{semana_10_rozamiento/ejercicios}
+% \include{semana_10_rozamiento/resueltos}
+
+% --- Semana 11: Plano inclinado ---
+% \include{semana_11_plano_inclinado/teoria}
+% \include{semana_11_plano_inclinado/ejercicios}
+% \include{semana_11_plano_inclinado/resueltos}
+
+% --- Semana 12: Dinámica circular ---
+% \include{semana_12_din_circular/teoria}
+% \include{semana_12_din_circular/ejercicios}
+% \include{semana_12_din_circular/resueltos}
+
+% ── UNIDAD III: Trabajo y Energía   (Temas 13–17) ───────────────────────
+\chapter{Trabajo y Energía}
+
+% --- Semana 13: Trabajo mecánico ---
+% \include{semana_13_trabajo/teoria}
+% \include{semana_13_trabajo/ejercicios}
+% \include{semana_13_trabajo/resueltos}
+
+% --- Semana 14: Energía cinética ---
+% \include{semana_14_ec/teoria}
+% \include{semana_14_ec/ejercicios}
+% \include{semana_14_ec/resueltos}
+
+% --- Semana 15: Energía potencial ---
+% \include{semana_15_ep/teoria}
+% \include{semana_15_ep/ejercicios}
+% \include{semana_15_ep/resueltos}
+
+% --- Semana 16: Conservación de la energía ---
+% \include{semana_16_conservacion/teoria}
+% \include{semana_16_conservacion/ejercicios}
+% \include{semana_16_conservacion/resueltos}
+
+% --- Semana 17: Potencia ---
+% \include{semana_17_potencia/teoria}
+% \include{semana_17_potencia/ejercicios}
+% \include{semana_17_potencia/resueltos}
+
+% ── UNIDAD IV: Cantidad de Movimiento   (Temas 18–20) ───────────────────
+\chapter{Cantidad de Movimiento}
+
+% --- Semana 18: Impulso ---
+% \include{semana_18_impulso/teoria}
+% \include{semana_18_impulso/ejercicios}
+% \include{semana_18_impulso/resueltos}
+
+% --- Semana 19: Cantidad de movimiento ---
+% \include{semana_19_cantidad_mov/teoria}
+% \include{semana_19_cantidad_mov/ejercicios}
+% \include{semana_19_cantidad_mov/resueltos}
+
+% --- Semana 20: Choques ---
+% \include{semana_20_choques/teoria}
+% \include{semana_20_choques/ejercicios}
+% \include{semana_20_choques/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% ESTÁTICA   (Temas 21–23)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Estática}
+
+% --- Semana 21: Equilibrio de fuerzas ---
+% \include{semana_21_equilibrio/teoria}
+% \include{semana_21_equilibrio/ejercicios}
+% \include{semana_21_equilibrio/resueltos}
+
+% --- Semana 22: Momento de una fuerza ---
+% \include{semana_22_momento/teoria}
+% \include{semana_22_momento/ejercicios}
+% \include{semana_22_momento/resueltos}
+
+% --- Semana 23: Centro de gravedad ---
+% \include{semana_23_centro_gravedad/teoria}
+% \include{semana_23_centro_gravedad/ejercicios}
+% \include{semana_23_centro_gravedad/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% HIDROSTÁTICA   (Temas 24–27)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Hidrostática}
+
+% --- Semana 24: Densidad ---
+% \include{semana_24_densidad/teoria}
+% \include{semana_24_densidad/ejercicios}
+% \include{semana_24_densidad/resueltos}
+
+% --- Semana 25: Presión ---
+% \include{semana_25_presion/teoria}
+% \include{semana_25_presion/ejercicios}
+% \include{semana_25_presion/resueltos}
+
+% --- Semana 26: Principio de Pascal ---
+% \include{semana_26_pascal/teoria}
+% \include{semana_26_pascal/ejercicios}
+% \include{semana_26_pascal/resueltos}
+
+% --- Semana 27: Principio de Arquímedes ---
+% \include{semana_27_arquimedes/teoria}
+% \include{semana_27_arquimedes/ejercicios}
+% \include{semana_27_arquimedes/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% TERMODINÁMICA   (Temas 28–32)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Termodinámica}
+
+% --- Semana 28: Temperatura ---
+% \include{semana_28_temperatura/teoria}
+% \include{semana_28_temperatura/ejercicios}
+% \include{semana_28_temperatura/resueltos}
+
+% --- Semana 29: Dilatación ---
+% \include{semana_29_dilatacion/teoria}
+% \include{semana_29_dilatacion/ejercicios}
+% \include{semana_29_dilatacion/resueltos}
+
+% --- Semana 30: Calor ---
+% \include{semana_30_calor/teoria}
+% \include{semana_30_calor/ejercicios}
+% \include{semana_30_calor/resueltos}
+
+% --- Semana 31: Cambios de estado ---
+% \include{semana_31_cambios_estado/teoria}
+% \include{semana_31_cambios_estado/ejercicios}
+% \include{semana_31_cambios_estado/resueltos}
+
+% --- Semana 32: Gases ideales ---
+% \include{semana_32_gases/teoria}
+% \include{semana_32_gases/ejercicios}
+% \include{semana_32_gases/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% ELECTRICIDAD Y MAGNETISMO   (Temas 33–40)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Electricidad y Magnetismo}
+
+% --- Semana 33: Carga eléctrica ---
+% \include{semana_33_carga/teoria}
+% \include{semana_33_carga/ejercicios}
+% \include{semana_33_carga/resueltos}
+
+% --- Semana 34: Ley de Coulomb ---
+% \include{semana_34_coulomb/teoria}
+% \include{semana_34_coulomb/ejercicios}
+% \include{semana_34_coulomb/resueltos}
+
+% --- Semana 35: Campo eléctrico ---
+% \include{semana_35_campo_electrico/teoria}
+% \include{semana_35_campo_electrico/ejercicios}
+% \include{semana_35_campo_electrico/resueltos}
+
+% --- Semana 36: Potencial eléctrico ---
+% \include{semana_36_potencial/teoria}
+% \include{semana_36_potencial/ejercicios}
+% \include{semana_36_potencial/resueltos}
+
+% --- Semana 37: Corriente eléctrica ---
+% \include{semana_37_corriente/teoria}
+% \include{semana_37_corriente/ejercicios}
+% \include{semana_37_corriente/resueltos}
+
+% --- Semana 38: Ley de Ohm ---
+% \include{semana_38_ohm/teoria}
+% \include{semana_38_ohm/ejercicios}
+% \include{semana_38_ohm/resueltos}
+
+% --- Semana 39: Circuitos eléctricos ---
+% \include{semana_39_circuitos/teoria}
+% \include{semana_39_circuitos/ejercicios}
+% \include{semana_39_circuitos/resueltos}
+
+% --- Semana 40: Magnetismo ---
+% \include{semana_40_magnetismo/teoria}
+% \include{semana_40_magnetismo/ejercicios}
+% \include{semana_40_magnetismo/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% ÓPTICA   (Temas 41–45)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Óptica}
+
+% --- Semana 41: Reflexión ---
+% \include{semana_41_reflexion/teoria}
+% \include{semana_41_reflexion/ejercicios}
+% \include{semana_41_reflexion/resueltos}
+
+% --- Semana 42: Refracción ---
+% \include{semana_42_refraccion/teoria}
+% \include{semana_42_refraccion/ejercicios}
+% \include{semana_42_refraccion/resueltos}
+
+% --- Semana 43: Espejos ---
+% \include{semana_43_espejos/teoria}
+% \include{semana_43_espejos/ejercicios}
+% \include{semana_43_espejos/resueltos}
+
+% --- Semana 44: Lentes ---
+% \include{semana_44_lentes/teoria}
+% \include{semana_44_lentes/ejercicios}
+% \include{semana_44_lentes/resueltos}
+
+% --- Semana 45: Instrumentos ópticos ---
+% \include{semana_45_instrumentos/teoria}
+% \include{semana_45_instrumentos/ejercicios}
+% \include{semana_45_instrumentos/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+\end{document}

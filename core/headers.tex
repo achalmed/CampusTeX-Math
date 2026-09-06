@@ -1,0 +1,17 @@
+% ══════════════════════════════════════════════════════════════════
+%  core/headers.tex — Encabezados y pies de página (fancyhdr)
+%
+%  Usa \NombreCurso y \NombreAcademia: deben estar definidos antes de
+%  \begin{document} (los define el §B del main.tex y config/project.tex).
+% ══════════════════════════════════════════════════════════════════
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]    {\small\sffamily\color{AzulPizarra}\leftmark}
+\fancyhead[RO]    {\small\sffamily\color{AzulPizarra}\rightmark}
+\fancyhead[LO,RE] {\small\sffamily\color{GrisMedio}\NombreCurso\ --- \NombreAcademia}
+\fancyfoot[LE,RO] {\small\sffamily\thepage}
+\fancyfoot[C]     {\small\sffamily\color{GrisMedio}Material de uso interno}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.2pt}
+\renewcommand{\headrule}{\color{AzulMedio}\hrule width\headwidth height\headrulewidth}

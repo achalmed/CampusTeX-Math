@@ -1,0 +1,491 @@
+\documentclass[12pt,a4paper]{article}
+
+% ─── Paquetes ───────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mdframed}
+\usepackage{multicol}
+
+% ─── Geometría ──────────────────────────────────────────────────────────────
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+% ─── Colores ────────────────────────────────────────────────────────────────
+\definecolor{primario}{RGB}{0,90,160}
+\definecolor{verde}{RGB}{0,120,60}
+\definecolor{fondoverde}{RGB}{230,248,235}
+\definecolor{fondoazul}{RGB}{220,235,250}
+\definecolor{acento}{RGB}{200,50,50}
+\definecolor{grisclaro}{RGB}{245,245,245}
+
+% ─── Encabezado / pie ────────────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{primario}{\textbf{Ejercicios Resueltos — Conectivos Lógicos}}}
+\fancyhead[R]{\small\textcolor{primario}{Cuarto Grado de Secundaria}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.6pt}
+
+% ─── Estilos de título ───────────────────────────────────────────────────────
+\titleformat{\section}{\large\bfseries\color{primario}}{}{0pt}{}[\titlerule]
+
+% ─── Entornos ────────────────────────────────────────────────────────────────
+\newmdenv[
+  backgroundcolor=grisclaro,
+  linecolor=primario,
+  linewidth=1pt,
+  innerleftmargin=10pt, innerrightmargin=10pt,
+  innertopmargin=6pt, innerbottommargin=6pt
+]{enunciado}
+
+\newmdenv[
+  backgroundcolor=fondoverde,
+  linecolor=verde,
+  linewidth=1pt,
+  innerleftmargin=10pt, innerrightmargin=10pt,
+  innertopmargin=6pt, innerbottommargin=6pt
+]{solucion}
+
+% ─── Macros útiles ───────────────────────────────────────────────────────────
+\newcommand{\V}{\textbf{V}}
+\newcommand{\F}{F}
+\newcommand{\resultado}[1]{\textcolor{verde}{\textbf{#1}}}
+
+% ─── Documento ───────────────────────────────────────────────────────────────
+\begin{document}
+
+% Portada
+\begin{center}
+  {\LARGE\bfseries\color{primario} CONECTIVOS LÓGICOS Y TABLA DE VERDAD}\\[4pt]
+  {\large Ejercicios Resueltos — Cuarto Grado de Secundaria}\\[2pt]
+  \textcolor{gray}{\rule{0.6\linewidth}{0.6pt}}
+\end{center}
+
+\vspace{6pt}
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Parte I — Nivel Integral}
+% ════════════════════════════════════════════════════════════════════════════
+
+% ───────────────────────────────────────────────────────────────────────────
+\subsection*{Ejercicio 1}
+% ───────────────────────────────────────────────────────────────────────────
+
+\begin{enunciado}
+Determina la \textbf{matriz principal} de: $(p \wedge q) \vee q$
+\end{enunciado}
+
+\begin{solucion}
+\textbf{Solución.} Identificamos el conectivo principal: la disyunción ($\vee$) exterior.
+Jerarquía: primero $p \wedge q$ (paso 1), luego $\vee\, q$ (paso 2).
+
+\medskip
+\begin{center}
+\begin{tabular}{cc|c|c}
+\toprule
+$p$ & $q$ & $p \wedge q$ \scriptsize{(paso 1)} & $(p \wedge q) \vee q$ \scriptsize{(paso 2 = M.P.)} \\
+\midrule
+\V & \V & \V & \resultado{V} \\
+\V & \F & \F & \resultado{F} \\
+\F & \V & \F & \resultado{V} \\
+\F & \F & \F & \resultado{F} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Matriz principal:} \resultado{V, F, V, F} \quad (Contingente)
+\end{solucion}
+
+\bigskip
+
+% ───────────────────────────────────────────────────────────────────────────
+\subsection*{Ejercicio 2}
+% ───────────────────────────────────────────────────────────────────────────
+
+\begin{enunciado}
+Determina los valores de verdad de $r$ y $p$ si $\sim p \vee r$ es \textbf{falsa}.
+\end{enunciado}
+
+\begin{solucion}
+\textbf{Solución.} Para que $\sim p \vee r$ sea \textbf{F}, la disyunción débil exige que \emph{ambos} disyuntos sean F:
+
+\[
+\sim p = \F \quad \Rightarrow \quad p = \V
+\]
+\[
+r = \F
+\]
+
+\textbf{Respuesta:} $p \equiv \V$ \quad y \quad $r \equiv \F$.
+\end{solucion}
+
+\bigskip
+
+% ───────────────────────────────────────────────────────────────────────────
+\subsection*{Ejercicio 3}
+% ───────────────────────────────────────────────────────────────────────────
+
+\begin{enunciado}
+Señala la \textbf{proposición compuesta}: \\[4pt]
+a) Agripino y Cesarina son hermanos.\quad
+b) Los Heraldos Negros es una obra de César Vallejo.\\
+c) Joseph-Nicéphore tomó la primera fotografía en blanco y negro.\\
+d) Carlos y Richard van juntos al cine.\quad
+e) Daniel es profesor \textbf{y} Rosa es escritora.
+\end{enunciado}
+
+\begin{solucion}
+\textbf{Solución.} Una proposición es compuesta cuando une \emph{dos sujetos con predicados distintos}.
+
+\begin{itemize}
+  \item Opción a): un solo predicado para ambos sujetos → simple.
+  \item Opción d): misma acción para ambos sujetos → simple.
+  \item Opción \resultado{e)}: dos predicados distintos para sujetos distintos:
+        \textit{"Daniel es profesor"} $\wedge$ \textit{"Rosa es escritora"} → \textbf{compuesta}.
+\end{itemize}
+
+\textbf{Respuesta: e)} \quad $p \wedge q$
+\end{solucion}
+
+\bigskip
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Parte II — Simbolización Lógica}
+% ════════════════════════════════════════════════════════════════════════════
+
+\subsection*{Ejercicio 4}
+
+\begin{enunciado}
+Simboliza: \textit{``Si Daniel y Agripina juegan fútbol, Margarito será el árbitro.''}
+\end{enunciado}
+
+\begin{solucion}
+\textbf{Solución.}
+
+\begin{center}
+\begin{tabular}{lll}
+$p$: & Daniel juega fútbol. & \\
+$q$: & Agripina juega fútbol. & \\
+$r$: & Margarito será el árbitro. &
+\end{tabular}
+\end{center}
+
+La frase tiene forma condicional (\textit{si \ldots entonces}):
+\begin{itemize}
+  \item Antecedente: \textit{Daniel \textbf{y} Agripina juegan fútbol} $\Rightarrow$ $p \wedge q$
+  \item Consecuente: $r$
+\end{itemize}
+
+\[
+\resultado{(p \wedge q) \rightarrow r}
+\]
+\end{solucion}
+
+\bigskip
+
+\subsection*{Ejercicio 5}
+
+\begin{enunciado}
+Simboliza: \textit{``Si tomas jugo de naranja o fresa, entonces estarás lleno.''}
+\end{enunciado}
+
+\begin{solucion}
+\textbf{Solución.}
+
+\begin{center}
+\begin{tabular}{lll}
+$p$: & Tomas jugo de naranja. & \\
+$q$: & Tomas jugo de fresa.   & \\
+$r$: & Estarás lleno.          &
+\end{tabular}
+\end{center}
+
+\[
+\resultado{(p \vee q) \rightarrow r}
+\]
+\end{solucion}
+
+\bigskip
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Parte III — Matrices Principales}
+% ════════════════════════════════════════════════════════════════════════════
+
+\subsection*{Ejercicio 6}
+
+\begin{enunciado}
+Determina la matriz principal de $(p \;\Delta\; q) \leftrightarrow \sim r$.
+\end{enunciado}
+
+\begin{solucion}
+\textbf{Solución.} Con 3 variables: $2^3 = 8$ filas.
+
+\begin{center}
+\begin{tabular}{ccc|c|c|c}
+\toprule
+$p$ & $q$ & $r$ & $p \;\Delta\; q$ & $\sim r$ & $(p \;\Delta\; q)\leftrightarrow \sim r$ \\
+\midrule
+\V & \V & \V & \F & \F & \resultado{V} \\
+\V & \V & \F & \F & \V & \resultado{F} \\
+\V & \F & \V & \V & \F & \resultado{F} \\
+\V & \F & \F & \V & \V & \resultado{V} \\
+\F & \V & \V & \V & \F & \resultado{F} \\
+\F & \V & \F & \V & \V & \resultado{V} \\
+\F & \F & \V & \F & \F & \resultado{V} \\
+\F & \F & \F & \F & \V & \resultado{F} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Matriz principal:} \resultado{V, F, F, V, F, V, V, F} \quad (Contingente)
+\end{solucion}
+
+\newpage
+
+\subsection*{Ejercicio 7}
+
+\begin{enunciado}
+Si $\bigl[(p \rightarrow q) \vee (q \vee \sim r)\bigr]$ es \textbf{falsa}, halla $p$, $q$, $r$.
+\end{enunciado}
+
+\begin{solucion}
+\textbf{Solución.} Para que la disyunción sea F, \emph{ambos} disyuntos deben ser F:
+
+\textbf{Condición 1:} $q \vee \sim r = \F$
+\[
+q = \F \quad \text{y} \quad \sim r = \F \;\Rightarrow\; r = \V
+\]
+
+\textbf{Condición 2:} $p \rightarrow q = \F$ \quad (con $q = \F$)
+\[
+p = \V \quad \text{y} \quad q = \F \;\Rightarrow\; p \rightarrow q = \F \checkmark
+\]
+
+\textbf{Respuesta:} \resultado{$p \equiv \V$, $q \equiv \F$, $r \equiv \V$}
+\end{solucion}
+
+\bigskip
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Parte IV — Nivel UNMSM / UNI}
+% ════════════════════════════════════════════════════════════════════════════
+
+\subsection*{Ejercicio 8 \small(Nivel UNMSM)}
+
+\begin{enunciado}
+Si $(\sim p \wedge q) \rightarrow [(p \vee r) \vee t]$ es \textbf{falsa}, halla el valor de:
+\begin{enumerate}[label=\Roman*.]
+  \item $\sim(\sim p \vee \sim q) \rightarrow (r \vee \sim t)$
+  \item $(\sim p \rightarrow t) \rightarrow (\sim q \rightarrow r)$
+\end{enumerate}
+\end{enunciado}
+
+\begin{solucion}
+\textbf{Solución.} Para que el condicional sea F: antecedente V y consecuente F.
+
+\textbf{Consecuente F:} $(p \vee r) \vee t = \F$
+\[
+p = \F,\quad r = \F,\quad t = \F
+\]
+\textbf{Antecedente V:} $\sim p \wedge q = \V$
+\[
+\sim p = \V \Rightarrow p = \F \checkmark, \quad q = \V
+\]
+
+\textbf{Valores:} $p \equiv \F,\; q \equiv \V,\; r \equiv \F,\; t \equiv \F$
+
+\medskip
+\textbf{I.} $\sim(\sim p \vee \sim q) \rightarrow (r \vee \sim t)$
+\[
+\sim(\V \vee \F) \rightarrow (\F \vee \V)
+= \sim\V \rightarrow \V
+= \F \rightarrow \V = \resultado{V}
+\]
+
+\textbf{II.} $(\sim p \rightarrow t) \rightarrow (\sim q \rightarrow r)$
+\[
+(\V \rightarrow \F) \rightarrow (\F \rightarrow \F)
+= \F \rightarrow \V = \resultado{V}
+\]
+\end{solucion}
+
+\bigskip
+
+\subsection*{Ejercicio 9}
+
+\begin{enunciado}
+Si $(p \rightarrow \sim q) \vee (\sim r \rightarrow s)$ es \textbf{falsa}, halla:
+\begin{enumerate}[label=\Roman*.]
+  \item $(\sim p \wedge \sim q) \vee \sim p$
+  \item $(p \rightarrow q) \rightarrow r$
+\end{enumerate}
+\end{enunciado}
+
+\begin{solucion}
+\textbf{Solución.} La disyunción es F $\Rightarrow$ ambos disyuntos son F.
+
+\textbf{Disyunto 1:} $p \rightarrow \sim q = \F$
+\[
+p = \V,\quad \sim q = \F \Rightarrow q = \V
+\]
+
+\textbf{Disyunto 2:} $\sim r \rightarrow s = \F$
+\[
+\sim r = \V \Rightarrow r = \F,\quad s = \F
+\]
+
+\textbf{Valores:} $p \equiv \V,\; q \equiv \V,\; r \equiv \F,\; s \equiv \F$
+
+\medskip
+\textbf{I.} $(\sim p \wedge \sim q) \vee \sim p$
+\[
+(\F \wedge \F) \vee \F = \F \vee \F = \resultado{F}
+\]
+
+\textbf{II.} $(p \rightarrow q) \rightarrow r$
+\[
+(\V \rightarrow \V) \rightarrow \F = \V \rightarrow \F = \resultado{F}
+\]
+\end{solucion}
+
+\newpage
+
+\subsection*{Ejercicio 10}
+
+\begin{enunciado}
+Clasifica $[(\sim p \wedge q) \rightarrow r] \leftrightarrow [(p \wedge q) \;\Delta\; \sim r]$: ¿tautología, contradicción o contingente?
+\end{enunciado}
+
+\begin{solucion}
+\textbf{Solución.} Construimos la tabla completa ($2^3 = 8$ filas):
+
+\begin{center}
+\small
+\begin{tabular}{ccc|c|c|c}
+\toprule
+$p$ & $q$ & $r$ & $(\sim p \wedge q)\to r$ & $(p\wedge q)\;\Delta\;\sim r$ & \textbf{M.P.} \\
+\midrule
+V & V & V & V & F & \resultado{F} \\
+V & V & F & V & V & \resultado{V} \\
+V & F & V & V & F & \resultado{F} \\
+V & F & F & V & F & \resultado{F} \\
+F & V & V & V & F & \resultado{F} \\
+F & V & F & F & F & \resultado{V} \\
+F & F & V & V & F & \resultado{F} \\
+F & F & F & V & F & \resultado{F} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Hay valores V y F} $\Rightarrow$ \resultado{Contingente}.
+\end{solucion}
+
+\bigskip
+
+\subsection*{Ejercicio 11}
+
+\begin{enunciado}
+Determina el valor de verdad de:
+a) $(3+5=9)\wedge(5\times2=10)$ \quad
+b) $\left(\frac{13}{5}+1=\frac{18}{5}\right)\rightarrow(3^2=5)$ \quad
+c) $(2^3=8)\;\Delta\;(\sqrt{16}=-4)$ \quad
+d) $(-13<8)\leftrightarrow(8+1>9)$
+\end{enunciado}
+
+\begin{solucion}
+\textbf{Solución.}
+
+\begin{enumerate}[label=\alph*)]
+  \item $3+5=9$ es \F; $5\times2=10$ es \V. \quad $\F \wedge \V = \resultado{F}$
+  \item $\frac{13}{5}+1=\frac{18}{5}$ es \V; $3^2=9\neq5$ es \F. \quad $\V\rightarrow\F = \resultado{F}$
+  \item $2^3=8$ es \V; $\sqrt{16}=4\neq-4$ es \F. \quad $\V\;\Delta\;\F = \resultado{V}$
+  \item $-13<8$ es \V; $8+1=9\not>9$ es \F. \quad $\V\leftrightarrow\F = \resultado{F}$
+\end{enumerate}
+\end{solucion}
+
+\bigskip
+
+\subsection*{Ejercicio 12 \small(UNI 2013-I)}
+
+\begin{enunciado}
+Dada $\sim[(r\vee q)\rightarrow(r\rightarrow p)]\equiv\V$ con $q\equiv\F$. Halla:
+I. $r\rightarrow(\sim p\vee\sim q)$ \quad
+II. $[r\leftrightarrow(p\vee q)]\leftrightarrow(q\wedge\sim p)$ \quad
+III. $(r\vee\sim p)\wedge(q\vee p)$
+\end{enunciado}
+
+\begin{solucion}
+\textbf{Solución.} Para que $\sim[\ldots]\equiv\V$, el interior debe ser F, es decir:
+$(r\vee q)\rightarrow(r\rightarrow p) = \F$
+
+Antecedente V y consecuente F:
+$r\rightarrow p=\F \Rightarrow r=\V,\; p=\F$. Verificamos: $r\vee q=\V\vee\F=\V\checkmark$
+
+\textbf{Valores:} $p\equiv\F,\; q\equiv\F,\; r\equiv\V$
+
+\medskip
+\textbf{I.} $r\rightarrow(\sim p\vee\sim q)$
+$= \V\rightarrow(\V\vee\V)=\V\rightarrow\V=\resultado{V}$
+
+\textbf{II.} $[r\leftrightarrow(p\wedge q)]\leftrightarrow(q\wedge\sim p)$
+$=[\V\leftrightarrow(\F\wedge\F)]\leftrightarrow(\F\wedge\V)$
+$=[\V\leftrightarrow\F]\leftrightarrow\F=\F\leftrightarrow\F=\resultado{V}$
+
+\textbf{III.} $(r\vee\sim p)\wedge(q\vee p)$
+$=(\V\vee\V)\wedge(\F\vee\F)=\V\wedge\F=\resultado{F}$
+\end{solucion}
+
+\bigskip
+
+\subsection*{Ejercicio 13 \small(UNI 2012-II)}
+
+\begin{enunciado}
+Si $[(\sim p\vee q)\rightarrow(q\leftrightarrow r)]\vee(q\wedge s)$ es \textbf{falsa} con $p\equiv\V$. Halla $q$, $r$, $s$.
+\end{enunciado}
+
+\begin{solucion}
+\textbf{Solución.} La disyunción es F $\Rightarrow$ ambos disyuntos son F.
+
+\textbf{Disyunto 2:} $q\wedge s=\F$. Caso posible: $q=\F$ (o $s=\F$).
+
+\textbf{Disyunto 1:} $(\sim p\vee q)\rightarrow(q\leftrightarrow r)=\F$
+$\Rightarrow$ antecedente V y consecuente F.
+
+Con $p=\V$: $\sim p=\F$. Para que $\sim p\vee q=\V$, necesitamos $q=\V$.
+
+Pero si $q=\V$, el disyunto 2: $\V\wedge s=\F \Rightarrow s=\F$.
+
+Consecuente F: $q\leftrightarrow r=\F \Rightarrow \V\leftrightarrow r=\F \Rightarrow r=\F$.
+
+\textbf{Respuesta:} \resultado{$q\equiv\V,\; r\equiv\F,\; s\equiv\F$}
+\end{solucion}
+
+\bigskip
+
+\subsection*{Ejercicio 14}
+
+\begin{enunciado}
+Clasifica: I. $(p\rightarrow q)\rightarrow\sim q$ \quad
+II. $(\sim q\vee q)\;\Delta\;[p\;\Delta\;(p\vee q)]$ \quad
+III. $(q\;\Delta\;\sim p)\leftrightarrow(p\;\Delta\; q)$
+\end{enunciado}
+
+\begin{solucion}
+\textbf{Solución.}
+
+\textbf{I.} $(p\rightarrow q)\rightarrow\sim q$: con $p=\V,q=\V$: $(\V\rightarrow\V)\rightarrow\F=\V\rightarrow\F=\F$; con $p=\F,q=\F$: $\V\rightarrow\V=\V$. Hay V y F $\Rightarrow$ \resultado{Contingente (C)}.
+
+\textbf{II.} $(\sim q\vee q)=\V$ (tautología). $\V\;\Delta\;[\ldots]$: es V cuando $[\ldots]=\F$, y F cuando $[\ldots]=\V$. Como $[p\;\Delta\;(p\vee q)]$ puede ser V o F, la expresión completa alterna valores $\Rightarrow$ \resultado{Contingente (C)}.
+
+\textbf{III.} $(q\;\Delta\;\sim p)\leftrightarrow(p\;\Delta\; q)$: Nótese que $q\;\Delta\;\sim p$ equivale a $\sim(q\leftrightarrow\sim p)=\sim(\sim(p\leftrightarrow q))=p\leftrightarrow q$, que es igual a $\sim(p\;\Delta\; q)$. Por tanto la bicondicional compara $\sim(p\;\Delta\; q)$ con $(p\;\Delta\; q)$, que siempre tienen valores opuestos $\Rightarrow$ siempre F $\Rightarrow$ \resultado{Contradicción (F)}.
+\end{solucion}
+
+\end{document}

@@ -1,0 +1,56 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║   EXAMEN — {{CURSO_MAYUS}}                                                 ║
+% ║   Compilar con: lualatex examen.tex                                       ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+%
+%  Documento independiente basado en el núcleo del framework.
+%  Copiar esta carpeta dentro de courses/<curso>/ (p. ej.
+%  courses/algebra/examen_mensual_01/) y compilar desde allí.
+%  Si se compila a otra profundidad, ajustar \CoreDir y \ConfigDir.
+% ══════════════════════════════════════════════════════════════════════════════
+\documentclass[11pt, a4paper]{article}
+
+\newcommand{\NombreCurso}{{{CURSO}}}
+% Profundidad estándar: courses/<curso>/<examen>/ → tres niveles arriba
+\newcommand{\CoreDir}{../../../core}
+\newcommand{\ConfigDir}{../../../config}
+
+\input{\CoreDir/preamble}
+
+\begin{document}
+
+% ── Cabecera del examen ────────────────────────────────────────────
+\begin{center}
+  {\Large\sffamily\bfseries\color{AzulPizarra} \NombreAcademia}\\[2pt]
+  {\large\sffamily Examen de \NombreCurso}\\[2pt]
+  {\small\sffamily\color{GrisMedio} Ciclo: \CicloActual \quad
+    Docente: \NombreDocente \quad Duración: 90 minutos}
+\end{center}
+
+\vspace{4pt}
+\noindent\sffamily\small
+Apellidos y nombres: \rule{9cm}{0.3pt} \quad Fecha: \rule{3cm}{0.3pt}
+\normalfont\normalsize
+
+\vspace{8pt}
+\begin{cajaadvert}
+  Marque una sola alternativa por pregunta. No se permite el uso de
+  calculadora ni apuntes.
+\end{cajaadvert}
+
+% ── Preguntas ──────────────────────────────────────────────────────
+\begin{multicols}{2}
+
+\ejercicio % Enunciado de la pregunta 1…
+\begin{alternativas}
+  \item $ $
+  \item $ $
+  \item $ $
+  \item $ $
+  \item $ $
+\end{alternativas}
+\vspace{0.3cm}
+
+\end{multicols}
+
+\end{document}

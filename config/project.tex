@@ -1,0 +1,30 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║   CONFIG/PROJECT.TEX — CONFIGURACIÓN GLOBAL DEL PROYECTO                 ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+%
+%  ÚNICO archivo que hay que editar para cambiar la identidad de TODOS
+%  los cursos a la vez: academia, docente, ciclo, versión.
+%
+%  PRECEDENCIA: estos valores usan \providecommand, así que un curso
+%  puede sobreescribir cualquiera con \newcommand en su main.tex §B
+%  (antes de cargar el preámbulo). Ejemplo en courses/trigonometria.
+%
+%  El nombre del curso (\NombreCurso) NO va aquí: es inherentemente
+%  específico de cada curso y se define en su main.tex.
+% ══════════════════════════════════════════════════════════════════════════════
+
+% ── Identidad institucional ────────────────────────────────────────
+\providecommand{\NombreAcademia}{Academia Preuniversitaria}
+\providecommand{\NombreDocente} {[Elmer Edison Achalma Mendoza]}
+\providecommand{\CicloActual}   {Anual 2026}
+
+% ── Versión del material ───────────────────────────────────────────
+% Aparece disponible para portadas y pies de página personalizados.
+\providecommand{\VersionMaterial}{2.0}
+
+% ── Colores de acento ──────────────────────────────────────────────
+% La paleta completa vive en core/colors.tex. Para cambiar el acento
+% de TODO el proyecto, descomentar y ajustar (después de que el
+% preámbulo cargue los colores, los cursos pueden redefinirlos):
+%
+%   \AtEndPreamble{\definecolor{AzulMedio}{RGB}{74, 103, 65}}

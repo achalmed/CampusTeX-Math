@@ -1,0 +1,263 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║   LIBRO COMPLETO — LÓGICA MATEMÁTICA PREUNIVERSITARIA                    ║
+% ║   Compilar con: lualatex main.tex                                        ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+\documentclass[12pt, a4paper, twoside]{book}
+
+% ─── MOTOR Y TIPOGRAFÍA ──────────────────────────────────────────────────────
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\setsansfont{TeX Gyre Heros}[Scale=MatchLowercase]
+\setmonofont{DejaVu Sans Mono}[Scale=0.85]
+
+% ─── GEOMETRÍA ───────────────────────────────────────────────────────────────
+\usepackage[
+  a4paper,
+  top=2.5cm,
+  bottom=2.5cm,
+  inner=3cm,
+  outer=2cm,
+  headheight=14pt
+]{geometry}
+
+% ─── MATEMÁTICA ──────────────────────────────────────────────────────────────
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{cancel}
+
+% ─── COLORES Y DISEÑO ────────────────────────────────────────────────────────
+\usepackage[dvipsnames, svgnames, table]{xcolor}
+
+% PALETA ACADÉMICA FORMAL
+\definecolor{AzulPizarra}{RGB}{30, 58, 95}
+\definecolor{AzulMedio}{RGB}{52, 101, 164}
+\definecolor{AzulClaro}{RGB}{214, 227, 243}
+\definecolor{GrisCarbón}{RGB}{60, 60, 60}
+\definecolor{GrisClaro}{RGB}{240, 240, 240}
+\definecolor{GrisMedio}{RGB}{180, 180, 180}
+\definecolor{Marfil}{RGB}{252, 250, 245}
+\definecolor{VerdeOliva}{RGB}{74, 103, 65}
+\definecolor{VerdeSuave}{RGB}{220, 235, 213}
+\definecolor{NaranjaTierra}{RGB}{160, 90, 30}
+\definecolor{NaranjaSuave}{RGB}{248, 230, 210}
+\definecolor{DoradoAcadémico}{RGB}{180, 145, 50}
+\definecolor{RojoSuave}{RGB}{170, 40, 40}
+
+% ─── CAJAS TCOLORBOX ─────────────────────────────────────────────────────────
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{theorems, breakable, skins}
+
+\newtcolorbox{cajadef}[1][]{
+  enhanced, breakable,
+  colback=AzulClaro!40, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily\small,
+  title={Definición #1},
+  arc=3pt, boxrule=0.8pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  attach boxed title to top left={yshift=-2mm, xshift=6mm},
+  boxed title style={colback=AzulPizarra, arc=2pt, coltext=white}
+}
+
+\newtcolorbox{cajaprop}[1][]{
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulMedio,
+  fonttitle=\bfseries\sffamily\small,
+  title={Propiedad #1},
+  arc=3pt, boxrule=0.8pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  attach boxed title to top left={yshift=-2mm, xshift=6mm},
+  boxed title style={colback=AzulMedio, arc=2pt, coltext=white}
+}
+
+\newtcolorbox{cajaejemplo}[1][]{
+  enhanced, breakable,
+  colback=Marfil, colframe=GrisMedio,
+  fonttitle=\bfseries\sffamily\small,
+  title={Ejemplo #1},
+  arc=3pt, boxrule=0.6pt,
+  left=8pt, right=8pt, top=5pt, bottom=5pt,
+  attach boxed title to top left={yshift=-2mm, xshift=6mm},
+  boxed title style={colback=GrisCarbón, arc=2pt, coltext=white}
+}
+
+\newtcolorbox{cajatip}{
+  enhanced, breakable,
+  colback=VerdeSuave, colframe=VerdeOliva,
+  fonttitle=\bfseries\sffamily\small\color{VerdeOliva},
+  title={✦ Tip Preuniversitario},
+  arc=3pt, boxrule=0.7pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+\newtcolorbox{cajaadvert}{
+  enhanced, breakable,
+  colback=NaranjaSuave, colframe=NaranjaTierra,
+  fonttitle=\bfseries\sffamily\small\color{NaranjaTierra},
+  title={⚠ Error Común},
+  arc=3pt, boxrule=0.7pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+\newtcolorbox{cajaformula}{
+  enhanced, breakable,
+  colback=GrisClaro, colframe=DoradoAcadémico,
+  fonttitle=\bfseries\sffamily\small,
+  title={Fórmulas Clave},
+  arc=3pt, boxrule=0.9pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  attach boxed title to top left={yshift=-2mm, xshift=6mm},
+  boxed title style={colback=DoradoAcadémico, arc=2pt}
+}
+
+\newenvironment{problema}{%
+  \begin{tcolorbox}[
+    enhanced,
+    colback=GrisClaro,
+    colframe=AzulPizarra,
+    arc=2pt, boxrule=0.8pt,
+    left=8pt, right=8pt, top=5pt, bottom=5pt
+  ]
+}{%
+  \end{tcolorbox}
+}
+
+% ─── ENCABEZADOS Y PIES DE PÁGINA ────────────────────────────────────────────
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\sffamily\color{AzulPizarra}\leftmark}
+\fancyhead[RO]{\small\sffamily\color{AzulPizarra}\rightmark}
+\fancyhead[LO,RE]{\small\sffamily\color{GrisMedio}Lógica Matemática — Preuniversitario}
+\fancyfoot[LE,RO]{\small\sffamily\thepage}
+\fancyfoot[C]{\small\sffamily\color{GrisMedio}Material de uso interno}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.2pt}
+\renewcommand{\headrule}{\color{AzulMedio}\hrule width\headwidth height\headrulewidth}
+
+% ─── SECCIONES Y TÍTULOS ─────────────────────────────────────────────────────
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries\sffamily\color{AzulPizarra}}
+  {\large\sffamily\color{AzulMedio}UNIDAD \thechapter}{6pt}
+  {\rule{\linewidth}{1.5pt}\vspace{4pt}\Huge}[\vspace{2pt}\rule{\linewidth}{0.5pt}]
+\titleformat{\section}
+  {\normalfont\large\bfseries\sffamily\color{AzulPizarra}}
+  {\color{AzulMedio}\thesection}{0.8em}{}
+  [\color{GrisMedio}\titlerule]
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries\sffamily\color{GrisCarbón}}
+  {\color{AzulMedio}\thesubsection}{0.6em}{}
+
+% ─── LISTAS ──────────────────────────────────────────────────────────────────
+\usepackage{enumitem}
+\setlist[itemize,1]{label=\textcolor{AzulMedio}{\textbullet}, leftmargin=1.5em}
+\setlist[enumerate,1]{label=\textcolor{AzulPizarra}{\arabic*.}, leftmargin=1.8em}
+
+% ─── COLUMNAS ────────────────────────────────────────────────────────────────
+\usepackage{multicol}
+\setlength{\columnsep}{0.8cm}
+\setlength{\columnseprule}{0.3pt}
+\def\columnseprulecolor{\color{GrisMedio}}
+
+% ─── TABLAS ──────────────────────────────────────────────────────────────────
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+
+% ─── GRÁFICOS ────────────────────────────────────────────────────────────────
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shapes, positioning, calc}
+
+% ─── OTROS PAQUETES ──────────────────────────────────────────────────────────
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{caption}
+\setstretch{1.15}
+
+% ─── CONTADORES DE EJERCICIOS ────────────────────────────────────────────────
+\newcounter{numejercicio}[chapter]
+\newcommand{\ejercicio}{%
+  \stepcounter{numejercicio}%
+  \noindent\textbf{\sffamily\color{AzulPizarra}\thenumejercicio.}\quad
+}
+
+% ─── ALTERNATIVAS (A,B,C,D,E) ────────────────────────────────────────────────
+\newlist{alternativas}{enumerate}{1}
+\setlist[alternativas]{
+  label=\textbf{\Alph*)},
+  leftmargin=2em,
+  itemsep=2pt,
+  parsep=0pt
+}
+
+% ─── INICIO DEL DOCUMENTO ────────────────────────────────────────────────────
+\begin{document}
+
+% ── Portada ─────────────────────────────────────────────────────────────────
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[AzulPizarra]
+    (current page.north west)
+    rectangle ([yshift=-12cm]current page.north east);
+  \fill[DoradoAcadémico]
+    ([yshift=-12cm]current page.north west)
+    rectangle ([yshift=-12.4cm]current page.north east);
+  \fill[GrisClaro]
+    (current page.south west)
+    rectangle ([yshift=3cm]current page.south east);
+  \node[anchor=center, text=white]
+    at ([yshift=-3cm]current page.north)
+    {\fontsize{28}{32}\selectfont\sffamily\bfseries ACADEMIA PREUNIVERSITARIA};
+  \node[anchor=center, text=GrisMedio]
+    at ([yshift=-4.5cm]current page.north)
+    {\large\sffamily Excelencia Académica para el Ingreso a la Universidad};
+  \draw[DoradoAcadémico, line width=1.5pt]
+    ([xshift=3cm, yshift=-5.5cm]current page.north west)
+    -- ([xshift=-3cm, yshift=-5.5cm]current page.north east);
+  \node[anchor=center, text=white]
+    at ([yshift=-7.5cm]current page.north)
+    {\fontsize{40}{44}\selectfont\sffamily\bfseries LÓGICA MATEMÁTICA};
+  \node[anchor=center, text=DoradoAcadémico]
+    at ([yshift=-9cm]current page.north)
+    {\Large\sffamily PREUNIVERSITARIO};
+  \node[anchor=center, text=white!80!AzulPizarra]
+    at ([yshift=-10.5cm]current page.north)
+    {\normalsize\sffamily Teoría · Ejercicios Propuestos · Ejercicios Resueltos};
+  \node[anchor=west, text=GrisCarbón]
+    at ([xshift=3cm, yshift=2cm]current page.south west)
+    {\sffamily\textbf{Docente:} [NOMBRE DEL DOCENTE]};
+  \node[anchor=west, text=GrisCarbón]
+    at ([xshift=3cm, yshift=1.2cm]current page.south west)
+    {\sffamily\textbf{Ciclo:} [CICLO] \quad \textbf{Año:} 2025 \quad \textbf{Edición:} 1};
+\end{tikzpicture}
+\end{titlepage}
+
+% ── Índice general ──────────────────────────────────────────────────────────
+\tableofcontents
+\newpage
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD 1: LÓGICA PROPOSICIONAL
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Lógica Proposicional}
+
+% --- Semana 01: Conectivos Lógicos y Tabla de Verdad ---
+\include{semana_01_logica/teoria}
+\include{semana_01_logica/ejercicios}
+%\include{semana_01_logica/resueltos}
+
+% --- Semana 02: [Próximo tema] ---
+% \include{semana_02_/teoria}
+% \include{semana_02_/ejercicios}
+% \include{semana_02_/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+
+\end{document}

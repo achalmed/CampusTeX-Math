@@ -1,0 +1,68 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║   PORTADA — LIBRO COMPLETO DE TRIGONOMETRÍA PREUNIVERSITARIA             ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{tikzpicture}[remember picture, overlay]
+
+    \fill[AzulPizarra]
+    (current page.north west)
+    rectangle ([yshift=-13cm]current page.north east);
+    \fill[DoradoAcadémico]
+    ([yshift=-13cm]current page.north west)
+    rectangle ([yshift=-13.5cm]current page.north east);
+    \fill[GrisClaro]
+    (current page.south west)
+    rectangle ([yshift=3.5cm]current page.south east);
+    \fill[AzulMedio]
+    (current page.south west)
+    rectangle ([yshift=0.6cm]current page.south east);
+
+    \node[anchor=center, text=white]
+    at ([yshift=-2.8cm]current page.north)
+    {\fontsize{26}{30}\selectfont\sffamily\bfseries \NombreAcademia};
+    \node[anchor=center, text=GrisMedio]
+    at ([yshift=-4.2cm]current page.north)
+    {\large\sffamily Excelencia Académica Preuniversitaria};
+
+    \draw[DoradoAcadémico, line width=1.8pt]
+    ([xshift=2.5cm, yshift=-5.4cm]current page.north west)
+    -- ([xshift=-2.5cm, yshift=-5.4cm]current page.north east);
+
+    % Círculo decorativo con triángulo (alusivo a trigonometría)
+    \begin{scope}[shift={([xshift=16cm, yshift=-9cm]current page.north west)}]
+      \draw[AzulMedio!40, line width=1.2pt] (0,0) circle (2.2cm);
+      \draw[DoradoAcadémico!60, line width=0.8pt]
+      (0,0) -- (2.2,0) -- (0,2.2) -- cycle;
+      \draw[white!30, line width=0.5pt] (0.5,0) arc (0:90:0.5);
+      \node[text=white!30] at (0.2,0.2) {\tiny$\theta$};
+    \end{scope}
+
+    \node[anchor=center, text=white]
+    at ([yshift=-7.5cm]current page.north)
+    {\fontsize{38}{44}\selectfont\sffamily\bfseries TRIGONOMETRÍA};
+    \node[anchor=center, text=DoradoAcadémico]
+    at ([yshift=-9.2cm]current page.north)
+    {\Large\sffamily\bfseries PREUNIVERSITARIA};
+    \node[anchor=center, text=white!70!AzulPizarra]
+    at ([yshift=-10.8cm]current page.north)
+    {\normalsize\sffamily
+      Teoría \textbullet\ Ejercicios Propuestos \textbullet\ Ejercicios Resueltos};
+    \node[anchor=center, text=AzulMedio]
+    at ([yshift=-12cm]current page.north)
+    {\small\sffamily
+      5 Unidades \textbullet\ 21 Temas \textbullet\ Niveles Básico, Intermedio y Avanzado};
+
+    \node[anchor=west, text=GrisCarbón]
+    at ([xshift=2.5cm, yshift=2.8cm]current page.south west)
+    {\sffamily\textbf{Docente:} \NombreDocente};
+    \node[anchor=west, text=GrisCarbón]
+    at ([xshift=2.5cm, yshift=1.8cm]current page.south west)
+    {\sffamily\textbf{Ciclo:} \CicloActual
+      \quad\textbf{Edición:} Primera};
+    \node[anchor=center, text=white]
+    at ([yshift=0.3cm]current page.south)
+    {\tiny\sffamily Material de uso interno — \NombreAcademia};
+
+  \end{tikzpicture}
+\end{titlepage}

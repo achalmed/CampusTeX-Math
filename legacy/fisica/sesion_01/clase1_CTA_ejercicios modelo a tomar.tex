@@ -1,0 +1,344 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, left=2.54cm, right=2.54cm, top=3cm, bottom=3cm]{geometry}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tikz}
+
+\tcbuselibrary{skins}
+
+% ── Colores ───────────────────────────────────────────────────────────────────
+\definecolor{azulprim}{RGB}{10, 60, 130}
+\definecolor{azulclaro}{RGB}{220, 232, 250}
+\definecolor{verdeprim}{RGB}{0, 110, 60}
+\definecolor{verdelight}{RGB}{215, 245, 225}
+\definecolor{rojoprim}{RGB}{180, 30, 30}
+\definecolor{naranja}{RGB}{200, 90, 0}
+\definecolor{morado}{RGB}{90, 30, 140}
+\definecolor{grisclaro}{RGB}{248, 248, 250}
+
+% ── Encabezado ────────────────────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{azulprim}{\textbf{CTA -- Clase 1} $|$ Ejercicios Propuestos}}
+\fancyhead[R]{\small\textcolor{azulprim}{\today}}
+\fancyfoot[C]{\small\textcolor{azulprim}{\thepage}}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{azulprim}\leaders\hrule height\headrulewidth\hfill}}
+
+% ── Bloque título de parte ────────────────────────────────────────────────────
+\newcommand{\parte}[2]{%
+  \begin{tcolorbox}[colback=#1, colframe=#1, arc=4pt,
+    left=8pt, right=8pt, top=3pt, bottom=3pt,
+    before skip=14pt, after skip=6pt]
+    \textbf{\color{white}\large #2}
+  \end{tcolorbox}%
+}
+
+\newcommand{\ptos}[1]{\hfill\textcolor{naranja}{\small(#1~pts.)}}
+
+% Líneas de respuesta
+\newcommand{\lineas}[1]{%
+  \par\vspace{2pt}%
+  \foreach \i in {1,...,#1}{%
+    \noindent\rule{\linewidth}{0.3pt}\par\vspace{3pt}%
+  }%
+}
+
+\setlength{\parskip}{0.4em}
+\setlength{\parindent}{0em}
+\setlength{\columnsep}{1.1cm}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\begin{document}
+% ─────────────────────────────────────────────────────────────────────────────
+
+% ── Ficha del alumno ──────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=azulclaro, colframe=azulprim, arc=4pt]
+  \begin{center}
+    {\large\bfseries\color{azulprim} CIENCIA, TECNOLOGÍA Y AMBIENTE -- CLASE 1}\\[3pt]
+    {\normalsize\bfseries Materia, Energía, Sistema Solar y Universo}\\[3pt]
+    {\small Ejercicios Propuestos}
+  \end{center}
+  \vspace{4pt}
+  \begin{tabular*}{\linewidth}{@{}p{5.5cm}p{6.5cm}p{3cm}@{}}
+    \textbf{Apellidos y nombres:} \underline{\hspace{4.5cm}} &
+    \textbf{Grado/Sección:} \underline{\hspace{2cm}} &
+    \textbf{Puntaje:} \underline{\hspace{1.8cm}} \\[6pt]
+    \textbf{Fecha:} \underline{\hspace{4.8cm}} &
+    \textbf{Docente:} \underline{\hspace{3cm}} & \\
+  \end{tabular*}
+\end{tcolorbox}
+
+\vspace{0.2cm}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\parte{azulprim}{PARTE I: Materia, Propiedades y Estados (30 puntos)}
+% ═════════════════════════════════════════════════════════════════════════════
+
+\begin{multicols}{2}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*, itemsep=0.55cm]
+
+  \item Define con tus propias palabras qué es la \textbf{materia} e indica sus dos características fundamentales.\ptos{2}
+  \lineas{3}
+
+  \item Clasifica las siguientes propiedades en \textbf{generales} o \textbf{específicas} de la materia, marcando con una X en el cuadro correspondiente:\ptos{3}
+  
+  \begin{center}
+  \begin{tabular}{lcc}
+  \toprule
+  Propiedad & General & Específica \\
+  \midrule
+  Masa & \quad\fbox{\phantom{X}} & \quad\fbox{\phantom{X}} \\
+  Ductilidad & \quad\fbox{\phantom{X}} & \quad\fbox{\phantom{X}} \\
+  Volumen & \quad\fbox{\phantom{X}} & \quad\fbox{\phantom{X}} \\
+  Magnetismo & \quad\fbox{\phantom{X}} & \quad\fbox{\phantom{X}} \\
+  Inercia & \quad\fbox{\phantom{X}} & \quad\fbox{\phantom{X}} \\
+  Solubilidad & \quad\fbox{\phantom{X}} & \quad\fbox{\phantom{X}} \\
+  \bottomrule
+  \end{tabular}
+  \end{center}
+
+  \item Un bloque de madera tiene una masa de $600\,\mathrm{g}$ y un volumen de $750\,\mathrm{cm}^3$. Calcula su \textbf{densidad} en g/cm³ y determina si flotará en agua ($\rho_{\text{agua}}=1\,\mathrm{g/cm}^3$).\ptos{3}
+  \lineas{4}
+
+  \item Una esfera de cobre tiene masa $178\,\mathrm{g}$ y densidad $8{,}9\,\mathrm{g/cm}^3$. ¿Cuál es su volumen?\ptos{2}
+  \lineas{3}
+
+  \item Completa la tabla de cambios de estado:\ptos{4}
+
+  \begin{center}
+  \begin{tabular}{lll}
+  \toprule
+  Cambio & De $\to$ A & Nombre \\
+  \midrule
+  \phantom{XX} & Sólido $\to$ Líquido & \underline{\hspace{2cm}} \\
+  \phantom{XX} & Líquido $\to$ Gaseoso & \underline{\hspace{2cm}} \\
+  \phantom{XX} & Gaseoso $\to$ Líquido & \underline{\hspace{2cm}} \\
+  \phantom{XX} & Líquido $\to$ Sólido & \underline{\hspace{2cm}} \\
+  \phantom{XX} & Sólido $\to$ Gaseoso & \underline{\hspace{2cm}} \\
+  \phantom{XX} & Gaseoso $\to$ Sólido & \underline{\hspace{2cm}} \\
+  \bottomrule
+  \end{tabular}
+  \end{center}
+
+  \item Explica la diferencia entre un \textbf{sólido} y un \textbf{líquido} en cuanto a forma y volumen. Da un ejemplo cotidiano de cada uno.\ptos{2}
+  \lineas{3}
+
+  \item ¿Por qué el aceite flota sobre el agua? Usa el concepto de \textbf{densidad} para justificar tu respuesta.\ptos{2}
+  \lineas{3}
+
+  \item Indica qué propiedad específica de la materia se aprovecha en cada caso:\ptos{3}
+  \begin{enumerate}[label=\alph*)]
+    \item Fabricar cables eléctricos de cobre: \underline{\hspace{3cm}}
+    \item Hacer láminas de aluminio para envolver alimentos: \underline{\hspace{3cm}}
+    \item Usar goma para fabricar bandas elásticas: \underline{\hspace{3cm}}
+  \end{enumerate}
+
+  \item Un recipiente contiene $2\,\mathrm{L}$ de agua ($\rho = 1\,\mathrm{kg/L}$) y $1\,\mathrm{L}$ de aceite ($\rho = 0{,}9\,\mathrm{kg/L}$). Calcula la masa total de los líquidos.\ptos{2}
+  \lineas{3}
+
+  \item \textbf{(Desafío)} El plasma es considerado el cuarto estado de la materia. Menciona dos lugares del universo o de la vida cotidiana donde pueda encontrarse plasma.\ptos{3}
+  \lineas{3}
+
+\end{enumerate}
+\end{multicols}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\parte{verdeprim}{PARTE II: Energía, Fuentes y Conservación (25 puntos)}
+% ═════════════════════════════════════════════════════════════════════════════
+
+\begin{multicols}{2}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*, itemsep=0.55cm, start=11]
+
+  \item Define \textbf{energía} y enuncia la Ley de Conservación de la Energía.\ptos{2}
+  \lineas{3}
+
+  \item Clasifica las siguientes fuentes de energía en \textbf{renovables} o \textbf{no renovables}:\ptos{3}
+
+  \begin{center}
+  \begin{tabular}{lcc}
+  \toprule
+  Fuente & Renovable & No renovable \\
+  \midrule
+  Petróleo & \fbox{\phantom{X}} & \fbox{\phantom{X}} \\
+  Solar & \fbox{\phantom{X}} & \fbox{\phantom{X}} \\
+  Gas natural & \fbox{\phantom{X}} & \fbox{\phantom{X}} \\
+  Eólica & \fbox{\phantom{X}} & \fbox{\phantom{X}} \\
+  Nuclear & \fbox{\phantom{X}} & \fbox{\phantom{X}} \\
+  Hidroeléctrica & \fbox{\phantom{X}} & \fbox{\phantom{X}} \\
+  \bottomrule
+  \end{tabular}
+  \end{center}
+
+  \item Un objeto de $2\,\mathrm{kg}$ se mueve a $10\,\mathrm{m/s}$. Calcula su \textbf{energía cinética}:
+  \[
+    E_k = \frac{1}{2}mv^2
+  \]
+  \ptos{3}
+  \lineas{3}
+
+  \item Un libro de $0{,}5\,\mathrm{kg}$ se encuentra en un estante a $1{,}5\,\mathrm{m}$ del suelo. Calcula su \textbf{energía potencial gravitacional} ($g = 10\,\mathrm{m/s^2}$):
+  \[
+    E_p = mgh
+  \]
+  \ptos{3}
+  \lineas{3}
+
+  \item Describe la transformación de energía que ocurre en cada situación (indica el tipo de energía inicial y final):\ptos{4}
+  \begin{enumerate}[label=\alph*), itemsep=4pt]
+    \item Una linterna encendida: \underline{\hspace{4cm}}
+    \item Un ventilador funcionando: \underline{\hspace{4cm}}
+    \item Una pelota cayendo: \underline{\hspace{4.5cm}}
+    \item Una fogata ardiendo: \underline{\hspace{4.5cm}}
+  \end{enumerate}
+
+  \item ¿Por qué el Perú es considerado un país con alto potencial en energías renovables? Menciona al menos \textbf{dos} fuentes disponibles en el país.\ptos{3}
+  \lineas{4}
+
+  \item Explica con un ejemplo cotidiano por qué la energía no ``desaparece'' sino que se \textbf{transforma}.\ptos{3}
+  \lineas{3}
+
+  \item \textbf{(Desafío)} ¿Cuál es la diferencia entre energía \textbf{cinética} y \textbf{potencial}? Un automóvil en la cima de una pendiente y en movimiento en la base, ¿qué tipo(s) de energía tiene en cada caso?\ptos{4}
+  \lineas{4}
+
+\end{enumerate}
+\end{multicols}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\parte{rojoprim}{PARTE III: Sistema Solar, Tierra, Rocas y Minerales (25 puntos)}
+% ═════════════════════════════════════════════════════════════════════════════
+
+\begin{multicols}{2}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*, itemsep=0.55cm, start=19]
+
+  \item Escribe en orden los \textbf{8 planetas} del sistema solar de menor a mayor distancia al Sol:\ptos{4}
+  
+  \begin{enumerate}[label=\arabic*., itemsep=5pt]
+    \item \underline{\hspace{3cm}} \quad 5. \underline{\hspace{3cm}}
+    \item \underline{\hspace{3cm}} \quad 6. \underline{\hspace{3cm}}
+    \item \underline{\hspace{3cm}} \quad 7. \underline{\hspace{3cm}}
+    \item \underline{\hspace{3cm}} \quad 8. \underline{\hspace{3cm}}
+  \end{enumerate}
+
+  \item Relaciona cada planeta con su característica:\ptos{4}
+  
+  \begin{center}
+  \begin{tabular}{lp{5cm}}
+  \toprule
+  Planeta & Característica \\
+  \midrule
+  \underline{\hspace{1.5cm}} & El más grande del sistema solar \\
+  \underline{\hspace{1.5cm}} & El más caliente (no el más cercano al Sol) \\
+  \underline{\hspace{1.5cm}} & Tiene anillos visibles de hielo \\
+  \underline{\hspace{1.5cm}} & Rota de lado, eje inclinado $\approx98°$ \\
+  \bottomrule
+  \end{tabular}
+  \end{center}
+
+  \item Nombra y describe brevemente las \textbf{cuatro capas internas} de la Tierra:\ptos{4}
+  \lineas{5}
+
+  \item ¿Cuál es la diferencia entre el \textbf{movimiento de rotación} y el \textbf{movimiento de traslación} de la Tierra? ¿Qué fenómeno produce cada uno?\ptos{3}
+  \lineas{4}
+
+  \item Clasifica las siguientes rocas en ígneas, sedimentarias o metamórficas:\ptos{3}
+  
+  \begin{center}
+  \begin{tabular}{lp{3cm}}
+  \toprule
+  Roca & Tipo \\
+  \midrule
+  Granito & \underline{\hspace{2.5cm}} \\
+  Mármol & \underline{\hspace{2.5cm}} \\
+  Caliza & \underline{\hspace{2.5cm}} \\
+  Basalto & \underline{\hspace{2.5cm}} \\
+  Pizarra & \underline{\hspace{2.5cm}} \\
+  Arenisca & \underline{\hspace{2.5cm}} \\
+  \bottomrule
+  \end{tabular}
+  \end{center}
+
+  \item ¿Cuál es la diferencia entre una \textbf{roca} y un \textbf{mineral}? Da un ejemplo de cada uno.\ptos{3}
+  \lineas{3}
+
+  \item \textbf{(Desafío)} Explica por qué los Andes peruanos son ricos en minerales metálicos. Relaciona tu respuesta con el tipo de rocas y la formación geológica de la región.\ptos{4}
+  \lineas{4}
+
+\end{enumerate}
+\end{multicols}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\parte{morado}{PARTE IV: Teorías sobre el Origen y Evolución del Universo (20 puntos)}
+% ═════════════════════════════════════════════════════════════════════════════
+
+\begin{multicols}{2}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*, itemsep=0.55cm, start=26]
+
+  \item Explica brevemente en qué consiste la \textbf{Teoría del Big Bang} e indica hace cuántos años ocurrió.\ptos{3}
+  \lineas{4}
+
+  \item Menciona y explica \textbf{dos evidencias científicas} que apoyan la Teoría del Big Bang.\ptos{4}
+  \lineas{4}
+
+  \item ¿Qué establece la \textbf{Ley de Hubble}? ¿Qué conclusión nos permite sacar sobre el estado del Universo?\ptos{3}
+  \lineas{3}
+
+  \item Ordena de menor a mayor escala las siguientes estructuras del Universo:\ptos{3}
+  
+  \medskip
+  \noindent\fbox{\strut\ Supercúmulo\ } \fbox{\strut\ Planeta\ } \fbox{\strut\ Galaxia\ } \fbox{\strut\ Sistema estelar\ } \fbox{\strut\ Cúmulo\ }
+  
+  \medskip
+  Orden: \underline{\hspace{7cm}}
+
+  \item Completa el cuadro comparativo de teorías cosmológicas:\ptos{4}
+  
+  \begin{center}
+  \begin{tabular}{p{2.8cm}p{4.5cm}}
+  \toprule
+  Teoría & Idea principal \\
+  \midrule
+  Big Bang & \\[1.2cm]
+  Estado Estacionario & \\[1.2cm]
+  Universo Oscilante & \\[1.2cm]
+  Multiverso & \\[1.2cm]
+  \bottomrule
+  \end{tabular}
+  \end{center}
+
+  \item \textbf{(Desafío)} La materia ordinaria representa solo el 5\% del Universo. ¿Qué compone el 95\% restante? ¿Por qué es difícil de detectar?\ptos{3}
+  \lineas{4}
+
+\end{enumerate}
+\end{multicols}
+
+\vspace{0.4cm}
+\begin{tcolorbox}[colback=grisclaro, colframe=azulprim!50, arc=3pt,
+  title=\textbf{Datos útiles}, coltitle=azulprim, colbacktitle=azulclaro]
+\begin{multicols}{3}
+$\rho = \dfrac{m}{V}$\quad (densidad)
+
+\columnbreak
+
+$E_k = \dfrac{1}{2}mv^2$\quad (energía cinética)
+
+\columnbreak
+
+$E_p = mgh$\quad ($g = 10\,\mathrm{m/s^2}$)
+\end{multicols}
+\vspace{2pt}
+Edad del Universo: $\approx 13\,800$ millones de años \hfill
+Distancia Tierra--Sol: $\approx 150 \times 10^6$ km (1 UA)
+\end{tcolorbox}
+
+\end{document}

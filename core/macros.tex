@@ -1,0 +1,49 @@
+% ══════════════════════════════════════════════════════════════════
+%  core/macros.tex — Macros pedagógicas del framework
+% ══════════════════════════════════════════════════════════════════
+
+% ── Contador de ejercicios ─────────────────────────────────────────
+% Se reinicia en cada capítulo (unidad). Uso: \ejercicio Enunciado…
+% En clases sin \chapter (article, p. ej. exámenes) el contador es corrido.
+\ifcsname c@chapter\endcsname
+\newcounter{numejercicio}[chapter]
+\else
+\newcounter{numejercicio}
+\fi
+\newcommand{\ejercicio}{%
+	\stepcounter{numejercicio}%
+	\noindent\textbf{\sffamily\color{AzulPizarra}\thenumejercicio.}\quad}
+
+% ── Portada de clase (TikZ) ────────────────────────────────────────
+% Uso: \portadaclase{Tema}{Semana}{N.Unidad}{Nombre Unidad}
+\newcommand{\portadaclase}[4]{%
+	\newpage\thispagestyle{empty}
+	\begin{tikzpicture}[remember picture,overlay]
+		\fill[AzulPizarra]
+		(current page.north west)
+		rectangle ([yshift=-4.5cm]current page.north east);
+		\fill[DoradoAcadémico]
+		([yshift=-4.5cm]current page.north west)
+		rectangle ([yshift=-4.8cm]current page.north east);
+		\fill[GrisClaro]
+		(current page.south west)
+		rectangle ([yshift=2cm]current page.south east);
+		\node[anchor=west,text=white]
+		at ([xshift=2cm,yshift=-1.5cm]current page.north west)
+		{\Large\sffamily\bfseries \NombreAcademia};
+		\node[anchor=west,text=GrisMedio]
+		at ([xshift=2cm,yshift=-2.5cm]current page.north west)
+		{\normalsize\sffamily Curso: \textbf{\NombreCurso}
+			\quad Docente: \textbf{\NombreDocente}};
+		\node[anchor=west,text=GrisMedio]
+		at ([xshift=2cm,yshift=-3.5cm]current page.north west)
+		{\normalsize\sffamily Semana: \textbf{#2}
+			\quad Ciclo: \textbf{\CicloActual}};
+		\node[anchor=center,text=AzulPizarra]
+		at ([yshift=-7cm]current page.north)
+		{\Huge\sffamily\bfseries #1};
+		\node[anchor=center,text=AzulMedio]
+		at ([yshift=-8.2cm]current page.north)
+		{\large\sffamily Unidad #3: #4};
+	\end{tikzpicture}
+	\vspace*{10cm}}

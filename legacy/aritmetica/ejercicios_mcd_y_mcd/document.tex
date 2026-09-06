@@ -1,0 +1,93 @@
+
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, left=2.54cm, right=2.54cm, top=3cm, bottom=3cm]{geometry} % Márgenes personalizados a 2cm
+\usepackage[spanish]{babel} % Para fechas y formato en español
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+% Configuración de página
+\pagestyle{fancy}
+\fancyhf{} % Limpia encabezados y pies de página
+\fancyhead[L]{Academia Prepolicial - MCD y MCM}
+\fancyhead[R]{\today}
+\fancyfoot[C]{\thepage} % Número de página centrado en el pie
+\renewcommand{\headrulewidth}{0.8pt}
+
+% Configuración de títulos y espaciado
+\titleformat{\section}[block]{\large\bfseries\centering}{\thesection}{1em}{}
+\setlength{\columnsep}{1cm}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0em}
+
+
+\begin{document}
+
+	\begin{center}
+		\Large\bfseries Máximo Común Divisor y Mínimo Común Múltiplo
+	\end{center}
+
+\begin{multicols}{2}
+	\section*{Ejercicios}
+		\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=0.4cm]
+			\item Calcula el MCD y MCM de \( A \), \( B \) y \( C \) y da como respuesta la suma de ambos resultados. \\
+			\( A = 3600 \) \\
+			\( B = 180 \) \\
+			\( C = 500 \)
+
+			\item Calcula el MCD y MCM de \( A \), \( B \) y \( C \) y da como respuesta la suma de los exponentes de ambos resultados. \\
+			\( A = 2^3 \times 3^5 \times 7^2 \) \\
+			\( B = 2^4 \times 3^4 \times 5^3 \) \\
+			\( C = 2^5 \times 5^4 \times 11^5 \)
+
+			\item Si el MCM de \( A \) y \( B \) tiene 81 divisores, calcula \( n + 1 \): \\
+			\( A = 12^n \times 3 \) \\
+			\( B = 3^n \times 48 \)
+
+			\item ¿Cuántos divisores tiene el MCD (\( A \), \( B \))? \\
+			\( A = 48 \times 32 \times 73 \) \\
+			\( B = 83 \times 27 \times 49 \)
+
+			\item ¿Cuántos divisores tiene el MCD (\( A \), \( B \))? \\
+			\( A = 4^6 \times 3^3 \times 7^4 \) \\
+			\( B = 8^3 \times 16 \times 343 \)
+
+			\item Calcula \( k \): \\
+			\( \text{MCD}(210k, 300k, 420k) = 1200 \)
+
+			\item Calcula \( n \): \\
+			\( A = 6 \times 14^n \) \\
+			\( B = 6^n \times 14 \) \\
+			\( \text{MCD}(A, B) = 336 \)
+
+			\item Determina el valor de \( K \): \\
+			\( \text{MCM}\left( \frac{21k}{5}, \frac{7k}{10}, \frac{9k}{5} \right) = 1260 \)
+
+			\item Calcula \( k + 1 \): \\
+			\( \text{MCM}\left( \frac{13k}{7}, \frac{5k}{14}, \frac{8k}{7} \right) = 520 \)
+
+			\item En un corral hay cierto número de gallinas que no pasan de 350 ni bajan de 380. Si las gallinas se acomodan en grupos de 2, 3, 4 o 5, siempre sobra 1. ¿Cuántas gallinas hay en el corral si se añaden 6?
+
+			\item Tres aviones (\( A \), \( B \) y \( C \)) parten de una base a las 8 horas. Si \( A \) regresa cada hora y cuarto; \( B \), cada \( \frac{3}{4} \) de hora; y \( C \), cada 50 minutos, ¿a qué hora se reencontrarán por primera vez en la base?
+
+			\item Calcula \( A + B \) si el MCD de ambos números es 495 y el valor de \( B \) se encuentra entre 5000 y 6000: \\
+			\( A = a48b \) \\
+			\( B = mnnm \)
+
+			\item Calcula \( (a + b) \): \\
+			\( \text{MCD}(a1b8, a9b0) = \degree^{88} \)
+
+			\item Calcula la cifra de las unidades del mayor número de 3 cifras, que convertido a los sistemas de numeración de bases 6, 8 y 9 da como resultados números que terminan en 5, 7 y 8 respectivamente.
+
+
+
+
+			% Para añadir más ejercicios, simplemente copia y pega el siguiente bloque:
+			% \item [Enunciado del ejercicio]
+		\end{enumerate}
+
+\end{multicols}
+
+\end{document}

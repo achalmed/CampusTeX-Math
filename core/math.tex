@@ -1,0 +1,32 @@
+% ══════════════════════════════════════════════════════════════════
+%  core/math.tex — Paquetes matemáticos
+%
+%  REGLA DE ORO con unicode-math + LuaLaTeX:
+%    1. amsmath        (base)
+%    2. mathtools      (antes de unicode-math, evita el Warning de orden)
+%    3. cancel, systeme
+%    4. unicode-math   (SIEMPRE AL FINAL — reemplaza completamente a amssymb)
+%
+%  NO cargar amssymb: genera 4 errores "Command already defined"
+%  (\eth, \smallsetminus, \digamma, \backepsilon).
+%
+%  Con unicode-math los nombres de símbolos cambian:
+%    amssymb \blacklozenge  →  unicode-math \mdlgblklozenge
+%    amssymb \triangle      →  unicode-math \triangle  (este sí existe)
+%    amssymb \blacktriangle →  unicode-math \blacktriangle (existe también)
+% ══════════════════════════════════════════════════════════════════
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{systeme}
+\usepackage[math-style=ISO, bold-style=ISO]{unicode-math}
+
+% ── Alias de compatibilidad amssymb → unicode-math ─────────────────
+% El contenido académico existente usa \square (amssymb); unicode-math
+% lo llama \mdlgwhtsquare. Se define al inicio del documento porque
+% unicode-math termina de montar su tabla de símbolos en \begin{document}.
+\AtBeginDocument{%
+	\ifdefined\square\else
+	\newcommand{\square}{\mdlgwhtsquare}%
+	\fi
+}

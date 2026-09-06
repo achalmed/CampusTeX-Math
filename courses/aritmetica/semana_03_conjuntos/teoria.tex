@@ -1,0 +1,356 @@
+% ============================================================
+% semana_03_conjuntos — teoria
+% ============================================================
+% Este archivo es incluido desde main.tex con \include{}
+
+
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║  TEORÍA — TEORÍA DE CONJUNTOS                                            ║
+% ║  Curso: Aritmética | Semana: 01 | Unidad 1: Fundamentos Numéricos        ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+
+% ─── PORTADA DE CLASE ────────────────────────────────────────────────────────
+\portadaclase{Teor\'{\i}a de Conjuntos}{01}{1}{Fundamentos Num\'ericos}
+
+% ─── MOTIVACIÓN ──────────────────────────────────────────────────────────────
+\section*{¿Por qu\'e estudiar este tema?}
+\begin{tcolorbox}[
+  enhanced, colback=AzulClaro!30, colframe=AzulMedio,
+  arc=3pt, boxrule=0.6pt, left=10pt, right=10pt, top=6pt, bottom=6pt
+]
+\textit{La Teor\'{\i}a de Conjuntos es la base estructural de toda la matem\'atica
+moderna. En los ex\'amenes de admisi\'on de la UNMSM, UNI, UNSCH, PUCP y Villarreal
+aparece de forma directa en Aritm\'etica, \'Algebra y Razonamiento Matem\'atico.
+Dominar operaciones entre conjuntos y conjuntos potencia es indispensable para
+resolver hasta 6 preguntas en un solo examen.}
+\end{tcolorbox}
+\vspace{0.5cm}
+
+% ─── SECCIÓN 1: NOCIÓN DE CONJUNTO ───────────────────────────────────────────
+\section{Noci\'on de Conjunto}
+
+\subsection{Definici\'on}
+
+\begin{cajadef}
+  \textbf{Conjunto:} Reunión, colección o agrupación de objetos abstractos y/o
+  concretos, que pueden o no tener una caracter\'{\i}stica en com\'un. A cada objeto
+  perteneciente al conjunto se le llama \textbf{elemento}.\\[4pt]
+  \textit{Ejemplos:} el conjunto de las vocales, el conjunto de los n\'umeros
+  naturales menores que 10, el conjunto de los colores primarios.
+\end{cajadef}
+
+\subsection{Determinaci\'on de un conjunto}
+
+\begin{cajaprop}[A --- Por comprensi\'on (constructiva)]
+  Se describe una caracter\'{\i}stica com\'un que identifica a todos los elementos.
+  \[
+    A = \{\,x \mid x \text{ es una vocal}\,\}
+  \]
+\end{cajaprop}
+
+\begin{cajaprop}[B --- Por extensi\'on (tabular)]
+  Se listan uno a uno todos los elementos del conjunto.
+  \[
+    A = \{a,\; e,\; i,\; o,\; u\}
+  \]
+\end{cajaprop}
+
+\begin{cajatip}
+  En los exámenes, la notación por comprensión usa la barra vertical ``$\mid$''
+  o la diagonal ``/''. Ambas significan ``tal que''. Así,
+  $\{x \mid P(x)\} = \{x / P(x)\}$.
+\end{cajatip}
+
+% ─── SECCIÓN 2: RELACIÓN DE PERTENENCIA ──────────────────────────────────────
+\section{Relaci\'on de Pertenencia}
+
+\begin{cajadef}
+  \textbf{Pertenencia ($\in$):} Un objeto $a$ pertenece al conjunto $A$ si $a$
+  es un elemento de $A$. Se escribe $a \in A$. En caso contrario, $a \notin A$.
+\end{cajadef}
+
+\begin{cajaejemplo}[1]
+  Dado $A = \{1,\; 3,\; \{4\},\; 8\}$, analizar:
+  \begin{align*}
+    1 &\in A && \checkmark \quad \text{(1 es elemento directo de } A\text{)} \\
+    \{4\} &\in A && \checkmark \quad \text{(\{4\} aparece listado en } A\text{)} \\
+    9 &\notin A && \checkmark \quad \text{(9 no está en la lista)} \\
+    \{8\} &\notin A && \checkmark \quad \text{(8 sí pertenece, pero \{8\} como conjunto, no)}
+  \end{align*}
+\end{cajaejemplo}
+
+\begin{cajaadvert}
+  \begin{itemize}
+    \item \textbf{Error frecuente:} confundir el elemento $8$ con el conjunto
+      $\{8\}$. Son objetos distintos: $8 \in A$ pero $\{8\} \notin A$ para el
+      conjunto del ejemplo anterior.
+    \item \textbf{Error frecuente:} escribir $\{a, b\} \in C$ cuando en realidad
+      $\{a, b\}$ es un subconjunto. Verificar si ese par aparece \emph{listado
+      directamente} como elemento.
+  \end{itemize}
+\end{cajaadvert}
+
+% ─── SECCIÓN 3: CARDINAL ─────────────────────────────────────────────────────
+\section{Cardinal de un Conjunto}
+
+\begin{cajadef}
+  El \textbf{cardinal} de un conjunto $A$, denotado $n(A)$, es la cantidad de
+  elementos \emph{diferentes} que contiene. Si un elemento se repite, se cuenta
+  una sola vez.
+\end{cajadef}
+
+\begin{cajaejemplo}[2]
+  \[
+    B = \{1,\; 2,\; 2,\; 3,\; 3,\; 3\}
+  \]
+  Los elementos distintos son $1$, $2$ y $3$, por tanto $n(B) = 3$.
+\end{cajaejemplo}
+
+% ─── SECCIÓN 4: RELACIONES ENTRE CONJUNTOS ───────────────────────────────────
+\section{Relaciones entre Conjuntos}
+
+% \texorpdfstring: los símbolos math de unicode-math no pueden ir directo
+% a los marcadores PDF de hyperref (error "Improper alphabetic constant").
+\subsection{Inclusi\'on (\texorpdfstring{$\subset$}{⊂})}
+
+\begin{cajadef}
+  $A \subset B$ (``$A$ está incluido en $B$'') si \emph{todo} elemento de $A$
+  también es elemento de $B$. Es decir:
+  \[
+    A \subset B \;\Longleftrightarrow\; \forall\, x:\; x \in A \Rightarrow x \in B
+  \]
+  Si existe al menos un elemento de $B$ que no pertenece a $A$, entonces
+  $A \subsetneq B$ (inclusión propia).
+\end{cajadef}
+
+\subsection{Igualdad}
+
+\begin{cajadef}
+  Dos conjuntos $A$ y $B$ son \textbf{iguales} ($A = B$) si tienen exactamente
+  los mismos elementos, independientemente del orden en que se listen.\\[4pt]
+  \textit{Ejemplo:} $A = \{R, O, M, A\}$ y $B = \{M, O, R, A\}$ $\Rightarrow$
+  $A = B$.
+\end{cajadef}
+
+% ─── SECCIÓN 5: PRINCIPALES CONJUNTOS ────────────────────────────────────────
+\section{Principales Conjuntos}
+
+\begin{cajaprop}[Conjunto vac\'{\i}o]
+  No contiene ning\'un elemento. Se denota $\emptyset$ o $\{\}$.
+  Su cardinal es $n(\emptyset) = 0$.\\
+  \textbf{Propiedad clave:} $\emptyset \subset A$ para \emph{todo} conjunto $A$.
+\end{cajaprop}
+
+\begin{cajaprop}[Conjunto unitario o singleton]
+  Posee exactamente un elemento. Ejemplo: $\{5\}$, $\{\emptyset\}$.
+\end{cajaprop}
+
+\begin{cajaprop}[Conjunto universal ($U$)]
+  Es el conjunto referencial que contiene a todos los conjuntos considerados
+  en un contexto dado.
+\end{cajaprop}
+
+\begin{cajaprop}[Conjunto potencia ($\mathcal{P}(A)$)]
+  El conjunto de \emph{todos los subconjuntos} de $A$, incluyendo $\emptyset$ y $A$.
+  \[
+    n\bigl[\mathcal{P}(A)\bigr] = 2^{\,n(A)}
+  \]
+  \textit{Ejemplo:} Si $A = \{x, y\}$, entonces
+  $\mathcal{P}(A) = \{\emptyset,\; \{x\},\; \{y\},\; \{x,y\}\}$
+  y $n[\mathcal{P}(A)] = 2^{2} = 4$.
+\end{cajaprop}
+
+\subsection{Conjuntos num\'ericos}
+
+\begin{cajaformula}
+  \begin{center}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{@{}cl@{}}
+    \toprule
+    \rowcolor{AzulClaro!60}
+    \textbf{S\'{\i}mbolo} & \textbf{Nombre y descripci\'on} \\
+    \midrule
+    $\mathbb{N}$ & Naturales: $\{0, 1, 2, 3, \ldots\}$ \\
+    $\mathbb{Z}$ & Enteros: $\{\ldots, -2, -1, 0, 1, 2, \ldots\}$ \\
+    $\mathbb{Q}$ & Racionales: n\'umeros expresables como $p/q$, $q \neq 0$ \\
+    $\mathbb{Q}'$& Irracionales: $\sqrt{2},\; \pi,\; e,\; \ldots$ \\
+    $\mathbb{R}$ & Reales: $\mathbb{Q} \cup \mathbb{Q}'$ \\
+    $\mathbb{C}$ & Complejos: $a + bi$, $\; b \in \mathbb{R}$ \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \[
+    \mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}
+    \subset \mathbb{C}
+  \]
+\end{cajaformula}
+
+% ─── SECCIÓN 6: CUANTIFICADORES ──────────────────────────────────────────────
+\section{Cuantificadores L\'ogicos}
+
+\begin{cajaformula}
+  \begin{center}
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabular}{@{}cll@{}}
+    \toprule
+    \rowcolor{AzulClaro!60}
+    \textbf{S\'{\i}mbolo} & \textbf{Clase} & \textbf{Se lee} \\
+    \midrule
+    $\forall$ & Universal & ``Para todo'' \\
+    $\exists$ & Existencial & ``Existe al menos un'' \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+\end{cajaformula}
+
+\begin{cajaejemplo}[3 --- Cuantificadores con $U = \{1, 2, 3\}$]
+  Determinar el valor de verdad de:
+  \[
+    \exists\, x,\; \forall\, y \;/\; x^{2} < y + 1
+  \]
+  \noindent\textit{Se pide:} que \emph{exista} un $x$ tal que para
+  \emph{todo} $y$ se cumpla $x^{2} < y + 1$.
+  \begin{align*}
+    x = 1: &\quad 1 < 1+1=2 \;\checkmark,\quad 1 < 2+1=3\;\checkmark,\quad
+              1 < 3+1=4\;\checkmark
+  \end{align*}
+  Como $x = 1$ satisface la condición para todo $y \in U$, la proposición
+  es \textbf{Verdadera}.
+\end{cajaejemplo}
+
+% ─── SECCIÓN 7: OPERACIONES ENTRE CONJUNTOS ──────────────────────────────────
+\section{Operaciones entre Conjuntos}
+
+\subsection{Uni\'on}
+
+\begin{cajadef}
+  $A \cup B = \{x \mid x \in A \;\text{o}\; x \in B\}$. Contiene todos los
+  elementos que pertenecen a $A$, a $B$ o a ambos.
+  \[
+    n(A \cup B) = n(A) + n(B) - n(A \cap B)
+  \]
+\end{cajadef}
+
+\subsection{Intersecci\'on}
+
+\begin{cajadef}
+  $A \cap B = \{x \mid x \in A \;\text{y}\; x \in B\}$. Contiene solo los
+  elementos comunes a ambos conjuntos.\\
+  Si $A \cap B = \emptyset$, los conjuntos se llaman \textbf{disjuntos}.
+\end{cajadef}
+
+\subsection{Diferencia}
+
+\begin{cajadef}
+  $A - B = \{x \mid x \in A \;\text{y}\; x \notin B\}$. Elementos de $A$ que
+  no pertenecen a $B$.
+  \[
+    n(A - B) = n(A) - n(A \cap B)
+  \]
+\end{cajadef}
+
+\subsection{Diferencia sim\'etrica}
+
+\begin{cajadef}
+  $A \mathbin{\triangle} B = (A - B) \cup (B - A)$. Elementos que pertenecen
+  a uno de los dos conjuntos pero no a ambos.
+  \[
+    n(A \mathbin{\triangle} B) = n(A) + n(B) - 2\,n(A \cap B)
+  \]
+\end{cajadef}
+
+\subsection{Complemento}
+
+\begin{cajadef}
+  $A' = A^{C} = U - A = \{x \in U \mid x \notin A\}$.
+  \[
+    n(A') = n(U) - n(A)
+  \]
+\end{cajadef}
+
+\begin{cajaformula}
+  \textbf{Fórmula del cardinal de la unión (tres conjuntos):}
+  \begin{align*}
+    n(A \cup B \cup C) =\;& n(A) + n(B) + n(C) \\
+                          &- n(A \cap B) - n(A \cap C) - n(B \cap C) \\
+                          &+ n(A \cap B \cap C)
+  \end{align*}
+\end{cajaformula}
+
+% ─── SECCIÓN 8: EJEMPLOS RESUELTOS DE NIVEL ADMISIÓN ─────────────────────────
+\section{Ejemplos resueltos de nivel admisi\'on}
+
+\begin{cajaejemplo}[4 --- UNMSM: Conjunto potencia y cardinales]
+  Se tienen dos conjuntos $A \subset B$. La diferencia de los cardinales de
+  sus conjuntos potencia es $112$. Hallar $n(B)$.
+
+  \medskip
+  \noindent\textit{Planteamiento:}
+  \[
+    n[\mathcal{P}(B)] - n[\mathcal{P}(A)] = 112
+    \;\Longrightarrow\;
+    2^{n(B)} - 2^{n(A)} = 112
+  \]
+  \begin{align*}
+    2^{7} - 2^{4} &= 128 - 16 = 112 \;\checkmark
+  \end{align*}
+  \begin{tcolorbox}[colback=AzulClaro!50, colframe=AzulPizarra,
+      arc=2pt, boxrule=0.7pt]
+    \[ \boxed{n(B) = 7} \]
+  \end{tcolorbox}
+\end{cajaejemplo}
+
+\begin{cajaejemplo}[5 --- UNI: Conjunto universal y subconjuntos]
+  Dado:
+  \[
+    U = \Bigl\{\tfrac{x+1}{3} \in \mathbb{N} \;\Big|\; 2 < x < 32\Bigr\},
+    \quad P = \{x \in U \mid x \text{ es par}\}, \quad
+    Q = \{x \in U \mid x < 7\}
+  \]
+  Calcular $n(P) - n(Q)$.
+
+  \noindent\textit{Desarrollo:}
+  \begin{align*}
+    2 < x < 32 &\Rightarrow \tfrac{3}{3} < \tfrac{x+1}{3} < \tfrac{33}{3}
+                \Rightarrow 1 < \tfrac{x+1}{3} < 11 \\
+    U &= \{2, 3, 4, 5, 6, 7, 8, 9, 10\} \quad (n(U)=9)\\
+    P &= \{2, 4, 6, 8, 10\} \;\Rightarrow\; n(P) = 5 \\
+    Q &= \{2, 3, 4, 5, 6\}  \;\Rightarrow\; n(Q) = 5
+  \end{align*}
+  \begin{tcolorbox}[colback=AzulClaro!50, colframe=AzulPizarra,
+      arc=2pt, boxrule=0.7pt]
+    \[ \boxed{n(P) - n(Q) = 0} \]
+  \end{tcolorbox}
+\end{cajaejemplo}
+
+% ─── RESUMEN ─────────────────────────────────────────────────────────────────
+\section{Resumen del tema}
+
+\begin{cajaformula}
+  \begin{center}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{@{}ll@{}}
+      \toprule
+      \rowcolor{AzulClaro!60}
+      \textbf{Concepto} & \textbf{Expresi\'on / Descripci\'on} \\
+      \midrule
+      Cardinal         & $n(A) = $ n\'umero de elementos distintos \\
+      Inclusi\'on      & $A \subset B \Leftrightarrow \forall\,x: x\in A \Rightarrow x\in B$ \\
+      Conjunto potencia& $n[\mathcal{P}(A)] = 2^{n(A)}$ \\
+      Uni\'on          & $n(A \cup B) = n(A)+n(B)-n(A\cap B)$ \\
+      Diferencia sim.  & $n(A\mathbin{\triangle}B) = n(A)+n(B)-2n(A\cap B)$ \\
+      Complemento      & $n(A') = n(U) - n(A)$ \\
+      Vac\'{\i}o       & $\emptyset \subset A$, para todo conjunto $A$ \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{cajaformula}
+
+\begin{cajatip}
+  \textbf{Estrategia clave para el examen:} cuando un problema mencione la
+  ``diferencia de conjuntos potencia'', factoriza potencias de 2.
+  Por ejemplo, $2^{n} - 2^{m} = 2^{m}(2^{n-m}-1)$. Esto acelera enormemente
+  la identificaci\'on de $n(A)$ y $n(B)$.
+\end{cajatip}
+
+% FIN — teoria.tex

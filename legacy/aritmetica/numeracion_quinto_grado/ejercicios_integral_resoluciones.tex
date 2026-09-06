@@ -1,0 +1,534 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, left=2.54cm, right=2.54cm, top=3cm, bottom=3cm]{geometry}
+\usepackage[spanish]{babel}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{mdframed}
+
+% Configuración de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Academia Prepolicial -- Numeración}
+\fancyhead[R]{\today}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.8pt}
+
+% Configuración de títulos
+\titleformat{\section}[block]{\large\bfseries\centering}{\thesection}{1em}{}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0em}
+
+% Colores
+\definecolor{enunciado}{RGB}{30, 80, 150}
+\definecolor{resolucion}{RGB}{0, 110, 60}
+\definecolor{respuesta}{RGB}{180, 30, 30}
+\definecolor{fondoenun}{RGB}{235, 243, 255}
+\definecolor{fondoresp}{RGB}{255, 240, 240}
+
+% Entorno para enunciado
+\newmdenv[
+  linecolor=enunciado,
+  linewidth=1.5pt,
+  backgroundcolor=fondoenun,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  innerleftmargin=8pt,
+  innerrightmargin=8pt,
+  innertopmargin=6pt,
+  innerbottommargin=6pt,
+  skipabove=4pt,
+  skipbelow=2pt
+]{enuncbox}
+
+% Entorno para respuesta final
+\newmdenv[
+  linecolor=respuesta,
+  linewidth=1.5pt,
+  backgroundcolor=fondoresp,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  innerleftmargin=8pt,
+  innerrightmargin=8pt,
+  innertopmargin=4pt,
+  innerbottommargin=4pt,
+  skipabove=4pt,
+  skipbelow=6pt
+]{respbox}
+
+\newcommand{\ejercicio}[2]{%
+  \begin{enuncbox}
+    \textbf{\textcolor{enunciado}{Ejercicio #1.}} #2
+  \end{enuncbox}
+}
+
+\newcommand{\resolucion}{\vspace{2pt}\textbf{\textcolor{resolucion}{$\blacktriangleright$ Resolución:}}\vspace{4pt}}
+
+\newcommand{\respuesta}[1]{%
+  \begin{respbox}
+    \textbf{\textcolor{respuesta}{Respuesta:}} #1
+  \end{respbox}
+}
+
+\begin{document}
+
+\begin{center}
+    \Large\bfseries Resoluciones Completas -- Numeración
+\end{center}
+\begin{center}
+    \large Paso a paso
+\end{center}
+
+\vspace{0.3cm}
+
+%------------------------------------------------------------
+\ejercicio{1}{Si a un número entero se le agregan 3 ceros a la derecha, dicho número queda aumentado en $522\,477$ unidades. ¿Cuál es el número?}
+
+\resolucion
+
+\textbf{Paso 1.} Sea $n$ el número entero buscado. Agregar 3 ceros a la derecha equivale a multiplicarlo por $1000$:
+\[
+    n \cdot 1000
+\]
+
+\textbf{Paso 2.} Planteamos la ecuación según el enunciado:
+\[
+    1000n = n + 522\,477
+\]
+
+\textbf{Paso 3.} Despejamos $n$:
+\[
+    1000n - n = 522\,477 \implies 999n = 522\,477
+\]
+\[
+    n = \frac{522\,477}{999} = 523
+\]
+
+\respuesta{El número buscado es $\mathbf{n = 523}$.}
+
+%------------------------------------------------------------
+\ejercicio{2}{¿Cuántos números de 3 cifras no tienen ninguna cifra 2?}
+
+\resolucion
+
+\textbf{Paso 1.} Un número de 3 cifras tiene la forma $\overline{abc}$ donde $a \in \{1,\ldots,9\}$ y $b,c \in \{0,\ldots,9\}$.
+
+\textbf{Paso 2.} Contamos las opciones válidas \emph{sin} usar el dígito 2:
+\begin{itemize}[itemsep=2pt]
+    \item \textbf{Cifra $a$ (centenas):} puede ser $\{1,3,4,5,6,7,8,9\}$ $\Rightarrow$ \textbf{8 opciones} (se excluyen el 0 y el 2).
+    \item \textbf{Cifra $b$ (decenas):} puede ser $\{0,1,3,4,5,6,7,8,9\}$ $\Rightarrow$ \textbf{9 opciones} (se excluye el 2).
+    \item \textbf{Cifra $c$ (unidades):} puede ser $\{0,1,3,4,5,6,7,8,9\}$ $\Rightarrow$ \textbf{9 opciones} (se excluye el 2).
+\end{itemize}
+
+\textbf{Paso 3.} Aplicamos el principio multiplicativo:
+\[
+    8 \times 9 \times 9 = 648
+\]
+
+\respuesta{Existen $\mathbf{648}$ números de 3 cifras sin ninguna cifra 2.}
+
+%------------------------------------------------------------
+\ejercicio{3}{¿Cuántos números existen mayores que 100 de la forma $\overline{a(2a)b}$ que terminen en cifra par? \hfill \textit{(PUCP)}}
+
+\resolucion
+
+\textbf{Paso 1.} Interpretamos la notación: $\overline{a(2a)b}$ es un número de 3 cifras donde la cifra de las centenas es $a$, la cifra de las decenas es $2a$, y la cifra de las unidades es $b$.
+
+\textbf{Paso 2.} Para que $2a$ sea una sola cifra (dígito válido):
+\[
+    2a \leq 9 \implies a \leq 4
+\]
+Además, como es un número mayor que 100, $a \geq 1$. Entonces $a \in \{1, 2, 3, 4\}$ $\Rightarrow$ \textbf{4 opciones}.
+
+\textbf{Paso 3.} Para que termine en cifra par, $b \in \{0, 2, 4, 6, 8\}$ $\Rightarrow$ \textbf{5 opciones}.
+
+\textbf{Paso 4.} Aplicamos el principio multiplicativo:
+\[
+    4 \times 5 = 20
+\]
+
+\respuesta{Existen $\mathbf{20}$ números con las condiciones dadas.}
+
+%------------------------------------------------------------
+\ejercicio{4}{Si con dos cifras consecutivas formo la edad actual de Danna, ¿dentro de cuántos años ella tendrá una edad formada por las dos cifras iniciales en orden inverso?}
+
+\resolucion
+
+\textbf{Paso 1.} Sea la edad actual de Danna $\overline{a\,(a+1)} = 10a + (a+1) = 11a + 1$, donde $a$ y $a+1$ son cifras consecutivas.
+
+\textbf{Paso 2.} La edad futura (cifras invertidas) será $\overline{(a+1)\,a} = 10(a+1) + a = 11a + 10$.
+
+\textbf{Paso 3.} La diferencia de años entre la edad futura y la actual es:
+\[
+    (11a + 10) - (11a + 1) = 9
+\]
+Esta diferencia no depende de $a$; siempre es 9.
+
+\respuesta{Danna tendrá la edad con cifras invertidas \textbf{dentro de 9 años}.}
+
+%------------------------------------------------------------
+\ejercicio{5}{Si con dos cifras consecutivas formo la edad actual de Norma, ¿dentro de cuántos años ella tendrá una edad formada por dos cifras que son las consecutivas de las cifras iniciales respectivamente?}
+
+\resolucion
+
+\textbf{Paso 1.} Sea la edad actual de Norma $\overline{a\,b}$ con $b = a+1$ (cifras consecutivas):
+\[
+    \text{Edad actual} = 10a + (a+1) = 11a + 1
+\]
+
+\textbf{Paso 2.} Las cifras \emph{consecutivas} de $a$ y $b = a+1$ son $a+1$ y $b+1 = a+2$. La edad futura es:
+\[
+    \text{Edad futura} = \overline{(a+1)(a+2)} = 10(a+1) + (a+2) = 11a + 12
+\]
+
+\textbf{Paso 3.} La diferencia de años:
+\[
+    (11a + 12) - (11a + 1) = 11
+\]
+
+\respuesta{Norma tendrá esa edad \textbf{dentro de 11 años}.}
+
+%------------------------------------------------------------
+\ejercicio{6}{Un número $\overline{abc}$ se divide entre el número $\overline{bc}$, obteniéndose cociente 19 y residuo 12. ¿Cuál es el menor valor de la expresión $2a + b + c$?}
+
+\resolucion
+
+\textbf{Paso 1.} Por el algoritmo de la división:
+\[
+    \overline{abc} = 19 \cdot \overline{bc} + 12
+\]
+
+\textbf{Paso 2.} Expresamos en forma polinómica: $\overline{abc} = 100a + 10b + c$ y $\overline{bc} = 10b + c$.
+\[
+    100a + 10b + c = 19(10b + c) + 12
+\]
+\[
+    100a + 10b + c = 190b + 19c + 12
+\]
+\[
+    100a = 180b + 18c + 12
+\]
+\[
+    100a = 18(10b + c) + 12
+\]
+
+\textbf{Paso 3.} Despejamos $\overline{bc} = 10b + c$:
+\[
+    18 \cdot \overline{bc} = 100a - 12 \implies \overline{bc} = \frac{100a - 12}{18} = \frac{50a - 6}{9}
+\]
+
+\textbf{Paso 4.} Para que $\overline{bc}$ sea entero, $9 \mid (50a - 6)$. Probamos $a = 1, 2, \ldots, 9$:
+\[
+    50a - 6 \equiv 0 \pmod{9} \implies 5a - 6 \equiv 0 \pmod 9 \implies 5a \equiv 6 \pmod 9
+\]
+Multiplicando por $2$ (inverso de $5$ mod $9$, pues $5 \times 2 = 10 \equiv 1$):
+\[
+    a \equiv 12 \equiv 3 \pmod{9} \implies a \in \{3\}\ (\text{para } a \leq 9)
+\]
+También $a = 3 + 9 = 12$ no es cifra, así que $a = 3$.
+
+\textbf{Paso 5.} Calculamos $\overline{bc}$:
+\[
+    \overline{bc} = \frac{50(3)-6}{9} = \frac{144}{9} = 16 \implies b=1,\ c=6
+\]
+
+\textbf{Paso 6.} Verificación: $\overline{abc} = 316$, $\overline{bc} = 16$, $316 \div 16 = 19$ con residuo $316 - 304 = 12$. \checkmark
+
+\textbf{Paso 7.} Calculamos la expresión:
+\[
+    2a + b + c = 2(3) + 1 + 6 = 13
+\]
+
+\respuesta{El menor valor de $2a + b + c = \mathbf{13}$.}
+
+%------------------------------------------------------------
+\ejercicio{7}{¿Cuántos números de tres cifras diferentes existen que sean iguales a 13 veces la suma de sus tres cifras? \hfill \textit{(UNMSM)}}
+
+\resolucion
+
+\textbf{Paso 1.} Sea el número $\overline{abc}$ con $a, b, c$ todos distintos. La condición es:
+\[
+    100a + 10b + c = 13(a + b + c)
+\]
+
+\textbf{Paso 2.} Simplificamos:
+\[
+    100a + 10b + c = 13a + 13b + 13c
+\]
+\[
+    87a = 3b + 12c \implies 87a = 3(b + 4c) \implies 29a = b + 4c
+\]
+
+\textbf{Paso 3.} Como $b, c \in \{0,\ldots,9\}$, el máximo de $b + 4c = 9 + 36 = 45$ y el mínimo es $0$.
+\[
+    29a \leq 45 \implies a = 1
+\]
+Así: $b + 4c = 29$.
+
+\textbf{Paso 4.} Buscamos pares $(b,c)$ con $b,c \in \{0,\ldots,9\}$ y $b+4c = 29$:
+\begin{itemize}[itemsep=2pt]
+    \item $c = 5$: $b = 29 - 20 = 9$ $\Rightarrow$ $(b,c) = (9,5)$, cifras $\{1,9,5\}$ todas distintas. \checkmark
+    \item $c = 6$: $b = 29 - 24 = 5$ $\Rightarrow$ $(b,c) = (5,6)$, cifras $\{1,5,6\}$ todas distintas. \checkmark
+    \item $c = 7$: $b = 29 - 28 = 1$ $\Rightarrow$ $(b,c) = (1,7)$, pero $b = a = 1$, cifras repetidas. \texttimes
+    \item $c = 8$: $b = 29 - 32 < 0$. No válido.
+\end{itemize}
+
+\textbf{Paso 5.} Los números válidos son: $195$ y $156$.
+\[
+    195 = 13 \times 15\ \checkmark \qquad 156 = 13 \times 12\ \checkmark
+\]
+
+\respuesta{Existen $\mathbf{2}$ números con esas características: $156$ y $195$.}
+
+%------------------------------------------------------------
+\ejercicio{8}{Si $\overline{mnpmn}$ es producto de números primos consecutivos y $p = 0$, ¿cuál es el mínimo valor de $\overline{mn}$? \hfill \textit{(UNMSM)}}
+
+\resolucion
+
+\textbf{Paso 1.} Con $p = 0$, el número es $\overline{mn0mn}$. Descomposición polinómica:
+\[
+    \overline{mn0mn} = 1000 \cdot \overline{mn} + \overline{mn} = 1001 \cdot \overline{mn}
+\]
+
+\textbf{Paso 2.} Factorizamos 1001:
+\[
+    1001 = 7 \times 143 = 7 \times 11 \times 13
+\]
+Estos tres factores son primos consecutivos (7, 11, 13).
+
+\textbf{Paso 3.} Entonces:
+\[
+    \overline{mn0mn} = 7 \times 11 \times 13 \times \overline{mn}
+\]
+Para que sea producto de \emph{más} primos consecutivos, $\overline{mn}$ debe aportar primos que continúen la secuencia. Los primos consecutivos alrededor de 7, 11, 13 son: $\ldots, 5, 7, 11, 13, 17, 19, \ldots$
+
+\textbf{Paso 4.} Si $\overline{mn} = 17$ (primo siguiente a 13), obtenemos 4 primos consecutivos: $7 \times 11 \times 13 \times 17$.
+
+El mínimo valor de $\overline{mn}$ como número de 2 cifras que cumpla la condición es $\overline{mn} = 17$.
+
+\respuesta{El mínimo valor de $\overline{mn} = \mathbf{17}$.}
+
+%------------------------------------------------------------
+\ejercicio{9}{Si $\overline{aabb}$ es el producto de 4 números primos consecutivos, calcula la suma de estos números.}
+
+\resolucion
+
+\textbf{Paso 1.} Expresamos $\overline{aabb}$ en forma polinómica:
+\[
+    \overline{aabb} = 1000a + 100a + 10b + b = 1100a + 11b = 11(100a + b)
+\]
+
+\textbf{Paso 2.} Como $11$ es primo, necesariamente uno de los 4 primos consecutivos es 11. Buscamos 4 primos consecutivos cuyo producto tenga la forma $11k$.
+
+\textbf{Paso 3.} Probamos la secuencia que incluye al 11:
+\[
+    7 \times 11 \times 13 \times 17 = 17017 \quad \text{(5 cifras, no válido)}
+\]
+\[
+    5 \times 7 \times 11 \times 13 = 5005 \quad \text{(no tiene forma } \overline{aabb}\text{)}
+\]
+\[
+    11 \times 13 \times 17 \times 19 = 46189 \quad \text{(5 cifras, no válido)}
+\]
+
+Probamos secuencias de 4 primos consecutivos que den un número de 4 cifras tipo $\overline{aabb}$:
+\[
+    2 \times 3 \times 5 \times 7 = 210 \quad \text{(3 cifras)}
+\]
+\[
+    3 \times 5 \times 7 \times 11 = 1155 \quad \Rightarrow \overline{aabb} = 1155:\ a=1,b=5\ \checkmark
+\]
+
+\textbf{Paso 4.} Verificación: $1155 = 3 \times 5 \times 7 \times 11$ y $1155 = 11(100 + 5) = 11 \times 105 = 1155$. \checkmark
+
+\textbf{Paso 5.} La suma de los primos:
+\[
+    3 + 5 + 7 + 11 = 26
+\]
+
+\respuesta{La suma de los 4 números primos consecutivos es $\mathbf{26}$.}
+
+%------------------------------------------------------------
+\ejercicio{10}{¿Cuántos números de 3 cifras utilizan por lo menos una cifra 7 en su escritura?}
+
+\resolucion
+
+\textbf{Paso 1.} Usamos el complemento:
+\[
+    \text{(con al menos un 7)} = \text{(todos los de 3 cifras)} - \text{(ningún 7)}
+\]
+
+\textbf{Paso 2.} Total de números de 3 cifras: de 100 a 999, en total $900$.
+
+\textbf{Paso 3.} Números de 3 cifras \textbf{sin ningún 7}:
+\begin{itemize}[itemsep=2pt]
+    \item Centenas ($a$): $\{1,2,3,4,5,6,8,9\}$ $\Rightarrow$ 8 opciones.
+    \item Decenas ($b$): $\{0,1,2,3,4,5,6,8,9\}$ $\Rightarrow$ 9 opciones.
+    \item Unidades ($c$): $\{0,1,2,3,4,5,6,8,9\}$ $\Rightarrow$ 9 opciones.
+\end{itemize}
+\[
+    8 \times 9 \times 9 = 648
+\]
+
+\textbf{Paso 4.} Números con al menos un 7:
+\[
+    900 - 648 = 252
+\]
+
+\respuesta{Hay $\mathbf{252}$ números de 3 cifras con al menos una cifra 7.}
+
+%------------------------------------------------------------
+\ejercicio{11}{¿Cuántas cifras se han usado para enumerar un libro de 189 hojas? \hfill \textit{(UNI)}}
+
+\resolucion
+
+\textbf{Paso 1.} Dividimos las páginas por cantidad de cifras:
+\begin{itemize}[itemsep=2pt]
+    \item Páginas de \textbf{1 cifra}: del 1 al 9 $\Rightarrow$ 9 páginas.
+    \item Páginas de \textbf{2 cifras}: del 10 al 99 $\Rightarrow$ 90 páginas.
+    \item Páginas de \textbf{3 cifras}: del 100 al 189 $\Rightarrow$ 90 páginas.
+\end{itemize}
+
+\textbf{Paso 2.} Contamos las cifras usadas en cada rango:
+\[
+    \text{1 cifra: } 9 \times 1 = 9
+\]
+\[
+    \text{2 cifras: } 90 \times 2 = 180
+\]
+\[
+    \text{3 cifras: } 90 \times 3 = 270
+\]
+
+\textbf{Paso 3.} Total de cifras:
+\[
+    9 + 180 + 270 = 459
+\]
+
+\respuesta{Se han usado $\mathbf{459}$ cifras para enumerar el libro.}
+
+%------------------------------------------------------------
+\ejercicio{12}{Si $\overline{ab}^2 - \overline{ba}^2 = 3168$, calcula el menor valor de $a + b$. \hfill \textit{(UNI)}}
+
+\resolucion
+
+\textbf{Paso 1.} Factorizamos usando diferencia de cuadrados:
+\[
+    \overline{ab}^2 - \overline{ba}^2 = \left(\overline{ab} - \overline{ba}\right)\left(\overline{ab} + \overline{ba}\right)
+\]
+
+\textbf{Paso 2.} Calculamos cada factor:
+\[
+    \overline{ab} - \overline{ba} = (10a+b) - (10b+a) = 9a - 9b = 9(a-b)
+\]
+\[
+    \overline{ab} + \overline{ba} = (10a+b) + (10b+a) = 11a + 11b = 11(a+b)
+\]
+
+\textbf{Paso 3.} Entonces:
+\[
+    9(a-b) \cdot 11(a+b) = 3168 \implies 99(a-b)(a+b) = 3168
+\]
+\[
+    (a-b)(a+b) = \frac{3168}{99} = 32
+\]
+
+\textbf{Paso 4.} Buscamos pares de enteros positivos $(a-b)$ y $(a+b)$ con:
+\begin{itemize}[itemsep=2pt]
+    \item $(a-b)(a+b) = 32$
+    \item $a-b < a+b$, ambos positivos, misma paridad.
+    \item $a, b$ dígitos del 1 al 9.
+\end{itemize}
+
+Factorizaciones de 32 con factores de igual paridad:
+\begin{center}
+\begin{tabular}{ccccc}
+\hline
+$a - b$ & $a + b$ & $a$ & $b$ & Válido \\
+\hline
+$2$ & $16$ & $9$ & $7$ & \checkmark \\
+$4$ & $8$  & $6$ & $2$ & \checkmark \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Paso 5.} El menor valor de $a+b$ corresponde al par $(a-b,a+b) = (4,8)$:
+\[
+    a + b = 8
+\]
+
+\respuesta{El menor valor de $a + b = \mathbf{8}$.}
+
+%------------------------------------------------------------
+\ejercicio{13}{Si $\overline{mn}^2 - \overline{nm}^2 = 1188$, calcula el valor de $m + n$.}
+
+\resolucion
+
+\textbf{Paso 1.} Igual que el ejercicio anterior, factorizamos:
+\[
+    \overline{mn}^2 - \overline{nm}^2 = (\overline{mn} - \overline{nm})(\overline{mn} + \overline{nm})
+\]
+\[
+    = 9(m-n) \cdot 11(m+n) = 99(m-n)(m+n)
+\]
+
+\textbf{Paso 2.} Igualamos:
+\[
+    99(m-n)(m+n) = 1188 \implies (m-n)(m+n) = 12
+\]
+
+\textbf{Paso 3.} Factorizaciones de 12 con igual paridad y $m,n$ dígitos:
+\begin{center}
+\begin{tabular}{ccccc}
+\hline
+$m - n$ & $m + n$ & $m$ & $n$ & Válido \\
+\hline
+$2$ & $6$ & $4$ & $2$ & \checkmark \\
+$4$ & $3$ & -- & -- & paridad diferente \\
+$1$ & $12$ & -- & -- & $m > 9$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Solo el par $(m-n, m+n) = (2, 6)$ es válido: $m = 4,\ n = 2$.
+
+\textbf{Paso 4.} Verificación: $\overline{mn} = 42$, $\overline{nm} = 24$, $42^2 - 24^2 = 1764 - 576 = 1188$. \checkmark
+
+\respuesta{El valor de $m + n = \mathbf{6}$.}
+
+%------------------------------------------------------------
+\ejercicio{14}{Si se cumple que $0{,}\overline{ab} + 0{,}\overline{ba} = 1$, calcula el valor de $a + b$.}
+
+\resolucion
+
+\textbf{Paso 1.} Convertimos las fracciones decimales periódicas a fracción:
+\[
+    0{,}\overline{ab} = \frac{\overline{ab}}{99} = \frac{10a+b}{99}
+\]
+\[
+    0{,}\overline{ba} = \frac{\overline{ba}}{99} = \frac{10b+a}{99}
+\]
+
+\textbf{Paso 2.} Sumamos:
+\[
+    \frac{10a+b}{99} + \frac{10b+a}{99} = 1
+\]
+\[
+    \frac{11a + 11b}{99} = 1 \implies \frac{11(a+b)}{99} = 1
+\]
+
+\textbf{Paso 3.} Despejamos:
+\[
+    a + b = \frac{99}{11} = 9
+\]
+
+\textbf{Paso 4.} Verificación con $a=4, b=5$: $0{,}\overline{45} + 0{,}\overline{54} = \tfrac{45}{99} + \tfrac{54}{99} = \tfrac{99}{99} = 1$. \checkmark
+
+\respuesta{El valor de $a + b = \mathbf{9}$.}
+
+\end{document}

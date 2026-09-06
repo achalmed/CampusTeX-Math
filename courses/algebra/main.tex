@@ -1,0 +1,312 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║   LIBRO COMPLETO — ÁLGEBRA PREUNIVERSITARIA                              ║
+% ║   Compilar con: lualatex main.tex  (dos pasadas para referencias)        ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+\documentclass[12pt, a4paper, twoside]{book}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §B  METADATOS DEL CURSO
+%     Academia, docente y ciclo se heredan de config/project.tex.
+%     Para sobreescribirlos SOLO en este curso, definirlos aquí, p. ej.:
+%       \newcommand{\NombreAcademia}{CEPRE-UNI}
+% ════════════════════════════════════════════════════════════════════════════
+\newcommand{\NombreCurso}{Álgebra}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §C  PREÁMBULO COMÚN (fuentes, colores, cajas, fancyhdr, tablas, tikz, etc.)
+%     fontspec y unicode-math los carga el núcleo — no recargarlos aquí:
+%     recargar unicode-math con opciones distintas produce "Option clash".
+% ════════════════════════════════════════════════════════════════════════════
+\input{../../core/preamble}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §D  PREÁMBULO ESPECÍFICO DE ÁLGEBRA
+%     Paquetes o comandos exclusivos de este curso
+% ════════════════════════════════════════════════════════════════════════════
+\usepackage{polynom}         % División sintética de polinomios
+\usepackage{cases}           % Sistemas de ecuaciones con llave
+
+% Comando para marcar el conjunto solución
+\newcommand{\CS}{\mathcal{CS}}
+
+% Ambiente para factorización en árbol (tikz)
+% Uso: \begin{arbolFact} ... \end{arbolFact}
+\newenvironment{arbolFact}{%
+  \begin{center}\begin{tikzpicture}[
+    level distance=1.2cm,
+    sibling distance=2cm,
+    every node/.style={draw, circle, minimum size=7mm,
+                       font=\small\sffamily, AzulPizarra}
+  ]
+}{%
+  \end{tikzpicture}\end{center}
+}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §E  INICIO DEL DOCUMENTO
+% ════════════════════════════════════════════════════════════════════════════
+\begin{document}
+
+% ── Portada del libro ────────────────────────────────────────────────────
+\input{portada_libro}
+
+% ── Índice (automático + temático manual) ────────────────────────────────
+\input{indice}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD I: Fundamentos Algebraicos   (Temas 1–10)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Fundamentos Algebraicos}
+
+% --- Semana 01: Introducción al Álgebra ---
+% \include{semana_01_introduccion/teoria}
+% \include{semana_01_introduccion/ejercicios}
+% \include{semana_01_introduccion/resueltos}
+
+% --- Semana 02: Conjuntos numéricos ---
+% \include{semana_02_conjuntos/teoria}
+% \include{semana_02_conjuntos/ejercicios}
+% \include{semana_02_conjuntos/resueltos}
+
+% --- Semana 03: Expresiones algebraicas ---
+% \include{semana_03_expresiones/teoria}
+% \include{semana_03_expresiones/ejercicios}
+% \include{semana_03_expresiones/resueltos}
+
+% --- Semana 04: Operaciones algebraicas ---
+% \include{semana_04_operaciones/teoria}
+% \include{semana_04_operaciones/ejercicios}
+% \include{semana_04_operaciones/resueltos}
+
+% --- Semana 05: Productos notables ---
+% \include{semana_05_productos_notables/teoria}
+% \include{semana_05_productos_notables/ejercicios}
+% \include{semana_05_productos_notables/resueltos}
+
+% --- Semana 06: Cocientes notables ---
+% \include{semana_06_cocientes_notables/teoria}
+% \include{semana_06_cocientes_notables/ejercicios}
+% \include{semana_06_cocientes_notables/resueltos}
+
+% --- Semana 07: Factorización ---
+% \include{semana_07_factorizacion/teoria}
+% \include{semana_07_factorizacion/ejercicios}
+% \include{semana_07_factorizacion/resueltos}
+
+% --- Semana 08: Fracciones algebraicas ---
+% \include{semana_08_fracciones/teoria}
+% \include{semana_08_fracciones/ejercicios}
+% \include{semana_08_fracciones/resueltos}
+
+% --- Semana 09: Radicales algebraicos ---
+% \include{semana_09_radicales/teoria}
+% \include{semana_09_radicales/ejercicios}
+% \include{semana_09_radicales/resueltos}
+
+% --- Semana 10: Potenciación y radicación ---
+% \include{semana_10_potenciacion/teoria}
+% \include{semana_10_potenciacion/ejercicios}
+% \include{semana_10_potenciacion/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD II: Ecuaciones e Inecuaciones   (Temas 11–20)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Ecuaciones e Inecuaciones}
+
+% --- Semana 11: Ecuaciones de primer grado ---
+% \include{semana_11_ec_primer_grado/teoria}
+% \include{semana_11_ec_primer_grado/ejercicios}
+% \include{semana_11_ec_primer_grado/resueltos}
+
+% --- Semana 12: Ecuaciones de segundo grado ---
+% \include{semana_12_ec_segundo_grado/teoria}
+% \include{semana_12_ec_segundo_grado/ejercicios}
+% \include{semana_12_ec_segundo_grado/resueltos}
+
+% --- Semana 13: Ecuaciones bicuadradas ---
+% \include{semana_13_bicuadradas/teoria}
+% \include{semana_13_bicuadradas/ejercicios}
+% \include{semana_13_bicuadradas/resueltos}
+
+% --- Semana 14: Ecuaciones irracionales ---
+% \include{semana_14_irracionales/teoria}
+% \include{semana_14_irracionales/ejercicios}
+% \include{semana_14_irracionales/resueltos}
+
+% --- Semana 15: Ecuaciones exponenciales ---
+% \include{semana_15_exponenciales/teoria}
+% \include{semana_15_exponenciales/ejercicios}
+% \include{semana_15_exponenciales/resueltos}
+
+% --- Semana 16: Ecuaciones logarítmicas ---
+% \include{semana_16_logaritmicas/teoria}
+% \include{semana_16_logaritmicas/ejercicios}
+% \include{semana_16_logaritmicas/resueltos}
+
+% --- Semana 17: Sistemas de ecuaciones ---
+% \include{semana_17_sistemas/teoria}
+% \include{semana_17_sistemas/ejercicios}
+% \include{semana_17_sistemas/resueltos}
+
+% --- Semana 18: Inecuaciones lineales ---
+% \include{semana_18_inecu_lineales/teoria}
+% \include{semana_18_inecu_lineales/ejercicios}
+% \include{semana_18_inecu_lineales/resueltos}
+
+% --- Semana 19: Inecuaciones cuadráticas ---
+% \include{semana_19_inecu_cuadr/teoria}
+% \include{semana_19_inecu_cuadr/ejercicios}
+% \include{semana_19_inecu_cuadr/resueltos}
+
+% --- Semana 20: Sistemas de inecuaciones ---
+% \include{semana_20_sistemas_inecu/teoria}
+% \include{semana_20_sistemas_inecu/ejercicios}
+% \include{semana_20_sistemas_inecu/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD III: Relaciones y Funciones   (Temas 21–32)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Relaciones y Funciones}
+
+% --- Semana 21: Relaciones ---
+% \include{semana_21_relaciones/teoria}
+% \include{semana_21_relaciones/ejercicios}
+% \include{semana_21_relaciones/resueltos}
+
+% --- Semana 22: Funciones ---
+% \include{semana_22_funciones/teoria}
+% \include{semana_22_funciones/ejercicios}
+% \include{semana_22_funciones/resueltos}
+
+% --- Semana 23: Función lineal ---
+% \include{semana_23_f_lineal/teoria}
+% \include{semana_23_f_lineal/ejercicios}
+% \include{semana_23_f_lineal/resueltos}
+
+% --- Semana 24: Función cuadrática ---
+% \include{semana_24_f_cuadratica/teoria}
+% \include{semana_24_f_cuadratica/ejercicios}
+% \include{semana_24_f_cuadratica/resueltos}
+
+% --- Semana 25: Función polinómica ---
+% \include{semana_25_f_polinomica/teoria}
+% \include{semana_25_f_polinomica/ejercicios}
+% \include{semana_25_f_polinomica/resueltos}
+
+% --- Semana 26: Función racional ---
+% \include{semana_26_f_racional/teoria}
+% \include{semana_26_f_racional/ejercicios}
+% \include{semana_26_f_racional/resueltos}
+
+% --- Semana 27: Función irracional ---
+% \include{semana_27_f_irracional/teoria}
+% \include{semana_27_f_irracional/ejercicios}
+% \include{semana_27_f_irracional/resueltos}
+
+% --- Semana 28: Función exponencial ---
+% \include{semana_28_f_exponencial/teoria}
+% \include{semana_28_f_exponencial/ejercicios}
+% \include{semana_28_f_exponencial/resueltos}
+
+% --- Semana 29: Función logarítmica ---
+% \include{semana_29_f_logaritmica/teoria}
+% \include{semana_29_f_logaritmica/ejercicios}
+% \include{semana_29_f_logaritmica/resueltos}
+
+% --- Semana 30: Funciones especiales ---
+% \include{semana_30_f_especiales/teoria}
+% \include{semana_30_f_especiales/ejercicios}
+% \include{semana_30_f_especiales/resueltos}
+
+% --- Semana 31: Composición de funciones ---
+% \include{semana_31_composicion/teoria}
+% \include{semana_31_composicion/ejercicios}
+% \include{semana_31_composicion/resueltos}
+
+% --- Semana 32: Función inversa ---
+% \include{semana_32_f_inversa/teoria}
+% \include{semana_32_f_inversa/ejercicios}
+% \include{semana_32_f_inversa/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD IV: Polinomios   (Temas 33–40)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Polinomios}
+
+% --- Semana 33: Polinomios ---
+% \include{semana_33_polinomios/teoria}
+% \include{semana_33_polinomios/ejercicios}
+% \include{semana_33_polinomios/resueltos}
+
+% --- Semana 34: Operaciones con polinomios ---
+% \include{semana_34_op_polinomios/teoria}
+% \include{semana_34_op_polinomios/ejercicios}
+% \include{semana_34_op_polinomios/resueltos}
+
+% --- Semana 35: División algebraica ---
+% \include{semana_35_division/teoria}
+% \include{semana_35_division/ejercicios}
+% \include{semana_35_division/resueltos}
+
+% --- Semana 36: Teorema del residuo ---
+% \include{semana_36_t_residuo/teoria}
+% \include{semana_36_t_residuo/ejercicios}
+% \include{semana_36_t_residuo/resueltos}
+
+% --- Semana 37: Teorema de Ruffini ---
+% \include{semana_37_ruffini/teoria}
+% \include{semana_37_ruffini/ejercicios}
+% \include{semana_37_ruffini/resueltos}
+
+% --- Semana 38: Teorema del factor ---
+% \include{semana_38_t_factor/teoria}
+% \include{semana_38_t_factor/ejercicios}
+% \include{semana_38_t_factor/resueltos}
+
+% --- Semana 39: Relaciones de Girard ---
+% \include{semana_39_girard/teoria}
+% \include{semana_39_girard/ejercicios}
+% \include{semana_39_girard/resueltos}
+
+% --- Semana 40: Ecuaciones polinómicas ---
+% \include{semana_40_ec_polinomicas/teoria}
+% \include{semana_40_ec_polinomicas/ejercicios}
+% \include{semana_40_ec_polinomicas/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD V: Progresiones y Binomio   (Temas 41–46)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Progresiones y Binomio de Newton}
+
+% --- Semana 41: Sucesiones ---
+% \include{semana_41_sucesiones/teoria}
+% \include{semana_41_sucesiones/ejercicios}
+% \include{semana_41_sucesiones/resueltos}
+
+% --- Semana 42: Progresión aritmética ---
+% \include{semana_42_pa/teoria}
+% \include{semana_42_pa/ejercicios}
+% \include{semana_42_pa/resueltos}
+
+% --- Semana 43: Progresión geométrica ---
+% \include{semana_43_pg/teoria}
+% \include{semana_43_pg/ejercicios}
+% \include{semana_43_pg/resueltos}
+
+% --- Semana 44: Interés compuesto ---
+% \include{semana_44_interes/teoria}
+% \include{semana_44_interes/ejercicios}
+% \include{semana_44_interes/resueltos}
+
+% --- Semana 45: Binomio de Newton ---
+% \include{semana_45_binomio/teoria}
+% \include{semana_45_binomio/ejercicios}
+% \include{semana_45_binomio/resueltos}
+
+% --- Semana 46: Triángulo de Pascal ---
+% \include{semana_46_pascal/teoria}
+% \include{semana_46_pascal/ejercicios}
+% \include{semana_46_pascal/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+\end{document}

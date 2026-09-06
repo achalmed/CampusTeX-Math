@@ -1,0 +1,307 @@
+% ============================================================
+% semana_03_conjuntos — resueltos
+% ============================================================
+% Este archivo es incluido desde main.tex con \include{}
+
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║  EJERCICIOS RESUELTOS — TEORÍA DE CONJUNTOS                              ║
+% ║  Curso: Aritmética | Semana: 01                                           ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+
+\newpage
+\section{Ejercicios resueltos --- Teor\'{\i}a de Conjuntos}
+
+\begin{tcolorbox}[
+  enhanced, colback=GrisClaro, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.7pt, left=8pt, right=8pt, top=4pt, bottom=4pt
+]
+\small\sffamily
+Las resoluciones presentan: identificaci\'on del m\'etodo, an\'alisis,
+desarrollo paso a paso y respuesta final destacada. Se resuelven los
+ejercicios 3, 6, 8, 11 y 13 de la secci\'on anterior.
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+% ══ EJERCICIO 3 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 3 --- Nivel B\'asico},
+  arc=3pt, boxrule=0.8pt
+]
+\begin{problema}
+  El conjunto $A = \{x \in \mathbb{N} \mid 2 < x \leq 6\}$ por extensi\'on es:
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Determinaci\'on de conjuntos
+\hfill
+\textbf{\sffamily\color{AzulMedio}M\'etodo:} Interpretaci\'on de desigualdades
+
+\medskip
+\noindent\textit{Observamos que:} la condici\'on $2 < x \leq 6$ con
+$x \in \mathbb{N}$ establece que $x$ es estrictamente mayor que 2 (es decir,
+$x \geq 3$) y menor o igual a 6. Por ello $x = 2$ \textbf{no} se incluye pero
+$x = 6$ \textbf{sí}.
+
+\medskip
+\noindent\textbf{\sffamily Desarrollo:}
+\begin{align*}
+  x \in \mathbb{N} \;\wedge\; 2 < x \leq 6
+  &\Rightarrow x \in \{3,\; 4,\; 5,\; 6\}
+\end{align*}
+
+\noindent\textit{La alternativa A incluye el 2 (incorrecto porque $2 \not> 2$).
+La correcta es la B.}
+
+\medskip
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle \boxed{A = \{3,\;4,\;5,\;6\}}$ \quad
+\textbf{Alternativa: B}
+\end{tcolorbox}
+
+\begin{cajatip}
+  Cuando la desigualdad usa $<$ (estricta), el extremo \emph{no} pertenece al
+  conjunto. Cuando usa $\leq$, el extremo \emph{sí} pertenece.
+  En el examen, escribe la desigualdad equivalente en $\mathbb{N}$:
+  $2 < x \leq 6 \;\equiv\; 3 \leq x \leq 6$.
+\end{cajatip}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% ══ EJERCICIO 6 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 6 --- Nivel Intermedio},
+  arc=3pt, boxrule=0.8pt
+]
+\begin{problema}
+  Si $A = \{x \in \mathbb{Z}^{+} \mid \tfrac{24}{x} \in \mathbb{Z}\}$ y
+  $B = \{y \in \mathbb{Z}^{+} \mid 18 \text{ es m\'ultiplo de } y\}$,
+  calcule $n(A) + n(B)$.
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Cardinal, divisores
+\hfill
+\textbf{\sffamily\color{AzulMedio}M\'etodo:} Divisores positivos
+
+\medskip
+\noindent\textit{Observamos que:} $\tfrac{24}{x} \in \mathbb{Z}$ significa que
+$x$ divide a $24$; es decir, $x$ es un divisor positivo de $24$. An\'alogamente,
+$18$ m\'ultiplo de $y$ significa que $y \mid 18$.
+
+\medskip
+\noindent\textbf{\sffamily Desarrollo:}
+\begin{align*}
+  24 &= 2^{3} \cdot 3^{1}
+  &&\Rightarrow\; \tau(24) = (3+1)(1+1) = 8 \text{ divisores} \\
+  A  &= \{1,\;2,\;3,\;4,\;6,\;8,\;12,\;24\}
+  &&\Rightarrow\; n(A) = 8 \\[6pt]
+  18 &= 2^{1} \cdot 3^{2}
+  &&\Rightarrow\; \tau(18) = (1+1)(2+1) = 6 \text{ divisores} \\
+  B  &= \{1,\;2,\;3,\;6,\;9,\;18\}
+  &&\Rightarrow\; n(B) = 6
+\end{align*}
+
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle \boxed{n(A) + n(B) = 8 + 6 = 14}$ \quad
+\textbf{Alternativa: B}
+\end{tcolorbox}
+
+\begin{cajatip}
+  F\'ormula r\'apida del n\'umero de divisores:
+  si $n = p_{1}^{a_{1}} p_{2}^{a_{2}} \cdots$, entonces
+  $\tau(n) = (a_1+1)(a_2+1)\cdots$.
+  Esta f\'ormula aparece directamente en preguntas de cardinal de conjuntos en
+  UNMSM y PUCP.
+\end{cajatip}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% ══ EJERCICIO 8 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 8 --- Nivel Intermedio},
+  arc=3pt, boxrule=0.8pt
+]
+\begin{problema}
+  Dados $A \subset B$, si $n[\mathcal{P}(B)] - n[\mathcal{P}(A)] = 112$,
+  calcule $n(B) + n(A)$.
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Conjunto potencia
+\hfill
+\textbf{\sffamily\color{AzulMedio}M\'etodo:} Factorizaci\'on de potencias de 2
+
+\medskip
+\noindent\textit{Observamos que:} $n[\mathcal{P}(X)] = 2^{n(X)}$, por lo que la
+ecuaci\'on se transforma en:
+\[
+  2^{n(B)} - 2^{n(A)} = 112
+\]
+
+\noindent\textbf{\sffamily Desarrollo:}
+\begin{align*}
+  2^{n(B)} - 2^{n(A)} &= 112 \\
+  \text{Probando } n(B)=7,\; n(A)=4: \qquad
+  2^{7} - 2^{4} &= 128 - 16 = 112 \;\checkmark
+\end{align*}
+
+\noindent\textit{Verificaci\'on por factorizaci\'on:}
+\[
+  2^{n(A)}\bigl(2^{n(B)-n(A)}-1\bigr) = 112
+  = 16 \cdot 7 = 2^{4}\cdot(2^{3}-1)
+  \;\Rightarrow\; n(A)=4,\; n(B)-n(A)=3
+\]
+
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle \boxed{n(B) + n(A) = 7 + 4 = 11}$ \quad
+\textbf{Alternativa: C}
+\end{tcolorbox}
+
+\begin{cajatip}
+  Ante diferencias o sumas de potencias de 2, factoriza la potencia menor.
+  La tabla $2^{1}\!=\!2,\;2^{2}\!=\!4,\;2^{3}\!=\!8,\;\ldots,\;2^{8}\!=\!256$
+  debe estar memorizada para el d\'{\i}a del examen.
+\end{cajatip}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% ══ EJERCICIO 11 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 11 --- Nivel Avanzado},
+  arc=3pt, boxrule=0.8pt
+]
+\begin{problema}
+  Dado $U = \bigl\{\tfrac{x+3}{2} \in \mathbb{N} \bigm| 5 < x < 17\bigr\}$,
+  $D = \{d \in U \mid d \text{ es par}\}$ y
+  $S = \{s \in U \mid s \leq 8\}$, calcule $n(D) + n(S)$.
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Cardinal con conjunto universal
+\hfill
+\textbf{\sffamily\color{AzulMedio}M\'etodo:} Construcci\'on del universal
+
+\medskip
+\noindent\textbf{\sffamily Desarrollo:}
+\begin{align*}
+  5 < x < 17
+  &\;\Rightarrow\; \frac{5+3}{2} < \frac{x+3}{2} < \frac{17+3}{2}
+  \;\Rightarrow\; 4 < \frac{x+3}{2} < 10 \\[4pt]
+  \frac{x+3}{2} \in \mathbb{N}
+  &\;\Rightarrow\; \frac{x+3}{2} \in \{5,\;6,\;7,\;8,\;9\} \\[6pt]
+  U &= \{5,\;6,\;7,\;8,\;9\} \quad (n(U)=5)\\[4pt]
+  D &= \{d \in U \mid d \text{ par}\} = \{6,\;8\}
+  \;\Rightarrow\; n(D)=2\\
+  S &= \{s \in U \mid s \leq 8\} = \{5,\;6,\;7,\;8\}
+  \;\Rightarrow\; n(S)=4
+\end{align*}
+
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle \boxed{n(D) + n(S) = 2 + 4 = 6}$ \quad
+\textbf{Alternativa: C}
+\end{tcolorbox}
+
+\begin{cajatip}
+  Paso 1 siempre: construir el conjunto universal antes de operar sobre \'el.
+  Transforma la condici\'on en una doble desigualdad del t\'ermino con
+  $\mathbb{N}$ para identificar los enteros del rango.
+\end{cajatip}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% ══ EJERCICIO 13 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 13 --- Nivel Avanzado},
+  arc=3pt, boxrule=0.8pt
+]
+\begin{problema}
+  Dos conjuntos comparables tienen cardinales que difieren en $3$.
+  La suma de los cardinales de sus conjuntos potencia es $288$.
+  Determinar el cardinal del conjunto de menor tama\~no.
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Conjunto potencia y sistema de ecuaciones
+\hfill
+\textbf{\sffamily\color{AzulMedio}M\'etodo:} Suma de potencias de 2
+
+\medskip
+\noindent\textit{Planteamiento:} Sean $A \subset B$ con
+$n(B) - n(A) = 3$ y $n[\mathcal{P}(A)] + n[\mathcal{P}(B)] = 288$.
+
+\medskip
+\noindent\textbf{\sffamily Desarrollo:}
+\begin{align*}
+  n[\mathcal{P}(A)] + n[\mathcal{P}(B)] &= 288 \\
+  2^{n(A)} + 2^{n(B)} &= 288 \\
+  \text{Sea } n(A) = k,\; n(B) = k+3: \qquad
+  2^{k} + 2^{k+3} &= 288 \\
+  2^{k}(1 + 8) &= 288 \\
+  2^{k} \cdot 9 &= 288 \\
+  2^{k} &= 32 = 2^{5} \\
+  k = n(A) &= 5
+\end{align*}
+
+\noindent\textit{Verificaci\'on:}
+$2^{5}+2^{8} = 32 + 256 = 288 \;\checkmark$
+
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle \boxed{n(A) = 5}$ \quad
+\textbf{Alternativa: C}
+\end{tcolorbox}
+
+\begin{cajatip}
+  Cuando veas una suma o diferencia de potencias de 2 con una constante,
+  factoriza la potencia menor:
+  $2^{k}(1 + 2^{3}) = 9 \cdot 2^{k}$.
+  Si la constante no es potencia de 2 pero tiene un factor de esa forma, el
+  problema siempre tendr\'a soluci\'on entera.
+\end{cajatip}
+\end{tcolorbox}
+
+% FIN — resueltos.tex

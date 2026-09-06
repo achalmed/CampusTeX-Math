@@ -1,0 +1,101 @@
+
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, left=2.54cm, right=2.54cm, top=3cm, bottom=3cm]{geometry} % Márgenes personalizados a 2cm
+\usepackage[spanish]{babel} % Para fechas y formato en español
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{amsmath}
+
+% Configuración de página
+\pagestyle{fancy}
+\fancyhf{} % Limpia encabezados y pies de página
+\fancyhead[L]{Academia Prepolicial - Polinomios}
+\fancyhead[R]{\today}
+\fancyfoot[C]{\thepage} % Número de página centrado en el pie
+\renewcommand{\headrulewidth}{0.8pt}
+
+% Configuración de títulos y espaciado
+\titleformat{\section}[block]{\large\bfseries\centering}{\thesection}{1em}{}
+\setlength{\columnsep}{1cm}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0em}
+
+
+\begin{document}
+
+	\begin{center}
+		\Large\bfseries Polinomios
+	\end{center}
+
+\begin{multicols}{2}
+	\section*{Ejercicios}
+		\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=0.4cm]
+			\item Si $5x^{a+3} y^{8}$ \text{y} $\frac{3}{5} x^8 y^{b+2}$ son términos semejantes, calcula $a + b$.
+
+			\item Calcula el grado relativo y el grado absoluto en cada caso:
+			\begin{itemize}
+				\item $P(x, y, z) = 3x^2 y^5 z^3 + \pi x^4 y^3 z^6 + 3x^7$
+				\item $R(x, y) = 2x^3 y^3 + 5x^{10} + 2^3 y^6$
+			\end{itemize}
+
+			\item Sea $P(x - 1) = 2x - 3$, calcula $P(3) - P(-2)$.
+
+			\item Si $P(x - 3) = 5x + 2$, calcula $P(2x - 1)$.\\
+
+
+			\item Si $P(x + 3) = 2x - 5$, calcula $P(x - 5)$.
+
+			\item Suma: $8x^{a+b} y^{16}$ y $bx^8 y^{a-b}$.
+
+			\item Si el grado absoluto de $R$ es 11, determina el valor de $n$. \\
+			$R(x, y) = x^{3n-1} y^n - 2x^{2n-2} y^{2n} + x^{n+3} y^{3n}$.
+
+			\item Si $P(x) = (x - 1)^{47} + (x + 2)^3 + x - 3 + a$ y su término independiente es -15, calcula la suma de coeficientes de $P(x)$.
+
+			\item Si $P(x) = (x - 1)^{42} + (x + 1)^4 + x + 2 + m$ y su término independiente es 10, calcula la suma de coeficientes de $P(x)$.
+
+			\item Sea $F(x)$ un polinomio que cumple con $F(x + 1) = 3F(x) - 2F(x - 1)$, además: \\
+			$F(4) = 1$, $F(6) = 4$. \\
+			Calcula $F(5)$. \\
+			\textbf{Resolución:} \\
+			Tenemos: \\
+			$F(x + 1) = 3F(x) - 2F(x - 1)$ \\
+			Si $x = 5$, reemplazamos: \\
+			$F(6) = 3F(5) - 2F(4)$ \\
+			$4 = 3F(5) - 2(1)$ \\
+			$4 + 2 = 3F(5)$ \\
+			$2 = F(5)$
+
+			\item En el siguiente polinomio: \\
+			$P(x, y) = x^a y^{b-1} + x^{a+1} y^b - x^{a-2} + x^{a+3} y^{b+1}$ \\
+			Donde: \\
+			$G.R.(x) = 10$, $G.A. = (P) = 11$. \\
+			Determina el $G.R.(y)$.
+
+			\item Calcula el valor de $n$ en el siguiente polinomio: \\
+			$P(x) = 2x^{n-7} + \sqrt{3} x^{\frac{n}{3}} - 5x^{10-n}$ \\
+			\textbf{Resolución:} \\
+			Recordar que un polinomio tiene exponentes enteros no negativos (positivo o cero): \\
+			$n - 7 \geq 0$, $\frac{n}{3} = 3$, $10 - n \geq 0$ \\
+			$n \geq 7$, $n = 0, 3, 6, 9, \dots$, $n \leq 10$ \\
+			$7 \leq n \leq 10 \implies \boxed{n = 9}$
+
+			\item Calcula el valor de $n$ en el siguiente polinomio: \\
+			$P(x) = 7x^{n-22} - \sqrt{2} x^{\frac{n}{5}} + 13x^{29-n}$.
+
+			\item Si $P(x) = a x^2 + b x + c$, además: \\
+			$P(0) = 3$, $P(-1) = 7$, $P(1) = 1$. \\
+			Calcula $P(2)$.
+
+
+
+			% Para añadir más ejercicios, simplemente copia y pega el siguiente bloque:
+			% \item [Enunciado del ejercicio]
+		\end{enumerate}
+
+\end{multicols}
+
+\end{document}

@@ -1,0 +1,100 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper, left=2.54cm, right=2.54cm, top=3cm, bottom=3cm]{geometry}
+\usepackage[spanish]{babel} % Para fechas y formato en español
+\usepackage{amsmath, amssymb} % Para notación matemática avanzada
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+% Configuración de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Academia Prepolicial - Conjuntos}
+\fancyhead[R]{\today}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.8pt}
+
+% Configuración de títulos y espaciado
+\titleformat{\section}[block]{\large\bfseries\centering}{\thesection}{1em}{}
+\setlength{\columnsep}{1cm}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0em}
+
+\begin{document}
+
+	\begin{center}
+		\Large\bfseries Conjuntos
+	\end{center}
+
+	\section*{Ejercicios}
+	\begin{multicols}{2}
+		\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=0.4cm]
+			\item Calcula la suma de los elementos del conjunto $A$ si:
+			\[
+			A = \{ (2y - 3) \in \mathbb{Z}, \, 2 \leq \sqrt{3y - 2} \leq 5 \}.
+			\]
+
+			\item Dado el conjunto:
+			\[
+			A = \{a; (b;c); d\},
+			\]
+			¿cuántos de los siguientes enunciados son incorrectos?
+			\begin{enumerate}[label=\Roman*.]
+				\item $\{b, c\} \subseteq A$
+				\item $\{b, c\} \in A$
+				\item $\{b, c\} \not\subseteq A$
+				\item $c \in A$
+				\item $\{a\} \subseteq A$
+				\item $\{a\} \in A$
+			\end{enumerate}
+
+			\item Dados los conjuntos:
+			\[
+			A = \{1, 2, 3, 4, 5, 6\}, \quad B = \{2, 3, 4, 8, 3\},
+			\]
+			calcula el número de subconjuntos de $A$ más el número de subconjuntos de $B$.
+
+			\item Si el subconjunto $A$ es unitario y es igual al conjunto $B$, calcula $a \times b$, donde:
+			\[
+			A = \{\sqrt{a+5};4\}, \quad B = \{\sqrt[3]{b + 7^2}\} .
+			\]
+
+			\item Si los conjuntos $A$ y $B$ son unitarios, calcula $x^y$, donde:
+			\[
+			A = \{\sqrt[3]{x+3};2\}, B = \{y^x;32\}.
+			\]
+
+			\item Calcula el cardinal de:
+			\[
+			C = \{ (2x+3) \in \mathbb{N} \mid 3\leq x <  5 \}.
+			\]
+
+			\item Calcula el cardinal del conjunto $B$ si:
+			\[
+			B = \{ x^2 + 2 \mid x \in \mathbb{Z} \mid -2 \leq x < 3 \}.
+			\]
+
+
+			\item Calcula $n(A) + n(B)$ si:
+			\[
+			A = \{ \frac{x+3}{2} \in \mathbb{N} \mid 2 \leq x \leq 5 \}, \quad B = \left\{ \frac{y+4}{3} \mid y = A.
+			\]
+
+			\item Dados los conjuntos:
+			\[
+			A = \{ x \in \mathbb{N} \mid 25x^2 + 5x + 10 + 1 = 0 \}, \quad
+			\]
+			\[
+			C = \{ \frac{1}{x} \in \mathbb{R} \mid 4x^2 - 4x + 1<=  0 \}
+			\]
+			calcula $n(A) + n(C)$.
+
+			\item El número de subconjuntos de un conjunto de
+			n + 2 elementos excede al doble del número de
+			subconjuntos de un conjunto de n – 2 elementos
+			en 224. Calcula el valor de “n”.
+		\end{enumerate}
+	\end{multicols}
+
+\end{document}

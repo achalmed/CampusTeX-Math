@@ -1,0 +1,347 @@
+\documentclass[12pt,a4paper]{article}
+
+% ─── Paquetes ───────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mdframed}
+
+% ─── Geometría ──────────────────────────────────────────────────────────────
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+% ─── Colores ────────────────────────────────────────────────────────────────
+\definecolor{primario}{RGB}{0,90,160}
+\definecolor{secundario}{RGB}{220,235,250}
+\definecolor{acento}{RGB}{200,50,50}
+
+% ─── Encabezado / pie de página ─────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{primario}{\textbf{Lógica Proposicional}}}
+\fancyhead[R]{\small\textcolor{primario}{Cuarto Grado de Secundaria}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.6pt}
+
+% ─── Estilos de título ───────────────────────────────────────────────────────
+\titleformat{\section}{\large\bfseries\color{primario}}{}{0pt}{}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries\color{acento}}{}{0pt}{}
+
+% ─── Entorno para definiciones ───────────────────────────────────────────────
+\newmdenv[
+  backgroundcolor=secundario,
+  linecolor=primario,
+  linewidth=1.5pt,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=8pt,
+  innerbottommargin=8pt
+]{definicion}
+
+% ─── Comando para tabla de verdad ────────────────────────────────────────────
+\newcommand{\TV}[1]{\textbf{#1}}   % V / F en negrita
+
+% ─── Documento ───────────────────────────────────────────────────────────────
+\begin{document}
+
+% Portada
+\begin{center}
+  {\LARGE\bfseries\color{primario} CONECTIVOS LÓGICOS Y TABLA DE VERDAD}\\[4pt]
+  {\large Teoría — Cuarto Grado de Secundaria}\\[2pt]
+  \textcolor{gray}{\rule{0.6\linewidth}{0.6pt}}
+\end{center}
+
+\vspace{6pt}
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Lógica Proposicional}
+% ════════════════════════════════════════════════════════════════════════════
+
+\begin{definicion}
+La \textbf{lógica proposicional} es una rama de la lógica que tiene por objeto de
+estudio las \textbf{proposiciones} y la relación entre ellas, así como la función que
+desempeñan las variables proposicionales y los conectivos lógicos.
+\end{definicion}
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Proposición Lógica}
+% ════════════════════════════════════════════════════════════════════════════
+
+\begin{definicion}
+Una \textbf{proposición lógica} (o enunciado cerrado) es un enunciado que posee un
+valor de verdad definido: \textbf{Verdadero (V)} o \textbf{Falso (F)}.  Se denomina
+\textbf{variable proposicional} y se representa con letras minúsculas ($p$, $q$, $r$, \ldots).
+\end{definicion}
+
+\subsection{Clasificación}
+
+\begin{itemize}[leftmargin=1.5cm]
+  \item \textbf{Proposiciones simples (atómicas):} No contienen conectivos lógicos.
+        \begin{itemize}
+          \item Carlos es despistado.
+          \item Carlos es travieso.
+        \end{itemize}
+  \item \textbf{Proposiciones compuestas (moleculares):} Se forman uniendo proposiciones
+        simples mediante conectivos lógicos.
+        \begin{itemize}
+          \item Carlos es travieso \textit{y} despistado.
+          \item \textit{Es falso que} Daniel sea actor de cine.
+        \end{itemize}
+\end{itemize}
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Conectivos Lógicos}
+% ════════════════════════════════════════════════════════════════════════════
+
+A continuación se presentan los seis conectivos lógicos fundamentales con su
+tabla de verdad correspondiente.
+
+% ─── a) Conjunción ──────────────────────────────────────────────────────────
+\subsection{a) Conjunción}
+
+\begin{minipage}{0.55\linewidth}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Conectiva:} y / pero / e / sin embargo \ldots
+  \item \textbf{Operador:} $\wedge$ (punto $\cdot$)
+  \item \textbf{Forma:} $p \wedge q$
+  \item \textbf{Regla:} es \textbf{V} solo cuando \emph{ambas} proposiciones son V.
+\end{itemize}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.38\linewidth}
+\centering
+\begin{tabular}{cc|c}
+\toprule
+$p$ & $q$ & $p \wedge q$ \\
+\midrule
+\TV{V} & \TV{V} & \TV{V} \\
+\TV{V} & F      & F      \\
+F      & \TV{V} & F      \\
+F      & F      & F      \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\bigskip
+
+% ─── b) Disyunción débil ─────────────────────────────────────────────────────
+\subsection{b) Disyunción Débil (Inclusiva)}
+
+\begin{minipage}{0.55\linewidth}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Conectiva:} o / u / \ldots o \ldots
+  \item \textbf{Operador:} $\vee$
+  \item \textbf{Forma:} $p \vee q$
+  \item \textbf{Regla:} es \textbf{F} solo cuando \emph{ambas} proposiciones son F.
+\end{itemize}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.38\linewidth}
+\centering
+\begin{tabular}{cc|c}
+\toprule
+$p$ & $q$ & $p \vee q$ \\
+\midrule
+\TV{V} & \TV{V} & \TV{V} \\
+\TV{V} & F      & \TV{V} \\
+F      & \TV{V} & \TV{V} \\
+F      & F      & F      \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\bigskip
+
+% ─── c) Disyunción fuerte ────────────────────────────────────────────────────
+\subsection{c) Disyunción Fuerte (Exclusiva)}
+
+\begin{minipage}{0.55\linewidth}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Conectiva:} o \ldots o / o bien \ldots o bien \ldots
+  \item \textbf{Operador:} $\Delta$ (o $\not\leftrightarrow$)
+  \item \textbf{Forma:} $p \;\Delta\; q$
+  \item \textbf{Regla:} es \textbf{V} cuando las proposiciones tienen \emph{distinto} valor.
+\end{itemize}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.38\linewidth}
+\centering
+\begin{tabular}{cc|c}
+\toprule
+$p$ & $q$ & $p \;\Delta\; q$ \\
+\midrule
+\TV{V} & \TV{V} & F      \\
+\TV{V} & F      & \TV{V} \\
+F      & \TV{V} & \TV{V} \\
+F      & F      & F      \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\bigskip
+
+% ─── d) Condicional ──────────────────────────────────────────────────────────
+\subsection{d) Condicional (Implicación)}
+
+\begin{minipage}{0.55\linewidth}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Conectiva:} Si \ldots entonces / por lo tanto
+  \item \textbf{Operador:} $\rightarrow$ (o $\Rightarrow$)
+  \item \textbf{Forma:} $p \rightarrow q$
+  \item \textbf{Regla:} es \textbf{F} solo cuando el antecedente es V y el consecuente es F.
+\end{itemize}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.38\linewidth}
+\centering
+\begin{tabular}{cc|c}
+\toprule
+$p$ & $q$ & $p \rightarrow q$ \\
+\midrule
+\TV{V} & \TV{V} & \TV{V} \\
+\TV{V} & F      & F      \\
+F      & \TV{V} & \TV{V} \\
+F      & F      & \TV{V} \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\bigskip
+
+% ─── e) Bicondicional ────────────────────────────────────────────────────────
+\subsection{e) Bicondicional (Doble Implicación)}
+
+\begin{minipage}{0.55\linewidth}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Conectiva:} Si y solo si / entonces y solo entonces
+  \item \textbf{Operador:} $\leftrightarrow$ (o $\equiv$)
+  \item \textbf{Forma:} $p \leftrightarrow q$
+  \item \textbf{Regla:} es \textbf{V} cuando ambas proposiciones tienen el \emph{mismo} valor.
+\end{itemize}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.38\linewidth}
+\centering
+\begin{tabular}{cc|c}
+\toprule
+$p$ & $q$ & $p \leftrightarrow q$ \\
+\midrule
+\TV{V} & \TV{V} & \TV{V} \\
+\TV{V} & F      & F      \\
+F      & \TV{V} & F      \\
+F      & F      & \TV{V} \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\bigskip
+
+% ─── f) Negación ─────────────────────────────────────────────────────────────
+\subsection{f) Negación}
+
+\begin{minipage}{0.55\linewidth}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Conectiva:} no / ni / no es el caso que
+  \item \textbf{Operador:} $\sim$ (o $\neg$)
+  \item \textbf{Forma:} $\sim p$
+  \item \textbf{Regla:} invierte el valor de verdad de la proposición.
+\end{itemize}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.38\linewidth}
+\centering
+\begin{tabular}{c|c}
+\toprule
+$p$ & $\sim p$ \\
+\midrule
+\TV{V} & F      \\
+F      & \TV{V} \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Tablas de Valores de Verdad (Matriz Principal)}
+% ════════════════════════════════════════════════════════════════════════════
+
+\begin{definicion}
+\textbf{Evaluar} un esquema molecular es obtener su \textbf{matriz principal}, es decir,
+la columna de valores de verdad del conectivo principal.
+\end{definicion}
+
+\subsection{Reglas importantes}
+
+\begin{enumerate}[leftmargin=1.5cm]
+  \item El número de filas en la tabla es $2^{n}$, donde $n$ es el número de variables
+        proposicionales distintas.
+  \item Se debe \textbf{jerarquizar} los conectivos antes de evaluar:
+        \begin{enumerate}[label=\arabic*$^\circ$]
+          \item Negación ($\sim$)
+          \item Conjunción ($\wedge$) y disyunción fuerte ($\Delta$)
+          \item Disyunción débil ($\vee$)
+          \item Condicional ($\rightarrow$)
+          \item Bicondicional ($\leftrightarrow$)
+          \item Los paréntesis \textbf{rompen} la jerarquía.
+        \end{enumerate}
+\end{enumerate}
+
+\subsection{Ejemplo resuelto}
+
+Obtener la matriz principal de $(p \wedge q) \rightarrow (p \;\Delta\; q)$:
+
+\[
+\begin{array}{cc|c|c|c}
+\toprule
+p & q & (p \wedge q) & (p \;\Delta\; q) & (p \wedge q) \rightarrow (p \;\Delta\; q) \\
+  &   & \text{(paso 1)} & \text{(paso 2)} & \textbf{(paso 3 = matriz principal)} \\
+\midrule
+V & V & V & F & \mathbf{F} \\
+V & F & F & V & \mathbf{V} \\
+F & V & F & V & \mathbf{V} \\
+F & F & F & F & \mathbf{V} \\
+\bottomrule
+\end{array}
+\]
+
+\textbf{Matriz principal:} F, V, V, V
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Clases de Matrices Principales}
+% ════════════════════════════════════════════════════════════════════════════
+
+\begin{center}
+\begin{tabular}{>{\bfseries}lll}
+\toprule
+Tipo & Característica & Ejemplo \\
+\midrule
+Tautología    & Todos los valores son \textbf{V} & $p \vee \sim p$ \\
+Contradicción & Todos los valores son \textbf{F} & $p \wedge \sim p$ \\
+Contingente   & Hay al menos un V y un F         & $p \rightarrow q$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{4pt}
+
+\begin{definicion}
+\textbf{Resumen:}\\[4pt]
+\begin{tabular}{@{}ll@{}}
+$p \wedge q$           & V solo si ambas son V.\\
+$p \vee q$             & F solo si ambas son F.\\
+$p \;\Delta\; q$       & V si tienen \emph{distinto} valor.\\
+$p \rightarrow q$      & F solo si $p$=V y $q$=F.\\
+$p \leftrightarrow q$  & V si tienen el \emph{mismo} valor.\\
+$\sim p$               & Invierte el valor de $p$.\\
+\end{tabular}
+\end{definicion}
+
+\end{document}

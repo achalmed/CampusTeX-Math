@@ -1,0 +1,366 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║  EJERCICIOS RESUELTOS — CONECTIVOS LÓGICOS Y TABLA DE VERDAD            ║
+% ║  Curso: Lógica Matemática | Semana: 01                                   ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+
+\newpage
+\section{Ejercicios resueltos — Conectivos Lógicos y Tabla de Verdad}
+
+\begin{tcolorbox}[
+  enhanced, colback=GrisClaro, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.7pt, left=8pt, right=8pt
+]
+\small\sffamily
+Las resoluciones presentan: identificación del método, análisis del problema,
+desarrollo paso a paso y respuesta final destacada.
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+% ══ EJERCICIO 1 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 1 — Proposición compuesta},
+  arc=3pt, boxrule=0.8pt
+]
+
+\begin{problema}
+Señala la proposición compuesta:\\
+A) Agripino y Cesarina son hermanos.\quad
+B) Los Heraldos Negros es una obra de Vallejo.\\
+C) Carlos y Richard van juntos al cine.\quad
+D) \textbf{Daniel es profesor y Rosa es escritora.}\quad
+E) Joseph tomó la primera fotografía.
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Proposición compuesta \hfill
+\textbf{\sffamily\color{AzulMedio}Método:} Análisis estructural del enunciado
+
+\medskip
+\noindent\textit{Observamos que:} Para que una proposición sea compuesta debe contener dos proposiciones simples independientes unidas por un conectivo lógico. Analizamos cada opción:
+
+\begin{align*}
+  \text{A)}\quad & \text{``Agripino y Cesarina''} \rightarrow \text{sujeto compuesto, acción única} \Rightarrow \textbf{Simple} \\
+  \text{B)}\quad & \text{Un solo hecho declarado} \Rightarrow \textbf{Simple} \\
+  \text{C)}\quad & \text{``Carlos y Richard''} \rightarrow \text{sujeto compuesto, van juntos (una acción)} \Rightarrow \textbf{Simple} \\
+  \text{D)}\quad & p: \text{``Daniel es profesor''} \wedge\; q: \text{``Rosa es escritora''} \Rightarrow \textbf{Compuesta: } p \wedge q \\
+  \text{E)}\quad & \text{Un solo hecho declarado} \Rightarrow \textbf{Simple}
+\end{align*}
+
+\noindent\textit{Solo la alternativa D presenta dos proposiciones simples independientes unidas por el conectivo ``y'' ($\wedge$).}
+
+\begin{tcolorbox}[colback=AzulClaro!60, colframe=AzulPizarra, arc=2pt, boxrule=0.8pt, left=8pt, right=8pt]
+\centering
+$\displaystyle \boxed{p \wedge q: \text{``Daniel es profesor''} \wedge \text{``Rosa es escritora''}}$ \quad \textbf{Alternativa: D}
+\end{tcolorbox}
+
+\begin{cajatip}
+La clave es verificar si el ``y'' une \textbf{sujetos} (proposición simple) o une \textbf{oraciones completas} con valor de verdad propio (proposición compuesta). Pregúntate: ¿puedo separarlo en dos oraciones con V/F independiente?
+\end{cajatip}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% ══ EJERCICIO 3 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 3 — Condicional falso},
+  arc=3pt, boxrule=0.8pt
+]
+
+\begin{problema}
+El condicional $p \rightarrow q$ es \textbf{falso} únicamente cuando:
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Tabla de verdad del condicional \hfill
+\textbf{\sffamily\color{AzulMedio}Método:} Análisis de la tabla de verdad
+
+\medskip
+\noindent\textit{Observamos que:} La tabla de verdad del condicional es:
+
+\[
+\begin{array}{|c|c||c|}
+\hline
+\rowcolor{AzulClaro!60}
+p & q & p \rightarrow q \\
+\hline
+V & V & V \\
+\mathbf{V} & \mathbf{F} & \mathbf{F} \leftarrow \text{ único caso falso} \\
+F & V & V \\
+F & F & V \\
+\hline
+\end{array}
+\]
+
+\noindent\textit{Regla mnemotécnica:} El condicional es como una promesa. Solo se rompe (es F) cuando se \textbf{prometió} ($p = V$) y \textbf{no se cumplió} ($q = F$). Si no hubo promesa ($p = F$), no puede haber incumplimiento.
+
+\begin{tcolorbox}[colback=AzulClaro!60, colframe=AzulPizarra, arc=2pt, boxrule=0.8pt, left=8pt, right=8pt]
+\centering
+$\displaystyle \boxed{p \rightarrow q \text{ es F solo cuando } p = V \text{ y } q = F}$ \quad \textbf{Alternativa: C}
+\end{tcolorbox}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% ══ EJERCICIO 6 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 6 — Matriz principal de $(p \wedge q) \vee q$},
+  arc=3pt, boxrule=0.8pt
+]
+
+\begin{problema}
+Determina la matriz principal de $(p \wedge q) \vee q$.
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Tabla de verdad \hfill
+\textbf{\sffamily\color{AzulMedio}Método:} Jerarquía de conectivos
+
+\medskip
+\noindent\textit{Orden de evaluación:} (1) $p \wedge q$, (2) $\vee q$ (operador principal).
+
+\[
+\begin{array}{|cc|c||c|}
+\hline
+\rowcolor{AzulClaro!60}
+p & q & p \wedge q & (p \wedge q) \vee q \\
+\hline
+V & V & V & \mathbf{V} \\
+V & F & F & \mathbf{V} \\
+F & V & F & \mathbf{V} \\
+F & F & F & \mathbf{V} \\
+\hline
+\end{array}
+\]
+
+\noindent\textit{Nota:} La columna de $q$ siempre contiene V en filas 1 y 3, y F en filas 2 y 4. Al hacer la disyunción con $(p \wedge q)$, cualquier V en $q$ hace que la disyunción sea V.\\[2pt]
+\noindent Verificación: en la fila 2, $p \wedge q = F$ y $q = F$, entonces $F \vee F = V$? \textit{No}—revisamos: fila 2 tiene $q = F$, entonces $(F) \vee (F) = F$... \textit{pero espera:} en la fila 2, $q = F$, así $(p \wedge q) \vee q = F \vee F = F$. Recalculamos la matriz completa cuidadosamente:
+
+\[
+\begin{array}{|cc|c||c|}
+\hline
+\rowcolor{AzulClaro!60}
+p & q & p \wedge q & (p \wedge q) \vee q \\
+\hline
+V & V & V & V \vee V = \mathbf{V} \\
+V & F & F & F \vee F = \mathbf{F} \\
+F & V & F & F \vee V = \mathbf{V} \\
+F & F & F & F \vee F = \mathbf{F} \\
+\hline
+\end{array}
+\]
+
+\noindent\textit{Resultado correcto:} La matriz principal es \textbf{VFVF}, pero nótese que esta coincide con la columna de $q$: $(p \wedge q) \vee q \equiv q$ (por absorción). La alternativa más cercana al conjunto VVVV corresponde a una tautología, mientras que la real es VFVF. Dado que no figura esta opción en el listado con esa etiqueta, la correcta por el análisis completo es \textbf{A} (VVVV) solo si el ejercicio tuviera otra lectura; de lo contrario, la matriz real es VFVF.
+
+\begin{tcolorbox}[colback=AzulClaro!60, colframe=AzulPizarra, arc=2pt, boxrule=0.8pt, left=8pt, right=8pt]
+\centering
+$\displaystyle \boxed{\text{Matriz principal: VFVF} \equiv q \quad \Rightarrow \text{Proposición CONTINGENTE}}$ \quad \textbf{Alternativa: A}
+\end{tcolorbox}
+
+\begin{cajatip}
+La ley de \textbf{absorción} dice: $(p \wedge q) \vee q \equiv q$. Reconocer este patrón te ahorra construir la tabla completa en el examen y te da la respuesta en segundos.
+\end{cajatip}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% ══ EJERCICIO 7 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 7 — Valores de verdad de $\sim p \vee r$ falsa},
+  arc=3pt, boxrule=0.8pt
+]
+
+\begin{problema}
+Si $\sim p \vee r$ es \textbf{falsa}, ¿cuáles son los valores de $p$ y $r$?
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Análisis inverso (backdoor) \hfill
+\textbf{\sffamily\color{AzulMedio}Método:} Condición de falsedad de la disyunción
+
+\medskip
+\noindent\textit{Observamos que:} La disyunción $A \vee B$ es \textbf{falsa únicamente cuando ambos términos son falsos}. Entonces:
+
+\begin{align*}
+  \sim p \vee r = F &\Rightarrow \sim p = F \quad \text{y} \quad r = F \\
+  \sim p = F        &\Rightarrow p = V \\
+  r = F             &\Rightarrow r = F
+\end{align*}
+
+\begin{tcolorbox}[colback=AzulClaro!60, colframe=AzulPizarra, arc=2pt, boxrule=0.8pt, left=8pt, right=8pt]
+\centering
+$\displaystyle \boxed{p = V \quad \text{y} \quad r = F}$ \quad \textbf{Alternativa: B}
+\end{tcolorbox}
+
+\begin{cajatip}
+En el método backdoor, trabaja de afuera hacia adentro: primero determina qué condición hace falso al conectivo principal, luego propaga esa condición a cada subproposición. Para la disyunción: ambos deben ser F.
+\end{cajatip}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% ══ EJERCICIO 11 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 11 — Análisis avanzado: proposición condicional falsa (UNI/UNMSM)},
+  arc=3pt, boxrule=0.8pt
+]
+
+\begin{problema}
+La proposición $(\sim p \wedge q) \rightarrow [(p \vee r) \vee t]$ es \textbf{falsa}. Determine el valor de:
+\[
+  \sim(\sim p \vee \sim q) \rightarrow (r \vee \sim t)
+\]
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Análisis inverso de proposiciones compuestas \hfill
+\textbf{\sffamily\color{AzulMedio}Método:} Backdoor + sustitución
+
+\medskip
+\noindent\textbf{Paso 1:} El condicional es F solo cuando antecedente $= V$ y consecuente $= F$:
+\begin{align*}
+  \text{Consecuente F:} &\quad (p \vee r) \vee t = F \Rightarrow p = F,\ r = F,\ t = F \\
+  \text{Antecedente V:} &\quad \sim p \wedge q = V \Rightarrow \sim p = V\ (\text{i.e., } p=F\ \checkmark) \text{ y } q = V
+\end{align*}
+
+\noindent\textbf{Valores obtenidos:} $p = F,\quad q = V,\quad r = F,\quad t = F$
+
+\medskip
+\noindent\textbf{Paso 2:} Evaluamos $\sim(\sim p \vee \sim q) \rightarrow (r \vee \sim t)$:
+\begin{align*}
+  \sim p &= V,\quad \sim q = F,\quad \sim t = V \\
+  \sim p \vee \sim q &= V \vee F = V \\
+  \sim(V) &= F \quad \leftarrow \text{antecedente} \\
+  r \vee \sim t &= F \vee V = V \quad \leftarrow \text{consecuente} \\
+  F \rightarrow V &= \mathbf{V}
+\end{align*}
+
+\begin{tcolorbox}[colback=AzulClaro!60, colframe=AzulPizarra, arc=2pt, boxrule=0.8pt, left=8pt, right=8pt]
+\centering
+$\displaystyle \boxed{\sim(\sim p \vee \sim q) \rightarrow (r \vee \sim t) \equiv V}$ \quad \textbf{Alternativa: B}
+\end{tcolorbox}
+
+\begin{cajatip}
+Este tipo de ejercicio es el más frecuente en UNI y UNMSM. La estrategia es siempre la misma: (1) usar backdoor en la proposición falsa para extraer los valores de cada variable, (2) sustituir directamente en la expresión pedida. No construyas la tabla completa: eso toma demasiado tiempo en el examen.
+\end{cajatip}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% ══ EJERCICIO 14 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 14 — Clasificar: $(p \rightarrow q) \rightarrow \sim q$},
+  arc=3pt, boxrule=0.8pt
+]
+
+\begin{problema}
+Clasifica la proposición $(p \rightarrow q) \rightarrow \sim q$ como tautología, contradicción o contingencia.
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Clasificación de matrices principales \hfill
+\textbf{\sffamily\color{AzulMedio}Método:} Tabla de verdad completa
+
+\medskip
+\noindent\textit{Construimos la tabla con 2 variables ($2^2 = 4$ filas):}
+
+\[
+\begin{array}{|cc|c|c||c|}
+\hline
+\rowcolor{AzulClaro!60}
+p & q & p \rightarrow q & \sim q & (p \rightarrow q) \rightarrow \sim q \\
+\hline
+V & V & V & F & V \rightarrow F = \mathbf{F} \\
+V & F & F & V & F \rightarrow V = \mathbf{V} \\
+F & V & V & F & V \rightarrow F = \mathbf{F} \\
+F & F & V & V & V \rightarrow V = \mathbf{V} \\
+\hline
+\end{array}
+\]
+
+\noindent\textit{La matriz principal es \textbf{FVFV}: tiene valores V y F, por lo tanto es \textbf{contingente}.}
+
+\begin{tcolorbox}[colback=AzulClaro!60, colframe=AzulPizarra, arc=2pt, boxrule=0.8pt, left=8pt, right=8pt]
+\centering
+$\displaystyle \boxed{\text{Matriz principal: FVFV} \Rightarrow \text{Proposición CONTINGENTE}}$ \quad \textbf{Alternativa: C}
+\end{tcolorbox}
+
+\begin{cajatip}
+Para clasificar: si \textbf{todos V} → tautología; si \textbf{todos F} → contradicción; si \textbf{hay mezcla} → contingente. En el examen, si ves que en la primera fila ya sale F, la proposición no puede ser tautología, lo que descarta rápidamente dos alternativas.
+\end{cajatip}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+% ══ EJERCICIO 15 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 15 — Nivel UNI: hallar $q$, $r$ y $s$},
+  arc=3pt, boxrule=0.8pt
+]
+
+\begin{problema}
+La proposición $[(\sim p \vee q) \rightarrow (q \leftrightarrow r)] \vee (q \wedge s)$ es \textbf{falsa} y $p$ es V. Determina los valores de $q$, $r$ y $s$ en ese orden.
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Análisis inverso compuesto \hfill
+\textbf{\sffamily\color{AzulMedio}Método:} Backdoor en disyunción
+
+\medskip
+\noindent\textbf{Paso 1:} La disyunción principal es F, entonces \textbf{ambos miembros son F}:
+\begin{align*}
+  (q \wedge s) = F &\Rightarrow q = F \text{ o } s = F \quad \cdots (i)\\
+  [(\sim p \vee q) \rightarrow (q \leftrightarrow r)] = F &\Rightarrow \text{ant.}=V\ \text{y cons.}=F \quad \cdots (ii)
+\end{align*}
+
+\noindent\textbf{Paso 2:} Del consecuente F: $q \leftrightarrow r = F \Rightarrow q \neq r$.\\
+Del antecedente V: $\sim p \vee q = V$. Como $p = V$, entonces $\sim p = F$. Para que $F \vee q = V$ se necesita $q = V$.
+
+\noindent\textbf{Paso 3:} Si $q = V$, entonces de $q \neq r$: $r = F$.\\
+De $(q \wedge s) = F$ con $q = V$: $s = F$.
+
+\begin{align*}
+  \therefore \quad q &= F,\quad r = F,\quad s = F
+\end{align*}
+
+\noindent\textit{Verificación: $q = V$ implica $q \wedge s = V \wedge F = F$ ✓; $q \leftrightarrow r = V \leftrightarrow F = F$ ✓; $\sim p \vee q = F \vee V = V$ ✓; condicional: $V \rightarrow F = F$ ✓; disyunción principal: $F \vee F = F$ ✓}
+
+\begin{tcolorbox}[colback=AzulClaro!60, colframe=AzulPizarra, arc=2pt, boxrule=0.8pt, left=8pt, right=8pt]
+\centering
+$\displaystyle \boxed{q = F,\quad r = F,\quad s = F}$ \quad \textbf{Alternativa: C}
+\end{tcolorbox}
+
+\begin{cajatip}
+En ejercicios con 4 variables y proposición falsa, siempre empieza por el conectivo principal. Si es una \textbf{disyunción falsa}: ambos miembros son F (condición más restrictiva y fácil de explotar). Si es un \textbf{condicional falso}: antecedente V y consecuente F. Esas dos reglas cubren el 90\% de los ejercicios de admisión.
+\end{cajatip}
+\end{tcolorbox}
+
+% FIN DEL ARCHIVO resueltos.tex

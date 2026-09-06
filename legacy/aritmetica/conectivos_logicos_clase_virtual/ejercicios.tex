@@ -1,0 +1,309 @@
+\documentclass[12pt,a4paper]{article}
+
+% ─── Paquetes ───────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mdframed}
+\usepackage{multicol}
+\usepackage{tasks}
+
+% ─── Geometría ──────────────────────────────────────────────────────────────
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+% ─── Colores ────────────────────────────────────────────────────────────────
+\definecolor{primario}{RGB}{0,90,160}
+\definecolor{secundario}{RGB}{220,235,250}
+\definecolor{acento}{RGB}{200,50,50}
+\definecolor{grisclaro}{RGB}{245,245,245}
+
+% ─── Encabezado / pie ────────────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{primario}{\textbf{Ejercicios — Conectivos Lógicos}}}
+\fancyhead[R]{\small\textcolor{primario}{Cuarto Grado de Secundaria}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.6pt}
+
+% ─── Estilos de título ───────────────────────────────────────────────────────
+\titleformat{\section}{\large\bfseries\color{primario}}{}{0pt}{}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries\color{acento}}{}{0pt}{}
+
+% ─── Entorno para recuadro de ejercicio ──────────────────────────────────────
+\newmdenv[
+  backgroundcolor=grisclaro,
+  linecolor=primario,
+  linewidth=1pt,
+  leftmargin=0pt, rightmargin=0pt,
+  innerleftmargin=10pt, innerrightmargin=10pt,
+  innertopmargin=6pt, innerbottommargin=6pt
+]{ejerciciobox}
+
+% ─── Espacio para respuesta ──────────────────────────────────────────────────
+\newcommand{\linea}{\underline{\hspace{10cm}}}
+\newcommand{\espacioresp}[1][3cm]{\vspace{#1}}
+
+% ─── Documento ───────────────────────────────────────────────────────────────
+\begin{document}
+
+% Portada
+\begin{center}
+  {\LARGE\bfseries\color{primario} CONECTIVOS LÓGICOS Y TABLA DE VERDAD}\\[4pt]
+  {\large Ejercicios — Cuarto Grado de Secundaria}\\[2pt]
+  \textcolor{gray}{\rule{0.6\linewidth}{0.6pt}}\\[6pt]
+  Nombre: \underline{\hspace{7cm}} \quad Fecha: \underline{\hspace{3cm}}
+\end{center}
+
+\vspace{6pt}
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Parte I — Nivel Integral}
+% ════════════════════════════════════════════════════════════════════════════
+
+% Ejercicio 1
+\begin{ejerciciobox}
+\textbf{Ejercicio 1.}
+Determina la \textbf{matriz principal} de la siguiente proposición compuesta:
+\[
+(p \wedge q) \vee q
+\]
+\end{ejerciciobox}
+
+\espacioresp[5cm]
+
+% Ejercicio 2
+\begin{ejerciciobox}
+\textbf{Ejercicio 2.}
+Determina los valores de verdad de $r$ y $p$ si se sabe que la siguiente
+proposición es \textbf{falsa}:
+\[
+\sim p \vee r
+\]
+\end{ejerciciobox}
+
+\espacioresp[3.5cm]
+
+% Ejercicio 3
+\begin{ejerciciobox}
+\textbf{Ejercicio 3.}
+Señala la \textbf{proposición compuesta} entre las siguientes opciones:
+
+\begin{enumerate}[label=\alph*)]
+  \item Agripino y Cesarina son hermanos.
+  \item Los Heraldos Negros es una obra de César Vallejo.
+  \item Joseph-Nicéphore tomó la primera fotografía en blanco y negro.
+  \item Carlos y Richard van juntos al cine.
+  \item Daniel es profesor y Rosa es escritora.
+\end{enumerate}
+\end{ejerciciobox}
+
+\espacioresp[1.5cm]
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Parte II — Simbolización Lógica}
+% ════════════════════════════════════════════════════════════════════════════
+
+% Ejercicio 4
+\begin{ejerciciobox}
+\textbf{Ejercicio 4.}
+Simboliza mediante conectivos lógicos la siguiente proposición:
+
+\begin{center}
+  \textit{``Si Daniel y Agripina juegan fútbol, Margarito será el árbitro.''}
+\end{center}
+
+Define las variables:
+\begin{itemize}
+  \item $p$: Daniel juega fútbol.
+  \item $q$: Agripina juega fútbol.
+  \item $r$: Margarito será el árbitro.
+\end{itemize}
+
+Simbolización: \linea
+\end{ejerciciobox}
+
+\espacioresp[2cm]
+
+% Ejercicio 5
+\begin{ejerciciobox}
+\textbf{Ejercicio 5.}
+Simboliza mediante conectivos lógicos la siguiente proposición:
+
+\begin{center}
+  \textit{``Si tomas jugo de naranja o fresa, entonces estarás lleno.''}
+\end{center}
+
+Define tus propias variables y escribe la simbolización:
+
+\vspace{0.5cm}
+Variables: \linea
+
+Simbolización: \linea
+\end{ejerciciobox}
+
+\espacioresp[2cm]
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Parte III — Matrices Principales}
+% ════════════════════════════════════════════════════════════════════════════
+
+% Ejercicio 6
+\begin{ejerciciobox}
+\textbf{Ejercicio 6.}
+Determina la \textbf{matriz principal} de la siguiente proposición compuesta:
+\[
+(p \;\Delta\; q) \leftrightarrow \sim r
+\]
+Completa la tabla de verdad ($2^3 = 8$ filas):
+
+\vspace{0.4cm}
+\begin{center}
+\begin{tabular}{ccc|c|c|c|c}
+\toprule
+$p$ & $q$ & $r$ & $p \;\Delta\; q$ & $\sim r$ & $(p \;\Delta\; q) \leftrightarrow \sim r$ \\
+\midrule
+V & V & V & & & \\[8pt]
+V & V & F & & & \\[8pt]
+V & F & V & & & \\[8pt]
+V & F & F & & & \\[8pt]
+F & V & V & & & \\[8pt]
+F & V & F & & & \\[8pt]
+F & F & V & & & \\[8pt]
+F & F & F & & & \\[8pt]
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{Matriz principal:} \linea
+\end{ejerciciobox}
+
+\newpage
+
+% Ejercicio 7
+\begin{ejerciciobox}
+\textbf{Ejercicio 7.}
+Si la proposición compuesta:
+\[
+\bigl[(p \rightarrow q) \vee (q \vee \sim r)\bigr]
+\]
+es \textbf{falsa}, determina los valores de verdad de $p$, $q$ y $r$.
+\end{ejerciciobox}
+
+\espacioresp[5cm]
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Parte IV — Nivel UNMSM / UNI}
+% ════════════════════════════════════════════════════════════════════════════
+
+% Ejercicio 8
+\begin{ejerciciobox}
+\textbf{Ejercicio 8. \small(Nivel UNMSM)}
+Si la siguiente proposición es \textbf{falsa}:
+\[
+(\sim p \wedge q) \rightarrow \bigl[(p \vee r) \vee t\bigr]
+\]
+determina el valor de verdad de:
+\begin{enumerate}[label=\Roman*.]
+  \item $\sim(\sim p \vee \sim q) \rightarrow (r \vee \sim t)$
+  \item $(\sim p \rightarrow t) \rightarrow (\sim q \rightarrow r)$
+\end{enumerate}
+\end{ejerciciobox}
+
+\espacioresp[6cm]
+
+% Ejercicio 9
+\begin{ejerciciobox}
+\textbf{Ejercicio 9.}
+Si la proposición:
+\[
+(p \rightarrow \sim q) \vee (\sim r \rightarrow s)
+\]
+es \textbf{falsa}, determina los valores de verdad de las siguientes proposiciones:
+\begin{enumerate}[label=\Roman*.]
+  \item $(\sim p \wedge \sim q) \vee \sim p$
+  \item $(p \rightarrow q) \rightarrow r$
+\end{enumerate}
+\end{ejerciciobox}
+
+\espacioresp[6cm]
+
+% Ejercicio 10
+\begin{ejerciciobox}
+\textbf{Ejercicio 10.}
+Determina si la siguiente proposición es \textbf{tautología}, \textbf{contradicción} o
+\textbf{contingente}:
+\[
+\bigl[(\sim p \wedge q) \rightarrow r\bigr] \leftrightarrow \bigl[(p \wedge q) \;\Delta\; \sim r\bigr]
+\]
+\end{ejerciciobox}
+
+\espacioresp[6cm]
+
+\newpage
+
+% Ejercicio 11
+\begin{ejerciciobox}
+\textbf{Ejercicio 11.}
+Determina el valor de verdad de las siguientes proposiciones:
+\begin{enumerate}[label=\alph*)]
+  \item $(3 + 5 = 9) \wedge (5 \times 2 = 10)$
+  \item $\left(\dfrac{13}{5} + 1 = \dfrac{18}{5}\right) \rightarrow (3^2 = 5)$
+  \item $(2^3 = 8) \;\Delta\; (\sqrt{16} = -4)$
+  \item $(-13 < 8) \leftrightarrow (8 + 1 > 9)$
+\end{enumerate}
+\end{ejerciciobox}
+
+\espacioresp[5cm]
+
+% Ejercicio 12
+\begin{ejerciciobox}
+\textbf{Ejercicio 12. \small(UNI 2013-I)}
+Dada la proposición:
+\[
+\sim\bigl[(r \vee q) \rightarrow (r \rightarrow p)\bigr] \equiv V
+\]
+donde $q$ es una proposición \textbf{falsa}. Determina el valor de verdad de:
+\begin{enumerate}[label=\Roman*.]
+  \item $r \rightarrow (\sim p \vee \sim q)$
+  \item $\bigl[r \leftrightarrow (p \vee q)\bigr] \leftrightarrow (q \wedge \sim p)$
+  \item $(r \vee \sim p) \wedge (q \vee p)$
+\end{enumerate}
+\end{ejerciciobox}
+
+\espacioresp[6cm]
+
+% Ejercicio 13
+\begin{ejerciciobox}
+\textbf{Ejercicio 13. \small(UNI 2012-II)}
+Si la proposición:
+\[
+\bigl[(\sim p \vee q) \rightarrow (q \leftrightarrow r)\bigr] \vee (q \wedge s)
+\]
+es \textbf{falsa} y $p$ es una proposición \textbf{verdadera}, determina los valores de
+verdad de $q$, $r$ y $s$ (en ese orden).
+\end{ejerciciobox}
+
+\espacioresp[5cm]
+
+% Ejercicio 14
+\begin{ejerciciobox}
+\textbf{Ejercicio 14.}
+Clasifica las siguientes proposiciones como tautología (T), contradicción (F)
+o contingencia (C):
+\begin{enumerate}[label=\Roman*.]
+  \item $(p \rightarrow q) \rightarrow \sim q$
+  \item $(\sim q \vee q) \;\Delta\; \bigl[p \;\Delta\; (p \vee q)\bigr]$
+  \item $(q \;\Delta\; \sim p) \leftrightarrow (p \;\Delta\; q)$
+\end{enumerate}
+\end{ejerciciobox}
+
+\espacioresp[5cm]
+
+\end{document}

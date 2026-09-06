@@ -1,0 +1,431 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║  TEORÍA — LEYES DE LA LÓGICA PROPOSICIONAL Y CIRCUITOS LÓGICOS           ║
+% ║  Curso: Aritmética | Semana: 01 | Unidad 1: Fundamentos Numéricos        ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+
+% ─── PORTADA DE CLASE ────────────────────────────────────────────────────────
+\portadaclase{Leyes de la L\'{o}gica Proposicional}{01}{1}{Fundamentos de L\'{o}gica}
+
+% ─── MOTIVACIÓN ──────────────────────────────────────────────────────────────
+\section*{¿Por qué estudiar este tema?}
+\begin{tcolorbox}[
+  enhanced, colback=AzulClaro!30, colframe=AzulMedio,
+  arc=3pt, boxrule=0.6pt, left=10pt, right=10pt, top=6pt, bottom=6pt
+]
+\textit{Las leyes de la lógica proposicional son la base del razonamiento
+formal en matemáticas y están presentes en exámenes de admisión de la UNI,
+San Marcos, PUCP y academias Aduni, Lumbreras y Trilce. Dominar las
+equivalencias lógicas permite simplificar expresiones complejas en segundos,
+una habilidad clave para resolución rápida en preselección.}
+\end{tcolorbox}
+\vspace{0.5cm}
+
+% ─── SECCIÓN 1: PROPOSICIONES EQUIVALENTES ───────────────────────────────────
+\section{Proposiciones Equivalentes}
+
+\subsection{Definición}
+
+\begin{cajadef}
+  \textbf{Proposiciones equivalentes:} Dos proposiciones $A$ y $B$ son
+  equivalentes cuando la bicondicional $A \leftrightarrow B$ es una
+  \textbf{tautología}. Se denota:
+  \[
+    A \equiv B \qquad \text{(``$A$ es equivalente a $B$'')}
+  \]
+  Es decir, $A$ y $B$ tienen \textit{exactamente} los mismos valores de
+  verdad en toda circunstancia posible.
+\end{cajadef}
+
+\begin{cajatip}
+  Una equivalencia lógica \textbf{no} es simplemente que ambas sean
+  verdaderas en un caso; deben coincidir en \textit{todas} las filas de
+  su tabla de verdad. Verificar con la bicondicional: si siempre es
+  verdadera $(\mathbf{V})$, entonces son equivalentes.
+\end{cajatip}
+
+% ─── SECCIÓN 2: LEYES DEL ÁLGEBRA DE PROPOSICIONES ───────────────────────────
+\section{Leyes del \'{A}lgebra de Proposiciones}
+
+A continuación se presentan las 11 leyes fundamentales con sus expresiones
+formales. El dominio de estas leyes permite \textbf{simplificar} esquemas
+moleculares complejos en pasos sistemáticos.
+
+\subsection{Ley 1 — Doble Negación (Involutiva)}
+
+\begin{cajaprop}[1 — Doble Negaci\'{o}n]
+  Negar dos veces una proposición devuelve la proposición original:
+  \[
+    \sim(\sim p) \equiv p
+  \]
+\end{cajaprop}
+
+\subsection{Ley 2 — Idempotencia}
+
+\begin{cajaprop}[2 — Idempotencia]
+  Operar una proposición consigo misma no cambia su valor:
+  \[
+    p \wedge p \equiv p \qquad\qquad p \vee p \equiv p
+  \]
+\end{cajaprop}
+
+\subsection{Ley 3 — Conmutativa}
+
+\begin{cajaprop}[3 — Conmutativa]
+  El orden de las proposiciones en la conjunción o disyunción no altera
+  el resultado:
+  \[
+    p \wedge q \equiv q \wedge p \qquad\qquad p \vee q \equiv q \vee p
+  \]
+\end{cajaprop}
+
+\subsection{Ley 4 — Asociativa}
+
+\begin{cajaprop}[4 — Asociativa]
+  El agrupamiento de proposiciones en conjunciones o disyunciones puede
+  modificarse libremente:
+  \[
+    p \wedge (q \wedge r) \equiv (p \wedge q) \wedge r
+  \]
+  \[
+    p \vee (q \vee r) \equiv (p \vee q) \vee r
+  \]
+\end{cajaprop}
+
+\subsection{Ley 5 — Distributiva}
+
+\begin{cajaprop}[5 — Distributiva]
+  La conjunción distribuye sobre la disyunción y viceversa:
+  \[
+    p \wedge (q \vee r) \equiv (p \wedge q) \vee (p \wedge r)
+  \]
+  \[
+    p \vee (q \wedge r) \equiv (p \vee q) \wedge (p \vee r)
+  \]
+\end{cajaprop}
+
+\subsection{Ley 6 — De Morgan}
+
+\begin{cajaprop}[6 — De Morgan]
+  La negación de una conjunción equivale a la disyunción de las
+  negaciones, y viceversa:
+  \[
+    \sim(p \wedge q) \equiv \sim p \vee \sim q
+  \]
+  \[
+    \sim(p \vee q) \equiv \sim p \wedge \sim q
+  \]
+\end{cajaprop}
+
+\begin{cajaadvert}
+  \begin{itemize}
+    \item \textbf{Error frecuente:} Al aplicar De Morgan, muchos estudiantes
+      olvidan cambiar el conector: $\sim(p \wedge q) \neq \sim p \wedge \sim q$.
+      \textit{El $\wedge$ debe convertirse en $\vee$.}
+    \item \textbf{Regla mnemotécnica:} ``Entro con negación, cambio el
+      conector y niego cada proposición.''
+  \end{itemize}
+\end{cajaadvert}
+
+\subsection{Ley 7 — De la Condicional}
+
+\begin{cajaprop}[7 — De la Condicional]
+  La condicional puede reescribirse en términos de disyunción, y también
+  posee una forma transpuesta equivalente:
+  \[
+    p \rightarrow q \equiv \sim p \vee q
+  \]
+  \[
+    p \rightarrow q \equiv \sim q \rightarrow \sim p \qquad
+    \text{(Transposici\'{o}n o Contrarrecíproca)}
+  \]
+\end{cajaprop}
+
+\subsection{Ley 8 — De la Bicondicional}
+
+\begin{cajaprop}[8 — De la Bicondicional]
+  La bicondicional equivale a la conjunción de dos condicionales en
+  sentidos opuestos:
+  \[
+    p \leftrightarrow q \equiv (p \rightarrow q) \wedge (q \rightarrow p)
+  \]
+\end{cajaprop}
+
+\subsection{Ley 9 — Absorción}
+
+\begin{cajaprop}[9 — Absorci\'{o}n]
+  Una proposición ``absorbe'' combinaciones que la contienen implícitamente:
+  \begin{align*}
+    p \wedge (p \vee q) &\equiv p \\[4pt]
+    p \vee (p \wedge q) &\equiv p \\[4pt]
+    p \wedge (\sim p \vee q) &\equiv p \wedge q \\[4pt]
+    p \vee (\sim p \wedge q) &\equiv p \vee q
+  \end{align*}
+\end{cajaprop}
+
+\begin{cajatip}
+  La ley de absorción es la más utilizada en simplificación de circuitos
+  lógicos y reducción de esquemas moleculares. Identifique siempre primero
+  si una subexpresión contiene la proposición principal.
+\end{cajatip}
+
+\subsection{Ley 10 — Complemento}
+
+\begin{cajaprop}[10 — Complemento]
+  La disyunción de una proposición con su negación es siempre verdadera
+  (tautología); su conjunción es siempre falsa (contradicción):
+  \[
+    p \vee \sim p \equiv \mathbf{V} \qquad\qquad p \wedge \sim p \equiv \mathbf{F}
+  \]
+\end{cajaprop}
+
+\subsection{Ley 11 — Identidad}
+
+\begin{cajaprop}[11 — Identidad]
+  Las constantes $\mathbf{V}$ (verdad) y $\mathbf{F}$ (falsedad) actúan
+  como elementos neutros y absorbentes:
+  \[
+    P \vee \mathbf{V} \equiv \mathbf{V} \qquad\quad
+    P \vee \mathbf{F} \equiv P
+  \]
+  \[
+    P \wedge \mathbf{V} \equiv P \qquad\quad
+    P \wedge \mathbf{F} \equiv \mathbf{F}
+  \]
+\end{cajaprop}
+
+% ─── SECCIÓN 3: CIRCUITOS LÓGICOS ────────────────────────────────────────────
+\section{Circuitos L\'{o}gicos}
+
+\subsection{Definición}
+
+\begin{cajadef}
+  Un \textbf{circuito lógico} es un arreglo de interruptores denominados
+  \textbf{compuertas lógicas}, donde cada compuerta tiene asociado un valor
+  de verdad. El estado del circuito (abierto o cerrado) determina si la
+  corriente pasa o no, lo cual modela el valor de verdad de la proposición
+  compuesta correspondiente.
+\end{cajadef}
+
+\subsection{Tipos de circuito}
+
+\begin{cajaprop}[Circuito en Serie — Conjunci\'{o}n ($\wedge$)]
+  Los interruptores $p$ y $q$ están en serie: la corriente pasa
+  \textbf{solo si ambos} están cerrados (ambos verdaderos).
+  \[
+    \text{Circuito en serie} \equiv p \wedge q
+  \]
+  \begin{center}
+  \begin{tikzpicture}[
+    switch/.style={
+      draw=AzulPizarra, fill=AzulClaro!40,
+      minimum width=1.2cm, minimum height=0.5cm,
+      rounded corners=2pt, font=\sffamily\small
+    },
+    wire/.style={draw=AzulPizarra, thick},
+    node distance=0.5cm
+  ]
+    \coordinate (L) at (0,0);
+    \coordinate (R) at (6.5,0);
+    \draw[wire] (L) -- ++(0.6,0);
+    \node[switch] (P) at (1.8,0) {$p$};
+    \draw[wire] (P.east) -- ++(0.5,0);
+    \node[switch] (Q) at (3.8,0) {$q$};
+    \draw[wire] (Q.east) -- ++(0.6,0);
+    \draw[wire] (L) -- ++(0,0);
+    \node[right, font=\sffamily\small\color{AzulPizarra}]
+      at (5.8,0) {$p \wedge q$};
+    \filldraw[AzulPizarra] (L) circle (2pt);
+    \filldraw[AzulPizarra] (5.5,0) circle (2pt);
+  \end{tikzpicture}
+  \end{center}
+\end{cajaprop}
+
+\begin{cajaprop}[Circuito en Paralelo — Disyunci\'{o}n ($\vee$)]
+  Los interruptores $p$ y $q$ están en paralelo: la corriente pasa
+  \textbf{si al menos uno} está cerrado (al menos uno verdadero).
+  \[
+    \text{Circuito en paralelo} \equiv p \vee q
+  \]
+  \begin{center}
+  \begin{tikzpicture}[
+    switch/.style={
+      draw=AzulPizarra, fill=AzulClaro!40,
+      minimum width=1.2cm, minimum height=0.5cm,
+      rounded corners=2pt, font=\sffamily\small
+    },
+    wire/.style={draw=AzulPizarra, thick}
+  ]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (5.0,0);
+    % Nodos de derivación
+    \coordinate (LA) at (0.8, 0);
+    \coordinate (RA) at (4.2, 0);
+    % Rama superior
+    \draw[wire] (LA) -- ++(0, 0.7) -- ++(0.6,0);
+    \node[switch] (P) at (2.3, 0.7) {$p$};
+    \draw[wire] (P.east) -- ++(0.6,0) -- ++(0,-0.7);
+    % Rama inferior
+    \draw[wire] (LA) -- ++(0,-0.7) -- ++(0.6,0);
+    \node[switch] (Q) at (2.3,-0.7) {$q$};
+    \draw[wire] (Q.east) -- ++(0.6,0) -- ++(0, 0.7);
+    % Línea principal
+    \draw[wire] (A) -- (LA);
+    \draw[wire] (RA) -- (B);
+    \filldraw[AzulPizarra] (A)  circle (2pt);
+    \filldraw[AzulPizarra] (B)  circle (2pt);
+    \filldraw[AzulPizarra] (LA) circle (2pt);
+    \filldraw[AzulPizarra] (RA) circle (2pt);
+    \node[right, font=\sffamily\small\color{AzulPizarra}]
+      at (5.1,0) {$p \vee q$};
+  \end{tikzpicture}
+  \end{center}
+\end{cajaprop}
+
+\subsection{Lectura de circuitos mixtos}
+
+\begin{cajaejemplo}[1 — Lectura de esquema molecular desde un circuito]
+  \textbf{Enunciado:} Determinar el esquema molecular para el circuito
+  con dos ramas en paralelo, donde la rama superior tiene $p$ y $q$ en
+  serie, y la rama inferior tiene $\sim p$ y $t$ en serie; todo ello
+  compuesto con una sección adicional en serie con $r$.
+
+  \noindent\textbf{Análisis:}
+  \begin{itemize}
+    \item Rama superior paralela: $p \wedge q$
+    \item Rama inferior paralela: $\sim p \wedge t$
+    \item Bloque paralelo completo: $(p \wedge q) \vee (\sim p \wedge t)$
+    \item Sección en serie con $r$ al final:
+      $\bigl[(p \wedge q) \vee (\sim p \wedge t)\bigr] \wedge r$
+  \end{itemize}
+  \begin{tcolorbox}[colback=AzulClaro!50, colframe=AzulPizarra,
+    arc=2pt, boxrule=0.7pt]
+    \[
+      \boxed{\bigl[(p \wedge q) \vee (\sim p \wedge t)\bigr] \wedge r}
+    \]
+  \end{tcolorbox}
+\end{cajaejemplo}
+
+% ─── SECCIÓN 4: ESTRATEGIA DE SIMPLIFICACIÓN ─────────────────────────────────
+\section{Estrategia de Simplificaci\'{o}n Paso a Paso}
+
+\begin{cajaformula}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{center}
+  \begin{tabular}{@{}cl@{}}
+    \toprule
+    \rowcolor{AzulClaro!60}
+    \textbf{Paso} & \textbf{Acción recomendada} \\
+    \midrule
+    1 & Eliminar condicionales con Ley~7:
+        $p \rightarrow q \equiv \sim p \vee q$ \\
+    2 & Eliminar bicondicionales con Ley~8 \\
+    3 & Ingresar negaciones con De Morgan (Ley~6) \\
+    4 & Aplicar doble negación (Ley~1) para limpiar \\
+    5 & Aplicar distributiva (Ley~5) si es necesario \\
+    6 & Identificar y aplicar absorción (Ley~9) \\
+    7 & Reducir con complemento (Ley~10) e identidad (Ley~11) \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+\end{cajaformula}
+
+% ─── EJEMPLOS RESUELTOS EN TEORÍA ────────────────────────────────────────────
+\section{Ejemplos resueltos}
+
+\begin{cajaejemplo}[2 — Nivel básico: Simplificación con De Morgan y absorción]
+  \textbf{Enunciado:} Simplificar la expresión:
+  \[
+    (p \vee q) \vee \bigl[(\sim p \wedge \sim q) \vee p\bigr]
+  \]
+  \noindent\textbf{Método:} Leyes de absorción, complemento e identidad.
+  \medskip
+
+  \begin{align*}
+    &(p \vee q) \vee \bigl[(\sim p \wedge \sim q) \vee p\bigr] \\[4pt]
+    &\equiv (p \vee q) \vee \bigl[p \vee (\sim p \wedge \sim q)\bigr]
+      && \text{Conmutativa} \\[4pt]
+    &\equiv (p \vee q) \vee \bigl[(p \vee \sim p) \wedge (p \vee \sim q)\bigr]
+      && \text{Distributiva} \\[4pt]
+    &\equiv (p \vee q) \vee \bigl[\mathbf{V} \wedge (p \vee \sim q)\bigr]
+      && \text{Complemento} \\[4pt]
+    &\equiv (p \vee q) \vee (p \vee \sim q)
+      && \text{Identidad} \\[4pt]
+    &\equiv p \vee (q \vee \sim q)
+      && \text{Asociativa + Conmutativa} \\[4pt]
+    &\equiv p \vee \mathbf{V}
+      && \text{Complemento} \\[4pt]
+    &\equiv \mathbf{V}
+      && \text{Identidad}
+  \end{align*}
+  \begin{tcolorbox}[colback=AzulClaro!50, colframe=AzulPizarra,
+    arc=2pt, boxrule=0.7pt]
+    \[ \boxed{\mathbf{V} \quad \text{(Tautolog\'{i}a)}} \]
+  \end{tcolorbox}
+\end{cajaejemplo}
+
+\begin{cajaejemplo}[3 — Nivel admisión UNI: Simplificación con condicional]
+  \textbf{Enunciado:} Determinar el equivalente más simple de:
+  \[
+    (p \vee q) \rightarrow (\sim p \wedge q)
+  \]
+  \noindent\textbf{Método:} Ley de la condicional, De Morgan, distributiva,
+  complemento e identidad.
+  \medskip
+
+  \begin{align*}
+    &(p \vee q) \rightarrow (\sim p \wedge q) \\[4pt]
+    &\equiv \sim(p \vee q) \vee (\sim p \wedge q)
+      && \text{Ley 7 (condicional)} \\[4pt]
+    &\equiv (\sim p \wedge \sim q) \vee (\sim p \wedge q)
+      && \text{De Morgan} \\[4pt]
+    &\equiv \sim p \wedge (\sim q \vee q)
+      && \text{Distributiva} \\[4pt]
+    &\equiv \sim p \wedge \mathbf{V}
+      && \text{Complemento} \\[4pt]
+    &\equiv \sim p
+      && \text{Identidad}
+  \end{align*}
+  \begin{tcolorbox}[colback=AzulClaro!50, colframe=AzulPizarra,
+    arc=2pt, boxrule=0.7pt]
+    \[ \boxed{\sim p} \]
+  \end{tcolorbox}
+\end{cajaejemplo}
+
+% ─── RESUMEN ─────────────────────────────────────────────────────────────────
+\section{Resumen del tema}
+
+\begin{cajaformula}
+  \begin{center}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{@{}ll@{}}
+    \toprule
+    \rowcolor{AzulClaro!60}
+    \textbf{Ley} & \textbf{Expresi\'{o}n principal} \\
+    \midrule
+    Doble negaci\'{o}n  & $\sim(\sim p) \equiv p$ \\
+    Idempotencia        & $p \wedge p \equiv p$ \quad $p \vee p \equiv p$ \\
+    Conmutativa         & $p \wedge q \equiv q \wedge p$ \\
+    Asociativa          & $p \wedge(q \wedge r)\equiv(p \wedge q)\wedge r$ \\
+    Distributiva        & $p \wedge(q \vee r)\equiv(p \wedge q)\vee(p \wedge r)$ \\
+    De Morgan           & $\sim(p \wedge q)\equiv \sim p \vee \sim q$ \\
+    Condicional         & $p \rightarrow q \equiv \sim p \vee q$ \\
+    Bicondicional       & $p \leftrightarrow q \equiv (p \to q)\wedge(q \to p)$ \\
+    Absorci\'{o}n       & $p \wedge(p \vee q)\equiv p$ \\
+    Complemento         & $p \vee \sim p \equiv \mathbf{V}$ \quad $p \wedge \sim p \equiv \mathbf{F}$ \\
+    Identidad           & $p \vee \mathbf{F}\equiv p$ \quad $p \wedge \mathbf{V}\equiv p$ \\
+    \midrule
+    Circuito serie      & $p \wedge q$ (ambos cierran) \\
+    Circuito paralelo   & $p \vee q$ (al menos uno cierra) \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+\end{cajaformula}
+
+\begin{cajatip}
+  En el examen de admisión, la simplificación siempre termina en una
+  proposición atómica, $\mathbf{V}$, $\mathbf{F}$, o una expresión de
+  dos variables. Si tu resultado es más largo, revisa si aplicaste
+  absorción o complemento correctamente.
+\end{cajatip}
+
+% FIN — teoria.tex

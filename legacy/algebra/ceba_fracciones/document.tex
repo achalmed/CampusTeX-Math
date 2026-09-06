@@ -1,0 +1,175 @@
+
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, left=2.54cm, right=2.54cm, top=3cm, bottom=3cm]{geometry} % Márgenes personalizados a 2cm
+\usepackage[spanish]{babel} % Para fechas y formato en español
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{amsmath}
+\usepackage{geometry}
+
+% Configuración de página
+\pagestyle{fancy}
+\fancyhf{} % Limpia encabezados y pies de página
+\fancyhead[L]{CEBA - Santo Domingo}
+\fancyhead[R]{\today}
+\fancyfoot[C]{\thepage} % Número de página centrado en el pie
+\renewcommand{\headrulewidth}{0.8pt}
+
+% Configuración de títulos y espaciado
+\titleformat{\section}[block]{\large\bfseries\centering}{\thesection}{1em}{}
+\setlength{\columnsep}{1cm}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0em}
+
+
+\begin{document}
+
+	\begin{center}
+		\Large\bfseries FRACCIONES ALGEBRAICAS
+	\end{center}
+
+\begin{multicols}{2}
+
+	% Explaining Maximum Common Divisor
+	\subsection*{MÁXIMO COMÚN DIVISOR}
+	El MCD de dos o más expresiones algebraicas es la expresión de mayor grado posible contenida como factor, un número entero de veces en dichas expresiones. Para calcular el MCD, se factorizan estas expresiones, y el MCD estará formado por el producto de los factores comunes con su menor exponente.
+
+	% Explaining Minimum Common Multiple
+	\subsection*{MÍNIMO COMÚN MÚLTIPLO}
+	El MCM de dos o más expresiones algebraicas es la expresión de menor grado posible que contiene un número entero de veces a dichas expresiones. Para calcular el MCM, se factorizan estas expresiones y el MCM se formará con los productos de los factores comunes y no comunes con su mayor exponente.
+
+	% Highlighting key relationship
+	\textbf{¡Ojito!}
+	Para dos polinomios $P(x)$ y $Q(x)$ se cumple:
+	\[
+	\text{MCD}(P(x), Q(x)) \cdot \text{MCM}(P(x), Q(x)) = P(x) \cdot Q(x)
+	\]
+
+	% Defining algebraic fractions
+	\subsection*{FRACCIÓN ALGEBRAICA}
+	Una fracción algebraica es la razón indicada de dos expresiones racionales, de las cuales el denominador no debe ser una constante. Ejemplo:
+	\[
+	P(x) = \frac{x - 1}{x - 3}, \quad R(x) = \frac{x - 3}{\sqrt{2}}, \quad Q(x) = \frac{x - 3}{\sqrt{x}}
+	\]
+
+	% Explaining equivalent fractions
+	\subsubsection*{1. Fracciones equivalentes}
+	Dos fracciones son equivalentes cuando adoptan los mismos valores numéricos para un dominio o conjunto de valores admisibles comunes.
+
+	% Homogeneous fractions
+	\paragraph{Fracción homogénea:}
+	Dos o más fracciones serán homogéneas si tienen el mismo denominador. Ejemplo:
+	\[
+	\frac{x^2 - 1}{x^2 + x + 1}, \quad \frac{x^2 + 2}{x^2 + x + 1}, \quad \frac{x}{x^2 + x + 1}
+	\]
+
+	% Heterogeneous fractions
+	\paragraph{Fracción heterogénea:}
+	Dos o más fracciones serán heterogéneas si tienen diferentes denominadores. Ejemplo:
+	\[
+	\frac{x + 1}{x - 1}, \quad \frac{x + 2}{x^2 + 1}, \quad \frac{x^3 - 2}{x + 1}
+	\]
+
+
+	% Constant value fractions
+	\paragraph{Fracción valor constante:}
+	Llamada también fracción independiente de sus variables, es aquella que admite el mismo valor numérico al sustituir sus variables por cualquier valor constante permisible. Propiedad: Si la fracción
+	\[
+	\frac{ax + by + c}{mx + ny + p}
+	\]
+	asume un valor constante, es decir, es independiente de sus variables, entonces:
+	\[
+	\frac{a}{m} = \frac{b}{n} = \frac{c}{p} = k
+	\]
+
+	% Simplifying fractions
+	\subsubsection*{2. Simplificación de fracciones}
+	Simplificar una fracción significa determinar otra fracción equivalente a ella, cuyos términos sean primos entre sí. Para lograr esto, se deberá factorizar numerador y denominador y luego se eliminarán los factores comunes a ambos términos.
+
+
+	\section*{Ejercicios}
+		\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=0.4cm]
+			% Exercise 1: GCD and LCM of monomials
+			\item Determina el MCD y MCM de los siguientes monomios: \\
+			$A(a, b, c) = 8a^2 b^3 c^3$, $B(a, b, c) = 12a^3 b^2 c^4$, $C(a, b, c) = 20a^4 b^5 c^7$ \\
+
+
+			% Exercise 2: GCD and LCM of polynomials
+			\item Calcula el MCD y MCM de los siguientes polinomios: \\
+			$P(x) = 6 (x - 1)^2 (x + 1)^5 (x + 4)^6$, $Q(x) = 8 (x - 1)^4 (x + 1)^3 (x + 4)^7$ \\
+
+
+			% Exercise 3: GCD and LCM of polynomials
+			\item Determina el MCD y el MCM de los siguientes polinomios: \\
+			$A(x, y) = 2 (x + 1)^3 y^2$, $B(x, y) = 4 (x + 1)^5 y^4 z^2$ \\
+
+
+			% Exercise 4: GCD and LCM of polynomials
+			\item Calcula el MCD y MCM de los siguientes polinomios: \\
+			$A(x) = x^2 + 8x + 12$, $B(x) = x^2 - 36$ \\
+			\textbf{Resolución:} \\
+			$A(x) = (x + 6)(x + 2)$, $B(x) = (x + 6)(x - 6)$. \\
+			MCD: $x + 6$. \\
+			MCM: $(x + 6)(x + 2)(x - 6)$.
+
+			% Exercise 5: GCD and LCM of polynomials
+			\item Calcula el MCD y MCM de los siguientes polinomios: \\
+			$A(x) = x^2 - 8x - 20$, $B(x) = x^2 - 5x - 50$ \\
+
+
+			% Exercise 6: GCD and LCM of polynomials
+			\item Calcula el MCD y MCM de los siguientes polinomios: \\
+			$P(a) = 4a^2 - 81$, $Q(a) = 2a^2 - 9a$ \\
+
+
+			% Exercise 7: LCM of polynomials
+			\item Calcula el MCM de los polinomios: \\
+			$A(x) = x^2 + 4x + 4$, $B(x) = x^2 - 4$, $C(x) = x^2 - x - 6$ \\
+
+
+			% Exercise 8: Simplify fraction
+			\item Simplifica: \\
+			$A = \frac{x^2 - 1}{x^2 - x - 2} \cdot \frac{x^2 + 5x + 6}{x^2 - 9} \cdot \frac{x^2 - 5x + 6}{x^2 + x - 2}$ \\
+			\textbf{Resolución:} \\
+			$A = \frac{(x + 1)(x - 1)}{(x - 2)(x + 1)} \cdot \frac{(x + 2)(x + 3)}{(x + 3)(x - 3)} \cdot \frac{(x - 2)(x - 3)}{(x + 2)(x - 1)} = 1$.
+
+			% Exercise 9: Simplify fraction
+			\item Simplifica: \\
+			$A = \frac{a^2 - 16}{a^2 + 7a + 12} \cdot \frac{a^2 + 5a + 6}{a^2 - 10a + 24} \cdot \frac{a^2 - 11a + 30}{a^2 - 3a - 10}$
+
+			% Exercise 10: Reduce fraction
+			\item Reduce: \\
+			$A = \frac{x + 2}{3x - 1} + \frac{x + 1}{3 - 2x} + \frac{4x^2 + 6x + 3}{6x^2 - 11x + 3}$
+
+			% Exercise 11: Reduce fraction
+			\item Reduce: \\
+			$k = \frac{1}{1 + \frac{y}{x + y}} \div \left(1 - \frac{1}{x + y}\right)$
+
+			% Exercise 12: Partial fraction decomposition
+			\item Calcula $A \cdot B$ si: \\
+			$\frac{x - 7}{x^2 + x - 6} = \frac{A}{x + 3} + \frac{B}{x - 2}$ \\
+			\textbf{Resolución:} \\
+			$\frac{x - 7}{(x + 3)(x - 2)} = \frac{A(x - 2) + B(x + 3)}{(x + 3)(x - 2)}$. \\
+			$x - 7 = (A + B)x + (3B - 2A)$. \\
+			Ecuaciones: $A + B = 1$, $3B - 2A = -7$. Resolviendo: $A = 2$, $B = -1$. \\
+			$A \cdot B = 2 \cdot (-1) = -2$.
+
+			% Exercise 13: Partial fraction decomposition
+			\item Calcula $A \cdot B$ si: \\
+			$\frac{4x + 5}{x^2 + x - 2} = \frac{A}{x - 1} + \frac{B}{x + 2}$
+
+			% Exercise 14: Complex fraction operation
+			\item Calcula $A + B$: \\
+			$A = \left[ \frac{x + 1}{x - 1} - \frac{x - 1}{x + 1} \right] \cdot \left[ \frac{x - 1}{x + 1} + \frac{x + 1}{x - 1} \right] \cdot \frac{x^2 + 1}{2a^2 - 2b} + \frac{2x}{a^2 - b}$
+
+
+			% Para añadir más ejercicios, simplemente copia y pega el siguiente bloque:
+			% \item [Enunciado del ejercicio]
+		\end{enumerate}
+
+\end{multicols}
+
+\end{document}

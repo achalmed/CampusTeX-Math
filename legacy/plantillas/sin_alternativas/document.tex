@@ -1,0 +1,46 @@
+
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, left=2.54cm, right=2.54cm, top=3cm, bottom=3cm]{geometry} % Márgenes personalizados a 2cm
+\usepackage[spanish]{babel} % Para fechas y formato en español
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+% Configuración de página
+\pagestyle{fancy}
+\fancyhf{} % Limpia encabezados y pies de página
+\fancyhead[L]{Academia Prepolicial - Regla de tres simple y compuesta}
+\fancyhead[R]{\today}
+\fancyfoot[C]{\thepage} % Número de página centrado en el pie
+\renewcommand{\headrulewidth}{0.8pt}
+
+% Configuración de títulos y espaciado
+\titleformat{\section}[block]{\large\bfseries\centering}{\thesection}{1em}{}
+\setlength{\columnsep}{1cm}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0em}
+
+
+\begin{document}
+
+	\begin{center}
+		\Large\bfseries Hoja de Ejercicios
+	\end{center}
+
+		\section*{Ejercicios}
+\begin{multicols}{2}
+		\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=0.4cm]
+			\item Si para pintar un cubo de 5 cm de arista gasté S/.
+			12, ¿cuánto gastaría para pintar otro cubo de 10
+			cm de arista?
+
+
+			% Para añadir más ejercicios, simplemente copia y pega el siguiente bloque:
+			% \item [Enunciado del ejercicio]
+		\end{enumerate}
+
+\end{multicols}
+
+\end{document}

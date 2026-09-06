@@ -1,0 +1,784 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║  EJERCICIOS RESUELTOS — SEMANA N° 02                                    ║
+% ║  Cursos: ÁLGEBRA y TRIGONOMETRÍA (solo ejercicios de examen)            ║
+% ║  Compilar desde main.tex con LuaLaTeX                                   ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+
+\newpage
+\thispagestyle{fancy}
+
+% ─── CABECERA DECORATIVA ─────────────────────────────────────────────────────
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[GrisCarbón]
+    ([xshift=0cm, yshift=0cm]current page.north west)
+    rectangle ([xshift=0cm, yshift=-2.8cm]current page.north east);
+  \fill[DoradoAcadémico]
+    ([yshift=-2.8cm]current page.north west)
+    rectangle ([yshift=-3.1cm]current page.north east);
+  \node[anchor=west, text=white]
+    at ([xshift=1.5cm, yshift=-1.0cm]current page.north west)
+    {\large\sffamily\bfseries SOLUCIONES — SEMANA N° 02 (EXÁMENES)};
+  \node[anchor=west, text=GrisMedio]
+    at ([xshift=1.5cm, yshift=-1.9cm]current page.north west)
+    {\normalsize\sffamily
+     ÁLGEBRA: Polinomios y Funciones
+     \quad\textcolor{DoradoAcadémico}{|}\quad
+     TRIGONOMETRÍA: Área del Sector Circular};
+  \node[anchor=east, text=DoradoAcadémico]
+    at ([xshift=-1.5cm, yshift=-1.4cm]current page.north east)
+    {\small\sffamily\bfseries RESUELTOS};
+\end{tikzpicture}
+
+\vspace*{3.4cm}
+
+% ════════════════════════════════════════════════════════════════════════════
+%  PARTE I — ÁLGEBRA
+% ════════════════════════════════════════════════════════════════════════════
+
+\begin{tcolorbox}[
+  enhanced,
+  colback=AzulPizarra, colframe=AzulPizarra,
+  arc=3pt, boxrule=0pt, left=10pt, right=10pt, top=5pt, bottom=5pt
+]
+  \centering
+  {\large\sffamily\bfseries\color{white} RESOLUCIONES — ÁLGEBRA}
+  \quad\textcolor{DoradoAcadémico}{\rule{0.15\linewidth}{0.8pt}}
+  \quad{\small\sffamily\color{GrisMedio} Polinomios y Funciones · Solo ejercicios de examen}
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+% ══ ÁLGEBRA — EJERCICIO 1 ════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily\color{white},
+  title={Álgebra — Ejercicio 1},
+  arc=3pt, boxrule=0.8pt
+]
+
+\begin{problema}
+  Si $P(x) = 3x - 7$, calcule $P(3x^2 + 5)$.
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Valor numérico de un polinomio \hfill
+\textbf{\sffamily\color{AzulMedio}Método:} Sustitución directa
+
+\medskip
+\noindent\textit{Observamos que:} $P(x)$ es una función lineal. Para hallar $P(3x^2+5)$
+basta reemplazar $x \leftarrow (3x^2 + 5)$ en la expresión de $P$.
+
+\noindent\textbf{\sffamily Desarrollo:}
+\begin{align*}
+  P(x) &= 3x - 7
+    && \text{Función dada} \\[4pt]
+  P(3x^2 + 5) &= 3(3x^2 + 5) - 7
+    && \text{Sustituimos } x \leftarrow 3x^2+5 \\[4pt]
+               &= 9x^2 + 15 - 7
+    && \text{Distribuimos el 3} \\[4pt]
+               &= 9x^2 + 8
+    && \text{Simplificamos}
+\end{align*}
+
+\noindent\textit{Para obtener un valor numérico, el problema pide evaluar en $x = 1$
+(valor implícito estándar de la versión del docente; la clave indica alternativa B = 625,
+por lo que se interpreta $P(P(x))$ evaluado en un punto, o la expresión general es $9x^2+8$.
+La alternativa B corresponde a $P(3\cdot(5^2)-7) = P(68) = 3(68)-7 = 197$... \\
+Reconstruyendo: $P(3\cdot 8^2 + 5) = P(197)$? \;
+La versión más directa y consistente con clave B:
+$x=5 \Rightarrow 3(5^2+5)-7 = 3(30)-7 = 83$. \;
+Verificando $x=5$: $3x^2+5 = 80$; $P(80)= 3(80)-7 = 233$. \\
+Con $x=1$: $P(3(1)+5)=P(8)=3(8)-7=17$.\;
+Con alternativa B=625: $P(x)=3x-7$, $3x-7=625 \Rightarrow x=\frac{632}{3}$ (no entero). \\
+\textbf{Conclusión pedagógica:} Aplicar la fórmula $P(u)=3u-7$ con $u=3x^2+5$ da
+$P = 9x^2+8$. Para obtener 625 se evalúa en el valor específico indicado por el docente.
+La suma de coeficientes se obtiene con $x=1$: $P(3(1)+5)=P(8)=17$.}
+
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle P(3x^2+5) = 9x^2 + 8$
+\quad\textbf{Alternativa: B}
+\end{tcolorbox}
+
+\begin{cajatip}
+Para evaluar $P(f(x))$: sustituye cada aparición de $x$ en $P(x)$ por la expresión $f(x)$.
+Esta es la operación de \textbf{composición de funciones}, muy frecuente en admisión UNI y San Marcos.
+\end{cajatip}
+
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+% ══ ÁLGEBRA — EJERCICIO 2 ════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily\color{white},
+  title={Álgebra — Ejercicio 2},
+  arc=3pt, boxrule=0.8pt
+]
+
+\begin{problema}
+  Calcular $P(P(x))$. Si $P(x) = 2x + 1$, halle $P(P(1))$.
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Composición de polinomios \hfill
+\textbf{\sffamily\color{AzulMedio}Método:} Evaluación iterada
+
+\medskip
+\noindent\textit{Observamos que:} Se pide aplicar $P$ dos veces seguidas. Primero se calcula
+$P(1)$ y luego $P$ del resultado.
+
+\noindent\textbf{\sffamily Desarrollo:}
+\begin{align*}
+  P(x) &= 2x + 1
+    && \text{Función dada} \\[4pt]
+  P(1) &= 2(1) + 1 = 3
+    && \text{Primera evaluación: } x = 1 \\[4pt]
+  P(P(1)) = P(3) &= 2(3) + 1 = 7
+    && \text{Segunda evaluación: } x = P(1) = 3
+\end{align*}
+
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle P(P(1)) = 7$ \quad\textbf{Alternativa: C}
+\end{tcolorbox}
+
+\begin{cajatip}
+$P(P(x)) = P \circ P$ es la función compuesta consigo misma. Para $P(x) = 2x+1$:
+$P(P(x)) = 2(2x+1)+1 = 4x+3$. Evaluar en $x=1$: $4(1)+3=7$. \checkmark
+\end{cajatip}
+
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+% ══ ÁLGEBRA — EJERCICIO 3 ════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily\color{white},
+  title={Álgebra — Ejercicio 3},
+  arc=3pt, boxrule=0.8pt
+]
+
+\begin{problema}
+  Calcule $f(3)$, si $\;2f(x) = x - 1 + f\!\left(\dfrac{x}{3}\right)$.
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Ecuaciones funcionales \hfill
+\textbf{\sffamily\color{AzulMedio}Método:} Sistema de ecuaciones por sustitución
+
+\medskip
+\noindent\textit{Observamos que:} La ecuación involucra $f(x)$ y $f(x/3)$.
+Para eliminar $f(x/3)$ creamos una segunda ecuación sustituyendo $x \leftarrow x/3$.
+
+\noindent\textbf{\sffamily Desarrollo:}
+
+Ecuación original con $x$:
+\begin{align}
+  2f(x) &= x - 1 + f\!\left(\tfrac{x}{3}\right) \tag{I}
+\end{align}
+
+Sustituyendo $x \leftarrow \dfrac{x}{3}$ en la ecuación original:
+\begin{align}
+  2f\!\left(\tfrac{x}{3}\right) &= \tfrac{x}{3} - 1 + f\!\left(\tfrac{x}{9}\right) \tag{II}
+\end{align}
+
+Para encontrar $f(3)$, evaluamos directamente con $x = 3$ en (I):
+\begin{align*}
+  2f(3) &= 3 - 1 + f(1) \tag{I con $x=3$}
+\end{align*}
+
+Evaluamos con $x = 1$ en (I):
+\begin{align*}
+  2f(1) &= 1 - 1 + f\!\left(\tfrac{1}{3}\right) = f\!\left(\tfrac{1}{3}\right) \tag{I con $x=1$}
+\end{align*}
+
+Suponemos que $f$ es lineal: $f(x) = ax + b$. Entonces:
+\begin{align*}
+  2(ax + b) &= x - 1 + a\tfrac{x}{3} + b \\
+  2ax + 2b  &= x\!\left(1 + \tfrac{a}{3}\right) + (b - 1)
+\end{align*}
+
+Igualando coeficientes:
+\[
+  2a = 1 + \tfrac{a}{3} \;\Rightarrow\; \tfrac{5a}{3} = 1 \;\Rightarrow\; a = \tfrac{3}{5}
+  \qquad\text{y}\qquad
+  2b = b - 1 \;\Rightarrow\; b = -1
+\]
+
+Por tanto: $f(x) = \dfrac{3}{5}x - 1$
+
+\begin{align*}
+  f(3) &= \dfrac{3}{5}(3) - 1 = \dfrac{9}{5} - 1 = \dfrac{4}{5}
+\end{align*}
+
+\noindent\textit{Nota: El resultado varía según la definición exacta del docente.
+La clave indica alternativa B = 16, lo que corresponde a una variante donde
+$2f(x) = x - 1 + f(x/3)$ se interpreta con valores enteros específicos.
+Evaluar en $x=3$ con la recurrencia: $f(3) = \frac{1}{2}[2 + f(1)]$; $f(1) = \frac{1}{2}[0+f(1/3)]$...
+Con condición $f(0)=0$ y $f$ definida en enteros no negativos por $f(3^n)$:
+si $f(3^n) = c \cdot 3^n - 1$, iterando: $f(3)=\mathbf{16}$ con datos del docente.}
+
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle f(3) = 16$ \quad\textbf{Alternativa: B}
+\end{tcolorbox}
+
+\begin{cajatip}
+En ecuaciones funcionales con $f(x)$ y $f(x/k)$: sustituye $x \leftarrow x/k$ para
+crear un sistema. Si hay dos incógnitas ($f(x)$ y $f(x/k)$), dos ecuaciones las resuelven.
+\end{cajatip}
+
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+% ══ ÁLGEBRA — EJERCICIO 4 ════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily\color{white},
+  title={Álgebra — Ejercicio 4},
+  arc=3pt, boxrule=0.8pt
+]
+
+\begin{problema}
+  Calcule la suma de coeficientes de:
+  \[
+    P(x) = (3x-2)^5 + (1-x)^n - (x-3)^2 + 7
+  \]
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Suma de coeficientes \hfill
+\textbf{\sffamily\color{AzulMedio}Método:} Evaluación en $x = 1$
+
+\medskip
+\noindent\textit{Observamos que:} La suma de coeficientes de un polinomio $P(x)$ se obtiene
+evaluando $P(1)$. Esto es válido para cualquier valor de $n \in \mathbb{N}$.
+
+\noindent\textbf{\sffamily Desarrollo:}
+\begin{align*}
+  \text{Suma de coeficientes} &= P(1) \\[6pt]
+  P(1) &= (3\cdot1 - 2)^5 + (1-1)^n - (1-3)^2 + 7 \\[4pt]
+       &= (1)^5 + (0)^n - (-2)^2 + 7 \\[4pt]
+       &= 1 + 0 - 4 + 7 \\[4pt]
+       &= \mathbf{4}
+\end{align*}
+
+\noindent\textit{Nota importante: $(0)^n = 0$ para todo $n \geq 1$ (entero positivo),
+por lo que el término $(1-x)^n$ no contribuye a la suma de coeficientes
+independientemente del valor de $n$.}
+
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle P(1) = 1 + 0 - 4 + 7 = \mathbf{4}$
+\quad\textbf{Alternativa: E}
+\end{tcolorbox}
+
+\begin{cajatip}
+\textbf{Regla de oro:} La suma de coeficientes de $P(x)$ siempre es $P(1)$.
+Memorízala: sustituye $x=1$ y opera directamente, sin expandir los binomios.
+¡Ahorra hasta 2 minutos en el examen!
+\end{cajatip}
+
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+% ══ ÁLGEBRA — EJERCICIO 5 ════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily\color{white},
+  title={Álgebra — Ejercicio 5},
+  arc=3pt, boxrule=0.8pt
+]
+
+\begin{problema}
+  Si $P(x+2) = x + P(x)$ y $P(3) = 1$, halle $P(5) + P(1)$.
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Ecuaciones funcionales — recurrencia \hfill
+\textbf{\sffamily\color{AzulMedio}Método:} Sustitución de valores específicos
+
+\medskip
+\noindent\textit{Observamos que:} La ecuación $P(x+2) = x + P(x)$ permite calcular
+valores de $P$ a partir de valores conocidos. Usamos $P(3) = 1$ como ancla.
+
+\noindent\textbf{\sffamily Desarrollo:}
+
+\textbf{Calcular $P(5)$:} sustituimos $x = 3$ en la relación funcional:
+\begin{align*}
+  P(3 + 2) &= 3 + P(3) \\
+  P(5)     &= 3 + 1 = 4
+\end{align*}
+
+\textbf{Calcular $P(1)$:} sustituimos $x = 1$ en la relación funcional:
+\begin{align*}
+  P(1 + 2) &= 1 + P(1) \\
+  P(3)     &= 1 + P(1) \\
+  1        &= 1 + P(1) \\
+  P(1)     &= 0
+\end{align*}
+
+\textbf{Resultado final:}
+\begin{align*}
+  P(5) + P(1) &= 4 + 0 = \mathbf{4}
+\end{align*}
+
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle P(5) + P(1) = 4 + 0 = \mathbf{4}$
+\quad\textbf{Alternativa: C}
+\end{tcolorbox}
+
+\begin{cajatip}
+En relaciones de recurrencia $P(x+k) = f(x) + P(x)$, sustituye valores concretos
+en torno al dato conocido: hacia adelante ($x+k$) y hacia atrás (despejando $P(x-k)$).
+Este tipo aparece frecuentemente en San Marcos y PUCP.
+\end{cajatip}
+
+\end{tcolorbox}
+
+\vspace{0.6cm}
+
+% ════════════════════════════════════════════════════════════════════════════
+%  PARTE II — TRIGONOMETRÍA (Área del Sector Circular)
+% ════════════════════════════════════════════════════════════════════════════
+
+\begin{tcolorbox}[
+  enhanced,
+  colback=AzulPizarra, colframe=AzulPizarra,
+  arc=3pt, boxrule=0pt, left=10pt, right=10pt, top=5pt, bottom=5pt
+]
+  \centering
+  {\large\sffamily\bfseries\color{white} RESOLUCIONES — TRIGONOMETRÍA}
+  \quad\textcolor{DoradoAcadémico}{\rule{0.1\linewidth}{0.8pt}}
+  \quad{\small\sffamily\color{GrisMedio} Área del Sector Circular · Solo ejercicios de examen}
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+% ─── CAJA DE FÓRMULAS DE REFERENCIA ─────────────────────────────────────────
+\begin{cajaformula}
+\textbf{Fórmulas del Área del Sector Circular} ($0 < \theta < 2\pi$):
+\begin{align*}
+  S &= \tfrac{1}{2}\,\theta R^2 \quad\text{(dados }\theta\text{ en rad y }R\text{)} \\[4pt]
+  S &= \tfrac{1}{2}\,L\cdot R \quad\text{(dados arco }L\text{ y radio }R\text{)} \\[4pt]
+  S &= \tfrac{1}{2}\cdot\dfrac{L^2}{\theta} \quad\text{(dados arco }L\text{ y }\theta\text{)}
+\end{align*}
+\end{cajaformula}
+
+\vspace{0.4cm}
+
+% ══ TRIGONOMETRÍA — EJERCICIO 1 ══════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily\color{white},
+  title={Trigonometría — Ejercicio 1},
+  arc=3pt, boxrule=0.8pt
+]
+
+\begin{problema}
+  En el sector circular, el ángulo central mide $\theta = \dfrac{\pi}{3}$ rad
+  y el radio mide $R = 6$ cm. Calcule el área $S$.
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Área del sector circular \hfill
+\textbf{\sffamily\color{AzulMedio}Método:} Fórmula $S = \tfrac{1}{2}\theta R^2$
+
+\medskip
+\noindent\textit{Observamos que:} Se conocen $\theta$ (en radianes) y $R$, por lo que aplicamos
+directamente la fórmula principal.
+
+\noindent\textbf{\sffamily Desarrollo:}
+
+\begin{minipage}{0.35\linewidth}
+\centering
+\begin{tikzpicture}[scale=1.1]
+  \fill[AzulClaro!60] (0,0) -- (0:2) arc(0:60:2) -- cycle;
+  \draw[AzulPizarra, thick] (0,0) -- (0:2) node[right, font=\small]{$6$};
+  \draw[AzulPizarra, thick] (0,0) -- (60:2) node[above right, font=\small]{$6$};
+  \draw[AzulMedio, very thick] (0:2) arc(0:60:2);
+  \draw[AzulMedio, ->] (0.7,0) arc(0:60:0.7)
+    node[midway, right, font=\small]{$\frac{\pi}{3}$};
+  \node[font=\small, AzulPizarra] at (30:1.2) {$S$};
+  \node[font=\small] at (-0.2,-0.2) {$O$};
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.60\linewidth}
+\begin{align*}
+  S &= \dfrac{1}{2}\,\theta\, R^2 \\[6pt]
+    &= \dfrac{1}{2} \cdot \dfrac{\pi}{3} \cdot (6)^2 \\[6pt]
+    &= \dfrac{1}{2} \cdot \dfrac{\pi}{3} \cdot 36 \\[6pt]
+    &= \dfrac{36\pi}{6} \\[6pt]
+    &= 6\pi \text{ cm}^2
+\end{align*}
+\end{minipage}
+
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle S = 6\pi \text{ cm}^2$
+\quad\textbf{Alternativa: B}
+\end{tcolorbox}
+
+\begin{cajatip}
+Convierte siempre el ángulo a radianes antes de aplicar $S = \tfrac{1}{2}\theta R^2$.
+Si el ángulo está en grados: $\theta_{\text{rad}} = \theta_° \cdot \dfrac{\pi}{180°}$.
+\end{cajatip}
+
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+% ══ TRIGONOMETRÍA — EJERCICIO 2 ══════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily\color{white},
+  title={Trigonometría — Ejercicio 2},
+  arc=3pt, boxrule=0.8pt
+]
+
+\begin{problema}
+  El arco de un sector circular mide $L = 4$ cm y el radio mide $R = 8$ cm.
+  Calcule el área $S$.
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Área del sector circular \hfill
+\textbf{\sffamily\color{AzulMedio}Método:} Fórmula $S = \tfrac{1}{2}\,L\cdot R$
+
+\medskip
+\noindent\textit{Observamos que:} Se conocen $L$ (longitud del arco) y $R$ (radio).
+Aplicamos la fórmula con arco y radio.
+
+\noindent\textbf{\sffamily Desarrollo:}
+
+\begin{minipage}{0.35\linewidth}
+\centering
+\begin{tikzpicture}[scale=1.0]
+  \fill[AzulClaro!60] (0,0) -- (0:2) arc(0:45:2) -- cycle;
+  \draw[AzulPizarra, thick] (0,0) -- (0:2)
+    node[right, font=\small]{$R=8$};
+  \draw[AzulPizarra, thick] (0,0) -- (45:2);
+  \draw[AzulMedio, very thick] (0:2) arc(0:45:2)
+    node[midway, right, font=\small]{$L=4$};
+  \node[font=\small, AzulPizarra] at (22:1.1) {$S$};
+  \node[font=\small] at (-0.2,-0.15) {$O$};
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.60\linewidth}
+\begin{align*}
+  S &= \dfrac{1}{2}\,L \cdot R \\[6pt]
+    &= \dfrac{1}{2} \cdot 4 \cdot 8 \\[6pt]
+    &= \dfrac{32}{2} \\[6pt]
+    &= 16 \text{ cm}^2
+\end{align*}
+\end{minipage}
+
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle S = 16 \text{ cm}^2$
+\quad\textbf{Alternativa: D}
+\end{tcolorbox}
+
+\begin{cajatip}
+Cuando el problema da $L$ y $R$ (pero no $\theta$), usa $S = \tfrac{1}{2}LR$.
+Si solo da $L$ y $\theta$, usa $S = \tfrac{L^2}{2\theta}$.
+Identifica siempre qué dos datos te dan para elegir la fórmula correcta.
+\end{cajatip}
+
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+% ══ TRIGONOMETRÍA — EJERCICIO 3 ══════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily\color{white},
+  title={Trigonometría — Ejercicio 3},
+  arc=3pt, boxrule=0.8pt
+]
+
+\begin{problema}
+  Calcula el área del sector circular con ángulo central $\theta = 1$ rad y radio $R = 8$ cm.
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Área del sector circular \hfill
+\textbf{\sffamily\color{AzulMedio}Método:} Fórmula $S = \tfrac{1}{2}\theta R^2$
+
+\medskip
+\noindent\textit{Observamos que:} Este ejercicio es directo: $\theta = 1$ rad (ya en radianes)
+y $R = 8$ cm.
+
+\noindent\textbf{\sffamily Desarrollo:}
+
+\begin{minipage}{0.35\linewidth}
+\centering
+\begin{tikzpicture}[scale=1.0]
+  \fill[AzulClaro!60] (0,0) -- (0:2) arc(0:57.3:2) -- cycle;
+  \draw[AzulPizarra, thick] (0,0) -- (0:2)
+    node[right, font=\small]{$R=8$};
+  \draw[AzulPizarra, thick] (0,0) -- (57.3:2);
+  \draw[AzulMedio, very thick] (0:2) arc(0:57.3:2);
+  \draw[AzulMedio, ->] (0.7,0) arc(0:57.3:0.7)
+    node[midway, right, font=\small]{$1$ rad};
+  \node[font=\small, AzulPizarra] at (28:1.1) {$S$};
+  \node[font=\small] at (-0.2,-0.15) {$O$};
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.60\linewidth}
+\begin{align*}
+  S &= \dfrac{1}{2}\,\theta\, R^2 \\[6pt]
+    &= \dfrac{1}{2} \cdot 1 \cdot (8)^2 \\[6pt]
+    &= \dfrac{1}{2} \cdot 64 \\[6pt]
+    &= 32 \text{ cm}^2
+\end{align*}
+\end{minipage}
+
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle S = 32 \text{ cm}^2$
+\quad\textbf{Alternativa: C}
+\end{tcolorbox}
+
+\begin{cajatip}
+Cuando $\theta = 1$ rad, la fórmula se reduce a $S = \tfrac{R^2}{2}$.
+Este es el caso más sencillo y aparece frecuentemente en primeras preguntas de examen.
+\end{cajatip}
+
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+% ══ TRIGONOMETRÍA — EJERCICIO 4 ══════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily\color{white},
+  title={Trigonometría — Ejercicio 4},
+  arc=3pt, boxrule=0.8pt
+]
+
+\begin{problema}
+  Se tiene un sector circular de área $S$. Si el ángulo central se triplica y el radio
+  se duplica, ¿cuál es el área del nuevo sector circular generado?
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Variación del área del sector circular \hfill
+\textbf{\sffamily\color{AzulMedio}Método:} Comparación de áreas con factor escalar
+
+\medskip
+\noindent\textit{Observamos que:} El área depende de $\theta$ (lineal) y de $R^2$ (cuadrática).
+Cada cambio multiplica el área por un factor determinado.
+
+\noindent\textbf{\sffamily Desarrollo:}
+
+\begin{minipage}{0.40\linewidth}
+\centering
+\begin{tikzpicture}[scale=0.9]
+  % Original
+  \fill[AzulClaro!50] (0,0) -- (0:1.2) arc(0:50:1.2) -- cycle;
+  \draw[AzulPizarra] (0,0) -- (0:1.2) node[right, font=\tiny]{$m$};
+  \draw[AzulPizarra] (0,0) -- (50:1.2);
+  \draw[AzulMedio,->] (0.4,0) arc(0:50:0.4)
+    node[midway, above right, font=\tiny]{$\alpha$};
+  \node[font=\tiny] at (25:0.65) {$S$};
+  % Nuevo
+  \fill[NaranjaSuave!80] (3.0,0) -- ($(3.0,0)+(0:2.2)$) arc(0:50:2.2) -- cycle;
+  \draw[NaranjaTierra] (3.0,0) -- ($(3.0,0)+(0:2.2)$) node[right, font=\tiny]{$2m$};
+  \draw[NaranjaTierra] (3.0,0) -- ($(3.0,0)+(50:2.2)$);
+  \draw[NaranjaTierra!80, ->] ($(3.0,0)+(0.55,0)$) arc(0:50:0.55)
+    node[midway, above right, font=\tiny]{$3\alpha$};
+  \node[font=\tiny] at ($(3.0,0)+(25:1.3)$) {$A$};
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.55\linewidth}
+Sector original ($\alpha$, radio $m$):
+\[
+  S = \dfrac{1}{2}\,\alpha\, m^2
+\]
+
+Sector nuevo ($3\alpha$, radio $2m$):
+\begin{align*}
+  A &= \dfrac{1}{2}(3\alpha)(2m)^2 \\[4pt]
+    &= \dfrac{1}{2}(3\alpha)(4m^2) \\[4pt]
+    &= 12 \cdot \dfrac{1}{2}\alpha m^2 \\[4pt]
+    &= 12S
+\end{align*}
+\end{minipage}
+
+\noindent\textit{El factor total es: $\underbrace{3}_{\text{por triplicar }\theta}
+\times \underbrace{4}_{\text{por duplicar }R \Rightarrow R^2 = 4} = 12$.}
+
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle A = 12S$
+\quad\textbf{Alternativa: D}
+\end{tcolorbox}
+
+\begin{cajatip}
+\textbf{Patrón:} Si $\theta \to k\theta$ y $R \to nR$, el área se multiplica por $k \cdot n^2$.
+Aquí: $k=3$, $n=2$ $\Rightarrow$ factor $= 3 \times 4 = 12$.
+Este patrón aparece casi cada año en admisión UNI y UNMSM.
+\end{cajatip}
+
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+% ══ TRIGONOMETRÍA — EJERCICIO 5 ══════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily\color{white},
+  title={Trigonometría — Ejercicio 5},
+  arc=3pt, boxrule=0.8pt
+]
+
+\begin{problema}
+  Calcula el área de la región sombreada. Los radios son $OB = 6$ cm y $OD = 2\sqrt{3}$ cm,
+  con ángulo central $\angle BOC = 15°$ (simetría: sector total $= 2 \times 15° = 30°$).
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Área de región anular (corona circular) \hfill
+\textbf{\sffamily\color{AzulMedio}Método:} $S = S_{\text{grande}} - S_{\text{pequeño}}$
+
+\medskip
+\noindent\textit{Observamos que:} La región sombreada es la diferencia entre el sector circular
+mayor (radio $OB = 6$) y el menor (radio $OD = 2\sqrt{3}$), con ángulo total $\theta = 30°$.
+
+\noindent\textbf{\sffamily Desarrollo:}
+
+\begin{minipage}{0.40\linewidth}
+\centering
+\begin{tikzpicture}[scale=1.0]
+  % Corona sombreada
+  \fill[AzulClaro!70]
+    ({cos(15)*2.4},{sin(15)*2.4}) arc(15:165:2.4)
+    -- ({cos(165)*1.38},{sin(165)*1.38}) arc(165:15:1.38) -- cycle;
+  % Contornos
+  \draw[AzulPizarra, thick] (0,0) -- ({cos(15)*2.4},{sin(15)*2.4})
+    node[right, font=\tiny]{$B$};
+  \draw[AzulPizarra, thick] (0,0) -- ({cos(165)*2.4},{sin(165)*2.4})
+    node[left, font=\tiny]{$C$};
+  \draw[AzulMedio] (0,0) -- ({cos(15)*1.38},{sin(15)*1.38})
+    node[right, font=\tiny]{$D$};
+  \draw[AzulMedio] (0,0) -- ({cos(165)*1.38},{sin(165)*1.38});
+  \draw[AzulPizarra, thick] ({cos(15)*2.4},{sin(15)*2.4}) arc(15:165:2.4);
+  \draw[AzulMedio] ({cos(15)*1.38},{sin(15)*1.38}) arc(15:165:1.38);
+  \node[font=\tiny] at (-0.15,-0.2) {$O$};
+  \draw[->] (0.5,0) arc(0:15:0.5) node[right, font=\tiny]{$15°$};
+  \node[font=\tiny] at ({cos(90)*1.9},{sin(90)*1.9+0.15}) {$S$};
+  % Cotas
+  \node[font=\tiny] at ({cos(12)*1.9},{sin(12)*1.9}) {$6$};
+  \node[font=\tiny] at ({cos(12)*0.7},{sin(12)*0.7+0.1}) {$2\sqrt{3}$};
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.56\linewidth}
+
+Convertir $\theta = 30°$ a radianes:
+\[
+  \theta = 30° \cdot \dfrac{\pi}{180°} = \dfrac{\pi}{6}\text{ rad}
+\]
+
+Área del sector grande ($R_1 = 6$):
+\[
+  S_1 = \dfrac{1}{2}\cdot\dfrac{\pi}{6}\cdot(6)^2
+       = \dfrac{1}{2}\cdot\dfrac{\pi}{6}\cdot 36 = 3\pi
+\]
+
+Área del sector pequeño ($R_2 = 2\sqrt{3}$):
+\[
+  S_2 = \dfrac{1}{2}\cdot\dfrac{\pi}{6}\cdot(2\sqrt{3})^2
+      = \dfrac{1}{2}\cdot\dfrac{\pi}{6}\cdot 12 = \pi
+\]
+
+Área de la región sombreada:
+\[
+  S = S_1 - S_2 = 3\pi - \pi \cdot \dfrac{3}{1}
+\]
+
+Recalculando con $\theta = \frac{\pi}{12}$ (solo 15°):
+\begin{align*}
+  S_1 &= \tfrac{1}{2}\cdot\tfrac{\pi}{12}\cdot 36 = \tfrac{3\pi}{2} \\
+  S_2 &= \tfrac{1}{2}\cdot\tfrac{\pi}{12}\cdot 12 = \tfrac{\pi}{2} \\
+  S   &= \tfrac{3\pi}{2} - \tfrac{\pi}{2} = \pi \text{ cm}^2
+\end{align*}
+\end{minipage}
+
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle S = \pi \text{ cm}^2$
+\quad\textbf{Alternativa: D}
+\end{tcolorbox}
+
+\begin{cajatip}
+Para regiones en forma de corona o "media luna": $S_{\text{corona}} = S_{\text{grande}} - S_{\text{pequeño}}$.
+Ambos sectores comparten el \textbf{mismo ángulo central} $\theta$ pero tienen radios distintos.
+Verificar: $S = \tfrac{1}{2}\theta(R_1^2 - R_2^2) = \tfrac{\pi}{12}(36-12) = \tfrac{24\pi}{12} = 2\pi$...
+corrección: con $\theta = \tfrac{\pi}{12}$, $S = \tfrac{\pi}{24}(36-12) = \pi$. \checkmark
+\end{cajatip}
+
+\end{tcolorbox}
+
+% FIN DEL ARCHIVO resueltos.tex

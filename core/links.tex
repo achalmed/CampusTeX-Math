@@ -1,0 +1,21 @@
+% ══════════════════════════════════════════════════════════════════
+%  core/links.tex — Hipervínculos y metadatos PDF (hyperref)
+%
+%  ORDEN: hyperref se carga casi al final, siempre después de
+%  unicode-math y titlesec.
+%
+%  Los metadatos PDF se generan desde los metadatos del curso: no es
+%  necesario repetir \hypersetup en cada main.tex.
+% ══════════════════════════════════════════════════════════════════
+\usepackage[
+colorlinks=true,
+linkcolor=AzulPizarra,
+citecolor=AzulMedio,
+urlcolor=AzulMedio
+]{hyperref}
+
+\hypersetup{
+	pdftitle  = {\NombreCurso\ --- \NombreAcademia},
+	pdfauthor = {\NombreDocente},
+	pdfsubject= {Material preuniversitario de \NombreCurso}
+}

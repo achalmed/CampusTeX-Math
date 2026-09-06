@@ -1,0 +1,204 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║   LIBRO COMPLETO — TRIGONOMETRÍA PREUNIVERSITARIA                                                                                             ║
+% ║   Compilar con: lualatex main.tex  (dos pasadas para referencias)                                                                                     ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+\documentclass[12pt, a4paper, twoside]{book}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §B  METADATOS DEL CURSO
+% ════════════════════════════════════════════════════════════════════════════
+\newcommand{\NombreCurso}   {Trigonometría y algebra}
+\newcommand{\NombreAcademia}{Joseph Musaja}
+\newcommand{\NombreDocente} {Edison Achalma}
+\newcommand{\CicloActual}   {Anual 2026}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §C  PREÁMBULO COMÚN
+%     fontspec y unicode-math los carga el núcleo — no recargarlos aquí.
+% ════════════════════════════════════════════════════════════════════════════
+\input{../../core/preamble}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §D  PREÁMBULO ESPECÍFICO DE TRIGONOMETRÍA
+% ════════════════════════════════════════════════════════════════════════════
+
+% Tabla rápida de razones notables
+% Uso: \tablaNotables
+\newcommand{\tablaNotables}{%
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{>{\bfseries\color{AzulPizarra}}c
+                *{5}{>{\centering\arraybackslash}p{1.6cm}}}
+\toprule
+\rowcolor{AzulClaro!60}
+ & $0°$ & $30°$ & $45°$ & $60°$ & $90°$ \\
+\midrule
+$\sin\theta$ & $0$ & $\dfrac{1}{2}$ & $\dfrac{\sqrt{2}}{2}$
+             & $\dfrac{\sqrt{3}}{2}$ & $1$ \\[8pt]
+$\cos\theta$ & $1$ & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{\sqrt{2}}{2}$
+             & $\dfrac{1}{2}$ & $0$ \\[8pt]
+$\tan\theta$ & $0$ & $\dfrac{\sqrt{3}}{3}$ & $1$ & $\sqrt{3}$ & $\infty$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+}
+
+% Entorno para el círculo trigonométrico (tikz)
+\newenvironment{circuloTrig}{%
+  \begin{center}\begin{tikzpicture}[scale=2.5]
+    \draw[GrisMedio, thin] (-1.2,0) -- (1.2,0);
+    \draw[GrisMedio, thin] (0,-1.2) -- (0,1.2);
+    \draw[AzulPizarra, thick] (0,0) circle (1cm);
+    \node[below right, text=GrisCarbón, font=\tiny] at (1,0) {$1$};
+    \node[above right, text=GrisCarbón, font=\tiny] at (0,1) {$1$};
+}{%
+  \end{tikzpicture}\end{center}
+}
+
+% Conversión grados–radianes
+\newcommand{\radConv}[2]{%
+  $#1° = \dfrac{#2\pi}{180°}\ \mathrm{rad}$%
+}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §E  INICIO DEL DOCUMENTO
+% ════════════════════════════════════════════════════════════════════════════
+\begin{document}
+
+\input{portada_libro}
+\input{indice}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD I: Fundamentos   (Temas 1–4)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Fundamentos de Trigonometría}
+
+% --- Semana 01: Ángulos ---
+% \include{semana_01_angulos/teoria}
+% \include{semana_01_angulos/ejercicios}
+% \include{semana_01_angulos/resueltos}
+
+% --- Semana 02: Sistemas de medición angular ---
+% \include{semana_02_medicion/teoria}
+% \include{semana_02_medicion/ejercicios}
+% \include{semana_02_medicion/resueltos}
+
+
+
+% --- Semana 03: Conversión de unidades ---
+% \include{semana_03_conversion/teoria}
+% \include{semana_03_conversion/ejercicios}
+% \include{semana_03_conversion/resueltos}
+
+% --- Semana 04: Arcos y sectores ---
+% \include{semana_04_arcos/teoria}
+ \include{semana_04_arcos/ejercicios}
+ \include{semana_04_arcos/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD II: Razones Trigonométricas   (Temas 5–8)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Razones Trigonométricas}
+
+% --- Semana 05: Razones trigonométricas ---
+% \include{semana_05_razones/teoria}
+% \include{semana_05_razones/ejercicios}
+% \include{semana_05_razones/resueltos}
+
+% --- Semana 06: Razones en triángulos rectángulos ---
+% \include{semana_06_triangulos_rect/teoria}
+% \include{semana_06_triangulos_rect/ejercicios}
+% \include{semana_06_triangulos_rect/resueltos}
+
+% --- Semana 07: Razones de ángulos notables ---
+% \include{semana_07_angulos_notables/teoria}
+% \include{semana_07_angulos_notables/ejercicios}
+% \include{semana_07_angulos_notables/resueltos}
+
+% --- Semana 08: Razones trigonométricas recíprocas ---
+% \include{semana_08_reciprocas/teoria}
+% \include{semana_08_reciprocas/ejercicios}
+% \include{semana_08_reciprocas/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD III: Identidades   (Temas 9–12)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Identidades Trigonométricas}
+
+% --- Semana 09: Identidades trigonométricas ---
+% \include{semana_09_identidades/teoria}
+% \include{semana_09_identidades/ejercicios}
+% \include{semana_09_identidades/resueltos}
+
+% --- Semana 10: Identidades fundamentales ---
+% \include{semana_10_id_fundamentales/teoria}
+% \include{semana_10_id_fundamentales/ejercicios}
+% \include{semana_10_id_fundamentales/resueltos}
+
+% --- Semana 11: Identidades auxiliares ---
+% \include{semana_11_id_auxiliares/teoria}
+% \include{semana_11_id_auxiliares/ejercicios}
+% \include{semana_11_id_auxiliares/resueltos}
+
+% --- Semana 12: Transformaciones trigonométricas ---
+% \include{semana_12_transformaciones/teoria}
+% \include{semana_12_transformaciones/ejercicios}
+% \include{semana_12_transformaciones/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD IV: Ecuaciones y Funciones   (Temas 13–16)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Ecuaciones y Funciones Trigonométricas}
+
+% --- Semana 13: Ecuaciones trigonométricas ---
+% \include{semana_13_ecuaciones/teoria}
+% \include{semana_13_ecuaciones/ejercicios}
+% \include{semana_13_ecuaciones/resueltos}
+
+% --- Semana 14: Inecuaciones trigonométricas ---
+% \include{semana_14_inecuaciones/teoria}
+% \include{semana_14_inecuaciones/ejercicios}
+% \include{semana_14_inecuaciones/resueltos}
+
+% --- Semana 15: Funciones trigonométricas ---
+% \include{semana_15_funciones/teoria}
+% \include{semana_15_funciones/ejercicios}
+% \include{semana_15_funciones/resueltos}
+
+% --- Semana 16: Gráficas trigonométricas ---
+% \include{semana_16_graficas/teoria}
+% \include{semana_16_graficas/ejercicios}
+% \include{semana_16_graficas/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD V: Trigonometría Analítica   (Temas 17–21)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Trigonometría Analítica}
+
+% --- Semana 17: Ley de senos ---
+% \include{semana_17_ley_senos/teoria}
+% \include{semana_17_ley_senos/ejercicios}
+% \include{semana_17_ley_senos/resueltos}
+
+% --- Semana 18: Ley de cosenos ---
+% \include{semana_18_ley_cosenos/teoria}
+% \include{semana_18_ley_cosenos/ejercicios}
+% \include{semana_18_ley_cosenos/resueltos}
+
+% --- Semana 19: Resolución de triángulos ---
+% \include{semana_19_resolucion/teoria}
+% \include{semana_19_resolucion/ejercicios}
+% \include{semana_19_resolucion/resueltos}
+
+% --- Semana 20: Área de triángulos ---
+% \include{semana_20_area/teoria}
+% \include{semana_20_area/ejercicios}
+% \include{semana_20_area/resueltos}
+
+% --- Semana 21: Fórmulas trigonométricas avanzadas ---
+% \include{semana_21_formulas_avanzadas/teoria}
+% \include{semana_21_formulas_avanzadas/ejercicios}
+% \include{semana_21_formulas_avanzadas/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+\end{document}

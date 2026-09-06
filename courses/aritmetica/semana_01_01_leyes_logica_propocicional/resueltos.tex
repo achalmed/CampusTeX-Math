@@ -1,0 +1,415 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║  EJERCICIOS RESUELTOS — LEYES DE LA LÓGICA PROPOSICIONAL                 ║
+% ║  Curso: Aritmética | Semana: 01                                           ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+
+\newpage
+\section{Ejercicios resueltos --- Leyes de la L\'{o}gica Proposicional}
+
+\begin{tcolorbox}[
+  enhanced, colback=GrisClaro, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.7pt, left=8pt, right=8pt, top=4pt, bottom=4pt
+]
+\small\sffamily
+Las resoluciones presentan: identificación del método, análisis, desarrollo
+paso a paso y respuesta final destacada. Se resuelven los ejercicios de
+mayor representatividad por nivel.
+\end{tcolorbox}
+\vspace{0.4cm}
+
+% ══ EJERCICIO 1 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 1 --- Nivel B\'{a}sico},
+  arc=3pt, boxrule=0.8pt
+]
+\begin{problema}
+  Simplificar la expresión: $\;\sim(\sim p \vee \sim q)$
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} De Morgan y doble negación
+\hfill
+\textbf{\sffamily\color{AzulMedio}M\'{e}todo:} Ley de De Morgan + Ley 1
+
+\medskip
+\noindent\textit{Observamos que} tenemos la negación de una disyunción.
+Debemos aplicar De Morgan para ingresar la negación y luego verificar
+si hay doble negación que simplificar.
+
+\medskip
+\noindent\textbf{\sffamily Desarrollo:}
+\begin{align*}
+  \sim(\sim p \vee \sim q)
+  &\equiv \sim(\sim p) \wedge \sim(\sim q)
+  && \text{De Morgan: $\sim(A \vee B) \equiv \sim A \wedge \sim B$} \\[6pt]
+  &\equiv p \wedge q
+  && \text{Doble negaci\'{o}n: $\sim(\sim p) \equiv p$}
+\end{align*}
+
+\noindent\textit{La negación exterior transforma la disyunción en conjunción
+y cancela ambas negaciones internas. Es la aplicación directa combinada
+de De Morgan (Ley 6) y la involutiva (Ley 1).}
+
+\medskip
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle \boxed{p \wedge q}$
+\quad \textbf{Alternativa: C}
+\end{tcolorbox}
+
+\begin{cajatip}
+  Cuando veas $\sim(\sim A \vee \sim B)$, aplica De Morgan y doble
+  negación en un solo paso mental: el resultado siempre es $A \wedge B$.
+  Identifica este patrón para ganar tiempo en el examen.
+\end{cajatip}
+\end{tcolorbox}
+\vspace{0.5cm}
+
+% ══ EJERCICIO 2 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 2 --- Nivel B\'{a}sico (Absorci\'{o}n)},
+  arc=3pt, boxrule=0.8pt
+]
+\begin{problema}
+  Simplificar: $\;p \wedge (\sim p \vee q)$
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Absorción con negación
+\hfill
+\textbf{\sffamily\color{AzulMedio}M\'{e}todo:} Ley de absorción (Ley 9)
+
+\medskip
+\noindent\textit{Observamos que} la expresión tiene la forma
+$p \wedge (\sim p \vee q)$, que corresponde exactamente a la tercera
+forma de la ley de absorción.
+
+\medskip
+\noindent\textbf{\sffamily Desarrollo:}
+\begin{align*}
+  p \wedge (\sim p \vee q)
+  &\equiv p \wedge q
+  && \text{Absorci\'{o}n: } p \wedge (\sim p \vee q) \equiv p \wedge q
+\end{align*}
+
+\noindent\textit{Esta es una de las formas de absorción que más aparece
+en exámenes. Reconocerla de forma directa evita desarrollos innecesarios.}
+
+\medskip
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle \boxed{p \wedge q}$
+\quad \textbf{Alternativa: C}
+\end{tcolorbox}
+
+\begin{cajatip}
+  Las cuatro formas de absorción con negación ($p \wedge (\sim p \vee q)$
+  y $p \vee (\sim p \wedge q)$) deben memorizarse como patrones listos,
+  pues aparecen frecuentemente en PUCP, UNI y San Marcos.
+\end{cajatip}
+\end{tcolorbox}
+\vspace{0.5cm}
+
+% ══ EJERCICIO 3 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 3 --- Nivel Intermedio (PUCP)},
+  arc=3pt, boxrule=0.8pt
+]
+\begin{problema}
+  Determinar el equivalente más simple de:
+  \[
+    (p \vee q) \rightarrow (\sim p \wedge q)
+  \]
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Condicional, De Morgan, distributiva
+\hfill
+\textbf{\sffamily\color{AzulMedio}M\'{e}todo:} Leyes 7, 6, 5, 10, 11
+
+\medskip
+\noindent\textit{Observamos que} la expresión es una condicional. El primer
+paso es siempre eliminarla usando la Ley 7.
+
+\medskip
+\noindent\textbf{\sffamily Desarrollo:}
+\begin{align*}
+  &(p \vee q) \rightarrow (\sim p \wedge q) \\[6pt]
+  &\equiv \sim(p \vee q) \vee (\sim p \wedge q)
+  && \text{Ley 7: } A \to B \equiv \sim A \vee B \\[6pt]
+  &\equiv (\sim p \wedge \sim q) \vee (\sim p \wedge q)
+  && \text{De Morgan (Ley 6)} \\[6pt]
+  &\equiv \sim p \wedge (\sim q \vee q)
+  && \text{Distributiva (Ley 5)} \\[6pt]
+  &\equiv \sim p \wedge \mathbf{V}
+  && \text{Complemento (Ley 10)} \\[6pt]
+  &\equiv \sim p
+  && \text{Identidad (Ley 11)}
+\end{align*}
+
+\noindent\textit{El patrón clave está en el paso 3: al distribuir $\sim p$,
+se genera $\sim q \vee q$ que por complemento es $\mathbf{V}$, y por
+identidad se elimina, dejando únicamente $\sim p$.}
+
+\medskip
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle \boxed{\sim p}$
+\quad \textbf{Alternativa: C}
+\end{tcolorbox}
+
+\begin{cajatip}
+  Siempre que aparezca una condicional de la forma
+  $(A \vee B) \rightarrow (\sim A \wedge B)$, el resultado simplificado
+  será $\sim A$. Este patrón es recurrente en PUCP y Trilce.
+\end{cajatip}
+\end{tcolorbox}
+\vspace{0.5cm}
+
+% ══ EJERCICIO 4 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 4 --- Nivel Avanzado (UNMSM)},
+  arc=3pt, boxrule=0.8pt
+]
+\begin{problema}
+  Determinar el esquema molecular de la proposición y simplificar:
+  \textit{``Si el triángulo tiene dos lados iguales, entonces el triángulo
+  se llama isósceles; y el triángulo no se llama isósceles; luego el
+  triángulo no tiene dos lados iguales.''}
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Condicional, De Morgan, absorción
+\hfill
+\textbf{\sffamily\color{AzulMedio}M\'{e}todo:} Simbolización + Leyes 7, 9, 6, 10, 11
+
+\medskip
+\noindent\textbf{\sffamily Simbolización:}
+\begin{itemize}
+  \item $p$: El triángulo tiene dos lados iguales.
+  \item $q$: El triángulo se llama isósceles.
+\end{itemize}
+
+\noindent Esquema molecular:
+$\;[(p \rightarrow q) \wedge \sim q] \rightarrow \sim p$
+
+\medskip
+\noindent\textbf{\sffamily Desarrollo:}
+\begin{align*}
+  &[(p \rightarrow q) \wedge \sim q] \rightarrow \sim p \\[6pt]
+  &\equiv [(\sim p \vee q) \wedge \sim q] \rightarrow \sim p
+  && \text{Ley 7 (condicional)} \\[6pt]
+  &\equiv (\sim q \wedge \sim p) \rightarrow \sim p
+  && \text{Absorci\'{o}n: } (\sim p \vee q) \wedge \sim q
+     \equiv \sim q \wedge \sim p \\[6pt]
+  &\equiv \sim(\sim q \wedge \sim p) \vee \sim p
+  && \text{Ley 7 (condicional)} \\[6pt]
+  &\equiv (q \vee p) \vee \sim p
+  && \text{De Morgan} \\[6pt]
+  &\equiv q \vee (p \vee \sim p)
+  && \text{Asociativa} \\[6pt]
+  &\equiv q \vee \mathbf{V}
+  && \text{Complemento (Ley 10)} \\[6pt]
+  &\equiv \mathbf{V}
+  && \text{Identidad (Ley 11)}
+\end{align*}
+
+\noindent\textit{La proposición completa es una \textbf{tautología}: es
+verdadera independientemente del valor de $p$ y $q$. Esto tiene sentido
+porque la estructura es la formalización del modus tollens, que es
+siempre válido.}
+
+\medskip
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle \boxed{\mathbf{V} \quad \text{(Tautolog\'{i}a)}}$
+\quad \textbf{Alternativa: D}
+\end{tcolorbox}
+
+\begin{cajatip}
+  El esquema $[(p \rightarrow q) \wedge \sim q] \rightarrow \sim p$ es
+  el \textbf{Modus Tollens}, que siempre es una tautología. Reconocer
+  estructuras clásicas de inferencia válida ahorra tiempo en San Marcos
+  y UNI.
+\end{cajatip}
+\end{tcolorbox}
+\vspace{0.5cm}
+
+% ══ EJERCICIO 5 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 5 --- Nivel Avanzado: Operaci\'{o}n definida},
+  arc=3pt, boxrule=0.8pt
+]
+\begin{problema}
+  Se define la operación: $p \ast q \equiv (p \wedge \sim q) \vee (p \wedge q)$.
+
+  Simplificar: $\;\sim[(p \ast \sim q) \rightarrow (\sim p \ast q)]$
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Operación definida, distributiva, condicional
+\hfill
+\textbf{\sffamily\color{AzulMedio}M\'{e}todo:} Reducción de la operación + Leyes 5, 7, 10
+
+\medskip
+\noindent\textbf{\sffamily Paso 1 — Reducir la operación $\ast$:}
+\begin{align*}
+  p \ast q
+  &\equiv (p \wedge \sim q) \vee (p \wedge q) \\[4pt]
+  &\equiv p \wedge (\sim q \vee q)
+  && \text{Distributiva} \\[4pt]
+  &\equiv p \wedge \mathbf{V}
+  && \text{Complemento} \\[4pt]
+  &\equiv p
+  && \text{Identidad}
+\end{align*}
+
+\noindent\textit{La operación $p \ast q$ es siempre igual a $p$,
+independientemente de $q$.}
+
+\medskip
+\noindent\textbf{\sffamily Paso 2 — Calcular los operandos:}
+\begin{align*}
+  p \ast \sim q &\equiv p
+  && \text{(por lo demostrado arriba)} \\[4pt]
+  \sim p \ast q &\equiv \sim p
+  && \text{(el resultado es siempre el primer operando)}
+\end{align*}
+
+\medskip
+\noindent\textbf{\sffamily Paso 3 — Sustituir y simplificar:}
+\begin{align*}
+  \sim[(p \ast \sim q) \rightarrow (\sim p \ast q)]
+  &\equiv \sim[p \rightarrow \sim p]
+  && \text{Sustituci\'{o}n} \\[6pt]
+  &\equiv \sim[\sim p \vee \sim p]
+  && \text{Ley 7 (condicional)} \\[6pt]
+  &\equiv \sim[\sim p]
+  && \text{Idempotencia (Ley 2)} \\[6pt]
+  &\equiv p
+  && \text{Doble negaci\'{o}n (Ley 1)}
+\end{align*}
+
+\medskip
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle \boxed{p}$
+\quad \textbf{Alternativa: E}
+\end{tcolorbox}
+
+\begin{cajatip}
+  Cuando encuentres una operación definida, el primer paso siempre es
+  simplificarla de forma general usando las leyes del álgebra. Luego
+  sustiuye en la expresión principal. Nunca trabajes con la definición
+  expandida dentro de una expresión compleja; eso lleva a errores.
+\end{cajatip}
+\end{tcolorbox}
+\vspace{0.5cm}
+
+% ══ EJERCICIO 6 ══════════════════════════════════════════════════════════════
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback=GrisClaro, colframe=AzulPizarra,
+  fonttitle=\bfseries\sffamily,
+  title={Ejercicio 6 --- Circuito L\'{o}gico a Esquema Molecular (PUCP)},
+  arc=3pt, boxrule=0.8pt
+]
+\begin{problema}
+  Determinar el esquema molecular del siguiente circuito y reducirlo:
+  dos ramas en paralelo; la rama superior tiene $p$ y $q$ en serie;
+  la rama inferior tiene $\sim p$ y $q$ en serie. Todo ello en serie
+  con un bloque de dos ramas en paralelo: $\sim p$ (superior) y $p$
+  con $q$ en serie (inferior).
+\end{problema}
+
+\smallskip
+\noindent
+\textbf{\sffamily\color{AzulMedio}Tema:} Circuitos lógicos y simplificación
+\hfill
+\textbf{\sffamily\color{AzulMedio}M\'{e}todo:} Lectura de circuito + Leyes 9 y 5
+
+\medskip
+\noindent\textbf{\sffamily Paso 1 — Leer el circuito:}
+
+\noindent El circuito corresponde al esquema molecular:
+\[
+  \bigl[(p \vee q) \wedge q\bigr] \wedge \bigl[\square p \vee (p \wedge q)\bigr]
+\]
+
+\noindent\textit{Nota: basado en el ejercicio 4 de la hoja de trabajo con
+dos bloques en serie.}
+
+\medskip
+\noindent\textbf{\sffamily Paso 2 — Simplificar bloque por bloque:}
+\begin{align*}
+  \bigl[(p \vee q) \wedge q\bigr]
+  &\equiv q
+  && \text{Absorci\'{o}n: } q \wedge (p \vee q) \equiv q
+\end{align*}
+
+\begin{align*}
+  q \wedge \bigl[\sim p \vee (p \wedge q)\bigr]
+  &\equiv q \wedge \bigl[(\sim p \vee p) \wedge (\sim p \vee q)\bigr]
+  && \text{Distributiva} \\[4pt]
+  &\equiv q \wedge \bigl[\mathbf{V} \wedge (\sim p \vee q)\bigr]
+  && \text{Complemento} \\[4pt]
+  &\equiv q \wedge (\sim p \vee q)
+  && \text{Identidad} \\[4pt]
+  &\equiv q
+  && \text{Absorci\'{o}n: } q \wedge (\sim p \vee q) \equiv q
+\end{align*}
+
+\medskip
+\begin{tcolorbox}[
+  colback=AzulClaro!60, colframe=AzulPizarra,
+  arc=2pt, boxrule=0.8pt, left=8pt, right=8pt
+]
+\centering
+$\displaystyle \boxed{q}$
+\quad \textbf{Rpta.: $q$}
+\end{tcolorbox}
+
+\begin{cajatip}
+  Al simplificar circuitos mixtos, trabaja bloque a bloque de izquierda
+  a derecha. Identifica primero los bloques en paralelo (disyunción),
+  luego conecta los bloques en serie (conjunción). La absorción casi
+  siempre aparece en el paso final.
+\end{cajatip}
+\end{tcolorbox}
+
+% FIN — resueltos.tex

@@ -1,0 +1,33 @@
+% ══════════════════════════════════════════════════════════════════
+%  core/boxes.tex — Sistema de cajas pedagógicas (tcolorbox)
+%
+%  Identidad SOBRIA (compartida con el Academic_Class_Framework): sin marcos
+%  de color, sin arcos redondeados, sin «boxed title» ni sombras. Solo un
+%  filete de acento a la izquierda + fondo gris muy tenue + rótulo en acento.
+%  Todas las cajas comparten el mismo estilo; se distinguen por su título.
+%
+%  NOTAS (unicode-math): \blacklozenge→\mdlgblklozenge; \triangle y
+%  \blacktriangle sí existen; usar \ensuremath{} para símbolos en el título.
+% ══════════════════════════════════════════════════════════════════
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{theorems, breakable, skins, listings}
+
+% Estilo base único: filete de acento a la izquierda, fondo tenue, sin adornos.
+\tcbset{campusbase/.style={
+	enhanced, breakable, sharp corners, frame hidden,
+	colback=GrisClaro, colbacktitle=GrisClaro, titlerule=0pt,
+	borderline west={1.6pt}{0pt}{AzulPizarra},
+	boxrule=0pt, left=10pt, right=8pt, top=6pt, bottom=6pt,
+	before skip=8pt, after skip=8pt,
+	coltitle=AzulPizarra, fonttitle=\bfseries\sffamily\small}}
+
+\newtcolorbox{cajadef}[1][]{campusbase, title={Definici\'{o}n #1}}
+\newtcolorbox{cajaprop}[1][]{campusbase, title={Propiedad #1}}
+\newtcolorbox{cajaejemplo}[1][]{campusbase, title={Ejemplo #1}}
+\newtcolorbox{cajatip}{campusbase, title={\ensuremath{\mdlgblklozenge}~Tip Preuniversitario}}
+\newtcolorbox{cajaadvert}{campusbase, title={\ensuremath{\blacktriangle}~Error com\'{u}n}}
+\newtcolorbox{cajarespuesta}{campusbase, title={Respuesta}}
+\newtcolorbox{cajaformula}{campusbase, title={F\'{o}rmulas Clave}}
+
+% Problema (sin título): mismo filete de acento.
+\newenvironment{problema}{\begin{tcolorbox}[campusbase]}{\end{tcolorbox}}

@@ -1,0 +1,49 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║   CORE/PREAMBLE.TEX — NÚCLEO DEL FRAMEWORK CampusTeX                     ║
+% ║   Cargador de módulos. Compilar SIEMPRE con LuaLaTeX (dos pasadas).      ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+%
+%  Cada módulo tiene una única responsabilidad y vive en core/.
+%  El ORDEN de carga importa y está documentado línea a línea; no
+%  reordenar sin entender la dependencia anotada.
+%
+%  RUTAS: \input resuelve rutas relativas al directorio de compilación
+%  (courses/<curso>/), no a este archivo. Por eso los módulos se cargan
+%  vía \CoreDir. Si un documento vive a otra profundidad, puede definir
+%  \CoreDir antes de cargar este preámbulo:
+%      \newcommand{\CoreDir}{../core}
+% ══════════════════════════════════════════════════════════════════════════════
+\providecommand{\CoreDir}{../../core}
+\providecommand{\ConfigDir}{../../config}
+
+% ── Validación temprana ────────────────────────────────────────────
+% \NombreCurso es obligatorio y específico de cada curso: fallar aquí
+% con mensaje claro evita errores crípticos en fancyhdr/hyperref.
+\ifdefined\NombreCurso\else
+	\errmessage{CampusTeX: define \string\NombreCurso\space en el main.tex
+		ANTES de cargar core/preamble}
+\fi
+
+% ── Configuración global del proyecto ──────────────────────────────
+% Academia, docente, ciclo y versión en UN solo lugar. Los valores del
+% main.tex del curso (definidos antes de este punto) tienen precedencia.
+\InputIfFileExists{\ConfigDir/project.tex}{}{%
+	\errmessage{CampusTeX: no se encontro config/project.tex}}
+
+\input{\CoreDir/layout}      % geometry + multicol (independiente)
+\input{\CoreDir/math}        % amsmath → mathtools → unicode-math (AL FINAL de math)
+\input{\CoreDir/fonts}       % selección de fuentes — REQUIERE unicode-math ya cargado
+\input{\CoreDir/colors}      % xcolor + paleta — antes de todo lo que usa colores
+\input{\CoreDir/boxes}       % cajas tcolorbox — usa la paleta
+\input{\CoreDir/headers}     % fancyhdr — usa \NombreCurso, \NombreAcademia
+\input{\CoreDir/sections}    % titlesec — usa la paleta
+\input{\CoreDir/lists}       % enumitem + alternativas A–E
+\input{\CoreDir/tables}      % booktabs, tabularx, multirow
+\input{\CoreDir/graphics}    % tikz, pgfplots, graphicx + \graphicspath a assets/
+\input{\CoreDir/links}       % hyperref — SIEMPRE después de unicode-math y titlesec
+\input{\CoreDir/typography}  % microtype, setspace, parskip
+\input{\CoreDir/macros}      % \ejercicio, \portadaclase — usa paleta y tikz
+
+% ══════════════════════════════════════════════════════════════════════════════
+% FIN DEL NÚCLEO
+% ══════════════════════════════════════════════════════════════════════════════

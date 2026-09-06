@@ -1,0 +1,79 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║   PORTADA — LIBRO COMPLETO DE ECONOMÍA PREUNIVERSITARIA                  ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{tikzpicture}[remember picture, overlay]
+
+    \fill[AzulPizarra]
+    (current page.north west)
+    rectangle ([yshift=-13cm]current page.north east);
+    \fill[DoradoAcadémico]
+    ([yshift=-13cm]current page.north west)
+    rectangle ([yshift=-13.5cm]current page.north east);
+    \fill[GrisClaro]
+    (current page.south west)
+    rectangle ([yshift=3.5cm]current page.south east);
+    \fill[AzulMedio]
+    (current page.south west)
+    rectangle ([yshift=0.6cm]current page.south east);
+
+    \node[anchor=center, text=white]
+    at ([yshift=-2.8cm]current page.north)
+    {\fontsize{26}{30}\selectfont\sffamily\bfseries \NombreAcademia};
+    \node[anchor=center, text=GrisMedio]
+    at ([yshift=-4.2cm]current page.north)
+    {\large\sffamily Excelencia Académica Preuniversitaria};
+
+    \draw[DoradoAcadémico, line width=1.8pt]
+    ([xshift=2.5cm, yshift=-5.4cm]current page.north west)
+    -- ([xshift=-2.5cm, yshift=-5.4cm]current page.north east);
+
+    % Gráfico decorativo de oferta-demanda (simplificado)
+    \begin{scope}[shift={([xshift=15.8cm, yshift=-9.5cm]current page.north west)},
+        scale=0.55]
+      % Ejes
+      \draw[white!25, thin, -Stealth] (0,0) -- (5,0)
+      node[right, font=\tiny\sffamily, text=white!25] {Q};
+      \draw[white!25, thin, -Stealth] (0,0) -- (0,5)
+      node[above, font=\tiny\sffamily, text=white!25] {P};
+      % Demanda
+      \draw[AzulMedio!60, thick] (0.5,4.5) -- (4.5,0.5)
+      node[right, font=\tiny\sffamily, text=AzulMedio!60] {D};
+      % Oferta
+      \draw[VerdeOliva!60, thick] (0.5,0.5) -- (4.5,4.5)
+      node[right, font=\tiny\sffamily, text=VerdeOliva!60] {O};
+      % Equilibrio
+      \filldraw[DoradoAcadémico!60] (2.5,2.5) circle (2pt);
+      \draw[DoradoAcadémico!40, dashed, thin]
+      (2.5,0) -- (2.5,2.5) -- (0,2.5);
+    \end{scope}
+
+    \node[anchor=center, text=white]
+    at ([yshift=-7.5cm]current page.north)
+    {\fontsize{50}{56}\selectfont\sffamily\bfseries ECONOMÍA};
+    \node[anchor=center, text=DoradoAcadémico]
+    at ([yshift=-9.2cm]current page.north)
+    {\Large\sffamily\bfseries PREUNIVERSITARIA};
+    \node[anchor=center, text=white!70!AzulPizarra]
+    at ([yshift=-10.8cm]current page.north)
+    {\normalsize\sffamily
+      Teoría \textbullet\ Ejercicios Propuestos \textbullet\ Ejercicios Resueltos};
+    \node[anchor=center, text=AzulMedio]
+    at ([yshift=-12cm]current page.north)
+    {\small\sffamily
+      8 Unidades \textbullet\ 56 Temas \textbullet\ Micro, Macro, Finanzas y Economía Peruana};
+
+    \node[anchor=west, text=GrisCarbón]
+    at ([xshift=2.5cm, yshift=2.8cm]current page.south west)
+    {\sffamily\textbf{Docente:} \NombreDocente};
+    \node[anchor=west, text=GrisCarbón]
+    at ([xshift=2.5cm, yshift=1.8cm]current page.south west)
+    {\sffamily\textbf{Ciclo:} \CicloActual
+      \quad\textbf{Edición:} Primera};
+    \node[anchor=center, text=white]
+    at ([yshift=0.3cm]current page.south)
+    {\tiny\sffamily Material de uso interno — \NombreAcademia};
+
+  \end{tikzpicture}
+\end{titlepage}

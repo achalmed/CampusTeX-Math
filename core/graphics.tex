@@ -1,0 +1,14 @@
+% ══════════════════════════════════════════════════════════════════
+%  core/graphics.tex — Gráficos, TikZ y pgfplots
+% ══════════════════════════════════════════════════════════════════
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,shapes,positioning,calc,
+	decorations.pathmorphing,backgrounds}
+
+% Ruta estándar de imágenes del framework: los cursos pueden usar
+% \includegraphics{logo} sin ruta si el archivo está en assets/images/.
+\graphicspath{{../../assets/images/}{../../assets/logos/}{./}}

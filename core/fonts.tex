@@ -1,0 +1,27 @@
+% ══════════════════════════════════════════════════════════════════
+%  core/fonts.tex — Selección de familias tipográficas
+%
+%  Valores por defecto del framework. Un curso puede sobreescribir
+%  cualquiera definiendo el comando ANTES de \input del preámbulo:
+%
+%      % en courses/economia/main.tex, antes del preámbulo:
+%      \newcommand{\FuenteSerif}        {EB Garamond}
+%      \newcommand{\OpcionesFuenteSerif}{Numbers=OldStyle}
+%
+%  \providecommand solo define el valor si el curso no lo definió ya.
+%
+%  ORDEN: este módulo debe cargarse DESPUÉS de core/math.tex, porque
+%  \setmathfont requiere unicode-math (que a su vez carga fontspec).
+% ══════════════════════════════════════════════════════════════════
+\usepackage{fontspec}
+
+\providecommand{\FuenteSerif}        {Libertinus Serif}
+\providecommand{\OpcionesFuenteSerif}{}
+\providecommand{\FuenteMath}         {Libertinus Math}
+\providecommand{\FuenteSans}         {Libertinus Sans}
+\providecommand{\FuenteMono}         {InconsolataN}
+
+\setmainfont{\FuenteSerif}[\OpcionesFuenteSerif]
+\setmathfont{\FuenteMath}
+\setsansfont{\FuenteSans}[Scale=MatchLowercase]
+\setmonofont{\FuenteMono}[Extension=.otf,UprightFont=*-Regular,BoldFont=*-Bold,Scale=0.85]

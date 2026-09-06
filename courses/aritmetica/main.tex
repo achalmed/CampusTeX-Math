@@ -1,0 +1,202 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║   LIBRO COMPLETO — ARITMÉTICA PREUNIVERSITARIA                           ║
+% ║   Compilar: lualatex main.tex   (dos pasadas para el índice)             ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+\documentclass[12pt,a4paper,twoside]{book}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §A  METADATOS DEL CURSO  ← editar aquí
+% ════════════════════════════════════════════════════════════════════════════
+\newcommand{\NombreCurso}   {Aritm\'{e}tica}
+\newcommand{\NombreAcademia}{CEBA SANTO DOMINGO}
+\newcommand{\NombreDocente} {Elmer Edison Achalma Mendoza}
+\newcommand{\CicloActual}   {Anual 2026}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §B  PREÁMBULO COMÚN
+%     fontspec y unicode-math los carga el núcleo — no recargarlos aquí.
+% ════════════════════════════════════════════════════════════════════════════
+\input{../../core/preamble}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §C  COMANDOS ESPECÍFICOS DE ARITMÉTICA
+% ════════════════════════════════════════════════════════════════════════════
+
+% Descomposición prima: \descompPrima{360}{2^3 \cdot 3^2 \cdot 5}
+\newcommand{\descompPrima}[2]{\[ #1 = #2 \]}
+
+% Criba de Eratóstenes (completar con tikz según necesidad)
+\newcommand{\cribaVisual}[1]{}
+
+% Tabla de divisibilidad
+\newenvironment{tablaDivisib}{%
+	\begin{center}
+		\renewcommand{\arraystretch}{1.4}
+		\begin{tabular}{>{\bfseries\color{AzulPizarra}}c p{9cm}}
+			\toprule
+			\rowcolor{AzulClaro!60}
+			\textbf{Divisible por} & \textbf{Criterio}\\
+			\midrule
+		}{%
+			\bottomrule
+		\end{tabular}
+\end{center}}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §D  DOCUMENTO
+% ════════════════════════════════════════════════════════════════════════════
+\begin{document}
+	
+	\input{portada_libro}
+	\input{indice}
+	
+	% ════════════════════════════════════════════════════════════════════════════
+	% UNIDAD I — Fundamentos Numéricos
+	% ════════════════════════════════════════════════════════════════════════════
+	\chapter{Fundamentos Num\'{e}ricos}
+	
+	% \include{semana_01_logica/teoria}
+	% \include{semana_01_logica/ejercicios}
+	% \include{semana_01_logica/resueltos}
+	
+	 \include{semana_01_01_leyes_logica_propocicional/teoria}
+     \include{semana_01_01_leyes_logica_propocicional/ejercicios}
+     \include{semana_01_01_leyes_logica_propocicional/resueltos}
+	
+	% \include{semana_02_sistemas_numeracion/teoria}
+	% \include{semana_02_sistemas_numeracion/ejercicios}
+	% \include{semana_02_sistemas_numeracion/resueltos}
+	
+	 \include{semana_03_conjuntos/teoria}
+	 \include{semana_03_conjuntos/ejercicios}
+	 \include{semana_03_conjuntos/resueltos}
+	
+	% \include{semana_04_operaciones/teoria}
+	% \include{semana_04_operaciones/ejercicios}
+	% \include{semana_04_operaciones/resueltos}
+	
+	% \include{semana_05_divisibilidad/teoria}
+	% \include{semana_05_divisibilidad/ejercicios}
+	% \include{semana_05_divisibilidad/resueltos}
+	
+	% \include{semana_06_numeros_primos/teoria}
+	% \include{semana_06_numeros_primos/ejercicios}
+	% \include{semana_06_numeros_primos/resueltos}
+	
+	% \include{semana_07_mcd_mcm/teoria}
+	% \include{semana_07_mcd_mcm/ejercicios}
+	% \include{semana_07_mcd_mcm/resueltos}
+	
+	% ════════════════════════════════════════════════════════════════════════════
+	% UNIDAD II — Fracciones y Decimales
+	% ════════════════════════════════════════════════════════════════════════════
+	\chapter{Fracciones y Decimales}
+	
+	% \include{semana_08_fracciones/teoria}
+	% \include{semana_08_fracciones/ejercicios}
+	% \include{semana_08_fracciones/resueltos}
+	
+	% \include{semana_09_op_fracciones/teoria}
+	% \include{semana_09_op_fracciones/ejercicios}
+	% \include{semana_09_op_fracciones/resueltos}
+	
+	% \include{semana_10_decimales/teoria}
+	% \include{semana_10_decimales/ejercicios}
+	% \include{semana_10_decimales/resueltos}
+	
+	% \include{semana_11_razones/teoria}
+	% \include{semana_11_razones/ejercicios}
+	% \include{semana_11_razones/resueltos}
+	
+	% \include{semana_12_magnitudes/teoria}
+	% \include{semana_12_magnitudes/ejercicios}
+	% \include{semana_12_magnitudes/resueltos}
+	
+	% \include{semana_13_r3_simple/teoria}
+	% \include{semana_13_r3_simple/ejercicios}
+	% \include{semana_13_r3_simple/resueltos}
+	
+	% \include{semana_14_r3_compuesta/teoria}
+	% \include{semana_14_r3_compuesta/ejercicios}
+	% \include{semana_14_r3_compuesta/resueltos}
+	
+	% ════════════════════════════════════════════════════════════════════════════
+	% UNIDAD III — Porcentajes e Interés
+	% ════════════════════════════════════════════════════════════════════════════
+	\chapter{Porcentajes e Inter\'{e}s}
+	
+	% \include{semana_15_porcentaje/teoria}
+	% \include{semana_15_porcentaje/ejercicios}
+	% \include{semana_15_porcentaje/resueltos}
+	
+	% \include{semana_16_interes_simple/teoria}
+	% \include{semana_16_interes_simple/ejercicios}
+	% \include{semana_16_interes_simple/resueltos}
+	
+	% \include{semana_17_interes_compuesto/teoria}
+	% \include{semana_17_interes_compuesto/ejercicios}
+	% \include{semana_17_interes_compuesto/resueltos}
+	
+	% \include{semana_18_descuentos/teoria}
+	% \include{semana_18_descuentos/ejercicios}
+	% \include{semana_18_descuentos/resueltos}
+	
+	% \include{semana_19_reparto/teoria}
+	% \include{semana_19_reparto/ejercicios}
+	% \include{semana_19_reparto/resueltos}
+	
+	% ════════════════════════════════════════════════════════════════════════════
+	% UNIDAD IV — Aplicaciones Comerciales
+	% ════════════════════════════════════════════════════════════════════════════
+	\chapter{Aplicaciones Comerciales}
+	
+	% \include{semana_20_ganancia/teoria}
+	% \include{semana_20_ganancia/ejercicios}
+	% \include{semana_20_ganancia/resueltos}
+	
+	% \include{semana_21_mezclas/teoria}
+	% \include{semana_21_mezclas/ejercicios}
+	% \include{semana_21_mezclas/resueltos}
+	
+	% \include{semana_22_aleaciones/teoria}
+	% \include{semana_22_aleaciones/ejercicios}
+	% \include{semana_22_aleaciones/resueltos}
+	
+	% \include{semana_23_promedios/teoria}
+	% \include{semana_23_promedios/ejercicios}
+	% \include{semana_23_promedios/resueltos}
+	
+	% \include{semana_24_movimiento/teoria}
+	% \include{semana_24_movimiento/ejercicios}
+	% \include{semana_24_movimiento/resueltos}
+	
+	% \include{semana_25_trabajo/teoria}
+	% \include{semana_25_trabajo/ejercicios}
+	% \include{semana_25_trabajo/resueltos}
+	
+	% ════════════════════════════════════════════════════════════════════════════
+	% UNIDAD V — Conteo y Probabilidad
+	% ════════════════════════════════════════════════════════════════════════════
+	\chapter{Conteo y Probabilidad}
+	
+	% \include{semana_26_combinatorio/teoria}
+	% \include{semana_26_combinatorio/ejercicios}
+	% \include{semana_26_combinatorio/resueltos}
+	
+	% \include{semana_27_permutaciones/teoria}
+	% \include{semana_27_permutaciones/ejercicios}
+	% \include{semana_27_permutaciones/resueltos}
+	
+	% \include{semana_28_variaciones/teoria}
+	% \include{semana_28_variaciones/ejercicios}
+	% \include{semana_28_variaciones/resueltos}
+	
+	% \include{semana_29_combinaciones/teoria}
+	% \include{semana_29_combinaciones/ejercicios}
+	% \include{semana_29_combinaciones/resueltos}
+	
+	% \include{semana_30_probabilidad/teoria}
+	% \include{semana_30_probabilidad/ejercicios}
+	% \include{semana_30_probabilidad/resueltos}
+	
+\end{document}

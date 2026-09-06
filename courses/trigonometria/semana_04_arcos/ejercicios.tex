@@ -1,0 +1,600 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║  EXAMEN Y TAREA — SEMANA N° 02                                                                                                                                        ║
+% ║  Cursos: ÁLGEBRA y TRIGONOMETRÍA                                                                                                                                     ║
+% ║  Compilar desde main.tex con LuaLaTeX                                                                                                                                 ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+
+% ════════════════════════════════════════════════════════════════════════════
+%  ENCABEZADO DE PÁGINA — SEMANA 02
+% ════════════════════════════════════════════════════════════════════════════
+\newpage
+\thispagestyle{fancy}
+
+% ─── CABECERA DECORATIVA ─────────────────────────────────────────────────────
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[AzulPizarra]
+    ([xshift=0cm, yshift=0cm]current page.north west)
+    rectangle ([xshift=0cm, yshift=-2.8cm]current page.north east);
+  \fill[DoradoAcadémico]
+    ([yshift=-2.8cm]current page.north west)
+    rectangle ([yshift=-3.1cm]current page.north east);
+  \node[anchor=west, text=white]
+    at ([xshift=1.5cm, yshift=-1.0cm]current page.north west)
+    {\large\sffamily\bfseries SEMANA N° 02 — EXAMEN Y TAREA};
+  \node[anchor=west, text=GrisMedio]
+    at ([xshift=1.5cm, yshift=-1.9cm]current page.north west)
+    {\normalsize\sffamily\bfseries ÁLGEBRA \textcolor{DoradoAcadémico}{|} Polinomios y Funciones
+     \quad\textcolor{DoradoAcadémico}{//}\quad
+     \textbf{TRIGONOMETRÍA} \textcolor{DoradoAcadémico}{|} Área del Sector Circular};
+  \node[anchor=east, text=white]
+    at ([xshift=-1.5cm, yshift=-1.4cm]current page.north east)
+    {\small\sffamily  2026};
+\end{tikzpicture}
+
+% ════════════════════════════════════════════════════════════════════════════
+%  BLOQUE A — ÁLGEBRA
+% ════════════════════════════════════════════════════════════════════════════
+
+% ── Separador de Curso ──────────────────────────────────────────────────────
+\begin{tcolorbox}[
+  enhanced,
+  colback=AzulPizarra, colframe=AzulPizarra,
+  arc=3pt, boxrule=0pt,
+  left=10pt, right=10pt, top=5pt, bottom=5pt
+]
+  \centering
+  {\large\sffamily\bfseries\color{white} ÁLGEBRA}
+  \quad\textcolor{DoradoAcadémico}{\rule{0.25\linewidth}{0.8pt}}
+  \quad{\normalsize\sffamily\color{GrisMedio} Semana N° 02 · Polinomios y Funciones}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+% ── Bloque EXAMEN ÁLGEBRA ───────────────────────────────────────────────────
+\begin{tcolorbox}[
+  enhanced,
+  colback=AzulClaro!50, colframe=AzulMedio,
+  arc=2pt, boxrule=0.7pt,
+  fonttitle=\sffamily\bfseries\small\color{white},
+  title={EXAMEN — ÁLGEBRA \hfill \small 5 preguntas · Tiempo: 20 min},
+  attach boxed title to top left={yshift=-2mm, xshift=6mm},
+  boxed title style={colback=AzulMedio, arc=2pt}
+]
+\small\sffamily
+\textit{Instrucciones:} Marca la alternativa correcta. \textbf{La alternativa correcta aparece resaltada.}
+\end{tcolorbox}
+
+\vspace{0.2cm}
+
+\begin{multicols}{2}
+\setcounter{numejercicio}{0}
+
+% ── Ejercicio E-A1 ──────────────────────────────────────────────────────────
+\ejercicio Si $P(x) = 3x - 7$, calcule $P(3x^2 + 5)$.
+
+\begin{alternativas}
+  \item $25$
+  \item \colorbox{AzulClaro!80}{$\mathbf{625}$}
+  \item $600$
+  \item $500$
+  \item $340$
+\end{alternativas}
+\vspace{0.25cm}
+
+% ── Ejercicio E-A2 ──────────────────────────────────────────────────────────
+\ejercicio Calcular $P(P(x))$, si $P(x) = 2x + 1$. Hallar $P(P(1))$.
+
+\begin{alternativas}
+  \item $0$
+  \item $64$
+  \item \colorbox{AzulClaro!80}{$\mathbf{7}$}
+  \item $4$
+  \item $16$
+\end{alternativas}
+\vspace{0.25cm}
+
+% ── Ejercicio E-A3 ──────────────────────────────────────────────────────────
+\ejercicio Calcule $f(3)$, si:
+\[
+  2f(x) = x - 1 + f\!\left(\tfrac{x}{3}\right)
+\]
+
+\begin{alternativas}
+  \item $1$
+  \item \colorbox{AzulClaro!80}{$\mathbf{16}$}
+  \item $4$
+  \item $32$
+  \item $8$
+\end{alternativas}
+\vspace{0.25cm}
+
+% ── Ejercicio E-A4 ──────────────────────────────────────────────────────────
+\ejercicio Calcule la suma de coeficientes de:
+\[
+  P(x) = (3x-2)^5 + (1-x)^n - (x-3)^2 + 7
+\]
+
+\begin{alternativas}
+  \item $17$
+  \item $48$
+  \item $60$
+  \item $20$
+  \item \colorbox{AzulClaro!80}{$\mathbf{7}$}
+\end{alternativas}
+\vspace{0.25cm}
+
+% ── Ejercicio E-A5 ──────────────────────────────────────────────────────────
+\ejercicio Si $P(x+2) = x + P(x)$ y $P(3) = 1$. Halle $P(5) + P(1)$.
+
+\begin{alternativas}
+  \item $3$
+  \item $2$
+  \item \colorbox{AzulClaro!80}{$\mathbf{4}$}
+  \item $0$
+  \item $5$
+\end{alternativas}
+
+\end{multicols}
+
+\vspace{0.4cm}
+
+% ── Bloque TAREA ÁLGEBRA ────────────────────────────────────────────────────
+\begin{tcolorbox}[
+  enhanced,
+  colback=VerdeSuave!50, colframe=VerdeOliva,
+  arc=2pt, boxrule=0.7pt,
+  fonttitle=\sffamily\bfseries\small\color{white},
+  title={TAREA — ÁLGEBRA \hfill \small 5 preguntas · Para casa},
+  attach boxed title to top left={yshift=-2mm, xshift=6mm},
+  boxed title style={colback=VerdeOliva, arc=2pt}
+]
+\small\sffamily
+\textit{Instrucciones:} Resuelve en casa y presenta en la siguiente clase. Marca la alternativa correcta.
+\end{tcolorbox}
+
+\vspace{0.2cm}
+
+\begin{multicols}{2}
+\setcounter{numejercicio}{0}
+
+% ── Tarea A1 ────────────────────────────────────────────────────────────────
+\ejercicio Si $P(x) = ax^2 + 2x - 1$ y $P(-2) = 7$, halle $a$.
+
+\begin{alternativas}
+  \item $\tfrac{1}{2}$
+  \item $\tfrac{2}{3}$
+  \item $\tfrac{6}{5}$
+  \item $0$
+  \item $-1$
+\end{alternativas}
+\vspace{0.25cm}
+
+% ── Tarea A2 ────────────────────────────────────────────────────────────────
+\ejercicio Halle $a + b$, sabiendo que:
+\[
+  15 - 4x \equiv a(2-x) + b(1+x)
+\]
+
+\begin{alternativas}
+  \item $0$
+  \item $1$
+  \item $\tfrac{1}{2}$
+  \item $\tfrac{3}{2}$
+  \item $2$
+\end{alternativas}
+\vspace{0.25cm}
+
+% ── Tarea A3 ────────────────────────────────────────────────────────────────
+\ejercicio Si $P(2x+3) = 7 - 6x$, halle $P(x+1)$.
+
+\begin{alternativas}
+  \item $16$
+  \item $32$
+  \item $30$
+  \item $64$
+  \item $-3x + 10$
+\end{alternativas}
+\vspace{0.25cm}
+
+% ── Tarea A4 ────────────────────────────────────────────────────────────────
+\ejercicio Hallar $a + b$, si son términos semejantes:
+$9x^{2a+1}$ y $-2x^9 y^{5b-3}$
+
+\begin{alternativas}
+  \item $7$
+  \item $10$
+  \item $15$
+  \item $4$
+  \item $12$
+\end{alternativas}
+\vspace{0.25cm}
+
+% ── Tarea A5 ────────────────────────────────────────────────────────────────
+\ejercicio Sea $P(x) = x^2 - 3x + 2$. Calcule $P(2) \cdot P(0) + P(1)$.
+
+\begin{alternativas}
+  \item $3$
+  \item $2$
+  \item $1$
+  \item $6$
+  \item $0$
+\end{alternativas}
+
+\end{multicols}
+
+\vspace{0.5cm}
+
+% ════════════════════════════════════════════════════════════════════════════
+%  BLOQUE B — TRIGONOMETRÍA (Área del Sector Circular)
+% ════════════════════════════════════════════════════════════════════════════
+
+% ── Separador de Curso ──────────────────────────────────────────────────────
+\begin{tcolorbox}[
+  enhanced,
+  colback=AzulPizarra, colframe=AzulPizarra,
+  arc=3pt, boxrule=0pt,
+  left=10pt, right=10pt, top=5pt, bottom=5pt
+]
+  \centering
+  {\large\sffamily\bfseries\color{white} TRIGONOMETRÍA}
+  \quad\textcolor{DoradoAcadémico}{\rule{0.2\linewidth}{0.8pt}}
+  \quad{\normalsize\sffamily\color{GrisMedio} Semana N° 02 · Área del Sector Circular}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+% ── Bloque EXAMEN TRIGONOMETRÍA ─────────────────────────────────────────────
+\begin{tcolorbox}[
+  enhanced,
+  colback=AzulClaro!50, colframe=AzulMedio,
+  arc=2pt, boxrule=0.7pt,
+  fonttitle=\sffamily\bfseries\small\color{white},
+  title={EXAMEN — TRIGONOMETRÍA \hfill \small 5 preguntas · Tiempo: 20 min},
+  attach boxed title to top left={yshift=-2mm, xshift=6mm},
+  boxed title style={colback=AzulMedio, arc=2pt}
+]
+\small\sffamily
+\textit{Instrucciones:} Marca la alternativa correcta. \textbf{La alternativa correcta aparece resaltada.}
+\end{tcolorbox}
+
+\vspace{0.2cm}
+
+\begin{multicols}{2}
+\setcounter{numejercicio}{0}
+
+% ── Ejercicio E-T1 ──────────────────────────────────────────────────────────
+\ejercicio En el sector circular, el ángulo central mide $\dfrac{\pi}{3}$ rad y el radio mide $6$ cm. Calcule el área.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+  \fill[AzulClaro!60] (0,0) -- (30:2.2) arc(30:90:2.2) -- cycle;
+  \draw[AzulPizarra, thick] (0,0) circle(2.2);
+  \draw[AzulPizarra, thick] (0,0) -- (30:2.2);
+  \draw[AzulPizarra, thick] (0,0) -- (90:2.2);
+  \draw[AzulMedio, ->] (0.5,0) arc(0:60:0.5) node[midway, right, font=\tiny] {$\frac{\pi}{3}$};
+  \node[font=\tiny, AzulPizarra] at (55:1.4) {$S$};
+  \node[font=\tiny] at (60:2.6) {$r=6$};
+\end{tikzpicture}
+\end{center}
+
+\begin{alternativas}
+  \item $3\pi\text{ cm}^2$
+  \item \colorbox{AzulClaro!80}{$\mathbf{6\pi\text{ cm}^2}$}
+  \item $9\pi\text{ cm}^2$
+  \item $12\pi\text{ cm}^2$
+  \item $4\pi\text{ cm}^2$
+\end{alternativas}
+\vspace{0.25cm}
+
+% ── Ejercicio E-T2 ──────────────────────────────────────────────────────────
+\ejercicio El arco de un sector circular mide $L = 4$ cm y el radio mide $R = 8$ cm. Calcule el área $S$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+  \fill[AzulClaro!60] (0,0) -- (20:2.6) arc(20:70:2.6) -- cycle;
+  \draw[AzulPizarra, thick] (0,0) -- (20:2.6) node[right, font=\tiny]{$R=8$};
+  \draw[AzulPizarra, thick] (0,0) -- (70:2.6);
+  \draw[AzulMedio, very thick] (20:2.6) arc(20:70:2.6) node[midway, right, font=\tiny]{$L=4$};
+  \node[font=\tiny, AzulPizarra] at (45:1.4) {$S$};
+\end{tikzpicture}
+\end{center}
+
+\begin{alternativas}
+  \item $8\text{ cm}^2$
+  \item $32\text{ cm}^2$
+  \item $20\text{ cm}^2$
+  \item \colorbox{AzulClaro!80}{$\mathbf{16\text{ cm}^2}$}
+  \item $12\text{ cm}^2$
+\end{alternativas}
+\vspace{0.25cm}
+
+% ── Ejercicio E-T3 ──────────────────────────────────────────────────────────
+\ejercicio Calcula el área del sector circular con ángulo central $\theta = 1$ rad y radio $R = 8$ cm.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+  \fill[AzulClaro!60] (0,0) -- (10:2.4) arc(10:67.3:2.4) -- cycle;
+  \draw[AzulPizarra, thick] (0,0) -- (10:2.4) node[right, font=\tiny]{$R=8$};
+  \draw[AzulPizarra, thick] (0,0) -- (67.3:2.4);
+  \draw[AzulMedio, ->] (0.6,0) arc(0:57.3:0.6) node[midway, above, font=\tiny]{$1$ rad};
+  \node[font=\tiny, AzulPizarra] at (38:1.3) {$S$};
+\end{tikzpicture}
+\end{center}
+
+\begin{alternativas}
+  \item $16\text{ cm}^2$
+  \item $64\text{ cm}^2$
+  \item \colorbox{AzulClaro!80}{$\mathbf{32\text{ cm}^2}$}
+  \item $8\text{ cm}^2$
+  \item $48\text{ cm}^2$
+\end{alternativas}
+\vspace{0.25cm}
+
+% ── Ejercicio E-T4 ──────────────────────────────────────────────────────────
+\ejercicio Se tiene un sector circular de área $S$. Si el ángulo central se triplica y el radio se duplica, ¿cuál es el nuevo área?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.78]
+  % Sector original
+  \fill[AzulClaro!40] (0,0) -- (15:1.5) arc(15:75:1.5) -- cycle;
+  \draw[AzulPizarra] (0,0) -- (15:1.5);
+  \draw[AzulPizarra] (0,0) -- (75:1.5);
+  \draw[AzulMedio, ->] (0.45,0) arc(0:60:0.45) node[midway, right, font=\tiny]{$\alpha$};
+  \node[font=\tiny] at (45:0.85) {$S$};
+  \node[font=\tiny] at (45:1.75) {$m$};
+  % Flecha
+  \draw[->, NaranjaTierra, thick] (2.2,0.5) -- (3.2,0.5) node[midway, above, font=\tiny]{$\times 12$};
+  % Sector nuevo
+  \fill[NaranjaSuave!80] (4.5,0) -- ($(4.5,0)+(15:2.8)$) arc(15:75:2.8) -- cycle;
+  \draw[NaranjaTierra] (4.5,0) -- ($(4.5,0)+(15:2.8)$) node[right, font=\tiny]{$2m$};
+  \draw[NaranjaTierra] (4.5,0) -- ($(4.5,0)+(75:2.8)$);
+  \draw[NaranjaTierra!80!black, ->] ($(4.5,0)+(0.55,0)$) arc(0:60:0.55)
+    node[midway, right, font=\tiny]{$3\alpha$};
+  \node[font=\tiny] at ($(4.5,0)+(45:1.6)$) {$A$};
+\end{tikzpicture}
+\end{center}
+
+\begin{alternativas}
+  \item $3S$
+  \item $6S$
+  \item $9S$
+  \item \colorbox{AzulClaro!80}{$\mathbf{12S}$}
+  \item $24S$
+\end{alternativas}
+\vspace{0.25cm}
+
+% ── Ejercicio E-T5 ──────────────────────────────────────────────────────────
+\ejercicio Calcula el área de la región sombreada. Los radios de los sectores son $OB = 6$ cm y $OD = 2\sqrt{3}$ cm, con ángulo $\angle BOC = 15°$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+  % Sector grande OB
+  \fill[AzulClaro!70]
+    (0,0) -- ({cos(15)*2.4},{sin(15)*2.4}) arc(15:165:2.4) -- (0,0);
+  % Quitar sector pequeño OD
+  \fill[white]
+    (0,0) -- ({cos(15)*1.38},{sin(15)*1.38}) arc(15:165:1.38) -- (0,0);
+  % Sombreado final (corona)
+  \fill[AzulClaro!70]
+    ({cos(15)*2.4},{sin(15)*2.4}) arc(15:165:2.4) --
+    ({cos(165)*1.38},{sin(165)*1.38}) arc(165:15:1.38) -- cycle;
+  % Contornos
+  \draw[AzulPizarra, thick] (0,0) -- ({cos(15)*2.4},{sin(15)*2.4})
+    node[right, font=\tiny]{$B$};
+  \draw[AzulPizarra, thick] (0,0) -- ({cos(165)*2.4},{sin(165)*2.4})
+    node[left, font=\tiny]{$C$};
+  \draw[AzulPizarra] (0,0) -- ({cos(15)*1.38},{sin(15)*1.38})
+    node[right, font=\tiny]{$D$};
+  \draw[AzulPizarra] (0,0) -- ({cos(165)*1.38},{sin(165)*1.38});
+  \draw[AzulMedio, thick] ({cos(15)*2.4},{sin(15)*2.4}) arc(15:165:2.4);
+  \draw[AzulMedio] ({cos(15)*1.38},{sin(15)*1.38}) arc(15:165:1.38);
+  \node[font=\tiny] at (0.0, -0.2) {$O$};
+  \node[font=\tiny, AzulPizarra] at (90:1.85) {$S$};
+  % Ángulo
+  \draw[AzulMedio,->] (0.55,0) arc(0:15:0.55) node[right, font=\tiny]{$15°$};
+  % Cotas
+  \node[font=\tiny] at ({cos(15)*1.9},{sin(15)*1.9}) {$6$};
+  \node[font=\tiny] at ({cos(15)*0.69+0.05},{sin(15)*0.69}) {$2\!\sqrt{3}$};
+\end{tikzpicture}
+\end{center}
+
+\begin{alternativas}
+  \item $2\pi\text{ cm}^2$
+  \item $3\pi\text{ cm}^2$
+  \item $4\pi\text{ cm}^2$
+  \item \colorbox{AzulClaro!80}{$\mathbf{\pi\text{ cm}^2}$}
+  \item $\tfrac{\pi}{2}\text{ cm}^2$
+\end{alternativas}
+
+\end{multicols}
+
+\vspace{0.4cm}
+
+% ── Bloque TAREA TRIGONOMETRÍA ───────────────────────────────────────────────
+\begin{tcolorbox}[
+  enhanced,
+  colback=VerdeSuave!50, colframe=VerdeOliva,
+  arc=2pt, boxrule=0.7pt,
+  fonttitle=\sffamily\bfseries\small\color{white},
+  title={TAREA — TRIGONOMETRÍA \hfill \small 5 preguntas · Para casa},
+  attach boxed title to top left={yshift=-2mm, xshift=6mm},
+  boxed title style={colback=VerdeOliva, arc=2pt}
+]
+\small\sffamily
+\textit{Instrucciones:} Resuelve en casa y presenta en la siguiente clase. Marca la alternativa correcta.
+\end{tcolorbox}
+
+\vspace{0.2cm}
+
+\begin{multicols}{2}
+\setcounter{numejercicio}{0}
+
+% ── Tarea T1 ────────────────────────────────────────────────────────────────
+\ejercicio En un sector circular, el ángulo central mide $18°$ y el radio mide $20$ cm. ¿Cuál es su área?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.78]
+  \fill[VerdeSuave!80] (0,0) -- (0:2.2) arc(0:18:2.2) -- cycle;
+  \draw[VerdeOliva, thick] (0,0) -- (0:2.2) node[right, font=\tiny]{$20$ cm};
+  \draw[VerdeOliva, thick] (0,0) -- (18:2.2);
+  \draw[AzulMedio, ->] (0.6,0) arc(0:18:0.6) node[midway, above right, font=\tiny]{$18°$};
+  \node[font=\tiny, VerdeOliva] at (9:1.2) {$S$};
+\end{tikzpicture}
+\end{center}
+
+\begin{alternativas}
+  \item $\dfrac{10\pi}{9}\text{ cm}^2$
+  \item $20\pi\text{ cm}^2$
+  \item $\dfrac{100\pi}{9}\text{ cm}^2$
+  \item $10\pi\text{ cm}^2$
+  \item $\dfrac{200\pi}{9}\text{ cm}^2$
+\end{alternativas}
+\vspace{0.25cm}
+
+% ── Tarea T2 ────────────────────────────────────────────────────────────────
+\ejercicio El arco de un sector circular mide $L = 3$ cm y el radio $R = 10$ cm. Halle el área $S$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.78]
+  \fill[VerdeSuave!80] (0,0) -- (5:2.3) arc(5:40:2.3) -- cycle;
+  \draw[VerdeOliva, thick] (0,0) -- (5:2.3) node[right, font=\tiny]{$R=10$};
+  \draw[VerdeOliva, thick] (0,0) -- (40:2.3);
+  \draw[VerdeOliva!80!black, very thick] (5:2.3) arc(5:40:2.3)
+    node[midway, right, font=\tiny]{$L=3$};
+  \node[font=\tiny, VerdeOliva] at (22:1.3) {$S$};
+\end{tikzpicture}
+\end{center}
+
+\begin{alternativas}
+  \item $10\text{ cm}^2$
+  \item $\dfrac{3}{2}\text{ cm}^2$
+  \item $30\text{ cm}^2$
+  \item $15\text{ cm}^2$
+  \item $\dfrac{15}{2}\text{ cm}^2$
+\end{alternativas}
+\vspace{0.25cm}
+
+% ── Tarea T3 ────────────────────────────────────────────────────────────────
+\ejercicio Si AOD y COB son sectores circulares concéntricos (ver figura), con $OA = 3$, $OC = 5$, y ángulo $\theta$. Calcule $k = \dfrac{S_1}{S_2}$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.80]
+  % Sector grande
+  \fill[AzulClaro!40] (0,0) -- (10:2.5) arc(10:70:2.5) -- cycle;
+  % Sector pequeño (blanco encima)
+  \fill[white] (0,0) -- (10:1.5) arc(10:70:1.5) -- cycle;
+  % Corona sombreada = S2
+  \fill[AzulClaro!70] (10:1.5) arc(10:70:1.5) -- (70:2.5) arc(70:10:2.5) -- cycle;
+  % Triángulo S1
+  \fill[VerdeSuave!80] (0,0) -- (10:1.5) arc(10:70:1.5) -- cycle;
+  % Contornos
+  \draw[AzulPizarra] (0,0) -- (10:2.5) node[right, font=\tiny]{$B$};
+  \draw[AzulPizarra] (0,0) -- (70:2.5) node[above, font=\tiny]{$C$};
+  \draw[AzulMedio] (0,0) -- (10:1.5) node[below, font=\tiny]{$A$};
+  \draw[AzulMedio] (0,0) -- (70:1.5) node[left, font=\tiny]{$D$};
+  \draw[AzulMedio] (10:1.5) arc(10:70:1.5);
+  \draw[AzulPizarra, thick] (10:2.5) arc(10:70:2.5);
+  \node[font=\tiny, AzulPizarra] at (40:0.9) {$S_1$};
+  \node[font=\tiny] at (40:2.1) {$S_2$};
+  \node[font=\tiny] at (-0.15,-0.15) {$O$};
+  % Cotas
+  \node[font=\tiny] at ($(0,0)!0.5!(10:1.5)+(0,-0.15)$) {$3$};
+  \node[font=\tiny] at ($(10:1.5)!0.5!(10:2.5)+(0,-0.12)$) {$2$};
+\end{tikzpicture}
+\end{center}
+
+\begin{alternativas}
+  \item $k = \dfrac{9}{16}$
+  \item $k = \dfrac{3}{5}$
+  \item $k = \dfrac{9}{25}$
+  \item $k = \dfrac{3}{4}$
+  \item $k = \dfrac{1}{3}$
+\end{alternativas}
+\vspace{0.25cm}
+
+% ── Tarea T4 ────────────────────────────────────────────────────────────────
+\ejercicio Se tiene un sector circular de área $S$. Si el ángulo central se duplica y el radio se triplica, ¿cuál es el área del nuevo sector circular?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.80]
+  \fill[VerdeSuave!60] (0,0) -- (10:1.3) arc(10:60:1.3) -- cycle;
+  \draw[VerdeOliva] (0,0) -- (10:1.3) node[right, font=\tiny]{$m$};
+  \draw[VerdeOliva] (0,0) -- (60:1.3);
+  \draw[VerdeOliva!80, ->] (0.4,0) arc(0:50:0.4)
+    node[midway, right, font=\tiny]{$\alpha$};
+  \node[font=\tiny] at (35:0.7) {$S$};
+  % Flecha
+  \draw[->, NaranjaTierra, thick] (1.8,0.4) -- (2.7,0.4);
+  % Nuevo
+  \fill[NaranjaSuave!80] (3.8,0) -- ($(3.8,0)+(10:2.4)$) arc(10:60:2.4) -- cycle;
+  \draw[NaranjaTierra] (3.8,0) -- ($(3.8,0)+(10:2.4)$) node[right, font=\tiny]{$3m$};
+  \draw[NaranjaTierra] (3.8,0) -- ($(3.8,0)+(60:2.4)$);
+  \draw[NaranjaTierra!80, ->] ($(3.8,0)+(0.55,0)$) arc(0:50:0.55)
+    node[midway, right, font=\tiny]{$2\alpha$};
+  \node[font=\tiny] at ($(3.8,0)+(35:1.4)$) {$A$};
+\end{tikzpicture}
+\end{center}
+
+\begin{alternativas}
+  \item $6S$
+  \item $9S$
+  \item $12S$
+  \item $18S$
+  \item $24S$
+\end{alternativas}
+\vspace{0.25cm}
+
+% ── Tarea T5 ────────────────────────────────────────────────────────────────
+\ejercicio En la figura, AOB y COD son sectores circulares. Si $OC = 6$ cm, $L_{COD} = 6$ y el sector AOB tiene $OA = x$ y $S_{AOB} = 4 \cdot S_{COD}$, calcule $x$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+  % Sector COD (pequeño)
+  \fill[VerdeSuave!80] (0,0) -- (5:1.6) arc(5:65:1.6) -- cycle;
+  \draw[VerdeOliva] (0,0) -- (5:1.6) node[right, font=\tiny]{$C$};
+  \draw[VerdeOliva] (0,0) -- (65:1.6) node[above, font=\tiny]{$D$};
+  \draw[VerdeOliva, thick] (5:1.6) arc(5:65:1.6);
+  \node[font=\tiny, VerdeOliva] at (35:0.9) {$S_2$};
+  \node[font=\tiny] at (0.08,1.7) {$L=6$};
+  % Sector AOB (grande)
+  \fill[AzulClaro!40] (0,0) -- (5:2.8) arc(5:65:2.8) -- cycle;
+  \fill[white] (0,0) -- (5:1.6) arc(5:65:1.6) -- cycle; % hueco
+  \draw[AzulPizarra, thick] (0,0) -- (5:2.8) node[right, font=\tiny]{$B$};
+  \draw[AzulPizarra, thick] (0,0) -- (65:2.8) node[above, font=\tiny]{$A$};
+  \draw[AzulPizarra, thick] (5:2.8) arc(5:65:2.8);
+  \node[font=\tiny, AzulPizarra] at (35:2.2) {$S_1$};
+  \node[font=\tiny] at (-0.15,-0.15) {$O$};
+  \node[font=\tiny] at ($(0,0)!0.6!(5:1.6)+(0,-0.15)$) {$6$};
+  \node[font=\tiny] at ($(0,0)!0.75!(5:2.8)+(0,-0.15)$) {$x$};
+\end{tikzpicture}
+\end{center}
+
+\begin{alternativas}
+  \item $x = 6$
+  \item $x = 10$
+  \item $x = 8$
+  \item $x = 12$
+  \item $x = 9$
+\end{alternativas}
+
+\end{multicols}
+
+\vspace{0.5cm}
+
+% ─── CLAVE DE RESPUESTAS ─────────────────────────────────────────────────────
+\begin{tcolorbox}[
+  enhanced, colback=GrisClaro, colframe=GrisMedio,
+  arc=2pt, boxrule=0.5pt,
+  fonttitle=\sffamily\bfseries\small\color{GrisCarbón},
+  title={Clave de Respuestas — Exámenes (Álgebra y Trigonometría)}
+]
+\small\sffamily
+\begin{multicols}{2}
+  \textbf{Álgebra:}\quad
+  1.~B \quad 2.~C \quad 3.~B \quad 4.~E \quad 5.~C \\[4pt]
+  \textbf{Trigonometría:}\quad
+  1.~B \quad 2.~D \quad 3.~C \quad 4.~D \quad 5.~D
+\end{multicols}
+\end{tcolorbox}
+
+% FIN DEL ARCHIVO ejercicios_examen_tarea.tex

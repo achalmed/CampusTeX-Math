@@ -1,0 +1,494 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║   LIBRO COMPLETO — ECONOMÍA PREUNIVERSITARIA                             ║
+% ║   Compilar con: lualatex main.tex  (dos pasadas para referencias)        ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+\documentclass[12pt, a4paper, twoside]{book}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §B  METADATOS DEL CURSO
+%     Academia, docente y ciclo se heredan de config/project.tex.
+%     Para sobreescribirlos SOLO en este curso, definirlos aquí.
+% ════════════════════════════════════════════════════════════════════════════
+\newcommand{\NombreCurso}{Economía}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §A  TIPOGRAFÍA — identidad unificada del framework (Libertinus)
+%     Economía usa la MISMA identidad sobria que los demás cursos (Libertinus
+%     Serif/Sans/Math + Inconsolata, paleta monocroma). Se retiró el override a
+%     EB Garamond para uniformar todo el material docente.
+% ════════════════════════════════════════════════════════════════════════════
+
+% ════════════════════════════════════════════════════════════════════════════
+% §C  PREÁMBULO COMÚN
+%     fontspec y unicode-math los carga el núcleo — no recargarlos aquí.
+% ════════════════════════════════════════════════════════════════════════════
+\input{../../core/preamble}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §D  PREÁMBULO ESPECÍFICO DE ECONOMÍA
+%     Herramientas exclusivas para el curso: cuadros comparativos, mapas
+%     conceptuales, cajas de datos reales peruanos y gráficos de oferta/demanda
+% ════════════════════════════════════════════════════════════════════════════
+
+% ── Cuadro comparativo estándar (2 categorías) ────────────────────────────
+% Uso: \begin{comparativo}{Criterio}{Cat. A}{Cat. B} ... \end{comparativo}
+% Filas: \fila{criterio}{descripción A}{descripción B}
+% Filas alternas: \filag{criterio}{descripción A}{descripción B}  (gris)
+\newenvironment{comparativo}[3]{%
+  \begin{center}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{>{\bfseries\color{AzulPizarra}}p{3.2cm}
+                  p{4.8cm} p{4.8cm}}
+  \toprule
+  \rowcolor{AzulClaro!80}
+  \textbf{#1} & \textbf{#2} & \textbf{#3} \\
+  \midrule
+}{%
+  \bottomrule
+  \end{tabular}
+  \end{center}
+}
+\newcommand{\fila}[3]{#1 & #2 & #3 \\}
+\newcommand{\filag}[3]{\rowcolor{GrisClaro} #1 & #2 & #3 \\}
+
+% ── Cuadro de datos reales Perú ───────────────────────────────────────────
+% Uso: \begin{datosPerú}{Título}{Fuente} ... \end{datosPerú}
+\newenvironment{datosPerú}[2]{%
+  \begin{tcolorbox}[
+    enhanced, breakable,
+    colback   = VerdeSuave!50,
+    colframe  = VerdeOliva,
+    fonttitle = \sffamily\bfseries\small\color{white},
+    title     = {🇵🇪\ Datos Perú — #1 \hfill \small\normalfont Fuente: #2},
+    arc = 3pt, boxrule = 0.7pt,
+    left = 8pt, right = 8pt, top = 5pt, bottom = 5pt,
+    attach boxed title to top left = {yshift=-2mm, xshift=6mm},
+    boxed title style = {colback=VerdeOliva, arc=2pt}
+  ]
+}{%
+  \end{tcolorbox}
+}
+
+% ── Mapa conceptual básico (tikz) ─────────────────────────────────────────
+% Estilos de nodos para diagramas de economía
+\tikzset{
+  nodoConcepto/.style = {
+    draw = AzulPizarra, fill = AzulClaro!40,
+    rounded corners = 4pt, text width = 3cm,
+    align = center, font = \small\sffamily\bfseries,
+    minimum height = 1cm, inner sep = 4pt
+  },
+  nodoSub/.style = {
+    draw = AzulMedio, fill = GrisClaro,
+    rounded corners = 3pt, text width = 2.6cm,
+    align = center, font = \small\sffamily,
+    minimum height = 0.8cm, inner sep = 3pt
+  },
+  flechaConcepto/.style = {
+    -{Stealth[length=5pt]}, AzulMedio, thick
+  },
+  flechaSub/.style = {
+    -{Stealth[length=4pt]}, GrisMedio, thin
+  }
+}
+
+% ── Gráfico de oferta y demanda (pgfplots preconfigurado) ─────────────────
+% Entorno para graficar curvas de mercado con ejes Q–P
+\newenvironment{grafOD}{%
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+    width       = 8cm,
+    height      = 6cm,
+    axis lines  = left,
+    xlabel      = {Cantidad ($Q$)},
+    ylabel      = {Precio ($P$)},
+    xmin = 0, xmax = 10,
+    ymin = 0, ymax = 10,
+    xtick = \empty, ytick = \empty,
+    xlabel style = {font=\small\sffamily, color=GrisCarbón},
+    ylabel style = {font=\small\sffamily, color=GrisCarbón},
+    axis line style = {GrisMedio, thin}
+  ]
+}{%
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+}
+
+% ── Línea de tiempo del pensamiento económico ─────────────────────────────
+% Uso: dentro de tikzpicture, ver ejemplos en semanas de Unidad VII
+\tikzset{
+  eventoHist/.style = {
+    draw = AzulPizarra, fill = AzulClaro!30,
+    rounded corners = 2pt, font = \tiny\sffamily,
+    text width = 2.2cm, align = center, inner sep = 3pt
+  }
+}
+
+% ── Caja de doctrina económica ────────────────────────────────────────────
+% Uso: \begin{cajadoctrina}{Nombre}{Siglo/Período} ... \end{cajadoctrina}
+\newenvironment{cajadoctrina}[2]{%
+  \begin{tcolorbox}[
+    enhanced, breakable,
+    colback   = NaranjaSuave!40,
+    colframe  = NaranjaTierra,
+    fonttitle = \sffamily\bfseries\small,
+    title     = {#1 \hfill \small\normalfont #2},
+    arc = 3pt, boxrule = 0.7pt,
+    left = 8pt, right = 8pt, top = 5pt, bottom = 5pt,
+    attach boxed title to top left = {yshift=-2mm, xshift=6mm},
+    boxed title style = {colback=NaranjaTierra, arc=2pt, coltext=white}
+  ]
+}{%
+  \end{tcolorbox}
+}
+
+% ── Indicadores macroeconómicos — tabla rápida ────────────────────────────
+% Uso: \begin{tablaIndicadores} ... \end{tablaIndicadores}
+\newenvironment{tablaIndicadores}{%
+  \begin{center}
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabular}{>{\bfseries\color{AzulPizarra}}p{4cm}
+                  >{\centering\arraybackslash}p{3cm}
+                  p{5cm}}
+  \toprule
+  \rowcolor{AzulClaro!70}
+  \textbf{Indicador} & \textbf{Valor / Período} & \textbf{Fuente / Nota} \\
+  \midrule
+}{%
+  \bottomrule
+  \end{tabular}
+  \end{center}
+}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §E  INICIO DEL DOCUMENTO
+% ════════════════════════════════════════════════════════════════════════════
+\begin{document}
+
+\input{portada_libro}
+\input{indice}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD I: Introducción a la Economía   (Temas 1–7)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Introducción a la Economía}
+
+% --- Semana 01: Concepto de economía ---
+% \include{semana_01_concepto/teoria}
+% \include{semana_01_concepto/ejercicios}
+% \include{semana_01_concepto/resueltos}
+
+% --- Semana 02: Necesidades humanas ---
+% \include{semana_02_necesidades/teoria}
+% \include{semana_02_necesidades/ejercicios}
+% \include{semana_02_necesidades/resueltos}
+
+% --- Semana 03: Bienes y servicios ---
+% \include{semana_03_bienes/teoria}
+% \include{semana_03_bienes/ejercicios}
+% \include{semana_03_bienes/resueltos}
+
+% --- Semana 04: Escasez ---
+% \include{semana_04_escasez/teoria}
+% \include{semana_04_escasez/ejercicios}
+% \include{semana_04_escasez/resueltos}
+
+% --- Semana 05: Costo de oportunidad ---
+% \include{semana_05_costo_oportunidad/teoria}
+% \include{semana_05_costo_oportunidad/ejercicios}
+% \include{semana_05_costo_oportunidad/resueltos}
+
+% --- Semana 06: Agentes económicos ---
+% \include{semana_06_agentes/teoria}
+% \include{semana_06_agentes/ejercicios}
+% \include{semana_06_agentes/resueltos}
+
+% --- Semana 07: Actividades económicas ---
+% \include{semana_07_actividades/teoria}
+% \include{semana_07_actividades/ejercicios}
+% \include{semana_07_actividades/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD II: Sistemas Económicos   (Temas 8–11)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Sistemas Económicos}
+
+% --- Semana 08: Sistema capitalista ---
+% \include{semana_08_capitalismo/teoria}
+% \include{semana_08_capitalismo/ejercicios}
+% \include{semana_08_capitalismo/resueltos}
+
+% --- Semana 09: Sistema socialista ---
+% \include{semana_09_socialismo/teoria}
+% \include{semana_09_socialismo/ejercicios}
+% \include{semana_09_socialismo/resueltos}
+
+% --- Semana 10: Sistema mixto ---
+% \include{semana_10_sistema_mixto/teoria}
+% \include{semana_10_sistema_mixto/ejercicios}
+% \include{semana_10_sistema_mixto/resueltos}
+
+% --- Semana 11: Doctrinas económicas ---
+% \include{semana_11_doctrinas/teoria}
+% \include{semana_11_doctrinas/ejercicios}
+% \include{semana_11_doctrinas/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD III: Microeconomía   (Temas 12–20)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Microeconomía}
+
+% --- Semana 12: Mercado ---
+% \include{semana_12_mercado/teoria}
+% \include{semana_12_mercado/ejercicios}
+% \include{semana_12_mercado/resueltos}
+
+% --- Semana 13: Oferta ---
+% \include{semana_13_oferta/teoria}
+% \include{semana_13_oferta/ejercicios}
+% \include{semana_13_oferta/resueltos}
+
+% --- Semana 14: Demanda ---
+% \include{semana_14_demanda/teoria}
+% \include{semana_14_demanda/ejercicios}
+% \include{semana_14_demanda/resueltos}
+
+% --- Semana 15: Elasticidad ---
+% \include{semana_15_elasticidad/teoria}
+% \include{semana_15_elasticidad/ejercicios}
+% \include{semana_15_elasticidad/resueltos}
+
+% --- Semana 16: Equilibrio de mercado ---
+% \include{semana_16_equilibrio/teoria}
+% \include{semana_16_equilibrio/ejercicios}
+% \include{semana_16_equilibrio/resueltos}
+
+% --- Semana 17: Competencia perfecta ---
+% \include{semana_17_competencia_perfecta/teoria}
+% \include{semana_17_competencia_perfecta/ejercicios}
+% \include{semana_17_competencia_perfecta/resueltos}
+
+% --- Semana 18: Monopolio ---
+% \include{semana_18_monopolio/teoria}
+% \include{semana_18_monopolio/ejercicios}
+% \include{semana_18_monopolio/resueltos}
+
+% --- Semana 19: Oligopolio ---
+% \include{semana_19_oligopolio/teoria}
+% \include{semana_19_oligopolio/ejercicios}
+% \include{semana_19_oligopolio/resueltos}
+
+% --- Semana 20: Competencia monopolística ---
+% \include{semana_20_comp_monopolistica/teoria}
+% \include{semana_20_comp_monopolistica/ejercicios}
+% \include{semana_20_comp_monopolistica/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD IV: Macroeconomía   (Temas 21–28)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Macroeconomía}
+
+% --- Semana 21: Producto Bruto Interno ---
+% \include{semana_21_pbi/teoria}
+% \include{semana_21_pbi/ejercicios}
+% \include{semana_21_pbi/resueltos}
+
+% --- Semana 22: Inflación ---
+% \include{semana_22_inflacion/teoria}
+% \include{semana_22_inflacion/ejercicios}
+% \include{semana_22_inflacion/resueltos}
+
+% --- Semana 23: Deflación ---
+% \include{semana_23_deflacion/teoria}
+% \include{semana_23_deflacion/ejercicios}
+% \include{semana_23_deflacion/resueltos}
+
+% --- Semana 24: Recesión ---
+% \include{semana_24_recesion/teoria}
+% \include{semana_24_recesion/ejercicios}
+% \include{semana_24_recesion/resueltos}
+
+% --- Semana 25: Desempleo ---
+% \include{semana_25_desempleo/teoria}
+% \include{semana_25_desempleo/ejercicios}
+% \include{semana_25_desempleo/resueltos}
+
+% --- Semana 26: Ciclos económicos ---
+% \include{semana_26_ciclos/teoria}
+% \include{semana_26_ciclos/ejercicios}
+% \include{semana_26_ciclos/resueltos}
+
+% --- Semana 27: Crecimiento económico ---
+% \include{semana_27_crecimiento/teoria}
+% \include{semana_27_crecimiento/ejercicios}
+% \include{semana_27_crecimiento/resueltos}
+
+% --- Semana 28: Desarrollo económico ---
+% \include{semana_28_desarrollo/teoria}
+% \include{semana_28_desarrollo/ejercicios}
+% \include{semana_28_desarrollo/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD V: Sistema Financiero   (Temas 29–34)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Sistema Financiero}
+
+% --- Semana 29: Dinero ---
+% \include{semana_29_dinero/teoria}
+% \include{semana_29_dinero/ejercicios}
+% \include{semana_29_dinero/resueltos}
+
+% --- Semana 30: Sistema financiero ---
+% \include{semana_30_sistema_financiero/teoria}
+% \include{semana_30_sistema_financiero/ejercicios}
+% \include{semana_30_sistema_financiero/resueltos}
+
+% --- Semana 31: Bancos ---
+% \include{semana_31_bancos/teoria}
+% \include{semana_31_bancos/ejercicios}
+% \include{semana_31_bancos/resueltos}
+
+% --- Semana 32: Crédito ---
+% \include{semana_32_credito/teoria}
+% \include{semana_32_credito/ejercicios}
+% \include{semana_32_credito/resueltos}
+
+% --- Semana 33: Tasas de interés ---
+% \include{semana_33_tasas_interes/teoria}
+% \include{semana_33_tasas_interes/ejercicios}
+% \include{semana_33_tasas_interes/resueltos}
+
+% --- Semana 34: Bolsa de valores ---
+% \include{semana_34_bolsa/teoria}
+% \include{semana_34_bolsa/ejercicios}
+% \include{semana_34_bolsa/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD VI: Economía Peruana   (Temas 35–43)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Economía Peruana}
+
+% --- Semana 35: BCRP ---
+% \include{semana_35_bcrp/teoria}
+% \include{semana_35_bcrp/ejercicios}
+% \include{semana_35_bcrp/resueltos}
+
+% --- Semana 36: SUNAT ---
+% \include{semana_36_sunat/teoria}
+% \include{semana_36_sunat/ejercicios}
+% \include{semana_36_sunat/resueltos}
+
+% --- Semana 37: MEF ---
+% \include{semana_37_mef/teoria}
+% \include{semana_37_mef/ejercicios}
+% \include{semana_37_mef/resueltos}
+
+% --- Semana 38: INEI ---
+% \include{semana_38_inei/teoria}
+% \include{semana_38_inei/ejercicios}
+% \include{semana_38_inei/resueltos}
+
+% --- Semana 39: Política fiscal ---
+% \include{semana_39_politica_fiscal/teoria}
+% \include{semana_39_politica_fiscal/ejercicios}
+% \include{semana_39_politica_fiscal/resueltos}
+
+% --- Semana 40: Política monetaria ---
+% \include{semana_40_politica_monetaria/teoria}
+% \include{semana_40_politica_monetaria/ejercicios}
+% \include{semana_40_politica_monetaria/resueltos}
+
+% --- Semana 41: Comercio exterior ---
+% \include{semana_41_comercio_exterior/teoria}
+% \include{semana_41_comercio_exterior/ejercicios}
+% \include{semana_41_comercio_exterior/resueltos}
+
+% --- Semana 42: Globalización ---
+% \include{semana_42_globalizacion/teoria}
+% \include{semana_42_globalizacion/ejercicios}
+% \include{semana_42_globalizacion/resueltos}
+
+% --- Semana 43: TLC ---
+% \include{semana_43_tlc/teoria}
+% \include{semana_43_tlc/ejercicios}
+% \include{semana_43_tlc/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD VII: Historia del Pensamiento Económico   (Temas 44–49)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Historia del Pensamiento Económico}
+
+% --- Semana 44: Mercantilismo ---
+% \include{semana_44_mercantilismo/teoria}
+% \include{semana_44_mercantilismo/ejercicios}
+% \include{semana_44_mercantilismo/resueltos}
+
+% --- Semana 45: Fisiocracia ---
+% \include{semana_45_fisiocracia/teoria}
+% \include{semana_45_fisiocracia/ejercicios}
+% \include{semana_45_fisiocracia/resueltos}
+
+% --- Semana 46: Escuela clásica ---
+% \include{semana_46_escuela_clasica/teoria}
+% \include{semana_46_escuela_clasica/ejercicios}
+% \include{semana_46_escuela_clasica/resueltos}
+
+% --- Semana 47: Marxismo ---
+% \include{semana_47_marxismo/teoria}
+% \include{semana_47_marxismo/ejercicios}
+% \include{semana_47_marxismo/resueltos}
+
+% --- Semana 48: Keynesianismo ---
+% \include{semana_48_keynesianismo/teoria}
+% \include{semana_48_keynesianismo/ejercicios}
+% \include{semana_48_keynesianismo/resueltos}
+
+% --- Semana 49: Neoliberalismo ---
+% \include{semana_49_neoliberalismo/teoria}
+% \include{semana_49_neoliberalismo/ejercicios}
+% \include{semana_49_neoliberalismo/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD VIII: Actualidad Económica   (Temas 50–56)
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{Actualidad Económica}
+
+% --- Semana 50: Pobreza ---
+% \include{semana_50_pobreza/teoria}
+% \include{semana_50_pobreza/ejercicios}
+% \include{semana_50_pobreza/resueltos}
+
+% --- Semana 51: Desigualdad ---
+% \include{semana_51_desigualdad/teoria}
+% \include{semana_51_desigualdad/ejercicios}
+% \include{semana_51_desigualdad/resueltos}
+
+% --- Semana 52: Desarrollo sostenible ---
+% \include{semana_52_desarrollo_sostenible/teoria}
+% \include{semana_52_desarrollo_sostenible/ejercicios}
+% \include{semana_52_desarrollo_sostenible/resueltos}
+
+% --- Semana 53: Economía ambiental ---
+% \include{semana_53_economia_ambiental/teoria}
+% \include{semana_53_economia_ambiental/ejercicios}
+% \include{semana_53_economia_ambiental/resueltos}
+
+% --- Semana 54: Crisis económicas ---
+% \include{semana_54_crisis/teoria}
+% \include{semana_54_crisis/ejercicios}
+% \include{semana_54_crisis/resueltos}
+
+% --- Semana 55: Economía digital ---
+% \include{semana_55_economia_digital/teoria}
+% \include{semana_55_economia_digital/ejercicios}
+% \include{semana_55_economia_digital/resueltos}
+
+% --- Semana 56: Inteligencia artificial y economía ---
+% \include{semana_56_ia_economia/teoria}
+% \include{semana_56_ia_economia/ejercicios}
+% \include{semana_56_ia_economia/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+\end{document}

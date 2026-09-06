@@ -1,0 +1,50 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║   LIBRO COMPLETO — {{CURSO_MAYUS}} PREUNIVERSITARIA                       ║
+% ║   Compilar con: lualatex main.tex  (dos pasadas para referencias)        ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+\documentclass[12pt, a4paper, twoside]{book}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §B  METADATOS DEL CURSO
+%     Academia, docente y ciclo se heredan de config/project.tex.
+%     Para sobreescribirlos SOLO en este curso, definirlos aquí, p. ej.:
+%       \newcommand{\NombreAcademia}{CEPRE-UNI}
+% ════════════════════════════════════════════════════════════════════════════
+\newcommand{\NombreCurso}{{{CURSO}}}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §C  PREÁMBULO COMÚN (fuentes, colores, cajas, fancyhdr, tablas, tikz, etc.)
+%     fontspec y unicode-math los carga el núcleo — no recargarlos aquí.
+%     Para cambiar la fuente de este curso, definir ANTES del preámbulo:
+%       \newcommand{\FuenteSerif}{EB Garamond}
+% ════════════════════════════════════════════════════════════════════════════
+\input{../../core/preamble}
+
+% ════════════════════════════════════════════════════════════════════════════
+% §D  PREÁMBULO ESPECÍFICO DE {{CURSO_MAYUS}}
+%     Paquetes o comandos exclusivos de este curso.
+% ════════════════════════════════════════════════════════════════════════════
+
+% ════════════════════════════════════════════════════════════════════════════
+% §E  INICIO DEL DOCUMENTO
+% ════════════════════════════════════════════════════════════════════════════
+\begin{document}
+
+\input{portada_libro}
+\input{indice}
+
+% ════════════════════════════════════════════════════════════════════════════
+% UNIDAD I: [Nombre de la unidad]
+% ════════════════════════════════════════════════════════════════════════════
+\chapter{[Nombre de la unidad]}
+
+% Las semanas se crean con:  ./scripts/new-week.sh {{SLUG}} 01 nombre_del_tema
+% y se activan descomentando sus \include:
+%
+% --- Semana 01: [Tema] ---
+% \include{semana_01_tema/teoria}
+% \include{semana_01_tema/ejercicios}
+% \include{semana_01_tema/resueltos}
+
+% ════════════════════════════════════════════════════════════════════════════
+\end{document}

@@ -1,0 +1,10 @@
+% ══════════════════════════════════════════════════════════════════
+%  core/lists.tex — Listas y alternativas de examen (A–E)
+% ══════════════════════════════════════════════════════════════════
+\usepackage{enumitem}
+\setlist[itemize,1]{label=\textcolor{AzulMedio}{\textbullet},leftmargin=1.5em}
+\setlist[enumerate,1]{label=\textcolor{AzulPizarra}{\arabic*.},leftmargin=1.8em}
+
+% Lista de alternativas con formato exacto de examen de admisión
+\newlist{alternativas}{enumerate}{1}
+\setlist[alternativas]{label=\textbf{\Alph*)},leftmargin=2em,itemsep=2pt,parsep=0pt}

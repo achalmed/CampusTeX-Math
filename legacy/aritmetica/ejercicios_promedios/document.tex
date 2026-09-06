@@ -1,0 +1,70 @@
+
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, left=2.54cm, right=2.54cm, top=3cm, bottom=3cm]{geometry} % Márgenes personalizados a 2cm
+\usepackage[spanish]{babel} % Para fechas y formato en español
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+% Configuración de página
+\pagestyle{fancy}
+\fancyhf{} % Limpia encabezados y pies de página
+\fancyhead[L]{Academia Prepolicial - Promedios}
+\fancyhead[R]{\today}
+\fancyfoot[C]{\thepage} % Número de página centrado en el pie
+\renewcommand{\headrulewidth}{0.8pt}
+
+% Configuración de títulos y espaciado
+\titleformat{\section}[block]{\large\bfseries\centering}{\thesection}{1em}{}
+\setlength{\columnsep}{1cm}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0em}
+
+
+\begin{document}
+
+	\begin{center}
+		\Large\bfseries Promedios
+	\end{center}
+
+\begin{multicols}{2}
+	\section*{Ejercicios}
+		\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=0.4cm]
+			\item Si $A = M.A.(3; 33; 333)$, $B =$ Media geométrica de $2; 4 ; 8$, $C = M.H.(45; 30; 15)$, calcula $A + B + C$.
+
+			\item Si la media aritmética de dos números es 8 y la media armónica de los mismos es 2, calcula el producto de dichos números.
+
+			\item Calcula el valor de $x$, si el promedio geométrico de los números $5^x$, $5^{2x}$, y $5^{3x}$ es 625.
+
+			\item El promedio geométrico de los números $2, 4, 8, 16, \dots, 2^n$ es 32. Calcula $n$.
+
+			\item El promedio geométrico de los números $3, 9, 27, 81, \dots, 3^n$ es 729. Calcula $n$.
+
+			\item Las calificaciones del alumno Pedro en el curso de aritmética son 12, 9 y 15, y los pesos respectivos de dichas notas son 4, 5 y 3. Calcula el promedio.
+
+			\item La media armónica de 20 números es 12 y la de otros 30 números es 15, calcula la media armónica de los 50 números.
+
+			\item El promedio geométrico de 4 números enteros y diferentes es $3\sqrt{3}$. Calcula el promedio aritmético de dichos números.
+
+			\item El promedio geométrico de 4 números enteros y diferentes es $5\sqrt{5}$. Calcula el promedio aritmético de dichos números.
+
+			\item Si la media aritmética de 53 números es 300 y la media aritmética de otros 47 números es 100, calcula la media aritmética de los 100.
+
+			\item La media aritmética de 40 números es 74. Si se quitan 4 de ellos, que tienen media aritmética 20, ¿en cuánto aumenta la media aritmética de los restantes?
+
+			\item Para la producción de camisas para exportación se distribuyó la confección entre 3 empresas en cantidades proporcionales a 6, 12 y 4. Si dichas empresas producen 500, 600 y 1000 camisas diarias respectivamente, la producción media por día es:
+
+			\item Un aeroplano que vuela alrededor de un circuito que tiene forma cuadrada emplea velocidades constantes en cada lado; si dichas velocidades están en relación con los números 1, 2, 3 y 4, respectivamente, y la velocidad media del aeroplano en su recorrido total es de 192 km/h. Calcula el tercer lado en km/h.
+
+			\item Si a cada uno de los lados de $a$ cuadrados iguales se les disminuye en dos centímetros, la suma de sus áreas disminuye en $20a$ cm$^2$. Calcula el promedio de los perímetros de los $a$ cuadrados.
+
+
+			% Para añadir más ejercicios, simplemente copia y pega el siguiente bloque:
+			% \item [Enunciado del ejercicio]
+		\end{enumerate}
+
+\end{multicols}
+
+\end{document}

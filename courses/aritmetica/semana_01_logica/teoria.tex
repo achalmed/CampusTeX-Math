@@ -1,0 +1,417 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║  TEORÍA — CONECTIVOS LÓGICOS Y TABLA DE VERDAD                          ║
+% ║  Curso: Aritmética / Lógica | Semana: 01                                ║
+% ║  MÓDULO: sin \documentclass ni \begin{document}                         ║
+	% ╚══════════════════════════════════════════════════════════════════════════╝
+	
+	% ─── PORTADA DE CLASE (usa \portadaclase definido en preambulo_comun) ─────────
+	\portadaclase%
+	{Conectivos Lógicos y Tabla de Verdad}%  #1 Tema
+	{01}%                                    #2 Semana
+	{I}%                                     #3 N° Unidad
+	{Fundamentos Numéricos}%                 #4 Nombre Unidad
+	
+	% ─── MOTIVACIÓN ──────────────────────────────────────────────────────────────
+	\section*{¿Por qué estudiar este tema?}
+	\begin{tcolorbox}[
+		enhanced, colback=AzulClaro!30, colframe=AzulMedio,
+		arc=3pt, boxrule=0.6pt, left=10pt, right=10pt
+		]
+		\textit{Los conectivos lógicos y las tablas de verdad son base obligatoria en los
+			exámenes de admisión de la UNI, UNMSM, UNSCH, PUCP y Villarreal. Dominar el
+			método \textbf{backdoor} y la clasificación de matrices (tautología, contradicción,
+			contingencia) permite resolver este bloque completo en tiempo mínimo.}
+	\end{tcolorbox}
+	\vspace{0.4cm}
+	
+	% ─── SECCIÓN 1: LÓGICA PROPOSICIONAL ─────────────────────────────────────────
+	\section{Lógica Proposicional}
+	
+	\subsection{Definiciones fundamentales}
+	
+	\begin{cajadef}
+		\textbf{Lógica proposicional:} Rama de la lógica que estudia las
+		\textbf{proposiciones}, las relaciones entre ellas y la función de las
+		variables proposicionales y los conectivos lógicos.
+	\end{cajadef}
+	
+	\begin{cajadef}[2]
+		\textbf{Proposición lógica} (enunciado cerrado): Todo enunciado declarativo
+		con un único valor de verdad: \textbf{Verdadero~(V)} o \textbf{Falso~(F)}.
+		Se representa con letras minúsculas: $p$, $q$, $r$, $s$\ldots
+	\end{cajadef}
+	
+	\subsection{Clasificación de proposiciones}
+	
+	\begin{cajaprop}[Tipos]
+		\begin{itemize}
+			\item \textbf{Simples (atómicas):} Sin conectivos lógicos.
+			Ejemplo: \textit{``Carlos es travieso''}.
+			\item \textbf{Compuestas (moleculares):} Dos o más simples unidas por un
+			conectivo. Ejemplo: \textit{``Carlos es travieso \textbf{y} despistado''}.
+		\end{itemize}
+	\end{cajaprop}
+	
+	\begin{cajaadvert}
+		\textbf{Error frecuente:} Confundir sujeto compuesto con proposición compuesta.\\
+		``Carlos y Richard van al cine'' $\to$ sujeto compuesto, acción única $\to$
+		proposición \textbf{simple}.\\[4pt]
+		\textbf{Regla:} Una proposición es compuesta si se puede separar en dos oraciones
+		con valor de verdad propio e independiente.
+	\end{cajaadvert}
+	
+	% ─── SECCIÓN 2: CONECTIVOS LÓGICOS ───────────────────────────────────────────
+	\section{Conectivos Lógicos}
+	
+	\subsection{Conjunción }
+	
+	\begin{cajadef}
+		\textbf{Conjunción:} Conectiva \textbf{y} (también: \textit{pero, e, sin
+			embargo}). Operador: $\wedge$. Proposición resultante: $p \wedge q$.
+	\end{cajadef}
+	
+	\begin{cajaprop}[Conjunción]
+		$p \wedge q$ es \textbf{V} únicamente cuando \textbf{ambas} proposiciones son V.
+		\[
+		\begin{array}{|c|c||c|}
+			\hline
+			\rowcolor{AzulClaro!60}
+			p & q & p \wedge q \\
+			\hline
+			V & V & \mathbf{V} \\
+			V & F & F \\
+			F & V & F \\
+			F & F & F \\
+			\hline
+		\end{array}
+		\]
+	\end{cajaprop}
+	
+	\subsection{Disyunción débil ($\vee$)}
+	
+	\begin{cajadef}
+		\textbf{Disyunción débil:} Conectiva \textbf{o} (también: \textit{u}).
+		Operador: $\vee$. Proposición: $p \vee q$.
+	\end{cajadef}
+	
+	\begin{cajaprop}[Disyunción débil]
+		$p \vee q$ es \textbf{F} únicamente cuando \textbf{ambas} son F.
+		\[
+		\begin{array}{|c|c||c|}
+			\hline
+			\rowcolor{AzulClaro!60}
+			p & q & p \vee q \\
+			\hline
+			V & V & V \\
+			V & F & V \\
+			F & V & V \\
+			F & F & \mathbf{F} \\
+			\hline
+		\end{array}
+		\]
+	\end{cajaprop}
+	
+	\subsection{Disyunción fuerte ($\Delta$)}
+	
+	\begin{cajadef}
+		\textbf{Disyunción fuerte (exclusiva):} Conectiva \textbf{o\ldots o / o
+			bien\ldots o bien}. Operador: $\Delta$. Proposición: $p \,\Delta\, q$.
+	\end{cajadef}
+	
+	\begin{cajaprop}[Disyunción fuerte]
+		$p \,\Delta\, q$ es \textbf{V} cuando exactamente \textbf{una} proposición
+		es V (valores distintos entre sí).
+		\[
+		\begin{array}{|c|c||c|}
+			\hline
+			\rowcolor{AzulClaro!60}
+			p & q & p \,\Delta\, q \\
+			\hline
+			V & V & F \\
+			V & F & \mathbf{V} \\
+			F & V & \mathbf{V} \\
+			F & F & F \\
+			\hline
+		\end{array}
+		\]
+	\end{cajaprop}
+	
+	\subsection{Condicional ($\to$)}
+	
+	\begin{cajadef}
+		\textbf{Condicional:} Conectiva \textbf{si\ldots entonces} (también:
+		\textit{implica, por lo tanto}). Operador: $\to$. Proposición: $p \to q$.
+		$p$ = antecedente; $q$ = consecuente.
+	\end{cajadef}
+	
+	\begin{cajaprop}[Condicional]
+		$p \to q$ es \textbf{F} únicamente cuando $p = V$ y $q = F$.
+		\[
+		\begin{array}{|c|c||c|}
+			\hline
+			\rowcolor{AzulClaro!60}
+			p & q & p \to q \\
+			\hline
+			V & V & V \\
+			V & F & \mathbf{F} \\
+			F & V & V \\
+			F & F & V \\
+			\hline
+		\end{array}
+		\]
+	\end{cajaprop}
+	
+	\begin{cajatip}
+		Mnemotecnia: el condicional es una \textbf{promesa}. Solo se rompe (F) cuando
+		se prometió ($p=V$) y no se cumplió ($q=F$). Sin promesa ($p=F$) no hay
+		incumplimiento $\Rightarrow$ siempre V.
+	\end{cajatip}
+	
+	\subsection{Bicondicional ($\leftrightarrow$)}
+	
+	\begin{cajadef}
+		\textbf{Bicondicional:} Conectiva \textbf{si y solo si} (también:
+		\textit{entonces y solo entonces}). Operador: $\leftrightarrow$ (también $\equiv$).
+		Proposición: $p \leftrightarrow q$.
+	\end{cajadef}
+	
+	\begin{cajaprop}[Bicondicional]
+		$p \leftrightarrow q$ es \textbf{V} cuando ambas tienen el
+		\textbf{mismo valor de verdad}.
+		\[
+		\begin{array}{|c|c||c|}
+			\hline
+			\rowcolor{AzulClaro!60}
+			p & q & p \leftrightarrow q \\
+			\hline
+			V & V & V \\
+			V & F & F \\
+			F & V & F \\
+			F & F & V \\
+			\hline
+		\end{array}
+		\]
+	\end{cajaprop}
+	
+	\subsection{Negación ($\sim$)}
+	
+	\begin{cajadef}
+		\textbf{Negación:} Conectiva \textbf{no} (también: \textit{ni, es falso que}).
+		Operador: $\sim$ (también $\neg$). Proposición: $\sim p$.
+	\end{cajadef}
+	
+	\begin{cajaprop}[Negación]
+		$\sim p$ invierte siempre el valor de $p$.
+		\[
+		\begin{array}{|c||c|}
+			\hline
+			\rowcolor{AzulClaro!60}
+			p & \sim p \\
+			\hline
+			V & F \\
+			F & V \\
+			\hline
+		\end{array}
+		\]
+	\end{cajaprop}
+	
+	% ─── SECCIÓN 3: TABLAS DE VERDAD ─────────────────────────────────────────────
+	\section{Tablas de Valores de Verdad}
+	
+	\subsection{Definición y número de filas}
+	
+	\begin{cajadef}
+		\textbf{Tabla de verdad:} Matriz que lista todas las combinaciones posibles
+		de valores de las variables y el valor resultante de la proposición compuesta.
+		La columna del operador principal se llama \textbf{matriz principal}.
+	\end{cajadef}
+	
+	\begin{cajaprop}[Número de filas]
+		Con $n$ variables proposicionales:
+		\[
+		\text{N}^{\circ}\text{ de filas} = 2^{n}
+		\]
+		\vspace{-6pt}
+		\begin{itemize}
+			\item 1 variable: $2^1 = 2$ filas
+			\item 2 variables: $2^2 = 4$ filas
+			\item 3 variables: $2^3 = 8$ filas
+		\end{itemize}
+	\end{cajaprop}
+	
+	\subsection{Jerarquía de conectivos}
+	
+	\begin{cajaformula}
+		\begin{center}
+			\renewcommand{\arraystretch}{1.4}
+			\begin{tabular}{@{}clc@{}}
+				\toprule
+				\rowcolor{AzulClaro!60}
+				\textbf{Prioridad} & \textbf{Conectivo} & \textbf{Símbolo} \\
+				\midrule
+				1\textsuperscript{o} (mayor) & Negación         & $\sim$            \\
+				\rowcolor{GrisClaro}
+				2\textsuperscript{o}          & Conjunción       & $\wedge$          \\
+				3\textsuperscript{o}          & Disyunción débil & $\vee$            \\
+				\rowcolor{GrisClaro}
+				4\textsuperscript{o}          & Disyunción fuerte& $\Delta$          \\
+				5\textsuperscript{o}          & Condicional      & $\to$             \\
+				\rowcolor{GrisClaro}
+				6\textsuperscript{o} (menor)  & Bicondicional    & $\leftrightarrow$ \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+	\end{cajaformula}
+	
+	\begin{cajaadvert}
+		\textbf{Error:} Evaluar de izquierda a derecha sin respetar jerarquía.\\
+		\textbf{Corrección:} Identificar el operador principal (menor prioridad fuera
+		de paréntesis) y evaluarlo \textbf{al final}.
+	\end{cajaadvert}
+	
+	\subsection{Ejemplo completo de tabla}
+	
+	Proposición: $(p \wedge q) \to (p \,\Delta\, q)$ \quad
+	(Orden: \textcircled{1} $p \wedge q$, \textcircled{2} $p\,\Delta\,q$,
+	\textcircled{3} $\to$)
+	
+	\[
+	\begin{array}{|cc|c|c||c|}
+		\hline
+		\rowcolor{AzulClaro!60}
+		p & q & \textcircled{1}\;p \wedge q & \textcircled{2}\;p\,\Delta\,q
+		& \textcircled{3}\;(p \wedge q) \to (p\,\Delta\,q) \\
+		\hline
+		V & V & V & F & F \\
+		V & F & F & V & V \\
+		F & V & F & V & V \\
+		F & F & F & F & V \\
+		\hline
+	\end{array}
+	\]
+	
+	\noindent Matriz principal: \textbf{FVVV} $\Rightarrow$ proposición
+	\textbf{contingente}.
+	
+	% ─── SECCIÓN 4: CLASES DE MATRICES ───────────────────────────────────────────
+	\section{Clases de Matrices Principales}
+	
+	\begin{cajaprop}[Tautología]
+		Todos los valores de la matriz principal son \textbf{V}.\\
+		Notación: $\models \varphi$ \quad (verdad lógica).
+	\end{cajaprop}
+	
+	\begin{cajaprop}[Contradicción]
+		Todos los valores de la matriz principal son \textbf{F}.\\
+		Notación: $\varphi \equiv \bot$ \quad (también: \textit{antología}).
+	\end{cajaprop}
+	
+	\begin{cajaprop}[Contingencia]
+		La matriz principal contiene \textbf{al menos un V y un F}.
+	\end{cajaprop}
+	
+	% ─── SECCIÓN 5: EJEMPLOS RESUELTOS ───────────────────────────────────────────
+	\section{Ejemplos resueltos}
+	
+	\begin{cajaejemplo}[1 — Identificar proposición compuesta]
+		\textbf{Enunciado:} ¿Cuál es una proposición compuesta?\\[4pt]
+		a)~``Agripino y Cesarina son hermanos.'' \quad
+		e)~``Daniel es profesor y Rosa es escritora.''
+		
+		\medskip
+		\noindent\textbf{Método:} Análisis estructural.
+		
+		\medskip
+		\noindent (a): sujeto compuesto, una sola acción $\to$ \textbf{simple}.\\
+		(e): $p$: ``Daniel es profesor'' y $q$: ``Rosa es escritora'' $\to$
+		dos proposiciones independientes $\to$ \textbf{compuesta}: $p \wedge q$.
+		
+		\begin{tcolorbox}[colback=AzulClaro!50, colframe=AzulPizarra,
+			arc=2pt, boxrule=0.7pt]
+			\[\boxed{(e)\;p \wedge q:\;\text{``Daniel es profesor''}
+				\wedge \text{``Rosa es escritora''}}\]
+		\end{tcolorbox}
+	\end{cajaejemplo}
+	
+	\begin{cajaejemplo}[2 — Simbolización]
+		\textbf{Enunciado:} Simboliza: \textit{``Si Daniel y Agripina juegan fútbol,
+			entonces Margarito será el árbitro''}.
+		
+		\medskip
+		$p$: Daniel juega fútbol,\quad $q$: Agripina juega fútbol,\quad
+		$r$: Margarito será árbitro.
+		
+		\begin{align*}
+			\text{Antecedente:} &\quad p \wedge q \\
+			\text{Consecuente:} &\quad r \\
+			\text{Resultado:}   &\quad (p \wedge q) \to r
+		\end{align*}
+		
+		\begin{tcolorbox}[colback=AzulClaro!50, colframe=AzulPizarra,
+			arc=2pt, boxrule=0.7pt]
+			\[\boxed{(p \wedge q) \to r}\]
+		\end{tcolorbox}
+	\end{cajaejemplo}
+	
+	\begin{cajaejemplo}[3 — Método backdoor]
+		\textbf{Enunciado:} La proposición $(\sim p \wedge q) \to [(p \vee r) \vee t]$
+		es \textbf{falsa}. Halla $p$, $q$, $r$, $t$.
+		
+		\medskip
+		\noindent Un condicional es F solo cuando ant.~$= V$ y cons.~$= F$:
+		
+		\begin{align*}
+			\text{Consecuente F:}&\quad
+			(p \vee r) \vee t = F \Rightarrow p=F,\;r=F,\;t=F \\
+			\text{Antecedente V:}&\quad
+			\sim p \wedge q = V \Rightarrow \underbrace{\sim p=V}_{\Rightarrow p=F\;\checkmark}
+			\text{ y } q=V
+		\end{align*}
+		
+		\begin{tcolorbox}[colback=AzulClaro!50, colframe=AzulPizarra,
+			arc=2pt, boxrule=0.7pt]
+			\[\boxed{p \equiv F,\quad q \equiv V,\quad r \equiv F,\quad t \equiv F}\]
+		\end{tcolorbox}
+		
+		\begin{cajatip}
+			\textbf{Backdoor:} trabaja siempre desde el conectivo principal hacia adentro.
+			Condicional falso $\Rightarrow$ ant.~V y cons.~F.
+			Disyunción falsa $\Rightarrow$ ambos miembros F. Estas dos reglas resuelven
+			el 90\,\% de los ejercicios de lógica en admisión.
+		\end{cajatip}
+	\end{cajaejemplo}
+	
+	% ─── RESUMEN FINAL ────────────────────────────────────────────────────────────
+	\section{Resumen del tema}
+	
+	\begin{cajaformula}
+		\begin{center}
+			\renewcommand{\arraystretch}{1.5}
+			\begin{tabular}{@{}p{3.8cm}cp{6.8cm}@{}}
+				\toprule
+				\rowcolor{AzulClaro!60}
+				\textbf{Conectivo} & \textbf{Símbolo} & \textbf{¿Cuándo es FALSO?} \\
+				\midrule
+				Conjunción & $p \wedge q$ & Cuando al menos uno es F \\
+				\rowcolor{GrisClaro}
+				Disyunción débil & $p \vee q$ & Solo cuando ambos son F \\
+				Disyunción fuerte & $p\,\Delta\,q$ & Cuando ambos son iguales (VV o FF) \\
+				\rowcolor{GrisClaro}
+				Condicional & $p \to q$ & Solo cuando $p=V$ y $q=F$ \\
+				Bicondicional & $p \leftrightarrow q$ & Cuando tienen valores distintos \\
+				\rowcolor{GrisClaro}
+				Negación & $\sim p$ & Cuando $p$ es V \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+	\end{cajaformula}
+	
+	\begin{cajatip}
+		Memoriza la \textbf{excepción de cada conectivo}. El condicional con
+		antecedente falso (siempre V) y el bicondicional con ambos falsos (también V)
+		son los casos que más sorprenden en el examen.
+	\end{cajatip}
+	
+	% ════════════════════════════════════════════════════════════════════════════
+	% FIN — teoria.tex
+	% ════════════════════════════════════════════════════════════════════════════

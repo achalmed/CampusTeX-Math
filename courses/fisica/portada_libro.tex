@@ -1,0 +1,69 @@
+% ╔══════════════════════════════════════════════════════════════════════════╗
+% ║   PORTADA — LIBRO COMPLETO DE FÍSICA PREUNIVERSITARIA                    ║
+% ╚══════════════════════════════════════════════════════════════════════════╝
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{tikzpicture}[remember picture, overlay]
+
+    \fill[AzulPizarra]
+    (current page.north west)
+    rectangle ([yshift=-13cm]current page.north east);
+    \fill[DoradoAcadémico]
+    ([yshift=-13cm]current page.north west)
+    rectangle ([yshift=-13.5cm]current page.north east);
+    \fill[GrisClaro]
+    (current page.south west)
+    rectangle ([yshift=3.5cm]current page.south east);
+    \fill[AzulMedio]
+    (current page.south west)
+    rectangle ([yshift=0.6cm]current page.south east);
+
+    \node[anchor=center, text=white]
+    at ([yshift=-2.8cm]current page.north)
+    {\fontsize{26}{30}\selectfont\sffamily\bfseries \NombreAcademia};
+    \node[anchor=center, text=GrisMedio]
+    at ([yshift=-4.2cm]current page.north)
+    {\large\sffamily Excelencia Académica Preuniversitaria};
+
+    \draw[DoradoAcadémico, line width=1.8pt]
+    ([xshift=2.5cm, yshift=-5.4cm]current page.north west)
+    -- ([xshift=-2.5cm, yshift=-5.4cm]current page.north east);
+
+    % Vector decorativo (alusivo a física)
+    \begin{scope}[shift={([xshift=15.5cm, yshift=-9cm]current page.north west)}]
+      \draw[-{Stealth[length=4pt]}, DoradoAcadémico!50, line width=1.5pt]
+      (0,0) -- (2,1.5);
+      \draw[white!20, dashed, thin] (2,0) -- (2,1.5) -- (0,1.5);
+      \draw[white!30, thin] (0.4,0) arc (0:36.87:0.4);
+      \node[text=white!30, font=\tiny] at (0.55,0.15) {$\theta$};
+      \node[text=DoradoAcadémico!50, font=\tiny\sffamily] at (0.8,1) {$\vec{F}$};
+    \end{scope}
+
+    \node[anchor=center, text=white]
+    at ([yshift=-7.5cm]current page.north)
+    {\fontsize{52}{58}\selectfont\sffamily\bfseries FÍSICA};
+    \node[anchor=center, text=DoradoAcadémico]
+    at ([yshift=-9.2cm]current page.north)
+    {\Large\sffamily\bfseries PREUNIVERSITARIA};
+    \node[anchor=center, text=white!70!AzulPizarra]
+    at ([yshift=-10.8cm]current page.north)
+    {\normalsize\sffamily
+      Teoría \textbullet\ Ejercicios Propuestos \textbullet\ Ejercicios Resueltos};
+    \node[anchor=center, text=AzulMedio]
+    at ([yshift=-12cm]current page.north)
+    {\small\sffamily
+      7 Bloques Temáticos \textbullet\ 45 Temas \textbullet\ Mecánica · Estática · Termodinámica · Óptica};
+
+    \node[anchor=west, text=GrisCarbón]
+    at ([xshift=2.5cm, yshift=2.8cm]current page.south west)
+    {\sffamily\textbf{Docente:} \NombreDocente};
+    \node[anchor=west, text=GrisCarbón]
+    at ([xshift=2.5cm, yshift=1.8cm]current page.south west)
+    {\sffamily\textbf{Ciclo:} \CicloActual
+      \quad\textbf{Edición:} Primera};
+    \node[anchor=center, text=white]
+    at ([yshift=0.3cm]current page.south)
+    {\tiny\sffamily Material de uso interno — \NombreAcademia};
+
+  \end{tikzpicture}
+\end{titlepage}

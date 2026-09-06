@@ -1,0 +1,395 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, shapes.geometric, positioning, babel}
+\tcbuselibrary{skins, breakable}
+% ── Colores ───────────────────────────────────────────────────────────────────
+\definecolor{azulprim}{RGB}{10, 60, 130}
+\definecolor{azulclaro}{RGB}{220, 232, 250}
+\definecolor{verdeprim}{RGB}{0, 110, 60}
+\definecolor{verdelight}{RGB}{215, 245, 225}
+\definecolor{rojoprim}{RGB}{180, 30, 30}
+\definecolor{rojolight}{RGB}{255, 235, 235}
+\definecolor{naranja}{RGB}{200, 90, 0}
+\definecolor{naranjalight}{RGB}{255, 240, 215}
+\definecolor{morado}{RGB}{90, 30, 140}
+\definecolor{moradolight}{RGB}{240, 225, 255}
+\definecolor{grisclaro}{RGB}{246, 246, 250}
+\definecolor{amarillo}{RGB}{255, 248, 200}
+% ── Encabezado ────────────────────────────────────────────────────────────────
+\setlength{\headheight}{22pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{azulprim}{\textbf{CTA -- Clase 1:} Materia, Energía y el Universo}}
+\fancyhead[R]{\small\textcolor{azulprim}{\today}}
+\fancyfoot[C]{\small\textcolor{azulprim}{\thepage}}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{azulprim}\leaders\hrule height\headrulewidth\hfill}}
+% ── Secciones ─────────────────────────────────────────────────────────────────
+\titleformat{\section}{\large\bfseries\color{white}}{}{0em}{}
+\titlespacing{\section}{0pt}{10pt}{4pt}
+\titleformat{\subsection}{\normalsize\bfseries\color{verdeprim}}{\thesubsection.}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{rojoprim}}{\thesubsubsection.}{0.5em}{}
+\newcommand{\seccion}[2]{%
+	\begin{tcolorbox}[colback=#1, colframe=#1, arc=4pt,
+		left=8pt, right=8pt, top=4pt, bottom=4pt,
+		before skip=12pt, after skip=6pt]
+		\textbf{\large\color{white} #2}
+	\end{tcolorbox}%
+}
+% ── Cajas ─────────────────────────────────────────────────────────────────────
+\newtcolorbox{defbox}[1]{
+	enhanced, breakable, arc=3pt,
+	colback=azulclaro, colframe=azulprim,
+	coltitle=white, colbacktitle=azulprim,
+	fonttitle=\bfseries, title=Definici\'on: #1,
+	left=6pt, right=6pt, top=4pt, bottom=4pt}
+\newtcolorbox{propbox}[1]{
+	enhanced, breakable, arc=3pt,
+	colback=verdelight, colframe=verdeprim,
+	coltitle=white, colbacktitle=verdeprim,
+	fonttitle=\bfseries, title=Propiedades: #1,
+	left=6pt, right=6pt, top=4pt, bottom=4pt}
+\newtcolorbox{importantebox}{
+	enhanced, breakable, arc=3pt,
+	colback=rojolight, colframe=rojoprim,
+	coltitle=white, colbacktitle=rojoprim,
+	fonttitle=\bfseries, title=$\bigstar$ \ Importante,
+	left=6pt, right=6pt, top=4pt, bottom=4pt}
+\newtcolorbox{ejemplobox}[1]{
+	enhanced, breakable, arc=3pt,
+	colback=naranjalight, colframe=naranja,
+	coltitle=white, colbacktitle=naranja,
+	fonttitle=\bfseries, title=Ejemplo: #1,
+	left=6pt, right=6pt, top=4pt, bottom=4pt}
+\newtcolorbox{curiosbox}{
+	enhanced, breakable, arc=3pt,
+	colback=moradolight, colframe=morado,
+	coltitle=white, colbacktitle=morado,
+	fonttitle=\bfseries, title=\textquestiondown Sab\'ias que\ldots?,
+	left=6pt, right=6pt, top=4pt, bottom=4pt}
+\newtcolorbox{databox}{
+	enhanced, breakable, arc=3pt,
+	colback=amarillo, colframe=naranja!70,
+	left=6pt, right=6pt, top=4pt, bottom=4pt}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0em}
+% ─────────────────────────────────────────────────────────────────────────────
+\begin{document}
+	% ─────────────────────────────────────────────────────────────────────────────
+	\begin{center}
+		{\Large\bfseries\color{azulprim} CIENCIA, TECNOLOG\'IA Y AMBIENTE}\\[4pt]
+		{\large\bfseries CLASE 1: Materia, Energ\'ia y el Universo}\\[4pt]
+		{\normalsize\color{verdeprim} Mundo F\'isico, Tecnolog\'ia y Ambiente}\\[2pt]
+		\textcolor{azulprim}{\rule{\linewidth}{1.5pt}}
+	\end{center}
+	% ═════════════════════════════════════════════════════════════════════════════
+	\seccion{azulprim}{1. Materia y Energ\'ia. Propiedades de la Materia}
+	% ═════════════════════════════════════════════════════════════════════════════
+	\subsection{¿Qué es la materia?}
+	\begin{defbox}{Materia}
+		La \textbf{materia} es todo aquello que tiene \textbf{masa} y ocupa un lugar en el \textbf{espacio} (volumen). Est\'a formada por \'atomos y mol\'eculas.
+		\[
+		\text{Materia} \Rightarrow \text{tiene masa} + \text{ocupa volumen}
+		\]
+	\end{defbox}
+	\begin{propbox}{Generales de la Materia}
+		Son las que poseen \textbf{todos los cuerpos} sin distinci\'on:
+		\begin{multicols}{2}
+			\begin{itemize}[itemsep=3pt]
+				\item \textbf{Masa:} cantidad de materia (kg).
+				\item \textbf{Volumen:} espacio que ocupa (m³).
+				\item \textbf{Peso:} fuerza gravitacional ($P = mg$).
+				\item \textbf{Densidad:} masa por unidad de volumen.
+				\[
+				\rho = \frac{m}{V} \quad \left[\frac{\mathrm{kg}}{\mathrm{m}^3}\right]
+				\]
+				\item \textbf{Inercia:} resistencia al cambio de movimiento.
+				\item \textbf{Impenetrabilidad:} dos cuerpos no pueden ocupar el mismo espacio al mismo tiempo.
+				\item \textbf{Divisibilidad:} puede dividirse en partes m\'as peque\~nas.
+				\item \textbf{Extensi\'on:} tiene longitud, anchura y altura.
+			\end{itemize}
+		\end{multicols}
+	\end{propbox}
+	\begin{propbox}{Espec\'ificas de la Materia}
+		Solo las poseen \textbf{algunos materiales}:
+		\begin{multicols}{2}
+			\begin{itemize}[itemsep=3pt]
+				\item \textbf{Elasticidad:} recupera su forma al cesar la fuerza.
+				\item \textbf{Dureza:} resistencia al rayado.
+				\item \textbf{Maleabilidad:} puede laminarse (oro, cobre).
+				\item \textbf{Ductilidad:} puede estirarse en hilos (hierro).
+				\item \textbf{Tenacidad:} resistencia a la rotura por golpe.
+				\item \textbf{Conductividad:} transmite calor o electricidad.
+				\item \textbf{Magnetismo:} atrae metales ferrosos.
+				\item \textbf{Solubilidad:} capacidad de disolverse.
+			\end{itemize}
+		\end{multicols}
+	\end{propbox}
+	\subsection{Estados de la Materia}
+	\begin{center}
+		\begin{tikzpicture}[node distance=2.2cm, font=\small]
+			% Nodos
+			\node[draw=azulprim, fill=azulclaro, rounded corners=6pt,
+			text width=2.4cm, align=center, minimum height=1.2cm] (sol)
+			{\textbf{S\'olido}\\Forma y\\volumen fijos};
+			\node[draw=verdeprim, fill=verdelight, rounded corners=6pt,
+			text width=2.4cm, align=center, minimum height=1.2cm,
+			right=of sol] (liq)
+			{\textbf{L\'iquido}\\Volumen fijo,\\forma variable};
+			\node[draw=rojoprim, fill=rojolight, rounded corners=6pt,
+			text width=2.4cm, align=center, minimum height=1.2cm,
+			right=of liq] (gas)
+			{\textbf{Gaseoso}\\Forma y volumen\\variables};
+			\node[draw=morado, fill=moradolight, rounded corners=6pt,
+			text width=2.4cm, align=center, minimum height=1.2cm,
+			right=of gas] (plas)
+			{\textbf{Plasma}\\Gas ionizado,\\alta energ\'ia};
+			% Flechas
+			\draw[-{Stealth}, thick, azulprim] (sol.north) to[bend left=25]
+			node[above, font=\scriptsize]{Fusi\'on} (liq.north);
+			\draw[-{Stealth}, thick, verdeprim] (liq.north) to[bend left=25]
+			node[above, font=\scriptsize]{Vaporizaci\'on} (gas.north);
+			\draw[-{Stealth}, thick, rojoprim] (gas.north) to[bend left=25]
+			node[above, font=\scriptsize]{Ionizaci\'on} (plas.north);
+			\draw[-{Stealth}, thick, azulprim!60] (liq.south) to[bend left=25]
+			node[below, font=\scriptsize]{Solidificaci\'on} (sol.south);
+			\draw[-{Stealth}, thick, verdeprim!60] (gas.south) to[bend left=25]
+			node[below, font=\scriptsize]{Condensaci\'on} (liq.south);
+		\end{tikzpicture}
+	\end{center}
+	\begin{ejemplobox}{Densidades de materiales comunes}
+		\begin{center}
+			\begin{tabular}{lccc}
+				\toprule
+				Material & Estado & Densidad (kg/m³) & Densidad (g/cm³) \\
+				\midrule
+				Oro & S\'olido & $19\,300$ & 19,3 \\
+				Hierro & S\'olido & $7\,874$ & 7,9 \\
+				Agua & L\'iquido & $1\,000$ & 1,0 \\
+				Aceite & L\'iquido & $900$ & 0,9 \\
+				Aire & Gaseoso & $1{,}29$ & 0,00129 \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		Un bloque de hierro de $2\,\mathrm{m}^3$ tiene masa: $m = \rho \cdot V = 7874 \times 2 = 15\,748\,\mathrm{kg}$.
+	\end{ejemplobox}
+	\subsection{¿Qué es la Energía?}
+	\begin{defbox}{Energ\'ia}
+		La \textbf{energ\'ia} es la \textbf{capacidad de realizar trabajo o producir cambios}. No se crea ni se destruye, solo se \textbf{transforma} (Ley de Conservaci\'on de la Energ\'ia).
+		\[
+		E_{\text{total}} = \text{constante}
+		\]
+	\end{defbox}
+	\subsection{Formas y Fuentes de Energía}
+	\begin{multicols}{2}
+		\textbf{Tipos de energ\'ia:}
+		\begin{itemize}[itemsep=3pt]
+			\item \textbf{Cin\'etica:} del movimiento. $E_k = \frac{1}{2}mv^2$
+			\item \textbf{Potencial gravitacional:} por posici\'on. $E_p = mgh$
+			\item \textbf{T\'ermica:} calor interno de un cuerpo.
+			\item \textbf{Qu\'imica:} almacenada en enlaces (combustibles, alimentos).
+			\item \textbf{El\'ectrica:} movimiento de cargas el\'ectricas.
+			\item \textbf{Nuclear:} n\'ucleo del \'atomo (fisi\'on y fusi\'on).
+			\item \textbf{Radiante/Lum\'inica:} luz y radiaci\'on electromagn\'etica.
+			\item \textbf{Sonora:} vibraciones mec\'anicas.
+		\end{itemize}
+		\columnbreak
+		\textbf{Fuentes de energ\'ia:}
+		\begin{itemize}[itemsep=3pt]
+			\item \textbf{No renovables:} petr\'oleo, gas natural, carb\'on mineral, energ\'ia nuclear.
+			\item \textbf{Renovables:} solar, e\'olica (viento), hidr\'aulica (agua), geotermal, biomasa, mareomotriz.
+		\end{itemize}
+		\vspace{0.3cm}
+		\begin{databox}
+			\textbf{Per\'u y la energ\'ia:} m\'as del 50\% de la electricidad peruana proviene de centrales hidroel\'ectricas. El Mantaro es la m\'as importante del pa\'is.
+		\end{databox}
+	\end{multicols}
+	\begin{importantebox}
+		\textbf{Ley de Conservaci\'on de la Energ\'ia:} La energ\'ia no se crea ni se destruye; solo cambia de forma. Por ejemplo: un auto convierte energ\'ia qu\'imica (gasolina) $\rightarrow$ energ\'ia cin\'etica + energ\'ia t\'ermica (calor del motor).
+	\end{importantebox}
+	% ═════════════════════════════════════════════════════════════════════════════
+	\seccion{verdeprim}{2. El Sistema Solar. Planeta Tierra. Rocas y Minerales}
+	% ═════════════════════════════════════════════════════════════════════════════
+	\subsection{El Sistema Solar}
+	\begin{defbox}{Sistema Solar}
+		El \textbf{Sistema Solar} es el conjunto formado por el \textbf{Sol} y todos los cuerpos celestes que orbitan a su alrededor: planetas, sat\'elites, asteroides, cometas y polvo c\'osmico.
+	\end{defbox}
+	\textbf{Los 8 planetas} en orden creciente de distancia al Sol:
+	
+	\begin{center}
+		\begin{tabular}{clcc}
+			\toprule
+			N° & Planeta & Tipo & Dato destacado \\
+			\midrule
+			1 & Mercurio & Rocoso (interior) & El m\'as peque\~no y el m\'as r\'apido en orbitar \\
+			2 & Venus & Rocoso (interior) & El m\'as caliente ($\approx 465°$C) \\
+			3 & Tierra & Rocoso (interior) & \'Unico con vida conocida \\
+			4 & Marte & Rocoso (interior) & Tiene el volc\'an m\'as alto del sistema solar \\
+			5 & J\'upiter & Gaseoso & El m\'as grande; tiene la Gran Mancha Roja \\
+			6 & Saturno & Gaseoso & Sus anillos est\'an hechos de hielo y roca \\
+			7 & Urano & Helado & Rota de lado (eje inclinado $\approx 98°$) \\
+			8 & Neptuno & Helado & El m\'as lejano; vientos de $\approx 2\,000$ km/h \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	\subsection{El Planeta Tierra}
+	\begin{multicols}{2}
+		\textbf{Caracter\'isticas principales:}
+		\begin{itemize}[itemsep=3pt]
+			\item \textbf{Radio ecuatorial:} $6\,378$ km.
+			\item \textbf{Masa:} $5{,}97 \times 10^{24}$ kg.
+			\item \textbf{Distancia al Sol:} $\approx 150$ millones de km (1 UA).
+			\item \textbf{Movimiento de rotaci\'on:} 24 horas (d\'ia y noche).
+			\item \textbf{Movimiento de traslaci\'on:} 365,25 d\'ias (estaciones).
+			\item \textbf{Inclinaci\'on del eje:} $23{,}5°$ (causa las estaciones).
+		\end{itemize}
+		\columnbreak
+		\textbf{Capas internas de la Tierra:}
+		\begin{itemize}[itemsep=3pt]
+			\item \textbf{Corteza:} capa s\'olida externa (5--70 km).
+			\item \textbf{Manto:} roca semifundida silicatada (hasta 2\,890 km).
+			\item \textbf{N\'ucleo externo:} hierro y n\'iquel l\'iquido (hasta 5\,150 km).
+			\item \textbf{N\'ucleo interno:} hierro y n\'iquel s\'olido (hasta 6\,371 km).
+		\end{itemize}
+	\end{multicols}
+	\begin{center}
+		\begin{tikzpicture}[font=\small]
+			\fill[orange!30] (0,0) circle (2.5cm);
+			\fill[red!20] (0,0) circle (2.0cm);
+			\fill[orange!50!brown!40] (0,0) circle (1.4cm);
+			\fill[yellow!40!orange!60] (0,0) circle (0.8cm);
+			\draw[-{Stealth}] (1.8, 1.8) -- (2.2, 1.5) node[right, font=\scriptsize]{\textbf{Corteza}};
+			\draw[-{Stealth}] (1.3, 1.3) -- (1.8, 0.8) node[right, font=\scriptsize]{\textbf{Manto}};
+			\draw[-{Stealth}] (0.7, 0.7) -- (1.3, 0.2) node[right, font=\scriptsize]{\textbf{N. externo}};
+			\draw[-{Stealth}] (0.0, 0.0) -- (0.6,-0.4) node[right, font=\scriptsize]{\textbf{N. interno}};
+			\node[font=\scriptsize\bfseries] at (0,-3) {Capas internas de la Tierra};
+		\end{tikzpicture}
+	\end{center}
+	\subsection{Rocas y Minerales}
+	\begin{defbox}{Mineral}
+		Un \textbf{mineral} es una sustancia natural, inorg\'anica, s\'olida, con composici\'on qu\'imica definida y estructura cristalina. Ejemplo: cuarzo (SiO$_2$), calcita (CaCO$_3$), oro (Au).
+	\end{defbox}
+	\begin{defbox}{Roca}
+		Una \textbf{roca} es un conjunto natural de uno o m\'as minerales. Se clasifica seg\'un su origen:
+	\end{defbox}
+	\begin{center}
+		\begin{tabular}{>{\bfseries}p{2.8cm} p{4.5cm} p{4.5cm}}
+			\toprule
+			Tipo de roca & Origen & Ejemplos \\
+			\midrule
+			\'Igneas (magm\'aticas) & Solidificaci\'on del magma o lava & Granito (intrusiva), basalto (extrusiva), obsidiana \\[4pt]
+			Sedimentarias & Acumulaci\'on y compactaci\'on de sedimentos & Arenisca, caliza, arcilla, carb\'on \\[4pt]
+			Metamórficas & Transformaci\'on por presi\'on y temperatura & M\'armol (de caliza), pizarra (de arcilla), cuarcita \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	\begin{curiosbox}
+		Los \textbf{Andes peruanos} son ricos en minerales met\'alicos como cobre, oro, plata, zinc y plomo. Per\'u es uno de los principales productores mundiales de estos minerales. Las rocas de la regi\'on de Ayacucho son predominantemente volc\'anicas e \'igneas, resultado de la actividad geol\'ogica andina.
+	\end{curiosbox}
+	% ═════════════════════════════════════════════════════════════════════════════
+	\seccion{morado}{3. Teorías sobre el Origen y Evolución del Universo}
+	% ═════════════════════════════════════════════════════════════════════════════
+	\subsection{El Big Bang: teor\'ia principal}
+	\begin{defbox}{Teor\'ia del Big Bang}
+		La teor\'ia del \textbf{Big Bang} (Gran Explosi\'on) sostiene que el Universo se origin\'o hace aproximadamente \textbf{13\,800 millones de a\~nos} a partir de un estado de temperatura y densidad extremadamente altas, expandi\'endose y enfri\'andose hasta el estado actual.
+	\end{defbox}
+	\textbf{Evidencias del Big Bang:}
+	\begin{itemize}[itemsep=3pt]
+		\item \textbf{Expansi\'on del Universo (Ley de Hubble, 1929):} las galaxias se alejan entre s\'i. A mayor distancia, mayor velocidad de alejamiento: $v = H_0 \cdot d$, donde $H_0 \approx 70\,\mathrm{km/s/Mpc}$.
+		\item \textbf{Radiaci\'on de fondo de microondas (CMB):} «eco» del Big Bang, detectado en 1965 por Penzias y Wilson.
+		\item \textbf{Abundancia de elementos livianos:} el 75\% de la materia ordinaria es hidr\'ogeno y el 24\% helio, consistente con las predicciones del modelo.
+	\end{itemize}
+	\subsection{Línea de tiempo del Universo}
+	\begin{center}
+		\begin{tikzpicture}[font=\scriptsize]
+			\draw[very thick, azulprim, -{Stealth}] (0,0) -- (13.5,0)
+			node[right]{\small Tiempo};
+			\foreach \x/\evento/\tiempo in {
+				0/{Big Bang}/{$t=0$},
+				1.5/{Primeras\\part\'iculas}/{$10^{-6}$ s},
+				3/{Primeros\\n\'ucleos at\'omicos}/{3 min},
+				5/{Primer\\hidr\'ogeno}/{380\,000 a},
+				7/{Primeras\\estrellas}/{200 M a},
+				9.5/{V\'ia L\'actea\\se forma}/{9\,000 M a},
+				11.5/{Nace el\\Sistema Solar}/{4\,600 M a},
+				13/{Aparece la\\vida en Tierra}/{3\,500 M a},
+				13.5/{Hoy}/{13\,800 M a}}{
+				\draw[thick] (\x, 0.15) -- (\x, -0.15);
+				\node[align=center, above, text width=1.7cm] at (\x, 0.2) {\evento};
+				\node[align=center, below, text=gray] at (\x, -0.25) {\tiempo};
+			}
+		\end{tikzpicture}
+	\end{center}
+	\subsection{Otras teorías cosmológicas}
+	\begin{center}
+		\begin{tabular}{>{\bfseries}p{3.5cm} p{8cm}}
+			\toprule
+			Teor\'ia & Descripci\'on principal \\
+			\midrule
+			Estado Estacionario (1948) & El Universo no tuvo inicio ni tendr\'a fin; la materia se crea continuamente. \textit{Descartada por la evidencia del CMB.} \\[4pt]
+			Universo Oscilante & El Universo se expande y contrae c\'iclicamente (Big Bang $\to$ Big Crunch $\to$ Big Bang). No tiene consenso. \\[4pt]
+			Inflaci\'on C\'osmica (Guth, 1980) & Complementa el Big Bang: en los primeros $10^{-36}$ s el Universo se expandi\'o exponencialmente. \\[4pt]
+			Multiverso & Existen m\'ultiples universos paralelos. Hip\'otesis especulativa, sin evidencia directa a\'un. \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	\subsection{Estructura actual del Universo}
+	\begin{multicols}{2}
+		La materia visible forma \textbf{estructuras anidadas}:
+		\begin{enumerate}[itemsep=3pt]
+			\item \textbf{Planetas} orbitan estrellas.
+			\item \textbf{Estrellas} forman galaxias ($\approx 10^{11}$ estrellas por galaxia).
+			\item \textbf{Galaxias} se agrupan en \textbf{c\'umulos}.
+			\item \textbf{C\'umulos} forman \textbf{suprac\'umulos}.
+			\item \textbf{Suprac\'umulos} forman filamentos y vac\'ios: la \textbf{gran estructura c\'osmica}.
+		\end{enumerate}
+		\columnbreak
+		\begin{databox}
+			\textbf{Composici\'on del Universo:}\\
+			$\bullet$ \textbf{Energ\'ia oscura:} 68\%\\
+			$\bullet$ \textbf{Materia oscura:} 27\%\\
+			$\bullet$ \textbf{Materia ordinaria:} solo el \textbf{5\%}\\[4pt]
+			Todo lo que vemos (estrellas, planetas, gas) representa apenas el 5\% del Universo.
+		\end{databox}
+	\end{multicols}
+	\begin{importantebox}
+		\textbf{Diferencia clave:} la \textbf{hip\'otesis} es una suposici\'on no verificada; la \textbf{teor\'ia cient\'ifica} es una explicaci\'on ampliamente probada con evidencias. El Big Bang es una \textit{teor\'ia}, no una simple suposici\'on.
+	\end{importantebox}
+	% ─────────────────────────────────────────────────────────────────────────────
+	\vspace{0.3cm}
+	\begin{tcolorbox}[colback=grisclaro, colframe=azulprim, arc=4pt,
+		title=\textbf{Resumen de la Clase 1}, coltitle=white, colbacktitle=azulprim]
+		\begin{multicols}{3}
+			\textbf{Materia:}\\
+			-- Propiedades generales\\
+			-- Propiedades espec\'ificas\\
+			-- 4 estados (s, l, g, plasma)\\
+			-- $\rho = m/V$
+			\columnbreak
+			\textbf{Sistema Solar:}\\
+			-- 8 planetas\\
+			-- Tierra: capas, movimientos\\
+			-- Rocas: \'igneas, sedimentarias,\\
+			\phantom{--} metam\'orficas
+			\columnbreak
+			\textbf{Universo:}\\
+			-- Big Bang: 13\,800 M a\\
+			-- Evidencias: Hubble, CMB\\
+			-- Estructura: planetas $\to$\\
+			\phantom{--} galaxias $\to$ suprac\'umulos
+		\end{multicols}
+	\end{tcolorbox}
+\end{document}
