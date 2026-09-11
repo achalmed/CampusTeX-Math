@@ -2,6 +2,15 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Where this sits in the documentary architecture
+
+`~/Documents/prompts/00 metodo/ARQUITECTURA_DOCUMENTAL.md` (2026-09-11) is the ecosystem's
+normative taxonomy of document types. The **course book** produced here is the didactic
+variant of the type `libro` (§5.6), and its schema is this framework's own: week =
+`teoria` · `ejercicios` · `resueltos`, enforced by `doctor.sh`. It is registered there and
+not re-specified. A general (non-didactic) book is `\documentclass{libro}` in `03 writing`
+(`esquemas/libro.tex`, Chicago "Divisions of a Book").
+
 ## What this is
 
 **CampusTeX** — a modular LuaLaTeX *framework* for producing Peruvian pre-university teaching material (course books, weekly handouts, exams) for Álgebra, Aritmética, Trigonometría, Física and Economía, taught by Edison Achalma at CEBA Santo Domingo. All content, comments, docs and CLI output are in **Spanish** — keep new content in Spanish.
