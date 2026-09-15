@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 #  build-course.sh — Compila el libro completo de UN curso
 #
 #  Uso:
@@ -7,7 +7,7 @@
 #    ./scripts/build-course.sh algebra --clean   (limpia auxiliares después)
 #
 #  Usa latexmk si está instalado; si no, dos pasadas de lualatex.
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 set -euo pipefail
 
 source "$(dirname "${BASH_SOURCE[0]}")/lib/common.sh"

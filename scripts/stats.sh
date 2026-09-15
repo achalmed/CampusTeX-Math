@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 #  stats.sh — Estadísticas del contenido del proyecto
 #
 #  Uso:
@@ -9,7 +9,7 @@
 #
 #  Métricas: cursos, semanas (temas), módulos escritos, ejercicios,
 #  PDFs generados y páginas totales (si pdfinfo está disponible).
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 set -euo pipefail
 
 source "$(dirname "${BASH_SOURCE[0]}")/lib/common.sh"

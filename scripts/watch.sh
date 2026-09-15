@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 #  watch.sh — Recompila un curso automáticamente al guardar cambios
 #
 #  Uso:
@@ -8,7 +8,7 @@
 #  Usa inotifywait si está instalado (paquete inotify-tools); si no,
 #  cae a un sondeo por mtime cada 2 segundos, que funciona en
 #  cualquier sistema POSIX.
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 set -euo pipefail
 
 source "$(dirname "${BASH_SOURCE[0]}")/lib/common.sh"

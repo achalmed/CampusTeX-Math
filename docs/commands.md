@@ -1,3 +1,8 @@
+---
+tipo: doc
+titulo: "Referencia de comandos"
+estado: activo
+---
 # Referencia de comandos
 
 ## Scripts (`scripts/`)

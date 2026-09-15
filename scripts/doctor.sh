@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 #  doctor.sh — Diagnóstico de salud del proyecto
 #
 #  Uso:
@@ -16,7 +16,7 @@
 #    • dependencias del sistema (lualatex, herramientas opcionales)
 #
 #  Sale con código 1 si hay ERRORES; las advertencias no bloquean.
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 set -euo pipefail
 
 source "$(dirname "${BASH_SOURCE[0]}")/lib/common.sh"
@@ -129,6 +129,27 @@ check_core_integrity() {
         || error "Falta config/project.tex"
 }
 
+# --- Normativa de archivos (meta/NORMATIVA_ARCHIVOS.md §11): un módulo, tres doctores: fase M9 de §12
+# Raíz del workspace por core/env.sh (nunca una ruta escrita a mano); el semáforo
+# de core/archivos.py (0 sano · 1 avisos · 2 fallos) se vuelca en los contadores.
+check_normativa_archivos() {
+    local core_env="${PROJECT_ROOT}/../core/env.sh" salida
+    log_info "── Normativa de archivos (core/archivos.py) ──"
+    if [[ ! -f "$core_env" ]]; then
+        log_warn "core/env.sh no encontrado: no se valida la normativa de archivos"
+        WARNINGS=$((WARNINGS + 1)); return
+    fi
+    # shellcheck source=/dev/null
+    source "$core_env"
+    salida=0
+    python3 "${DOCS_ROOT}/core/archivos.py" validar "${DOCS_ROOT}/11 Book" --max 5 || salida=$?   # set -e: capturar sin abortar
+    case $salida in
+        0) log_ok "Normativa de archivos: sano" ;;
+        1) log_warn "Normativa de archivos: avisos (ver arriba)"; WARNINGS=$((WARNINGS + 1)) ;;
+        *) log_error "Normativa de archivos: fallos (ver arriba)"; ERRORS=$((ERRORS + 1)) ;;
+    esac
+}
+
 main() {
     log_info "Diagnóstico CampusTeX — $(date '+%Y-%m-%d %H:%M')"
     printf '\n'
@@ -144,6 +165,9 @@ main() {
         check_broken_includes     "${COURSES_DIR}/${course}"
         check_content_hygiene     "${COURSES_DIR}/${course}"
     done < <(list_courses)
+
+    printf '\n'
+    check_normativa_archivos
 
     printf '\n'
     if [[ $ERRORS -eq 0 && $WARNINGS -eq 0 ]]; then

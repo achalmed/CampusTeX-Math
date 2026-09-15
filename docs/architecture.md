@@ -1,3 +1,8 @@
+---
+tipo: doc
+titulo: "Arquitectura"
+estado: activo
+---
 # Arquitectura
 
 ## Visión

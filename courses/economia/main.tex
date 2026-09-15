@@ -1,36 +1,29 @@
-% ╔══════════════════════════════════════════════════════════════════════════╗
-% ║   LIBRO COMPLETO — ECONOMÍA PREUNIVERSITARIA                             ║
-% ║   Compilar con: lualatex main.tex  (dos pasadas para referencias)        ║
-% ╚══════════════════════════════════════════════════════════════════════════╝
+% =====================================================================
+%  courses/economia/main.tex — libro completo: economía preuniversitaria
+% ---------------------------------------------------------------------
+%  Uso: scripts/build-course.sh economia
+% =====================================================================
 \documentclass[12pt, a4paper, twoside]{book}
 
-% ════════════════════════════════════════════════════════════════════════════
-% §B  METADATOS DEL CURSO
+% --- §B  METADATOS DEL CURSO -----------------------------------------------
 %     Academia, docente y ciclo se heredan de config/project.tex.
 %     Para sobreescribirlos SOLO en este curso, definirlos aquí.
-% ════════════════════════════════════════════════════════════════════════════
 \newcommand{\NombreCurso}{Economía}
 
-% ════════════════════════════════════════════════════════════════════════════
-% §A  TIPOGRAFÍA — identidad unificada del framework (Libertinus)
+% --- §A  TIPOGRAFÍA — identidad unificada del framework (Libertinus) -------
 %     Economía usa la MISMA identidad sobria que los demás cursos (Libertinus
 %     Serif/Sans/Math + Inconsolata, paleta monocroma). Se retiró el override a
 %     EB Garamond para uniformar todo el material docente.
-% ════════════════════════════════════════════════════════════════════════════
 
-% ════════════════════════════════════════════════════════════════════════════
-% §C  PREÁMBULO COMÚN
+% --- §C  PREÁMBULO COMÚN ---------------------------------------------------
 %     fontspec y unicode-math los carga el núcleo — no recargarlos aquí.
-% ════════════════════════════════════════════════════════════════════════════
 \input{../../core/preamble}
 
-% ════════════════════════════════════════════════════════════════════════════
-% §D  PREÁMBULO ESPECÍFICO DE ECONOMÍA
+% --- §D  PREÁMBULO ESPECÍFICO DE ECONOMÍA ----------------------------------
 %     Herramientas exclusivas para el curso: cuadros comparativos, mapas
 %     conceptuales, cajas de datos reales peruanos y gráficos de oferta/demanda
-% ════════════════════════════════════════════════════════════════════════════
 
-% ── Cuadro comparativo estándar (2 categorías) ────────────────────────────
+% --- Cuadro comparativo estándar (2 categorías) ----------------------------
 % Uso: \begin{comparativo}{Criterio}{Cat. A}{Cat. B} ... \end{comparativo}
 % Filas: \fila{criterio}{descripción A}{descripción B}
 % Filas alternas: \filag{criterio}{descripción A}{descripción B}  (gris)
@@ -51,7 +44,7 @@
 \newcommand{\fila}[3]{#1 & #2 & #3 \\}
 \newcommand{\filag}[3]{\rowcolor{GrisClaro} #1 & #2 & #3 \\}
 
-% ── Cuadro de datos reales Perú ───────────────────────────────────────────
+% --- Cuadro de datos reales Perú -------------------------------------------
 % Uso: \begin{datosPerú}{Título}{Fuente} ... \end{datosPerú}
 \newenvironment{datosPerú}[2]{%
   \begin{tcolorbox}[
@@ -69,7 +62,7 @@
   \end{tcolorbox}
 }
 
-% ── Mapa conceptual básico (tikz) ─────────────────────────────────────────
+% --- Mapa conceptual básico (tikz) -----------------------------------------
 % Estilos de nodos para diagramas de economía
 \tikzset{
   nodoConcepto/.style = {
@@ -92,7 +85,7 @@
   }
 }
 
-% ── Gráfico de oferta y demanda (pgfplots preconfigurado) ─────────────────
+% --- Gráfico de oferta y demanda (pgfplots preconfigurado) -----------------
 % Entorno para graficar curvas de mercado con ejes Q–P
 \newenvironment{grafOD}{%
   \begin{center}
@@ -116,7 +109,7 @@
   \end{center}
 }
 
-% ── Línea de tiempo del pensamiento económico ─────────────────────────────
+% --- Línea de tiempo del pensamiento económico -----------------------------
 % Uso: dentro de tikzpicture, ver ejemplos en semanas de Unidad VII
 \tikzset{
   eventoHist/.style = {
@@ -126,7 +119,7 @@
   }
 }
 
-% ── Caja de doctrina económica ────────────────────────────────────────────
+% --- Caja de doctrina económica --------------------------------------------
 % Uso: \begin{cajadoctrina}{Nombre}{Siglo/Período} ... \end{cajadoctrina}
 \newenvironment{cajadoctrina}[2]{%
   \begin{tcolorbox}[
@@ -144,7 +137,7 @@
   \end{tcolorbox}
 }
 
-% ── Indicadores macroeconómicos — tabla rápida ────────────────────────────
+% --- Indicadores macroeconómicos — tabla rápida ----------------------------
 % Uso: \begin{tablaIndicadores} ... \end{tablaIndicadores}
 \newenvironment{tablaIndicadores}{%
   \begin{center}
@@ -162,17 +155,13 @@
   \end{center}
 }
 
-% ════════════════════════════════════════════════════════════════════════════
-% §E  INICIO DEL DOCUMENTO
-% ════════════════════════════════════════════════════════════════════════════
+% --- §E  INICIO DEL DOCUMENTO ----------------------------------------------
 \begin{document}
 
 \input{portada_libro}
 \input{indice}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD I: Introducción a la Economía   (Temas 1–7)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD I: Introducción a la Economía   (Temas 1–7) --------------------
 \chapter{Introducción a la Economía}
 
 % --- Semana 01: Concepto de economía ---
@@ -210,9 +199,7 @@
 % \include{semana_07_actividades/ejercicios}
 % \include{semana_07_actividades/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD II: Sistemas Económicos   (Temas 8–11)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD II: Sistemas Económicos   (Temas 8–11) -------------------------
 \chapter{Sistemas Económicos}
 
 % --- Semana 08: Sistema capitalista ---
@@ -235,9 +222,7 @@
 % \include{semana_11_doctrinas/ejercicios}
 % \include{semana_11_doctrinas/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD III: Microeconomía   (Temas 12–20)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD III: Microeconomía   (Temas 12–20) -----------------------------
 \chapter{Microeconomía}
 
 % --- Semana 12: Mercado ---
@@ -285,9 +270,7 @@
 % \include{semana_20_comp_monopolistica/ejercicios}
 % \include{semana_20_comp_monopolistica/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD IV: Macroeconomía   (Temas 21–28)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD IV: Macroeconomía   (Temas 21–28) ------------------------------
 \chapter{Macroeconomía}
 
 % --- Semana 21: Producto Bruto Interno ---
@@ -330,9 +313,7 @@
 % \include{semana_28_desarrollo/ejercicios}
 % \include{semana_28_desarrollo/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD V: Sistema Financiero   (Temas 29–34)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD V: Sistema Financiero   (Temas 29–34) --------------------------
 \chapter{Sistema Financiero}
 
 % --- Semana 29: Dinero ---
@@ -365,9 +346,7 @@
 % \include{semana_34_bolsa/ejercicios}
 % \include{semana_34_bolsa/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD VI: Economía Peruana   (Temas 35–43)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD VI: Economía Peruana   (Temas 35–43) ---------------------------
 \chapter{Economía Peruana}
 
 % --- Semana 35: BCRP ---
@@ -415,9 +394,7 @@
 % \include{semana_43_tlc/ejercicios}
 % \include{semana_43_tlc/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD VII: Historia del Pensamiento Económico   (Temas 44–49)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD VII: Historia del Pensamiento Económico   (Temas 44–49) --------
 \chapter{Historia del Pensamiento Económico}
 
 % --- Semana 44: Mercantilismo ---
@@ -450,9 +427,7 @@
 % \include{semana_49_neoliberalismo/ejercicios}
 % \include{semana_49_neoliberalismo/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD VIII: Actualidad Económica   (Temas 50–56)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD VIII: Actualidad Económica   (Temas 50–56) ---------------------
 \chapter{Actualidad Económica}
 
 % --- Semana 50: Pobreza ---
@@ -490,5 +465,5 @@
 % \include{semana_56_ia_economia/ejercicios}
 % \include{semana_56_ia_economia/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
+% ---------------------------------------------------------------------
 \end{document}

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 #  clean.sh — Elimina los archivos auxiliares de compilación LaTeX
 #
 #  Uso:
@@ -7,7 +7,7 @@
 #    ./scripts/clean.sh --dry-run  → muestra qué borraría, sin borrar
 #
 #  Nunca toca PDFs ni archivos fuente (.tex, .sh, .md).
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 set -euo pipefail
 
 source "$(dirname "${BASH_SOURCE[0]}")/lib/common.sh"

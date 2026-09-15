@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 #  lib/common.sh — Funciones compartidas por todos los scripts
 #
 #  Provee: logging con niveles, detección de la raíz del proyecto,
 #  descubrimiento de cursos y utilidades de compilación.
 #  Todos los scripts hacen `source` de este archivo; ninguno duplica
 #  estas funciones.
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 
-# ── Raíz del proyecto ──────────────────────────────────────────────
+# --- Raíz del proyecto -----------------------------------------------------
 # Se resuelve desde la ubicación física de ESTE archivo, no del CWD,
 # para que los scripts funcionen desde cualquier directorio.
 COMMON_LIB_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -23,7 +23,7 @@ else
     readonly COURSES_DIR="${PROJECT_ROOT}"
 fi
 
-# ── Colores (solo si stdout es una terminal) ───────────────────────
+# --- Colores (solo si stdout es una terminal) ------------------------------
 if [[ -t 1 ]]; then
     readonly C_RED=$'\033[0;31m' C_YELLOW=$'\033[0;33m' \
              C_GREEN=$'\033[0;32m' C_BLUE=$'\033[0;34m' C_RESET=$'\033[0m'
@@ -31,7 +31,7 @@ else
     readonly C_RED="" C_YELLOW="" C_GREEN="" C_BLUE="" C_RESET=""
 fi
 
-# ── Logging ────────────────────────────────────────────────────────
+# --- Logging ---------------------------------------------------------------
 # WARN y ERROR van a stderr para no contaminar salidas encadenables.
 _log() {
     local level=$1 color=$2
@@ -49,7 +49,7 @@ die() {
     exit 1
 }
 
-# ── Descubrimiento de cursos ───────────────────────────────────────
+# --- Descubrimiento de cursos ----------------------------------------------
 # list_courses()
 # Imprime el nombre de cada curso (carpeta con main.tex) uno por línea.
 list_courses() {
@@ -68,7 +68,7 @@ course_dir() {
     printf '%s\n' "$dir"
 }
 
-# ── Utilidades de texto ────────────────────────────────────────────
+# --- Utilidades de texto ---------------------------------------------------
 # slugify()
 # Convierte un nombre a identificador de carpeta: minúsculas, sin
 # tildes, espacios y guiones → guion bajo. "Razonamiento Matemático"
@@ -111,7 +111,7 @@ render_template() {
     printf '%s' "$content" >"$dest"
 }
 
-# ── Compilación ────────────────────────────────────────────────────
+# --- Compilación -----------------------------------------------------------
 # compile_course()
 # Compila el main.tex de un curso. Usa latexmk si está instalado
 # (gestiona las pasadas automáticamente); si no, dos pasadas de

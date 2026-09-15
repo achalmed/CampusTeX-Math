@@ -1,28 +1,23 @@
-% ╔══════════════════════════════════════════════════════════════════════════╗
-% ║   LIBRO COMPLETO — ÁLGEBRA PREUNIVERSITARIA                              ║
-% ║   Compilar con: lualatex main.tex  (dos pasadas para referencias)        ║
-% ╚══════════════════════════════════════════════════════════════════════════╝
+% =====================================================================
+%  courses/algebra/main.tex — libro completo: álgebra preuniversitaria
+% ---------------------------------------------------------------------
+%  Uso: scripts/build-course.sh algebra
+% =====================================================================
 \documentclass[12pt, a4paper, twoside]{book}
 
-% ════════════════════════════════════════════════════════════════════════════
-% §B  METADATOS DEL CURSO
+% --- §B  METADATOS DEL CURSO -----------------------------------------------
 %     Academia, docente y ciclo se heredan de config/project.tex.
 %     Para sobreescribirlos SOLO en este curso, definirlos aquí, p. ej.:
 %       \newcommand{\NombreAcademia}{CEPRE-UNI}
-% ════════════════════════════════════════════════════════════════════════════
 \newcommand{\NombreCurso}{Álgebra}
 
-% ════════════════════════════════════════════════════════════════════════════
-% §C  PREÁMBULO COMÚN (fuentes, colores, cajas, fancyhdr, tablas, tikz, etc.)
+% --- §C  PREÁMBULO COMÚN (fuentes, colores, cajas, fancyhdr, tablas, tikz, etc.) ---
 %     fontspec y unicode-math los carga el núcleo — no recargarlos aquí:
 %     recargar unicode-math con opciones distintas produce "Option clash".
-% ════════════════════════════════════════════════════════════════════════════
 \input{../../core/preamble}
 
-% ════════════════════════════════════════════════════════════════════════════
-% §D  PREÁMBULO ESPECÍFICO DE ÁLGEBRA
+% --- §D  PREÁMBULO ESPECÍFICO DE ÁLGEBRA -----------------------------------
 %     Paquetes o comandos exclusivos de este curso
-% ════════════════════════════════════════════════════════════════════════════
 \usepackage{polynom}         % División sintética de polinomios
 \usepackage{cases}           % Sistemas de ecuaciones con llave
 
@@ -42,20 +37,16 @@
   \end{tikzpicture}\end{center}
 }
 
-% ════════════════════════════════════════════════════════════════════════════
-% §E  INICIO DEL DOCUMENTO
-% ════════════════════════════════════════════════════════════════════════════
+% --- §E  INICIO DEL DOCUMENTO ----------------------------------------------
 \begin{document}
 
-% ── Portada del libro ────────────────────────────────────────────────────
+% --- Portada del libro -----------------------------------------------------
 \input{portada_libro}
 
-% ── Índice (automático + temático manual) ────────────────────────────────
+% --- Índice (automático + temático manual) ---------------------------------
 \input{indice}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD I: Fundamentos Algebraicos   (Temas 1–10)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD I: Fundamentos Algebraicos   (Temas 1–10) ----------------------
 \chapter{Fundamentos Algebraicos}
 
 % --- Semana 01: Introducción al Álgebra ---
@@ -108,9 +99,7 @@
 % \include{semana_10_potenciacion/ejercicios}
 % \include{semana_10_potenciacion/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD II: Ecuaciones e Inecuaciones   (Temas 11–20)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD II: Ecuaciones e Inecuaciones   (Temas 11–20) ------------------
 \chapter{Ecuaciones e Inecuaciones}
 
 % --- Semana 11: Ecuaciones de primer grado ---
@@ -163,9 +152,7 @@
 % \include{semana_20_sistemas_inecu/ejercicios}
 % \include{semana_20_sistemas_inecu/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD III: Relaciones y Funciones   (Temas 21–32)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD III: Relaciones y Funciones   (Temas 21–32) --------------------
 \chapter{Relaciones y Funciones}
 
 % --- Semana 21: Relaciones ---
@@ -228,9 +215,7 @@
 % \include{semana_32_f_inversa/ejercicios}
 % \include{semana_32_f_inversa/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD IV: Polinomios   (Temas 33–40)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD IV: Polinomios   (Temas 33–40) ---------------------------------
 \chapter{Polinomios}
 
 % --- Semana 33: Polinomios ---
@@ -273,9 +258,7 @@
 % \include{semana_40_ec_polinomicas/ejercicios}
 % \include{semana_40_ec_polinomicas/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD V: Progresiones y Binomio   (Temas 41–46)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD V: Progresiones y Binomio   (Temas 41–46) ----------------------
 \chapter{Progresiones y Binomio de Newton}
 
 % --- Semana 41: Sucesiones ---
@@ -308,5 +291,5 @@
 % \include{semana_46_pascal/ejercicios}
 % \include{semana_46_pascal/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
+% ---------------------------------------------------------------------
 \end{document}

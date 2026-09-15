@@ -1,3 +1,8 @@
+---
+tipo: doc
+titulo: "Flujo de trabajo del docente"
+estado: activo
+---
 # Flujo de trabajo del docente
 
 ## Ciclo semanal típico

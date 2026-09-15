@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 #  new-week.sh — Crea una semana (tema) nueva dentro de un curso
 #
 #  Uso:
@@ -12,7 +12,7 @@
 #  NOTA: el bloque \include NO se inserta automáticamente en main.tex:
 #  el punto de inserción (unidad/capítulo correcto) es una decisión
 #  pedagógica del docente que un script no puede adivinar con seguridad.
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 set -euo pipefail
 
 source "$(dirname "${BASH_SOURCE[0]}")/lib/common.sh"

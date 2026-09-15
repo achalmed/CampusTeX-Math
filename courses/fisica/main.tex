@@ -1,25 +1,20 @@
-% ╔══════════════════════════════════════════════════════════════════════════╗
-% ║   LIBRO COMPLETO — FÍSICA PREUNIVERSITARIA                               ║
-% ║   Compilar con: lualatex main.tex  (dos pasadas para referencias)        ║
-% ╚══════════════════════════════════════════════════════════════════════════╝
+% =====================================================================
+%  courses/fisica/main.tex — libro completo: física preuniversitaria
+% ---------------------------------------------------------------------
+%  Uso: scripts/build-course.sh fisica
+% =====================================================================
 \documentclass[12pt, a4paper, twoside]{book}
 
-% ════════════════════════════════════════════════════════════════════════════
-% §B  METADATOS DEL CURSO
+% --- §B  METADATOS DEL CURSO -----------------------------------------------
 %     Academia, docente y ciclo se heredan de config/project.tex.
 %     Para sobreescribirlos SOLO en este curso, definirlos aquí.
-% ════════════════════════════════════════════════════════════════════════════
 \newcommand{\NombreCurso}{Física}
 
-% ════════════════════════════════════════════════════════════════════════════
-% §C  PREÁMBULO COMÚN
+% --- §C  PREÁMBULO COMÚN ---------------------------------------------------
 %     fontspec y unicode-math los carga el núcleo — no recargarlos aquí.
-% ════════════════════════════════════════════════════════════════════════════
 \input{../../core/preamble}
 
-% ════════════════════════════════════════════════════════════════════════════
-% §D  PREÁMBULO ESPECÍFICO DE FÍSICA
-% ════════════════════════════════════════════════════════════════════════════
+% --- §D  PREÁMBULO ESPECÍFICO DE FÍSICA ------------------------------------
 
 % Unidades del SI — comando rápido
 % Uso: \SI{9.8}{\metre\per\second\squared}
@@ -66,19 +61,15 @@
   \end{cajaprop}
 }
 
-% ════════════════════════════════════════════════════════════════════════════
-% §E  INICIO DEL DOCUMENTO
-% ════════════════════════════════════════════════════════════════════════════
+% --- §E  INICIO DEL DOCUMENTO ----------------------------------------------
 \begin{document}
 
 \input{portada_libro}
 \input{indice}
 
-% ════════════════════════════════════════════════════════════════════════════
-% MECÁNICA
-% ════════════════════════════════════════════════════════════════════════════
+% --- MECÁNICA --------------------------------------------------------------
 
-% ── UNIDAD I: Magnitudes y Movimiento   (Temas 1–8) ──────────────────────
+% --- UNIDAD I: Magnitudes y Movimiento   (Temas 1–8) -----------------------
 \chapter{Magnitudes y Movimiento}
 
 % --- Semana 01: Magnitudes físicas ---
@@ -121,7 +112,7 @@
 % \include{semana_08_circular/ejercicios}
 % \include{semana_08_circular/resueltos}
 
-% ── UNIDAD II: Dinámica   (Temas 9–12) ──────────────────────────────────
+% --- UNIDAD II: Dinámica   (Temas 9–12) ------------------------------------
 \chapter{Dinámica}
 
 % --- Semana 09: Leyes de Newton ---
@@ -144,7 +135,7 @@
 % \include{semana_12_din_circular/ejercicios}
 % \include{semana_12_din_circular/resueltos}
 
-% ── UNIDAD III: Trabajo y Energía   (Temas 13–17) ───────────────────────
+% --- UNIDAD III: Trabajo y Energía   (Temas 13–17) -------------------------
 \chapter{Trabajo y Energía}
 
 % --- Semana 13: Trabajo mecánico ---
@@ -172,7 +163,7 @@
 % \include{semana_17_potencia/ejercicios}
 % \include{semana_17_potencia/resueltos}
 
-% ── UNIDAD IV: Cantidad de Movimiento   (Temas 18–20) ───────────────────
+% --- UNIDAD IV: Cantidad de Movimiento   (Temas 18–20) ---------------------
 \chapter{Cantidad de Movimiento}
 
 % --- Semana 18: Impulso ---
@@ -190,9 +181,7 @@
 % \include{semana_20_choques/ejercicios}
 % \include{semana_20_choques/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% ESTÁTICA   (Temas 21–23)
-% ════════════════════════════════════════════════════════════════════════════
+% --- ESTÁTICA   (Temas 21–23) ----------------------------------------------
 \chapter{Estática}
 
 % --- Semana 21: Equilibrio de fuerzas ---
@@ -210,9 +199,7 @@
 % \include{semana_23_centro_gravedad/ejercicios}
 % \include{semana_23_centro_gravedad/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% HIDROSTÁTICA   (Temas 24–27)
-% ════════════════════════════════════════════════════════════════════════════
+% --- HIDROSTÁTICA   (Temas 24–27) ------------------------------------------
 \chapter{Hidrostática}
 
 % --- Semana 24: Densidad ---
@@ -235,9 +222,7 @@
 % \include{semana_27_arquimedes/ejercicios}
 % \include{semana_27_arquimedes/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% TERMODINÁMICA   (Temas 28–32)
-% ════════════════════════════════════════════════════════════════════════════
+% --- TERMODINÁMICA   (Temas 28–32) -----------------------------------------
 \chapter{Termodinámica}
 
 % --- Semana 28: Temperatura ---
@@ -265,9 +250,7 @@
 % \include{semana_32_gases/ejercicios}
 % \include{semana_32_gases/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% ELECTRICIDAD Y MAGNETISMO   (Temas 33–40)
-% ════════════════════════════════════════════════════════════════════════════
+% --- ELECTRICIDAD Y MAGNETISMO   (Temas 33–40) -----------------------------
 \chapter{Electricidad y Magnetismo}
 
 % --- Semana 33: Carga eléctrica ---
@@ -310,9 +293,9 @@
 % \include{semana_40_magnetismo/ejercicios}
 % \include{semana_40_magnetismo/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
+% ---------------------------------------------------------------------
 % ÓPTICA   (Temas 41–45)
-% ════════════════════════════════════════════════════════════════════════════
+% ---------------------------------------------------------------------
 \chapter{Óptica}
 
 % --- Semana 41: Reflexión ---
@@ -340,5 +323,5 @@
 % \include{semana_45_instrumentos/ejercicios}
 % \include{semana_45_instrumentos/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
+% ---------------------------------------------------------------------
 \end{document}

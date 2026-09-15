@@ -1,4 +1,4 @@
-% ══════════════════════════════════════════════════════════════════
+% =====================================================================
 %  core/math.tex — Paquetes matemáticos
 %
 %  REGLA DE ORO con unicode-math + LuaLaTeX:
@@ -14,14 +14,14 @@
 %    amssymb \blacklozenge  →  unicode-math \mdlgblklozenge
 %    amssymb \triangle      →  unicode-math \triangle  (este sí existe)
 %    amssymb \blacktriangle →  unicode-math \blacktriangle (existe también)
-% ══════════════════════════════════════════════════════════════════
+% =====================================================================
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{cancel}
 \usepackage{systeme}
 \usepackage[math-style=ISO, bold-style=ISO]{unicode-math}
 
-% ── Alias de compatibilidad amssymb → unicode-math ─────────────────
+% --- Alias de compatibilidad amssymb → unicode-math ------------------------
 % El contenido académico existente usa \square (amssymb); unicode-math
 % lo llama \mdlgwhtsquare. Se define al inicio del documento porque
 % unicode-math termina de montar su tabla de símbolos en \begin{document}.

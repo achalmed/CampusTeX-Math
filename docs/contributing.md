@@ -1,3 +1,8 @@
+---
+tipo: doc
+titulo: "Cómo contribuir"
+estado: activo
+---
 # Cómo contribuir
 
 ## Contribuir contenido académico (lo más valioso)

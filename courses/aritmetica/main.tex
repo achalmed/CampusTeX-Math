@@ -1,26 +1,21 @@
-% ╔══════════════════════════════════════════════════════════════════════════╗
-% ║   LIBRO COMPLETO — ARITMÉTICA PREUNIVERSITARIA                           ║
-% ║   Compilar: lualatex main.tex   (dos pasadas para el índice)             ║
-% ╚══════════════════════════════════════════════════════════════════════════╝
+% =====================================================================
+%  courses/aritmetica/main.tex — libro completo: aritmética preuniversitaria
+% ---------------------------------------------------------------------
+%  Uso: scripts/build-course.sh aritmetica
+% =====================================================================
 \documentclass[12pt,a4paper,twoside]{book}
 
-% ════════════════════════════════════════════════════════════════════════════
-% §A  METADATOS DEL CURSO  ← editar aquí
-% ════════════════════════════════════════════════════════════════════════════
+% --- §A  METADATOS DEL CURSO  ← editar aquí --------------------------------
 \newcommand{\NombreCurso}   {Aritm\'{e}tica}
 \newcommand{\NombreAcademia}{CEBA SANTO DOMINGO}
 \newcommand{\NombreDocente} {Elmer Edison Achalma Mendoza}
 \newcommand{\CicloActual}   {Anual 2026}
 
-% ════════════════════════════════════════════════════════════════════════════
-% §B  PREÁMBULO COMÚN
+% --- §B  PREÁMBULO COMÚN ---------------------------------------------------
 %     fontspec y unicode-math los carga el núcleo — no recargarlos aquí.
-% ════════════════════════════════════════════════════════════════════════════
 \input{../../core/preamble}
 
-% ════════════════════════════════════════════════════════════════════════════
-% §C  COMANDOS ESPECÍFICOS DE ARITMÉTICA
-% ════════════════════════════════════════════════════════════════════════════
+% --- §C  COMANDOS ESPECÍFICOS DE ARITMÉTICA --------------------------------
 
 % Descomposición prima: \descompPrima{360}{2^3 \cdot 3^2 \cdot 5}
 \newcommand{\descompPrima}[2]{\[ #1 = #2 \]}
@@ -42,17 +37,13 @@
 		\end{tabular}
 \end{center}}
 
-% ════════════════════════════════════════════════════════════════════════════
-% §D  DOCUMENTO
-% ════════════════════════════════════════════════════════════════════════════
+% --- §D  DOCUMENTO ---------------------------------------------------------
 \begin{document}
 	
 	\input{portada_libro}
 	\input{indice}
 	
-	% ════════════════════════════════════════════════════════════════════════════
-	% UNIDAD I — Fundamentos Numéricos
-	% ════════════════════════════════════════════════════════════════════════════
+	% --- UNIDAD I — Fundamentos Numéricos --------------------------------------
 	\chapter{Fundamentos Num\'{e}ricos}
 	
 	% \include{semana_01_logica/teoria}
@@ -87,9 +78,7 @@
 	% \include{semana_07_mcd_mcm/ejercicios}
 	% \include{semana_07_mcd_mcm/resueltos}
 	
-	% ════════════════════════════════════════════════════════════════════════════
-	% UNIDAD II — Fracciones y Decimales
-	% ════════════════════════════════════════════════════════════════════════════
+	% --- UNIDAD II — Fracciones y Decimales ------------------------------------
 	\chapter{Fracciones y Decimales}
 	
 	% \include{semana_08_fracciones/teoria}
@@ -120,9 +109,7 @@
 	% \include{semana_14_r3_compuesta/ejercicios}
 	% \include{semana_14_r3_compuesta/resueltos}
 	
-	% ════════════════════════════════════════════════════════════════════════════
-	% UNIDAD III — Porcentajes e Interés
-	% ════════════════════════════════════════════════════════════════════════════
+	% --- UNIDAD III — Porcentajes e Interés ------------------------------------
 	\chapter{Porcentajes e Inter\'{e}s}
 	
 	% \include{semana_15_porcentaje/teoria}
@@ -145,9 +132,7 @@
 	% \include{semana_19_reparto/ejercicios}
 	% \include{semana_19_reparto/resueltos}
 	
-	% ════════════════════════════════════════════════════════════════════════════
-	% UNIDAD IV — Aplicaciones Comerciales
-	% ════════════════════════════════════════════════════════════════════════════
+	% --- UNIDAD IV — Aplicaciones Comerciales ----------------------------------
 	\chapter{Aplicaciones Comerciales}
 	
 	% \include{semana_20_ganancia/teoria}
@@ -174,9 +159,7 @@
 	% \include{semana_25_trabajo/ejercicios}
 	% \include{semana_25_trabajo/resueltos}
 	
-	% ════════════════════════════════════════════════════════════════════════════
-	% UNIDAD V — Conteo y Probabilidad
-	% ════════════════════════════════════════════════════════════════════════════
+	% --- UNIDAD V — Conteo y Probabilidad --------------------------------------
 	\chapter{Conteo y Probabilidad}
 	
 	% \include{semana_26_combinatorio/teoria}

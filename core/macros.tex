@@ -1,8 +1,8 @@
-% ══════════════════════════════════════════════════════════════════
+% =====================================================================
 %  core/macros.tex — Macros pedagógicas del framework
-% ══════════════════════════════════════════════════════════════════
+% =====================================================================
 
-% ── Contador de ejercicios ─────────────────────────────────────────
+% --- Contador de ejercicios ------------------------------------------------
 % Se reinicia en cada capítulo (unidad). Uso: \ejercicio Enunciado…
 % En clases sin \chapter (article, p. ej. exámenes) el contador es corrido.
 \ifcsname c@chapter\endcsname
@@ -14,7 +14,7 @@
 	\stepcounter{numejercicio}%
 	\noindent\textbf{\sffamily\color{AzulPizarra}\thenumejercicio.}\quad}
 
-% ── Portada de clase (TikZ) ────────────────────────────────────────
+% --- Portada de clase (TikZ) -----------------------------------------------
 % Uso: \portadaclase{Tema}{Semana}{N.Unidad}{Nombre Unidad}
 \newcommand{\portadaclase}[4]{%
 	\newpage\thispagestyle{empty}

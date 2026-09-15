@@ -1,7 +1,8 @@
-% ╔══════════════════════════════════════════════════════════════════════════╗
-% ║   CORE/PREAMBLE.TEX — NÚCLEO DEL FRAMEWORK CampusTeX                     ║
-% ║   Cargador de módulos. Compilar SIEMPRE con LuaLaTeX (dos pasadas).      ║
-% ╚══════════════════════════════════════════════════════════════════════════╝
+% =====================================================================
+%  core/preamble.tex — núcleo del framework CampusTeX
+% ---------------------------------------------------------------------
+%  Cargador de módulos. Compilar SIEMPRE con LuaLaTeX (dos pasadas).
+% =====================================================================
 %
 %  Cada módulo tiene una única responsabilidad y vive en core/.
 %  El ORDEN de carga importa y está documentado línea a línea; no
@@ -12,11 +13,11 @@
 %  vía \CoreDir. Si un documento vive a otra profundidad, puede definir
 %  \CoreDir antes de cargar este preámbulo:
 %      \newcommand{\CoreDir}{../core}
-% ══════════════════════════════════════════════════════════════════════════════
+% =====================================================================
 \providecommand{\CoreDir}{../../core}
 \providecommand{\ConfigDir}{../../config}
 
-% ── Validación temprana ────────────────────────────────────────────
+% --- Validación temprana ---------------------------------------------------
 % \NombreCurso es obligatorio y específico de cada curso: fallar aquí
 % con mensaje claro evita errores crípticos en fancyhdr/hyperref.
 \ifdefined\NombreCurso\else
@@ -24,7 +25,7 @@
 		ANTES de cargar core/preamble}
 \fi
 
-% ── Configuración global del proyecto ──────────────────────────────
+% --- Configuración global del proyecto -------------------------------------
 % Academia, docente, ciclo y versión en UN solo lugar. Los valores del
 % main.tex del curso (definidos antes de este punto) tienen precedencia.
 \InputIfFileExists{\ConfigDir/project.tex}{}{%
@@ -44,6 +45,4 @@
 \input{\CoreDir/typography}  % microtype, setspace, parskip
 \input{\CoreDir/macros}      % \ejercicio, \portadaclase — usa paleta y tikz
 
-% ══════════════════════════════════════════════════════════════════════════════
-% FIN DEL NÚCLEO
-% ══════════════════════════════════════════════════════════════════════════════
+% --- FIN DEL NÚCLEO --------------------------------------------------------

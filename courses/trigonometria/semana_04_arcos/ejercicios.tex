@@ -1,16 +1,15 @@
-% ╔══════════════════════════════════════════════════════════════════════════╗
-% ║  EXAMEN Y TAREA — SEMANA N° 02                                                                                                                                        ║
-% ║  Cursos: ÁLGEBRA y TRIGONOMETRÍA                                                                                                                                     ║
-% ║  Compilar desde main.tex con LuaLaTeX                                                                                                                                 ║
-% ╚══════════════════════════════════════════════════════════════════════════╝
+% =====================================================================
+%  courses/trigonometria/semana_04_arcos/ejercicios.tex — examen y tarea: semana N° 02
+% ---------------------------------------------------------------------
+%  Cursos: ÁLGEBRA y TRIGONOMETRÍA
+%  Compilar desde main.tex con LuaLaTeX
+% =====================================================================
 
-% ════════════════════════════════════════════════════════════════════════════
-%  ENCABEZADO DE PÁGINA — SEMANA 02
-% ════════════════════════════════════════════════════════════════════════════
+% --- ENCABEZADO DE PÁGINA — SEMANA 02 --------------------------------------
 \newpage
 \thispagestyle{fancy}
 
-% ─── CABECERA DECORATIVA ─────────────────────────────────────────────────────
+% --- CABECERA DECORATIVA ---------------------------------------------------
 \begin{tikzpicture}[remember picture, overlay]
   \fill[AzulPizarra]
     ([xshift=0cm, yshift=0cm]current page.north west)
@@ -31,11 +30,9 @@
     {\small\sffamily  2026};
 \end{tikzpicture}
 
-% ════════════════════════════════════════════════════════════════════════════
-%  BLOQUE A — ÁLGEBRA
-% ════════════════════════════════════════════════════════════════════════════
+% --- BLOQUE A — ÁLGEBRA ----------------------------------------------------
 
-% ── Separador de Curso ──────────────────────────────────────────────────────
+% --- Separador de Curso ----------------------------------------------------
 \begin{tcolorbox}[
   enhanced,
   colback=AzulPizarra, colframe=AzulPizarra,
@@ -50,7 +47,7 @@
 
 \vspace{0.3cm}
 
-% ── Bloque EXAMEN ÁLGEBRA ───────────────────────────────────────────────────
+% --- Bloque EXAMEN ÁLGEBRA -------------------------------------------------
 \begin{tcolorbox}[
   enhanced,
   colback=AzulClaro!50, colframe=AzulMedio,
@@ -69,7 +66,7 @@
 \begin{multicols}{2}
 \setcounter{numejercicio}{0}
 
-% ── Ejercicio E-A1 ──────────────────────────────────────────────────────────
+% --- Ejercicio E-A1 --------------------------------------------------------
 \ejercicio Si $P(x) = 3x - 7$, calcule $P(3x^2 + 5)$.
 
 \begin{alternativas}
@@ -81,7 +78,7 @@
 \end{alternativas}
 \vspace{0.25cm}
 
-% ── Ejercicio E-A2 ──────────────────────────────────────────────────────────
+% --- Ejercicio E-A2 --------------------------------------------------------
 \ejercicio Calcular $P(P(x))$, si $P(x) = 2x + 1$. Hallar $P(P(1))$.
 
 \begin{alternativas}
@@ -93,7 +90,7 @@
 \end{alternativas}
 \vspace{0.25cm}
 
-% ── Ejercicio E-A3 ──────────────────────────────────────────────────────────
+% --- Ejercicio E-A3 --------------------------------------------------------
 \ejercicio Calcule $f(3)$, si:
 \[
   2f(x) = x - 1 + f\!\left(\tfrac{x}{3}\right)
@@ -108,7 +105,7 @@
 \end{alternativas}
 \vspace{0.25cm}
 
-% ── Ejercicio E-A4 ──────────────────────────────────────────────────────────
+% --- Ejercicio E-A4 --------------------------------------------------------
 \ejercicio Calcule la suma de coeficientes de:
 \[
   P(x) = (3x-2)^5 + (1-x)^n - (x-3)^2 + 7
@@ -123,7 +120,7 @@
 \end{alternativas}
 \vspace{0.25cm}
 
-% ── Ejercicio E-A5 ──────────────────────────────────────────────────────────
+% --- Ejercicio E-A5 --------------------------------------------------------
 \ejercicio Si $P(x+2) = x + P(x)$ y $P(3) = 1$. Halle $P(5) + P(1)$.
 
 \begin{alternativas}
@@ -138,7 +135,7 @@
 
 \vspace{0.4cm}
 
-% ── Bloque TAREA ÁLGEBRA ────────────────────────────────────────────────────
+% --- Bloque TAREA ÁLGEBRA --------------------------------------------------
 \begin{tcolorbox}[
   enhanced,
   colback=VerdeSuave!50, colframe=VerdeOliva,
@@ -157,7 +154,7 @@
 \begin{multicols}{2}
 \setcounter{numejercicio}{0}
 
-% ── Tarea A1 ────────────────────────────────────────────────────────────────
+% --- Tarea A1 --------------------------------------------------------------
 \ejercicio Si $P(x) = ax^2 + 2x - 1$ y $P(-2) = 7$, halle $a$.
 
 \begin{alternativas}
@@ -169,7 +166,7 @@
 \end{alternativas}
 \vspace{0.25cm}
 
-% ── Tarea A2 ────────────────────────────────────────────────────────────────
+% --- Tarea A2 --------------------------------------------------------------
 \ejercicio Halle $a + b$, sabiendo que:
 \[
   15 - 4x \equiv a(2-x) + b(1+x)
@@ -184,7 +181,7 @@
 \end{alternativas}
 \vspace{0.25cm}
 
-% ── Tarea A3 ────────────────────────────────────────────────────────────────
+% --- Tarea A3 --------------------------------------------------------------
 \ejercicio Si $P(2x+3) = 7 - 6x$, halle $P(x+1)$.
 
 \begin{alternativas}
@@ -196,7 +193,7 @@
 \end{alternativas}
 \vspace{0.25cm}
 
-% ── Tarea A4 ────────────────────────────────────────────────────────────────
+% --- Tarea A4 --------------------------------------------------------------
 \ejercicio Hallar $a + b$, si son términos semejantes:
 $9x^{2a+1}$ y $-2x^9 y^{5b-3}$
 
@@ -209,7 +206,7 @@ $9x^{2a+1}$ y $-2x^9 y^{5b-3}$
 \end{alternativas}
 \vspace{0.25cm}
 
-% ── Tarea A5 ────────────────────────────────────────────────────────────────
+% --- Tarea A5 --------------------------------------------------------------
 \ejercicio Sea $P(x) = x^2 - 3x + 2$. Calcule $P(2) \cdot P(0) + P(1)$.
 
 \begin{alternativas}
@@ -224,11 +221,9 @@ $9x^{2a+1}$ y $-2x^9 y^{5b-3}$
 
 \vspace{0.5cm}
 
-% ════════════════════════════════════════════════════════════════════════════
-%  BLOQUE B — TRIGONOMETRÍA (Área del Sector Circular)
-% ════════════════════════════════════════════════════════════════════════════
+% --- BLOQUE B — TRIGONOMETRÍA (Área del Sector Circular) -------------------
 
-% ── Separador de Curso ──────────────────────────────────────────────────────
+% --- Separador de Curso ----------------------------------------------------
 \begin{tcolorbox}[
   enhanced,
   colback=AzulPizarra, colframe=AzulPizarra,
@@ -243,7 +238,7 @@ $9x^{2a+1}$ y $-2x^9 y^{5b-3}$
 
 \vspace{0.3cm}
 
-% ── Bloque EXAMEN TRIGONOMETRÍA ─────────────────────────────────────────────
+% --- Bloque EXAMEN TRIGONOMETRÍA -------------------------------------------
 \begin{tcolorbox}[
   enhanced,
   colback=AzulClaro!50, colframe=AzulMedio,
@@ -262,7 +257,7 @@ $9x^{2a+1}$ y $-2x^9 y^{5b-3}$
 \begin{multicols}{2}
 \setcounter{numejercicio}{0}
 
-% ── Ejercicio E-T1 ──────────────────────────────────────────────────────────
+% --- Ejercicio E-T1 --------------------------------------------------------
 \ejercicio En el sector circular, el ángulo central mide $\dfrac{\pi}{3}$ rad y el radio mide $6$ cm. Calcule el área.
 
 \begin{center}
@@ -286,7 +281,7 @@ $9x^{2a+1}$ y $-2x^9 y^{5b-3}$
 \end{alternativas}
 \vspace{0.25cm}
 
-% ── Ejercicio E-T2 ──────────────────────────────────────────────────────────
+% --- Ejercicio E-T2 --------------------------------------------------------
 \ejercicio El arco de un sector circular mide $L = 4$ cm y el radio mide $R = 8$ cm. Calcule el área $S$.
 
 \begin{center}
@@ -308,7 +303,7 @@ $9x^{2a+1}$ y $-2x^9 y^{5b-3}$
 \end{alternativas}
 \vspace{0.25cm}
 
-% ── Ejercicio E-T3 ──────────────────────────────────────────────────────────
+% --- Ejercicio E-T3 --------------------------------------------------------
 \ejercicio Calcula el área del sector circular con ángulo central $\theta = 1$ rad y radio $R = 8$ cm.
 
 \begin{center}
@@ -330,7 +325,7 @@ $9x^{2a+1}$ y $-2x^9 y^{5b-3}$
 \end{alternativas}
 \vspace{0.25cm}
 
-% ── Ejercicio E-T4 ──────────────────────────────────────────────────────────
+% --- Ejercicio E-T4 --------------------------------------------------------
 \ejercicio Se tiene un sector circular de área $S$. Si el ángulo central se triplica y el radio se duplica, ¿cuál es el nuevo área?
 
 \begin{center}
@@ -363,7 +358,7 @@ $9x^{2a+1}$ y $-2x^9 y^{5b-3}$
 \end{alternativas}
 \vspace{0.25cm}
 
-% ── Ejercicio E-T5 ──────────────────────────────────────────────────────────
+% --- Ejercicio E-T5 --------------------------------------------------------
 \ejercicio Calcula el área de la región sombreada. Los radios de los sectores son $OB = 6$ cm y $OD = 2\sqrt{3}$ cm, con ángulo $\angle BOC = 15°$.
 
 \begin{center}
@@ -410,7 +405,7 @@ $9x^{2a+1}$ y $-2x^9 y^{5b-3}$
 
 \vspace{0.4cm}
 
-% ── Bloque TAREA TRIGONOMETRÍA ───────────────────────────────────────────────
+% --- Bloque TAREA TRIGONOMETRÍA --------------------------------------------
 \begin{tcolorbox}[
   enhanced,
   colback=VerdeSuave!50, colframe=VerdeOliva,
@@ -429,7 +424,7 @@ $9x^{2a+1}$ y $-2x^9 y^{5b-3}$
 \begin{multicols}{2}
 \setcounter{numejercicio}{0}
 
-% ── Tarea T1 ────────────────────────────────────────────────────────────────
+% --- Tarea T1 --------------------------------------------------------------
 \ejercicio En un sector circular, el ángulo central mide $18°$ y el radio mide $20$ cm. ¿Cuál es su área?
 
 \begin{center}
@@ -451,7 +446,7 @@ $9x^{2a+1}$ y $-2x^9 y^{5b-3}$
 \end{alternativas}
 \vspace{0.25cm}
 
-% ── Tarea T2 ────────────────────────────────────────────────────────────────
+% --- Tarea T2 --------------------------------------------------------------
 \ejercicio El arco de un sector circular mide $L = 3$ cm y el radio $R = 10$ cm. Halle el área $S$.
 
 \begin{center}
@@ -474,7 +469,7 @@ $9x^{2a+1}$ y $-2x^9 y^{5b-3}$
 \end{alternativas}
 \vspace{0.25cm}
 
-% ── Tarea T3 ────────────────────────────────────────────────────────────────
+% --- Tarea T3 --------------------------------------------------------------
 \ejercicio Si AOD y COB son sectores circulares concéntricos (ver figura), con $OA = 3$, $OC = 5$, y ángulo $\theta$. Calcule $k = \dfrac{S_1}{S_2}$.
 
 \begin{center}
@@ -512,7 +507,7 @@ $9x^{2a+1}$ y $-2x^9 y^{5b-3}$
 \end{alternativas}
 \vspace{0.25cm}
 
-% ── Tarea T4 ────────────────────────────────────────────────────────────────
+% --- Tarea T4 --------------------------------------------------------------
 \ejercicio Se tiene un sector circular de área $S$. Si el ángulo central se duplica y el radio se triplica, ¿cuál es el área del nuevo sector circular?
 
 \begin{center}
@@ -544,7 +539,7 @@ $9x^{2a+1}$ y $-2x^9 y^{5b-3}$
 \end{alternativas}
 \vspace{0.25cm}
 
-% ── Tarea T5 ────────────────────────────────────────────────────────────────
+% --- Tarea T5 --------------------------------------------------------------
 \ejercicio En la figura, AOB y COD son sectores circulares. Si $OC = 6$ cm, $L_{COD} = 6$ y el sector AOB tiene $OA = x$ y $S_{AOB} = 4 \cdot S_{COD}$, calcule $x$.
 
 \begin{center}
@@ -581,7 +576,7 @@ $9x^{2a+1}$ y $-2x^9 y^{5b-3}$
 
 \vspace{0.5cm}
 
-% ─── CLAVE DE RESPUESTAS ─────────────────────────────────────────────────────
+% --- CLAVE DE RESPUESTAS ---------------------------------------------------
 \begin{tcolorbox}[
   enhanced, colback=GrisClaro, colframe=GrisMedio,
   arc=2pt, boxrule=0.5pt,

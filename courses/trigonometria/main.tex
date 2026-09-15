@@ -1,26 +1,21 @@
-% ╔══════════════════════════════════════════════════════════════════════════╗
-% ║   LIBRO COMPLETO — TRIGONOMETRÍA PREUNIVERSITARIA                                                                                             ║
-% ║   Compilar con: lualatex main.tex  (dos pasadas para referencias)                                                                                     ║
-% ╚══════════════════════════════════════════════════════════════════════════╝
+% =====================================================================
+%  courses/trigonometria/main.tex — libro completo: trigonometría preuniversitaria
+% ---------------------------------------------------------------------
+%  Uso: scripts/build-course.sh trigonometria
+% =====================================================================
 \documentclass[12pt, a4paper, twoside]{book}
 
-% ════════════════════════════════════════════════════════════════════════════
-% §B  METADATOS DEL CURSO
-% ════════════════════════════════════════════════════════════════════════════
+% --- §B  METADATOS DEL CURSO -----------------------------------------------
 \newcommand{\NombreCurso}   {Trigonometría y algebra}
 \newcommand{\NombreAcademia}{Joseph Musaja}
 \newcommand{\NombreDocente} {Edison Achalma}
 \newcommand{\CicloActual}   {Anual 2026}
 
-% ════════════════════════════════════════════════════════════════════════════
-% §C  PREÁMBULO COMÚN
+% --- §C  PREÁMBULO COMÚN ---------------------------------------------------
 %     fontspec y unicode-math los carga el núcleo — no recargarlos aquí.
-% ════════════════════════════════════════════════════════════════════════════
 \input{../../core/preamble}
 
-% ════════════════════════════════════════════════════════════════════════════
-% §D  PREÁMBULO ESPECÍFICO DE TRIGONOMETRÍA
-% ════════════════════════════════════════════════════════════════════════════
+% --- §D  PREÁMBULO ESPECÍFICO DE TRIGONOMETRÍA -----------------------------
 
 % Tabla rápida de razones notables
 % Uso: \tablaNotables
@@ -60,17 +55,13 @@ $\tan\theta$ & $0$ & $\dfrac{\sqrt{3}}{3}$ & $1$ & $\sqrt{3}$ & $\infty$ \\
   $#1° = \dfrac{#2\pi}{180°}\ \mathrm{rad}$%
 }
 
-% ════════════════════════════════════════════════════════════════════════════
-% §E  INICIO DEL DOCUMENTO
-% ════════════════════════════════════════════════════════════════════════════
+% --- §E  INICIO DEL DOCUMENTO ----------------------------------------------
 \begin{document}
 
 \input{portada_libro}
 \input{indice}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD I: Fundamentos   (Temas 1–4)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD I: Fundamentos   (Temas 1–4) -----------------------------------
 \chapter{Fundamentos de Trigonometría}
 
 % --- Semana 01: Ángulos ---
@@ -95,9 +86,7 @@ $\tan\theta$ & $0$ & $\dfrac{\sqrt{3}}{3}$ & $1$ & $\sqrt{3}$ & $\infty$ \\
  \include{semana_04_arcos/ejercicios}
  \include{semana_04_arcos/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD II: Razones Trigonométricas   (Temas 5–8)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD II: Razones Trigonométricas   (Temas 5–8) ----------------------
 \chapter{Razones Trigonométricas}
 
 % --- Semana 05: Razones trigonométricas ---
@@ -120,9 +109,7 @@ $\tan\theta$ & $0$ & $\dfrac{\sqrt{3}}{3}$ & $1$ & $\sqrt{3}$ & $\infty$ \\
 % \include{semana_08_reciprocas/ejercicios}
 % \include{semana_08_reciprocas/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD III: Identidades   (Temas 9–12)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD III: Identidades   (Temas 9–12) --------------------------------
 \chapter{Identidades Trigonométricas}
 
 % --- Semana 09: Identidades trigonométricas ---
@@ -145,9 +132,7 @@ $\tan\theta$ & $0$ & $\dfrac{\sqrt{3}}{3}$ & $1$ & $\sqrt{3}$ & $\infty$ \\
 % \include{semana_12_transformaciones/ejercicios}
 % \include{semana_12_transformaciones/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD IV: Ecuaciones y Funciones   (Temas 13–16)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD IV: Ecuaciones y Funciones   (Temas 13–16) ---------------------
 \chapter{Ecuaciones y Funciones Trigonométricas}
 
 % --- Semana 13: Ecuaciones trigonométricas ---
@@ -170,9 +155,7 @@ $\tan\theta$ & $0$ & $\dfrac{\sqrt{3}}{3}$ & $1$ & $\sqrt{3}$ & $\infty$ \\
 % \include{semana_16_graficas/ejercicios}
 % \include{semana_16_graficas/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
-% UNIDAD V: Trigonometría Analítica   (Temas 17–21)
-% ════════════════════════════════════════════════════════════════════════════
+% --- UNIDAD V: Trigonometría Analítica   (Temas 17–21) ---------------------
 \chapter{Trigonometría Analítica}
 
 % --- Semana 17: Ley de senos ---
@@ -200,5 +183,5 @@ $\tan\theta$ & $0$ & $\dfrac{\sqrt{3}}{3}$ & $1$ & $\sqrt{3}$ & $\infty$ \\
 % \include{semana_21_formulas_avanzadas/ejercicios}
 % \include{semana_21_formulas_avanzadas/resueltos}
 
-% ════════════════════════════════════════════════════════════════════════════
+% ---------------------------------------------------------------------
 \end{document}

@@ -1,3 +1,8 @@
+---
+tipo: doc
+titulo: "Guía de desarrollo del framework"
+estado: activo
+---
 # Guía de desarrollo del framework
 
 Para quien modifica el _sistema_ (core, scripts, plantillas), no el

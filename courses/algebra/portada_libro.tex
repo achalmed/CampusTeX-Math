@@ -1,68 +1,68 @@
-% ╔══════════════════════════════════════════════════════════════════════════╗
-% ║   PORTADA — LIBRO COMPLETO DE ÁLGEBRA PREUNIVERSITARIA                   ║
-% ╚══════════════════════════════════════════════════════════════════════════╝
+% =====================================================================
+%  courses/algebra/portada_libro.tex — portada: libro completo de álgebra preuniversitaria
+% =====================================================================
 \begin{titlepage}
   \thispagestyle{empty}
   \begin{tikzpicture}[remember picture, overlay]
 
-    %── Fondo superior azul pizarra ──────────────────────────────────────────
+    % --- Fondo superior azul pizarra -------------------------------------------
     \fill[AzulPizarra]
     (current page.north west)
     rectangle ([yshift=-13cm]current page.north east);
 
-    %── Franja dorada separadora ─────────────────────────────────────────────
+    % --- Franja dorada separadora ----------------------------------------------
     \fill[DoradoAcadémico]
     ([yshift=-13cm]current page.north west)
     rectangle ([yshift=-13.5cm]current page.north east);
 
-    %── Fondo inferior gris claro ────────────────────────────────────────────
+    % --- Fondo inferior gris claro ---------------------------------------------
     \fill[GrisClaro]
     (current page.south west)
     rectangle ([yshift=3.5cm]current page.south east);
 
-    %── Franja inferior azul delgada ─────────────────────────────────────────
+    % --- Franja inferior azul delgada ------------------------------------------
     \fill[AzulMedio]
     (current page.south west)
     rectangle ([yshift=0.6cm]current page.south east);
 
-    %── Nombre de la academia ────────────────────────────────────────────────
+    % --- Nombre de la academia -------------------------------------------------
     \node[anchor=center, text=white]
     at ([yshift=-2.8cm]current page.north)
     {\fontsize{26}{30}\selectfont\sffamily\bfseries \NombreAcademia};
 
-    %── Slogan / descripción academia ────────────────────────────────────────
+    % --- Slogan / descripción academia -----------------------------------------
     \node[anchor=center, text=GrisMedio]
     at ([yshift=-4.2cm]current page.north)
     {\large\sffamily Excelencia Académica Preuniversitaria};
 
-    %── Línea decorativa dorada ──────────────────────────────────────────────
+    % --- Línea decorativa dorada -----------------------------------------------
     \draw[DoradoAcadémico, line width=1.8pt]
     ([xshift=2.5cm, yshift=-5.4cm]current page.north west)
     -- ([xshift=-2.5cm, yshift=-5.4cm]current page.north east);
 
-    %── Nombre del curso — letra grande ──────────────────────────────────────
+    % --- Nombre del curso — letra grande ---------------------------------------
     \node[anchor=center, text=white]
     at ([yshift=-7.5cm]current page.north)
     {\fontsize{52}{58}\selectfont\sffamily\bfseries ÁLGEBRA};
 
-    %── Subtítulo curso ───────────────────────────────────────────────────────
+    % --- Subtítulo curso -------------------------------------------------------
     \node[anchor=center, text=DoradoAcadémico]
     at ([yshift=-9.2cm]current page.north)
     {\Large\sffamily\bfseries PREUNIVERSITARIA};
 
-    %── Descripción del contenido ────────────────────────────────────────────
+    % --- Descripción del contenido ---------------------------------------------
     \node[anchor=center, text=white!70!AzulPizarra]
     at ([yshift=-10.8cm]current page.north)
     {\normalsize\sffamily
       Teoría \textbullet\ Ejercicios Propuestos \textbullet\ Ejercicios Resueltos};
 
-    %── Unidades del libro ────────────────────────────────────────────────────
+    % --- Unidades del libro ----------------------------------------------------
     \node[anchor=center, text=AzulMedio]
     at ([yshift=-12cm]current page.north)
     {\small\sffamily
       5 Unidades \textbullet\ 46 Temas \textbullet\ Niveles Básico, Intermedio y Avanzado};
 
-    %── Datos del docente ────────────────────────────────────────────────────
+    % --- Datos del docente -----------------------------------------------------
     \node[anchor=west, text=GrisCarbón]
     at ([xshift=2.5cm, yshift=2.8cm]current page.south west)
     {\sffamily\textbf{Docente:} \NombreDocente};
@@ -72,7 +72,7 @@
     {\sffamily\textbf{Ciclo:} \CicloActual
       \quad\textbf{Edición:} Primera};
 
-    %── Pie: texto institucional ─────────────────────────────────────────────
+    % --- Pie: texto institucional ----------------------------------------------
     \node[anchor=center, text=white]
     at ([yshift=0.3cm]current page.south)
     {\tiny\sffamily Material de uso interno — \NombreAcademia};

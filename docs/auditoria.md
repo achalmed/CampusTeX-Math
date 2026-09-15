@@ -1,3 +1,8 @@
+---
+tipo: doc
+titulo: "🔍 Auditoría del proyecto CampusTeX-Preuniversitario"
+estado: activo
+---
 # 🔍 Auditoría del proyecto CampusTeX-Preuniversitario
 
 > **Fecha**: 2026-07-05 · **Fase**: 1 (auditoría automática, previa a la reestructuración)

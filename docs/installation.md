@@ -1,3 +1,8 @@
+---
+tipo: doc
+titulo: "Instalación"
+estado: activo
+---
 # Instalación
 
 ## Requisitos

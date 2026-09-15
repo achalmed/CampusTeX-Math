@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 #  new-course.sh — Crea un curso nuevo desde templates/course/
 #
 #  Uso:
@@ -8,7 +8,7 @@
 #
 #  Genera courses/<slug>/ con main.tex, portada_libro.tex e indice.tex
 #  listos para compilar. Las semanas se agregan con new-week.sh.
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 set -euo pipefail
 
 source "$(dirname "${BASH_SOURCE[0]}")/lib/common.sh"

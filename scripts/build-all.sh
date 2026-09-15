@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 #  build-all.sh — Compila TODOS los cursos del proyecto
 #
 #  Uso:
@@ -7,7 +7,7 @@
 #
 #  No se detiene en el primer fallo: compila todo y presenta un
 #  resumen final, saliendo con código 1 si algún curso falló.
-# ══════════════════════════════════════════════════════════════════
+# =====================================================================
 set -euo pipefail
 
 source "$(dirname "${BASH_SOURCE[0]}")/lib/common.sh"

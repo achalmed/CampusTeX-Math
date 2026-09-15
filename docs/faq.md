@@ -1,3 +1,8 @@
+---
+tipo: doc
+titulo: "Preguntas frecuentes y solución de problemas"
+estado: activo
+---
 # Preguntas frecuentes y solución de problemas
 
 ## Compilación

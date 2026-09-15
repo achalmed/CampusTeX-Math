@@ -1,3 +1,8 @@
+---
+tipo: doc
+titulo: "Sistema de plantillas"
+estado: activo
+---
 # Sistema de plantillas
 
 Las plantillas viven en `templates/` y usan marcadores `{{NOMBRE}}` que los

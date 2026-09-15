@@ -1,13 +1,14 @@
-% ╔══════════════════════════════════════════════════════════════════════════╗
-% ║   EXAMEN — {{CURSO_MAYUS}}                                                 ║
-% ║   Compilar con: lualatex examen.tex                                       ║
-% ╚══════════════════════════════════════════════════════════════════════════╝
+% =====================================================================
+%  templates/exam/examen.tex — examen: {{CURSO_MAYUS}}
+% ---------------------------------------------------------------------
+%  Uso: lualatex examen.tex
+% =====================================================================
 %
 %  Documento independiente basado en el núcleo del framework.
 %  Copiar esta carpeta dentro de courses/<curso>/ (p. ej.
 %  courses/algebra/examen_mensual_01/) y compilar desde allí.
 %  Si se compila a otra profundidad, ajustar \CoreDir y \ConfigDir.
-% ══════════════════════════════════════════════════════════════════════════════
+% =====================================================================
 \documentclass[11pt, a4paper]{article}
 
 \newcommand{\NombreCurso}{{{CURSO}}}
@@ -19,7 +20,7 @@
 
 \begin{document}
 
-% ── Cabecera del examen ────────────────────────────────────────────
+% --- Cabecera del examen ---------------------------------------------------
 \begin{center}
   {\Large\sffamily\bfseries\color{AzulPizarra} \NombreAcademia}\\[2pt]
   {\large\sffamily Examen de \NombreCurso}\\[2pt]
@@ -38,7 +39,7 @@ Apellidos y nombres: \rule{9cm}{0.3pt} \quad Fecha: \rule{3cm}{0.3pt}
   calculadora ni apuntes.
 \end{cajaadvert}
 
-% ── Preguntas ──────────────────────────────────────────────────────
+% --- Preguntas -------------------------------------------------------------
 \begin{multicols}{2}
 
 \ejercicio % Enunciado de la pregunta 1…
