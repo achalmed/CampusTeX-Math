@@ -12,7 +12,7 @@ el _contenido académico_ (courses/) del _sistema editorial_ (core/, config/,
 templates/) y de la _automatización_ (scripts/, Makefile).
 
 ```
-CampusTeX-Preuniversitario/
+11 Book/                ← carpeta real; el remoto se llama CampusTeX-Math
 ├── core/               ← Núcleo: preámbulo modular (13 módulos)
 │   └── preamble.tex    ← Cargador; documenta el orden de carga
 ├── config/

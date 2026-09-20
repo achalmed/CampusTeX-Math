@@ -1,9 +1,11 @@
 ---
-tipo: doc
-titulo: "🔍 Auditoría del proyecto CampusTeX-Preuniversitario"
-estado: activo
+tipo: diagnostico
+titulo: "Auditoría de CampusTeX (2026-07-05)"
+estado: hecho
 ---
-# 🔍 Auditoría del proyecto CampusTeX-Preuniversitario
+# Auditoría de CampusTeX — 2026-07-05
+
+> Cerrada (DOC4, 2026-09-20): el estado que describe —267 archivos, ningún curso compilando— ya no existe; la arquitectura que originó está en `docs/architecture.md` y la narración de los errores, en `docs/faq.md`.
 
 > **Fecha**: 2026-07-05 · **Fase**: 1 (auditoría automática, previa a la reestructuración)
 > **Estado del proyecto al momento de la auditoría**: 267 archivos, 6.1 MB, sin control de versiones.

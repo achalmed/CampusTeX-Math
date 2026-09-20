@@ -12,8 +12,8 @@ semana. Requisitos:
 
 - Matemáticamente correcto y verificado.
 - Generado con `./scripts/new-week.sh` (estructura garantizada).
-- Exactamente 15 ejercicios (5 básicos, 5 intermedios, 5 avanzados) con
-  clave de respuestas completa.
+- La composición de la semana tal y como la especifica `docs/workflow.md`
+  (el único documento que la formula), con la clave completa al pie.
 - Compila sin errores: `./scripts/build-course.sh <curso>`.
 - Pasa `./scripts/doctor.sh` sin errores nuevos.
 - Respeta las convenciones de `docs/workflow.md` (nada de `$$`, 5
@@ -24,7 +24,7 @@ semana. Requisitos:
 - Leer antes `docs/architecture.md` y `docs/development.md`.
 - Un cambio al núcleo debe compilar los 5 cursos existentes sin
   modificar su apariencia (salvo que ese sea el objetivo declarado).
-- Scripts nuevos: patrón de los existentes (`lib/common.sh`,
+- Scripts nuevos: patrón de los existentes (`scripts/lib/common.sh`,
   `set -euo pipefail`, `--help`, mensajes en español).
 
 ## Estilo
@@ -37,7 +37,12 @@ semana. Requisitos:
 
 ## Flujo con git
 
-El proyecto aún no es repositorio git (decisión del autor: se
-inicializará manualmente). Cuando lo sea, el flujo previsto es el
-estándar: rama descriptiva → cambios verificados → PR con descripción de
-qué y por qué. El `.gitignore` ya está preparado.
+Este repositorio existe desde el 2026-06-17 y su remoto es público:
+`achalmed/CampusTeX-Math` en GitHub. Lo ordinario —una semana nueva, una
+corrección— se confirma en `main`, con mensajes en español que tienen
+la forma `<ámbito>: <qué cambia y por qué>`; un cambio estructural —el
+núcleo, los scripts, la organización— va en una rama descriptiva y se
+fusiona cuando los cinco cursos compilan. Antes de cualquier commit:
+`./scripts/doctor.sh` y `./scripts/build-all.sh`. Los PDF finales se
+versionan a propósito; los auxiliares de LaTeX y los `.xopp` de clase, no
+(el `.gitignore` lo explica decisión por decisión).

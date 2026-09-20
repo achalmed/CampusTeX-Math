@@ -11,7 +11,7 @@ Todos aceptan `-h`/`--help`. Ejecutar desde cualquier directorio.
 
 | Script            | Uso                                                   | Qué hace                                                                   |
 | ----------------- | ----------------------------------------------------- | -------------------------------------------------------------------------- |
-| `new-course.sh`   | `./scripts/new-course.sh "Geometría"`                 | Crea `courses/geometria/` con main, portada e índice listos                |
+| `new-course.sh`   | `./scripts/new-course.sh "Geometría"`                 | Crea `courses/<slug>/` con main, portada e índice listos                |
 | `new-week.sh`     | `./scripts/new-week.sh algebra 05 productos_notables` | Crea la carpeta de semana con los 3 módulos e imprime el bloque `\include` |
 | `build-course.sh` | `./scripts/build-course.sh algebra [--clean]`         | Compila el libro de un curso (latexmk o 2× lualatex)                       |
 | `build-all.sh`    | `./scripts/build-all.sh`                              | Compila todos los cursos y resume; exit 1 si alguno falla                  |
@@ -19,6 +19,14 @@ Todos aceptan `-h`/`--help`. Ejecutar desde cualquier directorio.
 | `clean.sh`        | `./scripts/clean.sh [--dry-run]`                      | Borra auxiliares LaTeX; nunca PDFs ni fuentes                              |
 | `doctor.sh`       | `./scripts/doctor.sh`                                 | Diagnóstico: módulos faltantes, includes rotos, convenciones               |
 | `stats.sh`        | `./scripts/stats.sh [--update-readme]`                | Estadísticas de contenido; actualiza el README entre marcadores            |
+
+## Herramientas de un solo uso (`scripts/migracion/`)
+
+No forman parte del ciclo normal y no tienen objetivo en el Makefile.
+
+| Script | Qué hizo |
+| ------ | -------- |
+| `scripts/migracion/normalizar-cabeceras.py` | Migración M7 (2026-09-15): cabeceras de identidad, separadores ASCII y frontmatter de `docs/` según `meta/NORMATIVA_ARCHIVOS.md`. Simula por defecto; `--aplicar` escribe |
 
 ## Makefile (equivalentes)
 

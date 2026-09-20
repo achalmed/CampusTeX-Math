@@ -61,6 +61,11 @@ La plantilla de `templates/week/` ya trae el esqueleto:
 
 ## Exámenes
 
+El examen no forma parte del libro y es el único flujo sin script del
+repositorio. El procedimiento completo —marcadores que hay que sustituir,
+profundidad de `\CoreDir`, nombre de la carpeta— está en
+`docs/examenes.md`. En corto:
+
 ```bash
 mkdir courses/aritmetica/examen_mensual_01
 cp templates/exam/examen.tex courses/aritmetica/examen_mensual_01/

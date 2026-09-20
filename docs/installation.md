@@ -44,7 +44,7 @@ Incluidas en TeX Live Full; con instalación básica: `tlmgr install <paquete>`.
 ## Primer uso
 
 ```bash
-cd CampusTeX-Preuniversitario
+cd "$HOME/Documents/11 Book"          # la carpeta real del repo
 
 # 1. Personaliza la identidad global (academia, docente, ciclo)
 $EDITOR config/project.tex

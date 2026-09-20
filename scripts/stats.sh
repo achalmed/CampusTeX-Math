@@ -30,7 +30,7 @@ count_pdf_pages() {
 # build_stats_table()
 # Imprime la tabla Markdown de estadísticas (una fila por curso).
 build_stats_table() {
-    local course course_path weeks written exercises pdf_state
+    local course course_path weeks written exercises pdf_state estado
     printf '| Curso | Semanas | Módulos escritos | Ejercicios | PDF |\n'
     printf '| ----- | :-----: | :--------------: | :--------: | :-: |\n'
     while IFS= read -r course; do
@@ -42,6 +42,12 @@ build_stats_table() {
         exercises=$(cat "$course_path"/semana_*/ejercicios.tex 2>/dev/null \
                         | grep -c '\\ejercicio' || true)
         [[ -f "${course_path}/main.pdf" ]] && pdf_state="✓" || pdf_state="—"
+        # D11 (2026-09-20): un curso sin semanas declara su estado en
+        # courses/<curso>/estado.yml; así tres ceros no se leen como
+        # material abandonado. Sin ese archivo, el curso es activo.
+        estado="activo"
+        [[ -f "${course_path}/estado.yml" ]] && estado=$(sed -n "s/^estado: *//p" "${course_path}/estado.yml" | head -1)
+        [[ "$estado" == "activo" ]] || course="${course} _(${estado//_/ })_"
         printf '| %s | %s | %s | %s | %s |\n' \
             "$course" "$weeks" "$written" "$exercises" "$pdf_state"
     done < <(list_courses)

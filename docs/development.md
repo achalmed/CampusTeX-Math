@@ -6,7 +6,8 @@ estado: activo
 # Guía de desarrollo del framework
 
 Para quien modifica el _sistema_ (core, scripts, plantillas), no el
-contenido académico.
+contenido académico. Dice cómo se modifica CampusTeX **hoy**; lo que
+todavía no existe y por qué está en `docs/decisiones.md`.
 
 ## Principios
 
@@ -30,15 +31,18 @@ contenido académico.
 | Un paquete para TODOS los cursos   | El módulo de core temáticamente correcto; respetar el orden de carga documentado en `core/preamble.tex`       |
 | Un paquete/macro de UN curso       | `main.tex` del curso, sección §D                                                                              |
 | Un valor editable (nombre, ciclo…) | `config/project.tex` (global) o §B del curso                                                                  |
-| Un script nuevo                    | `scripts/`, con `source lib/common.sh`, `set -euo pipefail`, ayuda `-h` y documentación en `docs/commands.md` |
+| Un script nuevo                    | `scripts/`, con `source scripts/lib/common.sh`, `set -euo pipefail`, ayuda `-h` y documentación en `docs/commands.md` |
+| Una herramienta de un solo uso     | `scripts/migracion/`, fuera del ciclo normal y fuera del Makefile                                             |
 
 ## Trampas conocidas de LuaLaTeX + unicode-math
 
-Documentadas en los comentarios de `core/math.tex` y `core/boxes.tex`:
+Documentadas en los comentarios de `core/math.tex` y `core/boxes.tex`. La
+narración de cada error, con su síntoma y su salida, está una sola vez, en
+`docs/faq.md`; aquí queda la lista de lo que no se puede hacer:
 
 - **Nunca** cargar `amssymb` (colisiona con unicode-math).
-- **Nunca** recargar `unicode-math` con opciones (Option clash — fue el
-  bug que rompía 4 de 5 cursos; ver `docs/auditoria.md`).
+- **Nunca** recargar `unicode-math` con opciones: produce el *Option
+  clash* que rompía 4 de 5 cursos antes de la reestructuración.
 - Símbolos renombrados: `\blacklozenge` → `\mdlgblklozenge`; `\square` →
   `\mdlgwhtsquare` (el núcleo provee un alias de compatibilidad).
 - Math en títulos de sección: envolver en
@@ -57,17 +61,19 @@ bash -n scripts/*.sh scripts/lib/*.sh   # sintaxis Bash
 No hay suite de tests: la correctitud LaTeX se verifica compilando y
 revisando el PDF.
 
-## Hoja de ruta (evolución futura)
+## Trabajar con git
 
-- **Metadatos YAML → TeX**: `config/project.yml` + script generador, para
-  integrarse con el ecosistema de `scripts_for_quarto`.
-- **Exportación multi-formato**: HTML/EPUB vía tex4ht o pandoc; a largo
-  plazo, puente a Quarto.
-- **`new-course.sh --from-indice`**: generar las carpetas de semanas desde
-  el índice temático del README.
-- **CI/CD**: cuando el proyecto sea repositorio git, un workflow que
-  ejecute `doctor.sh` + `build-all.sh` y publique los PDFs como artifacts
-  (la estructura de scripts ya está pensada para eso: códigos de salida
-  correctos y sin estado interactivo).
-- **Perfiles de academia**: múltiples `config/<academia>.tex`
-  seleccionables por flag en `build-course.sh`.
+El repositorio existe desde el 2026-06-17 y su remoto es público
+(`achalmed/CampusTeX-Math` en GitHub). Lo ordinario se confirma en
+`main`; un cambio estructural del núcleo o de los scripts va en una rama
+descriptiva y se fusiona cuando los cinco cursos compilan. Mensajes en
+español, con la forma `<ámbito>: <qué cambia y por qué>`. Los PDF finales
+se versionan a propósito; los auxiliares de LaTeX y los `.xopp` de clase,
+no. El detalle del flujo está en `docs/contributing.md`.
+
+## Hacia dónde va (y por qué no está aquí)
+
+La hoja de ruta —capa YAML → TeX, exportación multiformato,
+`new-course.sh --from-indice`, integración continua, perfiles de
+academia— vive en `docs/decisiones.md`, con fecha y dueño por pendiente.
+Este documento no la repite: lo caducado no debe contaminar lo normativo.

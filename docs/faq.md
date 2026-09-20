@@ -11,7 +11,7 @@ estado: activo
 
 Un `main.tex` está recargando `fontspec`/`unicode-math`. El núcleo ya los
 carga: borra esos `\usepackage` del curso. (Fue el bug histórico que rompía
-4 de 5 cursos — `docs/auditoria.md`.)
+4 de 5 cursos — `docs/historial/auditoria-2026-07-05.md`.)
 
 ### «Undefined control sequence \square» (u otro símbolo amssymb)
 

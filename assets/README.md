@@ -1,3 +1,7 @@
+---
+tipo: readme
+estado: activo
+---
 # assets/ — Recursos gráficos del framework
 
 Separación estricta: los recursos gráficos viven aquí, nunca dentro de

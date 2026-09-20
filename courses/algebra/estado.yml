@@ -1,0 +1,8 @@
+# courses/algebra/estado.yml — estado del curso Álgebra: declarado, no deducido del número de semanas
+# Vocabulario de meta/NORMATIVA_ARCHIVOS.md §2.1. Lo lee scripts/stats.sh para marcar la fila
+# del curso en el bloque STATS del README; un curso sin este archivo se considera activo.
+curso: algebra
+estado: en_espera
+desde: 2026-09-20
+motivo: portada, índice y main.tex compilan, pero ninguna semana escrita todavía
+revisar_en: el siguiente ciclo de la academia (decisión D11, docs/decisiones.md)
