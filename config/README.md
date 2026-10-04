@@ -14,6 +14,8 @@ academia, del docente, ciclo, versión del material— y de nada más. `meta/wor
 |---|---|
 | `project.tex` | `\NombreAcademia`, `\NombreDocente`, `\CicloActual`, `\VersionMaterial` y el gancho para redefinir el color de acento |
 
+`\VersionMaterial` se define aquí, pero hoy ninguna plantilla la imprime (pendiente en `docs/decisiones.md`).
+
 ## Cómo funciona la precedencia
 
 Los valores se declaran con `\providecommand`, que **no** pisa una definición previa. De ahí el

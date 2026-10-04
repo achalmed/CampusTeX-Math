@@ -5,6 +5,9 @@ estado: activo
 ---
 # Arquitectura
 
+Cómo está hecho CampusTeX por dentro: qué carga el núcleo y en qué orden, cómo se resuelven
+las rutas y de dónde sale cada valor de configuración. Para quien modifica el framework.
+
 ## Visión
 
 CampusTeX es un **framework de publicación educativa** en LuaLaTeX: separa
@@ -80,23 +83,12 @@ definido.
 
 (Economía es el ejemplo vivo.)
 
-## Decisiones de diseño
-
-- **Config en TeX, no YAML/TOML**: LaTeX no lee YAML sin herramientas
-  externas; `config/project.tex` funciona con una instalación TeX pura.
-  Una capa YAML → TeX generada por script queda como evolución futura
-  (ver `docs/development.md`).
-- **`\include` comentados como interruptores**: compilar solo la semana en
-  curso es el flujo normal del docente; los comentarios son el mecanismo
-  más simple y visible.
-- **`legacy/` intocado**: los documentos standalone antiguos (estilo
-  pdflatex) compilan por sí solos; migrarlos al framework es trabajo
-  editorial, no técnico, y no se hace automáticamente.
-
 ## Escalabilidad
 
 La arquitectura no cambia con el crecimiento: un curso nuevo es una carpeta
 en `courses/` (creada por `new-course.sh`); una semana nueva es una carpeta
-dentro del curso (`new-week.sh`). 20 cursos × 50 semanas no requieren tocar
-`core/` ni `scripts/`. Varias academias = varios `config/project.tex`
-alternativos (parámetro futuro de `build-course.sh`).
+dentro del curso (`new-week.sh`). Ni el núcleo ni los scripts se tocan para
+añadir cursos o semanas.
+
+Por qué la configuración es TeX y no YAML, por qué los `\include` comentados son el interruptor
+de semana y por qué `legacy/` no se migra está en `docs/decisiones.md`, con su fecha.

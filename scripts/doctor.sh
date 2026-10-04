@@ -39,7 +39,7 @@ check_system_dependencies() {
     local tool
     for tool in latexmk make inotifywait; do
         command -v "$tool" >/dev/null 2>&1 \
-            || warn "$tool no está instalado (opcional; ver docs/installation.md)"
+            || warn "$tool no está instalado (opcional; ver docs/instalacion.md)"
     done
 }
 

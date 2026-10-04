@@ -33,7 +33,7 @@ Qué hay que tocar en el `.tex` copiado:
 | `\newcommand{\NombreCurso}` | el marcador `{{CURSO}}` por el nombre real del curso | el preámbulo aborta si `\NombreCurso` no está definido |
 | cabecera del documento | `{{CURSO_MAYUS}}` de la línea de identidad, duración | la plantilla no la rellena nadie: no hay `render_template` en este flujo |
 | `\CoreDir` y `\ConfigDir` | solo si el examen no está a tres niveles de la raíz | `\input` resuelve rutas contra el directorio de compilación, no contra el archivo |
-| bloque de preguntas | un `\ejercicio` + `alternativas` con 5 `\item` por pregunta | la misma convención que en `ejercicios.tex` (`docs/workflow.md`) |
+| bloque de preguntas | un `\ejercicio` + `alternativas` con 5 `\item` por pregunta | la misma convención que en `ejercicios.tex` (`docs/escribir-una-semana.md`) |
 
 La plantilla ya trae `\CoreDir` y `\ConfigDir` a tres niveles arriba, que es la
 profundidad de `courses/<curso>/<examen>/`. Si el examen se guarda en otro sitio hay que
@@ -50,8 +50,5 @@ El PDF resultante se versiona, como todos los PDF finales del repo: es material 
 
 ## Pendiente
 
-**Un `new-exam.sh` en `scripts/` (abierto el 2026-09-20; dueño: Edison Achalma).** Haría con un examen
-lo que `scripts/new-week.sh` hace con una semana: crear la carpeta con el nombre correcto,
-rellenar `{{CURSO}}` y `{{CURSO_MAYUS}}` con `render_template` de `scripts/lib/common.sh` y
-ajustar la profundidad de `\CoreDir`. Hasta que exista, este procedimiento manual es el flujo
-oficial. La entrada del registro está en `docs/decisiones.md`.
+Un `new-exam.sh` que automatice este procedimiento está en `docs/decisiones.md` §Pendientes;
+hasta que exista, el procedimiento manual de arriba es el flujo oficial.

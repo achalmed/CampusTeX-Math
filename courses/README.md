@@ -30,7 +30,7 @@ son un contrato que `scripts/doctor.sh` comprueba.
 - **Nunca `\usepackage` ni `\definecolor` dentro de un módulo de semana**, y nunca `$$ … $$`:
   matemática exhibida con `\[ … \]` o `align*`. Lo comprueba `scripts/doctor.sh`.
 - La composición de una semana —cuántos ejercicios y de qué niveles— está escrita una sola vez,
-  en `docs/workflow.md`.
+  en `docs/escribir-una-semana.md`.
 - **Un curso sin semanas no es un curso abandonado:** se declara en su `estado.yml` con el
   vocabulario de `meta/NORMATIVA_ARCHIVOS.md` §2.1 (`en_espera`, `borrador`, `archivado`…), y
   el motivo se anota en `docs/decisiones.md`. Sin `estado.yml`, un curso se considera `activo`.

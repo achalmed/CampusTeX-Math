@@ -8,7 +8,7 @@ Es dueña de toda la lógica ejecutable del framework. El `Makefile` de la raíz
 de conveniencia: **delega, nunca duplica**. Y los scripts son delgados porque
 `scripts/lib/common.sh` es la única fuente de logging, detección de la raíz, descubrimiento de
 cursos, sustitución de plantillas y compilación. La referencia de uso, con argumentos y
-códigos de salida, está en `docs/commands.md`.
+códigos de salida, está en `docs/comandos.md`.
 
 ## Estructura
 
@@ -30,7 +30,7 @@ códigos de salida, está en `docs/commands.md`.
 - `source lib/common.sh`, `set -euo pipefail`, ayuda con `-h`/`--help`, mensajes en español.
 - Ningún logger propio, ninguna detección de raíz propia, ninguna lógica de compilación
   propia: todo eso lo da `lib/common.sh`.
-- Se documenta en `docs/commands.md` y, si tiene equivalente cómodo, en el `Makefile`.
+- Se documenta en `docs/comandos.md` y, si tiene equivalente cómodo, en el `Makefile`.
 - Códigos de salida: 0 éxito, 1 error de ejecución, 2 error de argumentos.
 - Se comprueba con `bash -n scripts/*.sh scripts/lib/*.sh` antes de nada.
 - Si es de un solo uso —una migración—, va a `migracion/` y no a esta carpeta.
@@ -38,5 +38,6 @@ códigos de salida, está en `docs/commands.md`.
 ## Límite honesto
 
 No hay pruebas automáticas de estos scripts: se verifican con `bash -n`, corriéndolos y mirando
-el resultado. `doctor.sh` avisa, no arregla. Y falta un `new-exam.sh`: armar un examen sigue
-siendo el único flujo manual del repositorio (`docs/examenes.md`).
+el resultado. `doctor.sh` avisa, no arregla. Armar un examen es el único flujo manual del
+repositorio (`docs/examenes.md`). Solo `new-course.sh`, `new-week.sh` y `build-course.sh` tienen
+ayuda con `-h`; los demás no la analizan (`docs/comandos.md`).

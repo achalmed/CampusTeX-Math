@@ -5,6 +5,8 @@ estado: activo
 ---
 # Instalación
 
+Cómo dejar listo el equipo para compilar los libros de CampusTeX y comprobar que funciona.
+
 ## Requisitos
 
 | Requisito                                   | Mínimo | Verificación         |
@@ -32,19 +34,21 @@ brew install --cask mactex
 
 ## Fuentes tipográficas
 
-Incluidas en TeX Live Full; con instalación básica: `tlmgr install <paquete>`.
+Los defectos los fija `core/fonts.tex` y un curso puede cambiarlos en su `main.tex`
+(`docs/arquitectura.md`, §Override de fuentes por curso). Están en TeX Live Full; con una
+instalación básica: `tlmgr install <paquete>`.
 
-| Fuente                    | Uso                            | Paquete                     |
-| ------------------------- | ------------------------------ | --------------------------- |
-| TeX Gyre Pagella (+ Math) | Serif y matemática por defecto | `tex-gyre`, `tex-gyre-math` |
-| EB Garamond               | Economía                       | `ebgaramond`                |
-| Source Sans Pro           | Sans-serif                     | `sourcesanspro`             |
-| JetBrains Mono            | Monoespaciada                  | `jetbrainsmono`             |
+| Fuente | Uso | Paquete |
+| --- | --- | --- |
+| Libertinus Serif, Libertinus Math | serif y matemática por defecto | `libertinus-fonts` |
+| Libertinus Sans | sans-serif por defecto | `libertinus-fonts` |
+| InconsolataN | monoespaciada por defecto | `inconsolata` |
+| EB Garamond | serif del curso de economía | `ebgaramond` |
 
 ## Primer uso
 
 ```bash
-cd "$HOME/Documents/11 Book"          # la carpeta real del repo
+# desde la raíz del repositorio (la carpeta 11 Book del espacio de trabajo)
 
 # 1. Personaliza la identidad global (academia, docente, ciclo)
 $EDITOR config/project.tex

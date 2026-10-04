@@ -7,7 +7,7 @@ estado: activo
 Es dueña de la **forma inicial** de cada cosa que se crea: qué archivos aparecen, con qué
 esqueleto pedagógico y con qué marcadores por rellenar. Los sustituye la función
 `render_template` de `scripts/lib/common.sh`, que recibe pares `CLAVE=valor`. El detalle de
-cada marcador está en `docs/templates.md`.
+cada marcador está en `docs/plantillas.md`.
 
 ## Estructura
 
@@ -17,9 +17,8 @@ cada marcador está en `docs/templates.md`.
 | `week/` | `scripts/new-week.sh` | `teoria.tex`, `ejercicios.tex`, `resueltos.tex` con la estructura pedagógica completa como esqueleto comentado |
 | `exam/` | nadie: se copia a mano | `examen.tex`, clase `article` sobre el mismo núcleo (`docs/examenes.md`) |
 
-`templates/week/ejercicios.tex` es, además, la fuente de la regla de composición de una semana:
-15 ejercicios en tres niveles y cinco alternativas por ejercicio. Si esa regla cambiara, cambia
-aquí primero y después en `docs/workflow.md`.
+`templates/week/ejercicios.tex` implementa la regla de composición de una semana, cuyo único
+dueño es `docs/escribir-una-semana.md`; si la regla cambia, cambian los dos en el mismo commit.
 
 ## Reglas
 
@@ -33,5 +32,4 @@ aquí primero y después en `docs/workflow.md`.
 
 Las plantillas no se versionan por separado ni tienen compatibilidad hacia atrás: un curso
 creado hace meses no se actualiza cuando la plantilla cambia. Y `exam/` no tiene script: sus
-marcadores se sustituyen a mano hasta que exista un `new-exam.sh` en `scripts/`
-(pendiente fechado en `docs/decisiones.md`).
+marcadores se sustituyen a mano (`docs/examenes.md`).

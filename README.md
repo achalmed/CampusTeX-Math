@@ -2,7 +2,7 @@
 tipo: readme
 estado: activo
 ---
-# 11 Book/ — CampusTeX, libros de curso preuniversitario (repo Academic_Book_Framework, remoto CampusTeX-Math)
+# 11 Book/ — CampusTeX, libros de curso preuniversitario (remoto CampusTeX-Math)
 
 ## Qué es
 
@@ -18,9 +18,11 @@ exige y la que distingue a este sistema de los otros del ecosistema.
 
 **No es** un sistema de dictado ni de gestión académica: no hay sílabo, sesión, asistencia ni
 alumnos (eso vive en `10 Class`), ni bibliografía, citas o aparato crítico (eso vive en
-`03 writing`). Depende solo de `core/` del workspace y de una instalación TeX Live; la
-identidad del proyecto (academia, docente, ciclo) es un archivo LaTeX, `config/project.tex`,
-declarado como fuente de verdad en `meta/workspace.yml`.
+`03 writing`). Necesita una instalación TeX Live; del espacio de trabajo solo usa `core`
+(entorno y validador de archivos, que llama `scripts/doctor.sh`), cuyo contrato con sus
+consumidores mantiene el propio `core` en su documento de consumidores. La identidad del
+proyecto (academia, docente, ciclo) es un archivo LaTeX, `config/project.tex`, declarado como
+fuente de verdad en `meta/workspace.yml` (id `academic_book_framework`).
 
 ## Uso
 
@@ -35,10 +37,9 @@ make watch-aritmetica                                      # recompila al guarda
 ./scripts/stats.sh --update-readme                         # regenera el bloque STATS de abajo
 ```
 
-Convención de contenido, una sola vez y en un solo sitio: cada semana lleva **15 ejercicios —
-5 básicos, 5 intermedios y 5 avanzados (tipo admisión) — y cada ejercicio tiene exactamente 5
-alternativas** más su clave de respuestas. Es lo que genera `templates/week/ejercicios.tex`, y
-`docs/workflow.md` es el único documento que la especifica y el único sitio donde se cambia.
+Cada semana lleva una composición fija de ejercicios con cinco alternativas y su clave. La
+regla la especifica `docs/escribir-una-semana.md` y la implementa
+`templates/week/ejercicios.tex`; si cambia, cambian los dos en el mismo commit.
 
 ## Estado del contenido
 
@@ -59,29 +60,37 @@ alternativas** más su clave de respuestas. Es lo que genera `templates/week/eje
 Tres cursos están **en espera**, no abandonados: `algebra`, `economia` y `fisica` tienen su
 portada, su índice y su `main.tex` compilando, pero ninguna semana escrita. Cada uno lo declara
 en su `courses/<curso>/estado.yml`, que `scripts/stats.sh` lee para marcarlos en la tabla; el
-motivo y la fecha de revisión están en `docs/decisiones.md`. Los dos con contenido son
-`aritmetica` (31 semanas) y `trigonometria` (1 semana).
+motivo y la fecha de revisión están en `docs/decisiones.md`.
 
 ## Estructura
 
 | carpeta | qué es | dueño / generador |
 |---|---|---|
-| `core/` | el núcleo: `preamble.tex` carga 13 módulos en un orden que importa | a mano; nada de `courses/` lo redefine |
+| `core/` | el núcleo: `preamble.tex` carga sus módulos en un orden que importa | a mano; nada de `courses/` lo redefine |
 | `config/` | `project.tex`, identidad global por `\providecommand` | a mano; es la `verdad` del proyecto en `meta/workspace.yml` |
 | `courses/` | contenido académico: un libro por curso, una carpeta por semana | `scripts/new-course.sh` y `scripts/new-week.sh`; el docente escribe dentro |
 | `templates/` | plantillas de curso, semana y examen con marcadores `{{NOMBRE}}` | a mano; las rellena `render_template` de `scripts/lib/common.sh` |
 | `scripts/` | automatización: crear, compilar, vigilar, limpiar, diagnosticar, medir | a mano; `scripts/migracion/` guarda lo de un solo uso |
 | `assets/` | recursos gráficos; `images/` y `logos/` ya están en `\graphicspath` | a mano |
-| `legacy/` | 22 documentos standalone anteriores al framework; intactos | nadie: no se toca, no se amplía, no se borra |
+| `legacy/` | documentos standalone anteriores al framework; intactos | nadie: no se toca, no se amplía, no se borra |
 | `docs/` | la documentación permanente | a mano; `docs/README.md` lo genera `core/docs.py indice` |
 
 ## Documentación
 
 El índice completo, con tipo y estado de cada documento, está en `docs/README.md` (generado).
-Puertas de entrada: `docs/installation.md` para instalar, `docs/workflow.md` para escribir una
-semana, `docs/commands.md` para los comandos, `docs/architecture.md` para entender el núcleo,
-`docs/examenes.md` para armar un examen y `docs/decisiones.md` para saber por qué algo es así.
-Lo cumplido y fechado vive en `docs/historial/`; las versiones, en `CHANGELOG.md`.
+| para | documento |
+|---|---|
+| instalar y compilar por primera vez | `docs/instalacion.md` |
+| escribir una semana | `docs/escribir-una-semana.md` |
+| armar un examen | `docs/examenes.md` |
+| consultar scripts, Makefile y macros | `docs/comandos.md` |
+| consultar plantillas y marcadores | `docs/plantillas.md` |
+| resolver un error | `docs/problemas-frecuentes.md` |
+| entender el núcleo | `docs/arquitectura.md` |
+| modificar el framework | `docs/desarrollo.md` |
+| saber por qué algo es así y qué está pendiente | `docs/decisiones.md` |
+
+Lo cumplido y fechado vive en `docs/historial/`.
 
 ## Límite honesto
 
@@ -97,6 +106,9 @@ Lo cumplido y fechado vive en `docs/historial/`; las versiones, en `CHANGELOG.md
   ejercicios sigue siendo trabajo del docente.
 - **Los módulos de una semana no compilan solos:** son fragmentos sin preámbulo, solo existen
   dentro del `main.tex` de su curso.
-- **`legacy/` no se migra automáticamente.** Convertir esos 22 documentos al framework es
+- **`legacy/` no se migra automáticamente.** Convertir esos documentos al framework es
   trabajo editorial, no técnico, y no está planificado.
-- Licencia MIT (`LICENSE`); el material académico de `courses/` es del autor.
+- **Licencia:** `LICENSE` es la licencia MIT, con copyright del autor, y no distingue entre el
+  código y el contenido de `courses/` y `legacy/`. Si el contenido debe llevar otra licencia es
+  una pregunta abierta en `docs/decisiones.md` §Pendientes.
+- **No acepta contribuciones de terceros:** es un proyecto de un solo autor.
