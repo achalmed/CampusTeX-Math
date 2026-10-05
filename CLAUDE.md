@@ -48,7 +48,7 @@ scripts— va en español.
 
 ### Dónde va cada cosa nueva
 
-La regla de destino del ecosistema (`meta/NORMATIVA_ARCHIVOS.md` §15.11), con los dueños de
+La regla de destino del ecosistema (`meta/docs/historial/NORMATIVA_ARCHIVOS.md` §15.11), con los dueños de
 este repo. En la raíz solo caben `README.md`, `CLAUDE.md`, `AGENTS.md`, `LICENSE` y los archivos
 de entorno (`.gitignore`, `.latexmkrc`, `Makefile`); cualquier otro `.md` está fuera de lugar.
 

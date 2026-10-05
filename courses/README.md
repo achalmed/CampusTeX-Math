@@ -32,7 +32,7 @@ son un contrato que `scripts/doctor.sh` comprueba.
 - La composición de una semana —cuántos ejercicios y de qué niveles— está escrita una sola vez,
   en `docs/escribir-una-semana.md`.
 - **Un curso sin semanas no es un curso abandonado:** se declara en su `estado.yml` con el
-  vocabulario de `meta/NORMATIVA_ARCHIVOS.md` §2.1 (`en_espera`, `borrador`, `archivado`…), y
+  vocabulario de `meta/docs/historial/NORMATIVA_ARCHIVOS.md` §2.1 (`en_espera`, `borrador`, `archivado`…), y
   el motivo se anota en `docs/decisiones.md`. Sin `estado.yml`, un curso se considera `activo`.
 
 ## Límite honesto

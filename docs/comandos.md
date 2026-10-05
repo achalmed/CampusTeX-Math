@@ -28,7 +28,7 @@ No forman parte del ciclo normal y no tienen objetivo en el Makefile.
 
 | Script | Qué hizo |
 | ------ | -------- |
-| `scripts/migracion/normalizar-cabeceras.py` | Normalizó cabeceras de identidad, separadores ASCII y frontmatter de `docs/` según `meta/NORMATIVA_ARCHIVOS.md`. Simula por defecto; `--aplicar` escribe |
+| `scripts/migracion/normalizar-cabeceras.py` | Normalizó cabeceras de identidad, separadores ASCII y frontmatter de `docs/` según `meta/docs/historial/NORMATIVA_ARCHIVOS.md`. Simula por defecto; `--aplicar` escribe |
 
 ## Makefile (equivalentes)
 

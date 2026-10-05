@@ -5,7 +5,7 @@ estado: activo
 ---
 # Decisiones y pendientes de CampusTeX
 
-Registro acumulativo por tema (`meta/NORMATIVA_ARCHIVOS.md` §15.6): una entrada por decisión,
+Registro acumulativo por tema (`meta/docs/historial/NORMATIVA_ARCHIVOS.md` §15.6): una entrada por decisión,
 con su fecha y su porqué. Lo **decidido** no se vuelve a discutir sin anotar aquí por qué; lo
 abierto está en [§Pendientes](#pendientes), con fecha y dueño.
 
@@ -57,7 +57,7 @@ scripts del ciclo normal (`docs/comandos.md`).
 **Decidido (2026-10-04): `docs/` se nombra en español y cada documento tiene una función.**
 Los documentos de `docs/` pasaron a nombres semánticos en español (`instalacion`,
 `escribir-una-semana`, `comandos`, `plantillas`, `problemas-frecuentes`, `arquitectura`,
-`desarrollo`), como en los demás frameworks del ecosistema (`meta/NORMATIVA_ARCHIVOS.md` §4 y
+`desarrollo`), como en los demás frameworks del ecosistema (`meta/docs/historial/NORMATIVA_ARCHIVOS.md` §4 y
 §15.11). La guía de contribución de `docs/` se retiró: el repo no acepta contribuciones de terceros y su
 contenido vigente pasó a `docs/escribir-una-semana.md` y `docs/desarrollo.md`. `CHANGELOG.md`
 se retiró: el framework no declara versión ni publica etiquetas, y lo que registraba está en el
