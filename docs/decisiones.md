@@ -70,7 +70,7 @@ dueño, `docs/escribir-una-semana.md`, y la implementa `templates/week/ejercicio
 `prompts/00 metodo/ARQUITECTURA_DOCUMENTAL.md` lo registra en §4.2 (tipos rechazados: el libro
 de curso no se duplica) y en §8.2 (qué hace cada sistema); el esquema —semana = teoría ·
 ejercicios · resueltos— es de este framework y lo exige `scripts/doctor.sh`. El libro general,
-no didáctico, es `\documentclass{libro}` de `03 writing`.
+no didáctico, es `\documentclass{libro}` de `escritura`.
 
 **Decidido (2026-09-20): CampusTeX y `docencia` siguen siendo dos sistemas.**
 `docencia` es el estándar de **dictado** (curso, sesión, sílabo, evaluación, registro de

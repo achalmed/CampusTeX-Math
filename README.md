@@ -18,7 +18,7 @@ exige y la que distingue a este sistema de los otros del ecosistema.
 
 **No es** un sistema de dictado ni de gestión académica: no hay sílabo, sesión, asistencia ni
 alumnos (eso vive en `docencia`), ni bibliografía, citas o aparato crítico (eso vive en
-`03 writing`). Necesita una instalación TeX Live; del espacio de trabajo solo usa `core`
+`escritura`). Necesita una instalación TeX Live; del espacio de trabajo solo usa `core`
 (entorno y validador de archivos, que llama `scripts/doctor.sh`), cuyo contrato con sus
 consumidores mantiene el propio `core` en su documento de consumidores. La identidad del
 proyecto (academia, docente, ciclo) es un archivo LaTeX, `config/project.tex`, declarado como

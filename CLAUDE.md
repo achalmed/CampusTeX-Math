@@ -11,8 +11,8 @@ Léase antes: `README.md` (qué es y cómo se usa), `docs/README.md` (índice), 
 CampusTeX produce el **libro de curso** preuniversitario, que
 `prompts/00 metodo/ARQUITECTURA_DOCUMENTAL.md` registra en §4.2 y §8.2 con esquema propio
 —semana = `teoria` · `ejercicios` · `resueltos`, exigido por `scripts/doctor.sh`— y que allí no
-se reespecifica. El libro general, no didáctico, es `\documentclass{libro}` de `03 writing`
-(`03 writing/esquemas/libro.tex`). Todo —contenido, comentarios, docs y salida de los
+se reespecifica. El libro general, no didáctico, es `\documentclass{libro}` de `escritura`
+(`escritura/esquemas/libro.tex`). Todo —contenido, comentarios, docs y salida de los
 scripts— va en español.
 
 ## Reglas que no se negocian
