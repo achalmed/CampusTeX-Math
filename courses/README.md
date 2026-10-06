@@ -39,4 +39,4 @@ son un contrato que `scripts/doctor.sh` comprueba.
 
 Esta carpeta no guarda nada de los alumnos: ni listas, ni notas, ni asistencia. El remoto es
 público. El registro del dictado —quién, cuándo, con qué resultado— es competencia de
-`10 Class`, no de CampusTeX.
+`docencia`, no de CampusTeX.

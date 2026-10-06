@@ -72,8 +72,8 @@ de curso no se duplica) y en §8.2 (qué hace cada sistema); el esquema —seman
 ejercicios · resueltos— es de este framework y lo exige `scripts/doctor.sh`. El libro general,
 no didáctico, es `\documentclass{libro}` de `03 writing`.
 
-**Decidido (2026-09-20): CampusTeX y `10 Class` siguen siendo dos sistemas.**
-`10 Class` es el estándar de **dictado** (curso, sesión, sílabo, evaluación, registro de
+**Decidido (2026-09-20): CampusTeX y `docencia` siguen siendo dos sistemas.**
+`docencia` es el estándar de **dictado** (curso, sesión, sílabo, evaluación, registro de
 alumnos) y consume la capa `sistema-editorial`; CampusTeX produce el **libro impreso** de una
 academia preuniversitaria con núcleo propio y autocontenido. Comparten motor (LuaLaTeX) y
 parecido en las cajas, pero no comparten núcleo: unificarlos obligaría a que el libro dependa
@@ -88,7 +88,7 @@ mantiene el proveedor, en `core/docs/consumidores.md` del workspace.
 
 | abierto | pendiente | dueño |
 |---|---|---|
-| 2026-07-05 | Una capa `project.yml` junto a `config/project.tex`, generada a TeX por un script, para que la identidad sea legible por las herramientas del ecosistema como `curso.yml` en `10 Class`. | Edison Achalma |
+| 2026-07-05 | Una capa `project.yml` junto a `config/project.tex`, generada a TeX por un script, para que la identidad sea legible por las herramientas del ecosistema como `curso.yml` en `docencia`. | Edison Achalma |
 | 2026-07-05 | Exportación multiformato (HTML/EPUB vía tex4ht o pandoc) y, a largo plazo, un puente a Quarto. Sin fecha ni diseño. | Edison Achalma |
 | 2026-07-05 | `./scripts/new-course.sh --from-indice`: generar las carpetas de semanas desde el índice temático del curso. | Edison Achalma |
 | 2026-07-05 | Perfiles de academia: varios `config/<academia>.tex` seleccionables por opción de `build-course.sh`. | Edison Achalma |

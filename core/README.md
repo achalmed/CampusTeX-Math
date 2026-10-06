@@ -48,5 +48,5 @@ de `unicode-math` y `titlesec`. La tabla módulo a módulo está en `docs/arquit
 
 El núcleo no sabe nada del contenido: no valida cuántos ejercicios tiene una semana ni si la
 teoría está completa (eso lo mira `scripts/doctor.sh`). Y no es una capa compartida con el
-resto del ecosistema: `10 Class` y `03 writing` tienen la suya, y este núcleo es deliberadamente
+resto del ecosistema: `docencia` y `03 writing` tienen la suya, y este núcleo es deliberadamente
 autocontenido para que un libro compile con una instalación TeX pura.
